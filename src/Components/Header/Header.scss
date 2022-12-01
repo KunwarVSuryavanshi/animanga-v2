@@ -1,0 +1,17 @@
+.header{
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 3.5vh;
+  &_nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    &-links{
+      margin-left: 10vw;
+      cursor: pointer;
+    }
+  }
+}
