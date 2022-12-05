@@ -5,6 +5,13 @@
   flex-wrap: wrap;
   justify-content: space-between;
   font-size: 3.5vh;
+  background-color: black;
+  top: 0;
+  height: 8vh;
+  &_logo, &_nav{
+    margin-top: auto;
+    margin-bottom: auto;
+  }
   &_nav{
     display: flex;
     flex-direction: row;

@@ -13,15 +13,14 @@ const airingSlice = createSlice({
     getAiringLoading(state) {
       state.loading = true
     },
-    getAiringSuccess(state, response) {
+    getAiringSuccess(state, {payload}) {
       state.loading = false,
       state.hasErrors = false,
-      state.response = response  
+      state.response = payload  
     },
-    getAiringError(state, res = null) {
+    getAiringError(state) {
       state.loading = false,
-      state.hasErrors = true,
-      state.response = res
+      state.hasErrors = true
     }
   }
 })
@@ -29,10 +28,9 @@ const airingSlice = createSlice({
 const fetchAiringAnime = () => {
   return async (dispatch) => {
     dispatch(getAiringLoading())
-
     try {
       const response = await fetch('https://api.jikan.moe/v4/seasons/now')
-      const data = response.json()
+      const data = await response.json();
       dispatch(getAiringSuccess(data))
     } catch (err) {
       dispatch(getAiringError(err))
@@ -42,3 +40,4 @@ const fetchAiringAnime = () => {
 
 export default airingSlice.reducer
 export const { getAiringLoading, getAiringSuccess, getAiringError } = airingSlice.actions;
+export { fetchAiringAnime };
