@@ -29,7 +29,9 @@ const fetchAiringAnime = () => {
   return async (dispatch) => {
     dispatch(getAiringLoading())
     try {
-      const response = await fetch('https://api.jikan.moe/v4/seasons/now')
+      const response = await fetch(
+        "https://api.consumet.org/meta/anilist/trending"
+      );
       const data = await response.json();
       dispatch(getAiringSuccess(data))
     } catch (err) {

@@ -8,12 +8,20 @@ function Carousel(props) {
     <>
       {props?.data?.map((item, key) => {
         return (
-          <div className={`container `}>
-            <img
-              className={`container_img`}
-              src={item?.images?.jpg?.large_image_url}
-            />
-            <div>Hello</div>
+          <div className={`container`}>
+            <div className="container_gradient"
+              style={{
+                background: "linear-gradient(90deg,rgba(0,0,0,.8),transparent)",
+              }}
+            >
+              <div
+                className="container_img"
+                style={{ backgroundImage: `url(${item?.cover})` }}
+              ></div>
+            </div>
+            <div className="description">
+              alkfsa sflkasf laksfnalks alskgnas galkgsa slgkas glaksg alskg
+            </div>
           </div>
         );
       })}

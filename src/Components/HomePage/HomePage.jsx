@@ -12,7 +12,7 @@ function HomePage() {
   
   useEffect(() => {
     if (
-      airingAnimeResponse?.response?.data?.length < 1 ||
+      airingAnimeResponse?.response?.results?.length < 1 ||
       !airingAnimeResponse?.hasError
     ) {
       dispatch(fetchAiringAnime());
@@ -33,7 +33,7 @@ function HomePage() {
           {/* {airingAnimeResponse?.response?.data?.map((item, key) => {
             return <Carousel item={item} key={key} />;
           })} */}
-          <BannerCarousel data={airingAnimeResponse?.response?.data} />
+          <BannerCarousel data={airingAnimeResponse?.response?.results} />
           {/* <div className="carousel_container_right-btn"></div> */}
         </div>
       )}
