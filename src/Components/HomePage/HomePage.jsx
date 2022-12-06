@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchAiringAnime } from '../../feature/airing.slice';
 import CircularProgress from "@mui/material/CircularProgress";
 import './HomePage.scss'
-import Carousel from "../Carousel/Carousel";
+import BannerCarousel from "../BannerCarousel/BannerCarousel";
 
 function HomePage() {
   const [airing, setAiring] = useState([]);
@@ -30,9 +30,10 @@ function HomePage() {
       ) : (
         <div className="carousel_container">
           {/* <div className="carousel_container_left-btn"></div> */}
-          {airingAnimeResponse?.response?.data?.map((item, key) => {
+          {/* {airingAnimeResponse?.response?.data?.map((item, key) => {
             return <Carousel item={item} key={key} />;
-          })}
+          })} */}
+          <BannerCarousel data={airingAnimeResponse?.response?.data} />
           {/* <div className="carousel_container_right-btn"></div> */}
         </div>
       )}
