@@ -24,7 +24,6 @@ function Carousel(props) {
 
   return (
     <>
-      {console.log("Interval--->", interval, index)}
       {props?.data?.map((item, key) => {
         return (
           <div
