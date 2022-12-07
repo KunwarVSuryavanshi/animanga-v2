@@ -1,17 +1,18 @@
 @use '../../variables.scss';
 
 .container {
-  display: flex;
-  flex-direction: row;
+  // display: flex;
+  // flex-direction: row;
   flex: 0 0 100vw;
   overflow: hidden;
   position: relative;
 
   // box-shadow: inset -350px 0 100px 0 #FFF
   &_gradient {
-    margin: 2vh 2vw;
+    padding: 2vh 2vw;
     height: 60vh;
     width: 100vw;
+    box-sizing: border-box;
   }
 
   &_img {
@@ -28,10 +29,48 @@
     background-position: center;
     // box-shadow: inset -350px 0 100px 0 rgb(20, 19, 19)
   }
-
   .description {
     position: absolute;
     margin: 4vh 5vw;
     width: 50%;
+    top: 0;
+  }
+}
+
+.hide_img{
+  animation-name: hideAnimation;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
+}
+
+.show_img{
+  animation-name: showAnimation;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
+  position: absolute;
+  left: 0;
+}
+
+@keyframes hideAnimation {
+  0% {
+    display: block;
+    opacity: 1;
+  }
+
+  100% {
+    display: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes showAnimation {
+  0% {
+    opacity: 0;
+    display: hidden;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
   }
 }
