@@ -10,7 +10,7 @@
   // box-shadow: inset -350px 0 100px 0 #FFF
   &_gradient {
     padding: 2vh 2vw;
-    height: 60vh;
+    height: 62vh;
     width: 100vw;
     box-sizing: border-box;
   }
@@ -22,7 +22,7 @@
     height: 100%;
     background-size: cover;
     border-radius: 15px;
-    box-shadow: inset 100px 0px 150px -25px variables.$background_main;
+    box-shadow: inset 250px 0px 250px -25px variables.$background_main;
     // background: linear-gradient(right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 100%);
     position: relative;
     background-repeat: no-repeat;
@@ -32,8 +32,44 @@
   .description {
     position: absolute;
     margin: 4vh 5vw;
-    width: 50%;
+    width: 40%;
+    height: 100%;
     top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-shadow: 2px 2px 2px black;
+    &_title{
+      font-size: 3rem;
+      font-weight: 600;
+      margin-top: 2vh;
+    }
+    &_epDetails{
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-top: 6vh;
+      font-weight: 300;
+      div{
+        padding-right: 2vw;
+        display: flex;
+        span{
+          padding-right: 0.25vw;
+        }
+      }
+    }
+    &_about{
+      padding-top: 4vh;
+    }
+    .btn{
+      // float: inline-end;
+      position: absolute;
+      bottom: 11vh;
+      &_mui{
+        padding: 1.5vh 1vw;
+      }
+    }
   }
 }
 

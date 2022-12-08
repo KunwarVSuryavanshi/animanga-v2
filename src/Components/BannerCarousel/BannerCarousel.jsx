@@ -1,6 +1,11 @@
+import { Button } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
+import { cleanHTML } from "../../Common/utils";
 import "./BannerCarousel.scss";
-
+import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import PlaylistPlayIcon from "@mui/icons-material/PlaylistPlay";
+import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 function Carousel(props) {
   const [index, setIndex] = useState(0);
   let interval = useRef();
@@ -8,15 +13,14 @@ function Carousel(props) {
   useEffect(() => {
     let temp = 0; // Closure beesh :P
     interval.current = setInterval(() => {
-      if (temp < props.data.length-1) {
+      if (temp < props.data.length - 1) {
         temp++;
         setIndex((prev) => prev + 1);
-      }
-      else {
+      } else {
         temp = 0;
         setIndex(0);
       }
-    }, 5000);
+    }, 6000);
     return () => {
       clearInterval(interval.current);
     };
@@ -29,19 +33,49 @@ function Carousel(props) {
           <div
             className={`container ${key !== index ? "hide_img" : "show_img"}`}
           >
-            <div
-              className="container_gradient"
-              style={{
-                background: "linear-gradient(90deg,rgba(0,0,0,.8),transparent)",
-              }}
-            >
+            <div className="container_gradient">
               <div
                 className={`container_img`}
                 style={{ backgroundImage: `url(${item?.cover})` }}
               ></div>
             </div>
             <div className="description">
-              alkfsa sflkasf laksfnalks alskgnas galkgsa slgkas glaksg alskg
+              <div className="description_title">{item?.title?.english}</div>
+              <div className="description_epDetails">
+                <div className="description_epDetails-cat">{item?.type}</div>
+                <div>
+                  <span>
+                    <PlaylistPlayIcon />
+                  </span>
+                  {item?.totalEpisodes} Episodes
+                </div>
+                <div>
+                  <span>
+                    <AccessTimeIcon />
+                  </span>
+                  {item?.duration} mins
+                </div>
+                <div>
+                  <span>
+                    <ThumbUpOffAltIcon />
+                  </span>
+                  {item?.rating}
+                </div>
+              </div>
+              <div className="description_about">
+                {item?.description?.length > 400
+                  ? cleanHTML(item.description.slice(0, 400)) + "..."
+                  : cleanHTML(item.description)}
+              </div>
+              <div className="btn">
+                <Button
+                  variant="outlined"
+                  className="btn_mui"
+                  sx={{ border: "3px solid #1976d280" }}
+                >
+                  <PlayCircleOutlineIcon /> Watch now
+                </Button>
+              </div>
             </div>
           </div>
         );

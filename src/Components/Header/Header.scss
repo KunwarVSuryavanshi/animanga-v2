@@ -4,18 +4,23 @@
   flex: 1;
   flex-wrap: wrap;
   justify-content: space-between;
-  font-size: 3.5vh;
+  font-size: 3.8vh;
   background-color: black;
   top: 0;
   height: 8vh;
+  font-weight: 700;
   &_logo, &_nav{
     margin-top: auto;
     margin-bottom: auto;
+    padding-left: 2vw;
+    padding-right: 2vw;
   }
   &_nav{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    font-weight: 500;
+    font-size: 3vh;
     &-links{
       margin-left: 10vw;
       cursor: pointer;
