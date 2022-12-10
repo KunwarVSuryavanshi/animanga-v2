@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import axios from 'axios'
 
 const initialState = {
   loading: true,
@@ -29,11 +30,11 @@ const fetchAiringAnime = () => {
   return async (dispatch) => {
     dispatch(getAiringLoading())
     try {
-      const response = await fetch(
+      const response = await axios.get(
         "https://api.consumet.org/meta/anilist/trending"
       );
-      const data = await response.json();
-      dispatch(getAiringSuccess(data))
+      // dispatch(airingSlice.actions.getAiringSuccess(response.data)); NOTE: THIS IS ALSO CORRECT
+      dispatch(getAiringSuccess(response.data))
     } catch (err) {
       dispatch(getAiringError(err))
     }
@@ -41,5 +42,11 @@ const fetchAiringAnime = () => {
 }
 
 export default airingSlice.reducer
-export const { getAiringLoading, getAiringSuccess, getAiringError } = airingSlice.actions;
+export const { getAiringLoading, getAiringSuccess, getAiringError } =
+  airingSlice.actions;
+// EVEN THOUGH NOT USING ACTION IN ANY JSX FILE STILL EXPORTING, WHY????
+// BECAUSE IN THE ABOVE ACTION HAVE USED THOSE ACTIONS, SO BECAUSE OF NAME EXPORT BEING ABLE TO DIRECTLT CALL THE FUNCTION (ACTION) OTHER WISE WOULD HAVEE TO USE LINE NO 36
+
+
+// export const airingSliceAction = airingSlice.actions;
 export { fetchAiringAnime };
