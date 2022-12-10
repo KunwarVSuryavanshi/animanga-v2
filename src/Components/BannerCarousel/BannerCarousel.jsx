@@ -8,23 +8,27 @@ import PlaylistPlayIcon from "@mui/icons-material/PlaylistPlay";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 function Carousel(props) {
   const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+
   let interval = useRef();
 
   useEffect(() => {
-    let temp = 0; // Closure beesh :P
+    let temp = index; // Closure beesh :P
     interval.current = setInterval(() => {
-      if (temp < props.data.length - 1) {
-        temp++;
-        setIndex((prev) => prev + 1);
-      } else {
-        temp = 0;
-        setIndex(0);
+      if (!paused) {
+        if (temp < props.data.length - 1) {
+          temp++;
+          setIndex((prev) => prev + 1);
+        } else {
+          temp = 0;
+          setIndex(0);
+        }
       }
     }, 6000);
     return () => {
       clearInterval(interval.current);
     };
-  }, [props?.data?.length]);
+  }, [props?.data?.length,paused]);
 
   return (
     <>
@@ -32,6 +36,8 @@ function Carousel(props) {
         return (
           <div
             className={`container ${key !== index ? "hide_img" : "show_img"}`}
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
           >
             <div className="container_gradient">
               <div

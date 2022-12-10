@@ -10,7 +10,7 @@
   // box-shadow: inset -350px 0 100px 0 #FFF
   &_gradient {
     padding: 2vh 2vw;
-    height: 62vh;
+    height: 67vh;
     width: 100vw;
     box-sizing: border-box;
   }
@@ -43,6 +43,7 @@
       font-size: 3rem;
       font-weight: 600;
       margin-top: 2vh;
+      white-space: nowrap;
     }
     &_epDetails{
       display: flex;
