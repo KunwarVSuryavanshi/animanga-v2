@@ -4,7 +4,7 @@
   flex: 1;
   flex-wrap: wrap;
   justify-content: space-between;
-  font-size: 3.8vh;
+  font-size: 4.8vh;
   background-color: black;
   top: 0;
   height: 8vh;
@@ -14,6 +14,8 @@
     margin-bottom: auto;
     padding-left: 2vw;
     padding-right: 2vw;
+    font-family: 'Rubik Vinyl', cursive;
+    // color: rgb(255, 0, 47);
   }
   &_nav{
     display: flex;
@@ -24,6 +26,8 @@
     &-links{
       margin-left: 10vw;
       cursor: pointer;
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 800;
     }
   }
 }
