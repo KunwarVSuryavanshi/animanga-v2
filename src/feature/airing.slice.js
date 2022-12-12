@@ -42,8 +42,7 @@ const fetchAiringAnime = () => {
 }
 
 export default airingSlice.reducer
-export const { getAiringLoading, getAiringSuccess, getAiringError } =
-  airingSlice.actions;
+export const { getAiringLoading, getAiringSuccess, getAiringError } = airingSlice.actions;
 // EVEN THOUGH NOT USING ACTION IN ANY JSX FILE STILL EXPORTING, WHY????
 // BECAUSE IN THE ABOVE ACTION HAVE USED THOSE ACTIONS, SO BECAUSE OF NAME EXPORT BEING ABLE TO DIRECTLT CALL THE FUNCTION (ACTION) OTHER WISE WOULD HAVEE TO USE LINE NO 36
 

@@ -11,8 +11,10 @@ const initialState = {
 export const fetchUpcoming = createAsyncThunk("notAiring/fetchUpcomings", () => {
   // NOTE: COULD HAVE USED notAiringAnime or notAiring but since for the specific action of fetchUpcomings using notAiringAnime/fetchUpcomings
   let url = "https://graphql.anilist.co";
+  const date = new Date();
+  console.log(date, date.getFullYear() + "" + date.getMonth() + "" + date.getDate());
   return axios
-    .post(url, { query: anilistNotAiringScheduleQuery() })
+    .post(url, { query: anilistNotAiringScheduleQuery(date) })
     .then((response) => response.data);
 });
 
