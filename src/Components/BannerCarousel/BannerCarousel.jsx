@@ -46,7 +46,9 @@ function Carousel(props) {
               ></div>
             </div>
             <div className="description">
-              <div className="description_title">{item?.title?.english}</div>
+              <div className="description_title">
+                {item?.title?.english ?? item?.title?.romaji}
+              </div>
               <div className="description_epDetails">
                 <div className="description_epDetails-cat">{item?.type}</div>
                 <div>

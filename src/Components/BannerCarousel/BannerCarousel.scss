@@ -7,11 +7,12 @@
   overflow: hidden;
   position: relative;
   cursor: default;
+  width: 100%;
   // box-shadow: inset -350px 0 100px 0 #FFF
   &_gradient {
     padding: 2vh 2vw;
     height: 65vh;
-    width: 100vw;
+    max-width: 100vw;
     box-sizing: border-box;
   }
 
@@ -50,7 +51,7 @@
       flex-direction: row;
       align-items: flex-start;
       justify-content: space-between;
-      margin-top: 6vh;
+      margin-top: 5%;
       font-weight: 300;
       div{
         padding-right: 2vw;
@@ -61,7 +62,7 @@
       }
     }
     &_about{
-      padding-top: 4vh;
+      padding-top: 5%;
     }
     .btn{
       // float: inline-end;

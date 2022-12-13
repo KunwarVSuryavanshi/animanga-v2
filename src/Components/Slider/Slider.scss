@@ -13,14 +13,15 @@
     flex-direction: row;
     min-width: 100%;
     overflow: auto;
+    overscroll-behavior-inline: contain;
     .card{
       display: flex;
       flex-direction: column;
       // height: 40vh;
       padding-right: 1vw;
       &_image{
-        width: 15vw;
-        min-height: 50vh;
+        width: 13.5vw;
+        min-height: 42vh;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -31,10 +32,19 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        width: 15vw;
+        width: 13.5vw;
         text-align: center;
         cursor: pointer;
       }
     }
   }
+  &_container::-webkit-scrollbar{
+    display: none;
+  }
+}
+.snaps-inline{
+  scroll-snap-type: x mandatory;
+}
+.snaps-inline > * {
+  scroll-snap-align: start;
 }
