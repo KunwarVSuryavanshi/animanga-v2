@@ -31,7 +31,7 @@ const fetchAiringAnime = () => {
     dispatch(getAiringLoading())
     try {
       const response = await axios.get(
-        "https://api.consumet.org/meta/anilist/trending"
+        "https://api.consumet.org/meta/anilist/trending?perPage=20"
       );
       // dispatch(airingSlice.actions.getAiringSuccess(response.data)); NOTE: THIS IS ALSO CORRECT
       dispatch(getAiringSuccess(response.data))
