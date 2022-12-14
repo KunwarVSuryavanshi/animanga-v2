@@ -1,8 +1,7 @@
 // Anilist
 
 export const anilistNotAiringScheduleQuery = (date, page = 1, perPage = 50) => {
-  return (
-    `query { 
+  return `query { 
       Page(page: ${page}, perPage: ${perPage}) { 
         pageInfo { 
           total 
@@ -11,7 +10,9 @@ export const anilistNotAiringScheduleQuery = (date, page = 1, perPage = 50) => {
           lastPage 
           hasNextPage
         } 
-        media(countryOfOrigin: JP, status: NOT_YET_RELEASED, startDate_greater: ${date.getFullYear() + "" + date.getMonth() + "" + date.getDate()}){
+        media(countryOfOrigin: JP, status: NOT_YET_RELEASED, type: ANIME, startDate_greater: ${
+          date.getFullYear() + "" + date.getMonth() + "" + date.getDate()
+        }){
           title {
             romaji
             english
@@ -34,8 +35,7 @@ export const anilistNotAiringScheduleQuery = (date, page = 1, perPage = 50) => {
           },
         }
       }
-    }`
-  )
+    }`;
 };
 export const airingToday = (page = 1, perPage = 50) => {
   return `query { 

@@ -51,20 +51,22 @@ function Slider(props) {
 
   const handleHover = (e, item) => {
     if (e.target.getAttribute("name") === 'card') {
-      e.target.style.border = `3px solid ${item?.coverImage?.color}`;
+      e.target.parentElement.style.border = `3px solid ${
+        item?.coverImage?.color ?? "#4504f7"
+      }`;
     }
   }
 
   const handleMouseLeave = (e) => {
     if (e.target.getAttribute("name") === "card") {
-      e.target.style.border = "3px solid transparent";
+      e.target.parentElement.style.border = "3px solid transparent";
     }
   };
   
   return (
     <div className='slider_root'>
       <div className='slider_title'>
-        {props.title}
+        {props.icon} {props.title}
       </div>
       <div ref={slideRef} className='slider_container snaps-inline' name='container'> 
         {props.data?.map((item, key) => {

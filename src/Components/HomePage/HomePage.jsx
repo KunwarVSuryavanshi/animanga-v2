@@ -7,8 +7,9 @@ import BannerCarousel from "../BannerCarousel/BannerCarousel";
 import { fetchUpcoming } from "../../feature/notAiring.slice";
 import Slider from "../Slider/Slider";
 import Footer from "../Footer/Footer";
-import axios from "axios";
-import { airingToday } from "../../Common/queries";
+// import { airingToday } from "../../Common/queries";
+import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
+import SatelliteAltIcon from '@mui/icons-material/SatelliteAlt';
 
 function HomePage() {
   const dispatch = useDispatch();
@@ -47,7 +48,9 @@ function HomePage() {
             {/* {airingAnimeResponse?.response?.data?.map((item, key) => {
               return <Carousel item={item} key={key} />;
             })} */}
-            <BannerCarousel data={airingAnimeResponse?.response?.data?.Page?.media} />
+            <BannerCarousel
+              data={airingAnimeResponse?.response?.data?.Page?.media}
+            />
             {/* <div className="carousel_container_right-btn"></div> */}
           </div>
         )}
@@ -56,6 +59,7 @@ function HomePage() {
         <Slider
           title={"UPCOMING..."}
           data={upcomingAnime?.response?.Page?.media}
+          icon={<AutoAwesomeIcon/>}
         />
       </div>
       <div className="sliderr airing">
@@ -63,6 +67,7 @@ function HomePage() {
           title={"AIRING..."}
           data={airingAnimeResponse?.response?.data?.Page?.media}
           watch={true}
+          icon={<SatelliteAltIcon/>}
         />
       </div>
       <Footer />

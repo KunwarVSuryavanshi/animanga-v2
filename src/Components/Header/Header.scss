@@ -1,4 +1,4 @@
-.header{
+.header {
   display: flex;
   flex-direction: row;
   flex: 1;
@@ -9,7 +9,9 @@
   top: 0;
   height: 8vh;
   font-weight: 700;
-  &_logo, &_nav{
+
+  &_logo,
+  &_nav {
     margin-top: auto;
     margin-bottom: auto;
     padding-left: 2vw;
@@ -17,16 +19,18 @@
     font-family: 'Rubik Vinyl', cursive;
     // color: rgb(255, 0, 47);
   }
-  &_nav{
+
+  &_nav {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     font-weight: 500;
     font-size: 3vh;
-    &-links{
+
+    &-links {
       margin-left: 10vw;
       cursor: pointer;
-      font-family: 'Ubuntu', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-weight: 800;
     }
   }
