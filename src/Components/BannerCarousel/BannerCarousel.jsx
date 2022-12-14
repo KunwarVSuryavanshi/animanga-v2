@@ -42,7 +42,9 @@ function Carousel(props) {
             <div className="container_gradient">
               <div
                 className={`container_img`}
-                style={{ backgroundImage: `url(${item?.cover})` }}
+                style={{
+                  backgroundImage: `url(${item?.bannerImage ?? item?.coverImage?.extraLarge})`,
+                }}
               ></div>
             </div>
             <div className="description">
@@ -50,12 +52,12 @@ function Carousel(props) {
                 {item?.title?.english ?? item?.title?.romaji}
               </div>
               <div className="description_epDetails">
-                <div className="description_epDetails-cat">{item?.type}</div>
+                <div className="description_epDetails-cat">{item?.format}</div>
                 <div>
                   <span>
                     <PlaylistPlayIcon />
                   </span>
-                  {item?.totalEpisodes} Episodes
+                  {item?.episodes} Episodes
                 </div>
                 <div>
                   <span>
@@ -67,7 +69,7 @@ function Carousel(props) {
                   <span>
                     <ThumbUpOffAltIcon />
                   </span>
-                  {item?.rating}
+                  {item?.averageScore / 10}
                 </div>
               </div>
               <div className="description_about">

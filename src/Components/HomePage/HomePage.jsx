@@ -7,9 +7,10 @@ import BannerCarousel from "../BannerCarousel/BannerCarousel";
 import { fetchUpcoming } from "../../feature/notAiring.slice";
 import Slider from "../Slider/Slider";
 import Footer from "../Footer/Footer";
+import axios from "axios";
+import { airingToday } from "../../Common/queries";
 
 function HomePage() {
-  const [upComingAnime, setUpComingAnime] = useState([]);
   const dispatch = useDispatch();
   const { airingAnimeResponse, upcomingAnime } = useSelector((state) => {
     return {
@@ -20,10 +21,11 @@ function HomePage() {
 
   useEffect(() => {
     if (
-      airingAnimeResponse?.response?.results?.length < 1 ||
+      airingAnimeResponse?.response?.data?.Page?.media?.length < 1 ||
       !airingAnimeResponse?.hasError
     ) {
       dispatch(fetchAiringAnime());
+      // axios.post("https://graphql.anilist.co", { query: airingToday(null) });
     }
     if (!upcomingAnime.response || !upcomingAnime?.hasError) {
       dispatch(fetchUpcoming());
@@ -45,18 +47,25 @@ function HomePage() {
             {/* {airingAnimeResponse?.response?.data?.map((item, key) => {
               return <Carousel item={item} key={key} />;
             })} */}
-            <BannerCarousel data={airingAnimeResponse?.response?.results} />
+            <BannerCarousel data={airingAnimeResponse?.response?.data?.Page?.media} />
             {/* <div className="carousel_container_right-btn"></div> */}
           </div>
         )}
       </div>
       <div className="sliderr">
         <Slider
-          title={"UPCOMING ANIME"}
+          title={"UPCOMING..."}
           data={upcomingAnime?.response?.Page?.media}
         />
       </div>
-      <Footer/>
+      <div className="sliderr airing">
+        <Slider
+          title={"AIRING..."}
+          data={airingAnimeResponse?.response?.data?.Page?.media}
+          watch={true}
+        />
+      </div>
+      <Footer />
     </>
   );
 }

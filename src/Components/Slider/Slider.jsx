@@ -4,6 +4,7 @@ import './Slider.scss';
 function Slider(props) {
   // const [clickPos, setClickPos] = useState(null);
   const slideRef = useRef()
+  const cardRef = useRef()
   // let pressed = false;
 
   // const handleMouseClick = (e) => { // Clicking
@@ -49,24 +50,51 @@ function Slider(props) {
   //   e.target.parentElement.parentElement.scrollRight = 200 + e.clientX;
   // }
 
+  const handleHover = (e) => {
+    console.log(e)
+  }
+
+  const handleMouseLeave = (e) => {
+    console.log(e);
+  };
+  
   return (
     <div className='slider_root'>
       <div className='slider_title'>
         {props.title}
       </div>
-      <div ref={ slideRef} className='slider_container snaps-inline'> 
+      <div ref={slideRef} className='slider_container snaps-inline'> 
         {props.data?.map((item, key) => {
           return (
-            <div className={`card card_${key}`}>
+            <div
+              ref={cardRef}
+              className={`card card_${key}`}
+              onMouseOver={handleHover}
+              onMouseLeave={handleMouseLeave}
+            >
               <div
                 className="card_image"
                 style={{
                   backgroundImage: `url(${
-                    item?.coverImage?.large ?? item?.coverImage?.medium
+                    item?.coverImage?.extraLarge ??
+                    item?.coverImage?.large ??
+                    item?.image
                   })`,
                 }}
-              />
-              <div title={`${item?.title?.romaji}`} className='card_title'>{item?.title?.english ?? item?.title?.romaji}</div>
+              >
+                {props?.watch && (
+                  <div className="rating">{item?.averageScore / 10}</div>
+                )}
+              </div>
+              <div title={`${item?.title?.romaji}`} className="card_title">
+                {item?.title?.english ?? item?.title?.romaji}
+              </div>
+              {/* {props.watch && (
+                  <div className="details">
+                    <span>{item?.type}</span>
+                    <span style={{float: 'right'}}>{item?.totalEpisodes} Episodes</span>
+                  </div>
+                )} */}
             </div>
           );
         })}

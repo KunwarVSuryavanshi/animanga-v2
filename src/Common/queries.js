@@ -31,13 +31,13 @@ export const anilistNotAiringScheduleQuery = (date, page = 1, perPage = 50) => {
             large
             medium
             color
-          }
+          },
         }
       }
     }`
   )
 };
-export const airingToday = (date, page = 1, perPage = 50) => {
+export const airingToday = (page = 1, perPage = 50) => {
   return `query { 
       Page(page: ${page}, perPage: ${perPage}) { 
         pageInfo { 
@@ -47,7 +47,7 @@ export const airingToday = (date, page = 1, perPage = 50) => {
           lastPage 
           hasNextPage
         } 
-        media(countryOfOrigin: JP, status: RELEASING, sort: TRENDING_DESC){
+        media(countryOfOrigin: JP, status: RELEASING, sort: TRENDING_DESC, type: ANIME){
           id,
           idMal,
           type,
@@ -64,22 +64,20 @@ export const airingToday = (date, page = 1, perPage = 50) => {
             day
           },
           episodes,
+          duration,
           title {
             romaji
             english
-            native
             userPreferred
           },
           coverImage {
             extraLarge
             large
-            medium
             color
           },
           bannerImage,
           genres,
           averageScore,
-          meanScore,
           nextAiringEpisode {
             id
           }
