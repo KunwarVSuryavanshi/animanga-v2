@@ -4,7 +4,6 @@ import './Slider.scss';
 function Slider(props) {
   // const [clickPos, setClickPos] = useState(null);
   const slideRef = useRef()
-  const cardRef = useRef()
   // let pressed = false;
 
   // const handleMouseClick = (e) => { // Clicking
@@ -50,12 +49,16 @@ function Slider(props) {
   //   e.target.parentElement.parentElement.scrollRight = 200 + e.clientX;
   // }
 
-  const handleHover = (e) => {
-    console.log(e)
+  const handleHover = (e, item) => {
+    if (e.target.getAttribute("name") === 'card') {
+      e.target.style.border = `3px solid ${item?.coverImage?.color}`;
+    }
   }
 
   const handleMouseLeave = (e) => {
-    console.log(e);
+    if (e.target.getAttribute("name") === "card") {
+      e.target.style.border = "3px solid transparent";
+    }
   };
   
   return (
@@ -63,15 +66,13 @@ function Slider(props) {
       <div className='slider_title'>
         {props.title}
       </div>
-      <div ref={slideRef} className='slider_container snaps-inline'> 
+      <div ref={slideRef} className='slider_container snaps-inline' name='container'> 
         {props.data?.map((item, key) => {
           return (
             <div
-              ref={cardRef}
+              // ref={cardRef}
               className={`card card_${key}`}
-              onMouseOver={handleHover}
-              onMouseLeave={handleMouseLeave}
-            >
+              >
               <div
                 className="card_image"
                 style={{
@@ -81,6 +82,9 @@ function Slider(props) {
                     item?.image
                   })`,
                 }}
+                onMouseOver={(e) => handleHover(e, item)}
+                onMouseLeave={(e) => handleMouseLeave(e)}
+                name='card'
               >
                 {props?.watch && (
                   <div className="rating">{item?.averageScore / 10}</div>

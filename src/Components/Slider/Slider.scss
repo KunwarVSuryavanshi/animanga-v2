@@ -20,7 +20,9 @@
       display: flex;
       flex-direction: column;
       // height: 40vh;
-      padding: 0 1vw 0.5vh;
+      padding: 1vh 1vw 1vh;
+      border: 2px solid transparent;
+      border-radius: 10px;
       &_image{
         width: 12vw;
         min-height: 42vh;
@@ -30,7 +32,8 @@
         border-radius: 10px;
         cursor: pointer;
         position: relative;
-        margin: 0.2vh 0.2vw;
+        padding: 0.2vh 0.2vw;
+        border: 3px solid transparent;
         .rating{
           color: rgb(255, 255, 255);
           text-shadow: 1px 1px rgb(0, 0, 0);
