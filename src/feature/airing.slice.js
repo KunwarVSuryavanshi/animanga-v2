@@ -4,7 +4,7 @@ import { airingToday } from "../Common/queries";
 
 const initialState = {
   loading: true,
-  hasErrors: false,
+  hasError: false,
   response: null,
 };
 

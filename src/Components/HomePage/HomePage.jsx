@@ -6,7 +6,6 @@ import "./HomePage.scss";
 import BannerCarousel from "../BannerCarousel/BannerCarousel";
 import { fetchUpcoming } from "../../feature/notAiring.slice";
 import Slider from "../Slider/Slider";
-import Footer from "../Footer/Footer";
 // import { airingToday } from "../../Common/queries";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import SatelliteAltIcon from '@mui/icons-material/SatelliteAlt';
@@ -22,13 +21,13 @@ function HomePage() {
 
   useEffect(() => {
     if (
-      airingAnimeResponse?.response?.data?.Page?.media?.length < 1 ||
+      !airingAnimeResponse?.response &&
       !airingAnimeResponse?.hasError
     ) {
       dispatch(fetchAiringAnime());
       // axios.post("https://graphql.anilist.co", { query: airingToday(null) });
     }
-    if (!upcomingAnime.response || !upcomingAnime?.hasError) {
+    if (!upcomingAnime.response && !upcomingAnime?.hasError) {
       dispatch(fetchUpcoming());
     }
   }, []);
@@ -70,7 +69,6 @@ function HomePage() {
           icon={<SatelliteAltIcon/>}
         />
       </div>
-      <Footer />
     </>
   );
 }

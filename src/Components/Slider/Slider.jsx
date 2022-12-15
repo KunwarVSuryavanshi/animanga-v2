@@ -68,7 +68,7 @@ function Slider(props) {
       <div className='slider_title'>
         {props.icon} {props.title}
       </div>
-      <div ref={slideRef} className='slider_container snaps-inline' name='container'> 
+      <div ref={slideRef} className='slider_container snaps-inline' name='container'>
         {props.data?.map((item, key) => {
           return (
             <div
