@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
 import App from './App'
 import store from './app/store'
 import './index.scss'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from './Components/HomePage/HomePage'
-import Manga from './Components/Manga/Manga'
+const HomePage = lazy(() => import('./Components/HomePage/HomePage'))
+const Manga = lazy(() => import('./Components/Manga/Manga'))
+const LandingPage = lazy(() => import('./LandingPage/LandingPage'))
 
 const router = createBrowserRouter([
   {
@@ -15,15 +16,19 @@ const router = createBrowserRouter([
     errorElement: <div>Not Found</div>,
     children: [
       {
+        path: "/",
+        element: <Suspense fallback={'Loading...'}><LandingPage/></Suspense>,
+      },
+      {
         path: "/anime",
-        element: <HomePage/>
+        element: <Suspense fallback={'Loading...'}><HomePage/></Suspense>,
       },
       {
         path: "/manga",
-        element: <Manga/>
-      }
-    ]
-  }
+        element: <Suspense fallback={'Loading...'}><Manga/></Suspense>,
+      },
+    ],
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

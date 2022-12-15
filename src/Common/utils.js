@@ -15,3 +15,11 @@ export const getSeason = () => {
   }
   return 'WINTER'
 }
+
+export const getQuotes = () => {
+  return import('../__mock_data__/quotes.mock.json').then(res => {
+    return res?.default?.[
+      Math.floor(Math.random() * (res.default?.length - 1))
+    ];
+  })
+}

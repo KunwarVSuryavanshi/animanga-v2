@@ -1,3 +1,4 @@
+@use '../../variables';
 .header {
   display: flex;
   flex-direction: row;
@@ -5,7 +6,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   font-size: 4.8vh;
-  background-color: black;
+  background-color: variables.$background_main;
   top: 0;
   height: 8vh;
   font-weight: 700;

@@ -6,8 +6,10 @@ function App() {
 
   return (
     <div className="App">
-      <Header/>
-      <Outlet />
+      <Header />
+      <div style={{minHeight: '100vh'}}>
+        <Outlet />
+      </div>
       <Footer/>
     </div>
   )
