@@ -1,0 +1,1099 @@
+{
+  "notAiring": {
+    "loading": false,
+    "hasErrors": false,
+    "response": {
+      "Page": {
+        "pageInfo": {
+          "total": 5000,
+          "perPage": 50,
+          "currentPage": 1,
+          "lastPage": 100,
+          "hasNextPage": true
+        },
+        "media": [
+          {
+            "title": {
+              "romaji": "Ten Count",
+              "english": null,
+              "native": "テンカウント",
+              "userPreferred": "Ten Count"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": null,
+              "day": null
+            },
+            "trailer": null,
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101387-3AAUEHS6iRSp.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101387-3AAUEHS6iRSp.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx101387-3AAUEHS6iRSp.jpg",
+              "color": "#e4ae5d"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Hibike! Euphonium: Kumiko 3 Nensei-hen",
+              "english": null,
+              "native": "響け! ユーフォニアム 久美子3年生編",
+              "userPreferred": "Hibike! Euphonium: Kumiko 3 Nensei-hen"
+            },
+            "startDate": {
+              "year": 2024,
+              "month": null,
+              "day": null
+            },
+            "trailer": {
+              "id": "_juRk_cAR9I"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx109731-D5mHKvbsmUvm.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx109731-D5mHKvbsmUvm.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx109731-D5mHKvbsmUvm.jpg",
+              "color": "#ffd643"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Collar×Malice",
+              "english": null,
+              "native": "カラー×マリス",
+              "userPreferred": "Collar×Malice"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": null,
+              "day": null
+            },
+            "trailer": {
+              "id": "Fs-TBc56Yb8"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx109821-1C5WYiH4SW5I.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx109821-1C5WYiH4SW5I.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx109821-1C5WYiH4SW5I.jpg",
+              "color": "#e46b5d"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Kimitachi wa Dou Ikiru ka",
+              "english": null,
+              "native": "君たちはどう生きるか",
+              "userPreferred": "Kimitachi wa Dou Ikiru ka"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": 7,
+              "day": 14
+            },
+            "trailer": null,
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx109979-CdmjFE7AUaJC.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx109979-CdmjFE7AUaJC.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx109979-CdmjFE7AUaJC.jpg",
+              "color": "#f1d65d"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Amrita no Kyouen",
+              "english": null,
+              "native": "アムリタの饗宴",
+              "userPreferred": "Amrita no Kyouen"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": 5,
+              "day": 26
+            },
+            "trailer": null,
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b114606-iJdc2G1Siayf.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b114606-iJdc2G1Siayf.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b114606-iJdc2G1Siayf.jpg",
+              "color": null
+            }
+          },
+          {
+            "title": {
+              "romaji": "Itai no wa Iya nano de Bougyoryoku ni Kyokufuri Shitai to Omoimasu. 2",
+              "english": "BOFURI: I Don\\'t Want to Get Hurt, so I\\'ll Max Out My Defense. Season 2",
+              "native": "痛いのは嫌なので防御力に極振りしたいと思います。2",
+              "userPreferred": "Itai no wa Iya nano de Bougyoryoku ni Kyokufuri Shitai to Omoimasu. 2"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": 1,
+              "day": null
+            },
+            "trailer": {
+              "id": "-tAaJ7hsas0"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx116867-Dduogsa96gK5.png",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx116867-Dduogsa96gK5.png",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx116867-Dduogsa96gK5.png",
+              "color": "#5daee4"
+            }
+          },
+          {
+            "title": {
+              "romaji": "The IDOLM@STER Million Live!",
+              "english": null,
+              "native": "アイドルマスター ミリオンライブ！",
+              "userPreferred": "The IDOLM@STER Million Live!"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": null,
+              "day": null
+            },
+            "trailer": {
+              "id": "Jc3WSfR_Z-g"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx120755-JdlNWDKmTk1t.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx120755-JdlNWDKmTk1t.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx120755-JdlNWDKmTk1t.jpg",
+              "color": "#e4f1ae"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Hikari no Ou",
+              "english": "The Fire Hunter",
+              "native": "火狩りの王",
+              "userPreferred": "Hikari no Ou"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": 1,
+              "day": 14
+            },
+            "trailer": null,
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx125869-NKHedpIqjUX0.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx125869-NKHedpIqjUX0.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx125869-NKHedpIqjUX0.jpg",
+              "color": "#d68678"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Kyokou Suiri Season 2",
+              "english": "In/Spectre Season 2",
+              "native": "虚構推理 Season2",
+              "userPreferred": "Kyokou Suiri Season 2"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": 1,
+              "day": 9
+            },
+            "trailer": {
+              "id": "tfzsmLzyAVw"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx126529-Jf4Z7OJBEt65.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx126529-Jf4Z7OJBEt65.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx126529-Jf4Z7OJBEt65.jpg",
+              "color": "#e4bb28"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Kuma Kuma Kuma Bear Punch!",
+              "english": null,
+              "native": "くまクマ熊ベアーぱーんち！",
+              "userPreferred": "Kuma Kuma Kuma Bear Punch!"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": 4,
+              "day": null
+            },
+            "trailer": {
+              "id": "ZEDFz9WhNsk"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127550-tqMHmRnKlEyu.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx127550-tqMHmRnKlEyu.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx127550-tqMHmRnKlEyu.jpg",
+              "color": "#50bbe4"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Argonavis AXIA",
+              "english": null,
+              "native": "劇場版アルゴナビス AXIA",
+              "userPreferred": "Argonavis AXIA"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": 3,
+              "day": 24
+            },
+            "trailer": {
+              "id": "Rs094zRkVcw"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx128344-kOz32YeomXEK.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx128344-kOz32YeomXEK.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx128344-kOz32YeomXEK.jpg",
+              "color": "#f15d50"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Niehime to Kemono no Ou",
+              "english": "Sacrificial Princess and the King of Beasts",
+              "native": "贄姫と獣の王",
+              "userPreferred": "Niehime to Kemono no Ou"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": 4,
+              "day": null
+            },
+            "trailer": {
+              "id": "AKGO0QJDPDw"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx128715-IDJ1vJOHQ6mI.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx128715-IDJ1vJOHQ6mI.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx128715-IDJ1vJOHQ6mI.jpg",
+              "color": "#d6aee4"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Jigokuraku",
+              "english": "Hell’s Paradise",
+              "native": "地獄楽",
+              "userPreferred": "Jigokuraku"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": null,
+              "day": null
+            },
+            "trailer": {
+              "id": "aaHZdwPZX6g"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx128893-NgQPuS9hvinl.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx128893-NgQPuS9hvinl.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx128893-NgQPuS9hvinl.jpg",
+              "color": "#c9c9f1"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Maou Gakuin no Futekigousha: Shijou Saikyou no Maou no Shiso, Tensei shite Shison-tachi no Gakkou e Kayou II",
+              "english": "The Misfit of Demon King Academy Ⅱ: History\\'s Strongest Demon King Reincarnates and Goes to School with His Descendants",
+              "native": "魔王学院の不適合者 ～史上最強の魔王の始祖、転生して子孫たちの学校へ通う～ Ⅱ",
+              "userPreferred": "Maou Gakuin no Futekigousha: Shijou Saikyou no Maou no Shiso, Tensei shite Shison-tachi no Gakkou e Kayou II"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": 1,
+              "day": 8
+            },
+            "trailer": {
+              "id": "djFyzu3ukyk"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx130588-zYz8Gp2kZfTm.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx130588-zYz8Gp2kZfTm.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx130588-zYz8Gp2kZfTm.jpg",
+              "color": "#e45dc9"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Kitarou Tanjou: Gegege no Nazo",
+              "english": null,
+              "native": "鬼太郎誕生 ゲゲゲの謎",
+              "userPreferred": "Kitarou Tanjou: Gegege no Nazo"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": null,
+              "day": null
+            },
+            "trailer": null,
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx130622-apYd3AHTdS4C.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx130622-apYd3AHTdS4C.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx130622-apYd3AHTdS4C.jpg",
+              "color": "#93280d"
+            }
+          },
+          {
+            "title": {
+              "romaji": "The Legend of Heroes: Sen no Kiseki - Northern War",
+              "english": "The Legend of Heroes: Trails of Cold Steel - Northern War",
+              "native": "The Legend of Heroes 閃の軌跡 Northern War",
+              "userPreferred": "The Legend of Heroes: Sen no Kiseki - Northern War"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": 1,
+              "day": 8
+            },
+            "trailer": {
+              "id": "RXju9Rftxbw"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx130696-LKIwk0tbfuN4.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx130696-LKIwk0tbfuN4.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx130696-LKIwk0tbfuN4.jpg",
+              "color": "#f1e4c9"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Akuma-kun (ONA)",
+              "english": "Akuma Kun",
+              "native": "悪魔くん (ONA)",
+              "userPreferred": "Akuma-kun (ONA)"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": null,
+              "day": null
+            },
+            "trailer": null,
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx130706-pSTEGJZc25Fm.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx130706-pSTEGJZc25Fm.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx130706-pSTEGJZc25Fm.jpg",
+              "color": "#e45d6b"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Dr. STONE: NEW WORLD",
+              "english": null,
+              "native": "Dr.STONE NEW WORLD",
+              "userPreferred": "Dr. STONE: NEW WORLD"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": null,
+              "day": null
+            },
+            "trailer": {
+              "id": "bITRcLr4xR8"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx131518-oOG9nbR5vPQ5.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx131518-oOG9nbR5vPQ5.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx131518-oOG9nbR5vPQ5.jpg",
+              "color": "#e48635"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Black Clover: Mahou Tei no Ken",
+              "english": "Black Clover: Sword of the Wizard King",
+              "native": "ブラッククローバー 魔法帝の剣",
+              "userPreferred": "Black Clover: Mahou Tei no Ken"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": 3,
+              "day": 31
+            },
+            "trailer": {
+              "id": "7FEyjd2hNSk"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx131680-19GRt6xUFwQr.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx131680-19GRt6xUFwQr.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx131680-19GRt6xUFwQr.jpg",
+              "color": "#1a78d6"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Liar Liar",
+              "english": null,
+              "native": "ライアー・ライアー",
+              "userPreferred": "Liar Liar"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": null,
+              "day": null
+            },
+            "trailer": {
+              "id": "pH-a2D2SnAs"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx131863-gLk3erPvJljy.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx131863-gLk3erPvJljy.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx131863-gLk3erPvJljy.jpg",
+              "color": "#e4356b"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Girls und Panzer: Saishuushou 4",
+              "english": null,
+              "native": "ガールズ＆パンツァー 最終章 第4話",
+              "userPreferred": "Girls und Panzer: Saishuushou 4"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": null,
+              "day": null
+            },
+            "trailer": {
+              "id": "FjWktJoInew"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx132420-kF35jIINUzrE.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx132420-kF35jIINUzrE.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx132420-kF35jIINUzrE.jpg",
+              "color": "#1a6bd6"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Mahou Shoujo Magical Destroyers",
+              "english": null,
+              "native": "魔法少女マジカルデストロイヤーズ",
+              "userPreferred": "Mahou Shoujo Magical Destroyers"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": null,
+              "day": null
+            },
+            "trailer": {
+              "id": "krhtc5J3XAo"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx134131-FZozzKVMwnjM.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx134131-FZozzKVMwnjM.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx134131-FZozzKVMwnjM.jpg",
+              "color": "#aee4f1"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Kamitachi ni Hirowareta Otoko 2",
+              "english": "By the Grace of the Gods Season 2",
+              "native": "神達に拾われた男２",
+              "userPreferred": "Kamitachi ni Hirowareta Otoko 2"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": 1,
+              "day": 8
+            },
+            "trailer": {
+              "id": "WeuqTw0EiZw"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx135102-3vX6Rs8e8oHU.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx135102-3vX6Rs8e8oHU.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx135102-3vX6Rs8e8oHU.jpg",
+              "color": "#d6ae6b"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Eiga no Osomatsu-san 2 (Provisional Title)",
+              "english": null,
+              "native": "えいがのおそ松さん 2 （仮）",
+              "userPreferred": "Eiga no Osomatsu-san 2 (Provisional Title)"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": null,
+              "day": null
+            },
+            "trailer": {
+              "id": "y7qWgtSxI3A"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/default.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/default.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/default.jpg",
+              "color": null
+            }
+          },
+          {
+            "title": {
+              "romaji": "MAKE MY DAY",
+              "english": "MAKE MY DAY",
+              "native": "MAKE MY DAY",
+              "userPreferred": "MAKE MY DAY"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": 2,
+              "day": null
+            },
+            "trailer": null,
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx135429-7BuTRpJhPjZl.png",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx135429-7BuTRpJhPjZl.png",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx135429-7BuTRpJhPjZl.png",
+              "color": "#aebbf1"
+            }
+          },
+          {
+            "title": {
+              "romaji": "HIGH CARD",
+              "english": "HIGH CARD",
+              "native": "HIGH CARD",
+              "userPreferred": "HIGH CARD"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": 1,
+              "day": 9
+            },
+            "trailer": {
+              "id": "qpDZ2L8TITU"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx135778-tRELlQMcSG2x.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx135778-tRELlQMcSG2x.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx135778-tRELlQMcSG2x.jpg",
+              "color": "#e4bb5d"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Vinland Saga SEASON 2",
+              "english": "Vinland Saga Season 2",
+              "native": "ヴィンランド・サガ SEASON2",
+              "userPreferred": "Vinland Saga SEASON 2"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": 1,
+              "day": 10
+            },
+            "trailer": {
+              "id": "VHGotYh6hPM"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx136430-MYfbAUri4gBe.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx136430-MYfbAUri4gBe.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx136430-MYfbAUri4gBe.jpg",
+              "color": "#f1ae28"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Mou Ippon!",
+              "english": null,
+              "native": "もういっぽん！",
+              "userPreferred": "Mou Ippon!"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": 1,
+              "day": 9
+            },
+            "trailer": {
+              "id": "jpiz5RLqSgw"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx136435-LWGyXLdHE71D.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx136435-LWGyXLdHE71D.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx136435-LWGyXLdHE71D.jpg",
+              "color": "#e46b93"
+            }
+          },
+          {
+            "title": {
+              "romaji": "BEASTARS FINAL SEASON",
+              "english": null,
+              "native": "BEASTARS FINAL SEASON",
+              "userPreferred": "BEASTARS FINAL SEASON"
+            },
+            "startDate": {
+              "year": 2024,
+              "month": null,
+              "day": null
+            },
+            "trailer": null,
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b136880-gSqKWzqwuX49.png",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b136880-gSqKWzqwuX49.png",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b136880-gSqKWzqwuX49.png",
+              "color": null
+            }
+          },
+          {
+            "title": {
+              "romaji": "Toutotsu ni Egypt Shin 2nd Season",
+              "english": null,
+              "native": "とーとつにエジプト 神2期",
+              "userPreferred": "Toutotsu ni Egypt Shin 2nd Season"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": 1,
+              "day": null
+            },
+            "trailer": {
+              "id": "Ahf0lAw-l84"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx137308-QFR6xeeWt49y.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx137308-QFR6xeeWt49y.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx137308-QFR6xeeWt49y.jpg",
+              "color": "#f1ae5d"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Princess Principal: Crown Handler - Chapter 3",
+              "english": null,
+              "native": "プリンセス・プリンシパル Crown Handler 第3章",
+              "userPreferred": "Princess Principal: Crown Handler - Chapter 3"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": 4,
+              "day": 7
+            },
+            "trailer": {
+              "id": "Ryvkmlf3Bno"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx137612-O5DYroQX6Tv5.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx137612-O5DYroQX6Tv5.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx137612-O5DYroQX6Tv5.jpg",
+              "color": null
+            }
+          },
+          {
+            "title": {
+              "romaji": "Ningen Fushin no Boukensha-tachi ga Sekai wo Sukuu you desu",
+              "english": "Ningen Fushin: Adventurers Who Don’t Believe in Humanity Will Save the World",
+              "native": "人間不信の冒険者たちが世界を救うようです",
+              "userPreferred": "Ningen Fushin no Boukensha-tachi ga Sekai wo Sukuu you desu"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": 1,
+              "day": 10
+            },
+            "trailer": {
+              "id": "vH32l69yp80"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx137909-jF335DHli4HQ.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx137909-jF335DHli4HQ.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx137909-jF335DHli4HQ.jpg",
+              "color": "#e4a15d"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Shuumatsu no Valkyrie II",
+              "english": "Record of Ragnarok II",
+              "native": "終末のワルキューレⅡ",
+              "userPreferred": "Shuumatsu no Valkyrie II"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": 1,
+              "day": 26
+            },
+            "trailer": {
+              "id": "80cbzfki5kk"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx138056-r6wKvl71ddar.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx138056-r6wKvl71ddar.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx138056-r6wKvl71ddar.jpg",
+              "color": "#5dd6f1"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Under Ninja",
+              "english": null,
+              "native": "アンダーニンジャ",
+              "userPreferred": "Under Ninja"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": null,
+              "day": null
+            },
+            "trailer": null,
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx138788-8jIjXiMM0sGi.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx138788-8jIjXiMM0sGi.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx138788-8jIjXiMM0sGi.jpg",
+              "color": "#d6e450"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Cardfight!! Vanguard: will+Dress Season 2",
+              "english": null,
+              "native": "カードファイト!! ヴァンガード will+Dress Season2",
+              "userPreferred": "Cardfight!! Vanguard: will+Dress Season 2"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": 1,
+              "day": 14
+            },
+            "trailer": {
+              "id": "fn02G5hl5Z8"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx139213-L3gwRcaqrjNt.png",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx139213-L3gwRcaqrjNt.png",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx139213-L3gwRcaqrjNt.png",
+              "color": "#1a93d6"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei shiteshimatta… Movie",
+              "english": null,
+              "native": "映画 乙女ゲームの破滅フラグしかない悪役令嬢に転生してしまった…",
+              "userPreferred": "Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei shiteshimatta… Movie"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": null,
+              "day": null
+            },
+            "trailer": {
+              "id": "GA8DRyBfjLc"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx139359-LTPqhkXjPRKz.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx139359-LTPqhkXjPRKz.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx139359-LTPqhkXjPRKz.jpg",
+              "color": "#f1a135"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Shinigami Bocchan to Kuro Maid 2nd Season",
+              "english": null,
+              "native": "死神坊ちゃんと黒メイド 第2期",
+              "userPreferred": "Shinigami Bocchan to Kuro Maid 2nd Season"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": null,
+              "day": null
+            },
+            "trailer": {
+              "id": "lTuEDGvJvDE"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx139435-38QpYPXT47DT.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx139435-38QpYPXT47DT.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx139435-38QpYPXT47DT.jpg",
+              "color": "#e4ae50"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Eiyuu Kyoushitsu",
+              "english": null,
+              "native": "英雄教室",
+              "userPreferred": "Eiyuu Kyoushitsu"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": null,
+              "day": null
+            },
+            "trailer": null,
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx139606-e6fhYLOsq43p.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx139606-e6fhYLOsq43p.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx139606-e6fhYLOsq43p.jpg",
+              "color": null
+            }
+          },
+          {
+            "title": {
+              "romaji": "Sugar Apple Fairy Tale",
+              "english": "Sugar Apple Fairy Tale",
+              "native": "シュガーアップル・フェアリーテイル",
+              "userPreferred": "Sugar Apple Fairy Tale"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": 1,
+              "day": 6
+            },
+            "trailer": {
+              "id": "4bfaiGioJkM"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx139821-RC4PW7KPY1DU.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx139821-RC4PW7KPY1DU.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx139821-RC4PW7KPY1DU.jpg",
+              "color": "#f16b5d"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Kimi to Boku no Saigo no Senjou, Aruiwa Sekai ga Hajimaru Seisen Season II",
+              "english": "Our Last Crusade or the Rise of a New World Season 2",
+              "native": "キミと僕の最後の戦場、あるいは世界が始まる聖戦 Season II",
+              "userPreferred": "Kimi to Boku no Saigo no Senjou, Aruiwa Sekai ga Hajimaru Seisen Season II"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": null,
+              "day": null
+            },
+            "trailer": {
+              "id": "KvWlUz7gg68"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx139825-Pvz6qQwUc6ag.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx139825-Pvz6qQwUc6ag.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx139825-Pvz6qQwUc6ag.jpg",
+              "color": "#e4ae43"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Rakudai Majo",
+              "english": null,
+              "native": "らくだい魔女",
+              "userPreferred": "Rakudai Majo"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": null,
+              "day": null
+            },
+            "trailer": {
+              "id": "aQUmKVRwAZg"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx140173-DK8JaglBr7C9.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx140173-DK8JaglBr7C9.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx140173-DK8JaglBr7C9.jpg",
+              "color": "#50aee4"
+            }
+          },
+          {
+            "title": {
+              "romaji": "BLUE GIANT",
+              "english": null,
+              "native": "BLUE GIANT",
+              "userPreferred": "BLUE GIANT"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": 2,
+              "day": 17
+            },
+            "trailer": {
+              "id": "meLG1wrDDA8"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx140499-zdrXUntFrv5N.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx140499-zdrXUntFrv5N.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx140499-zdrXUntFrv5N.jpg",
+              "color": "#5da1e4"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Ijiranaide, Nagatoro-san 2nd Attack",
+              "english": "Don\\'t Toy With Me, Miss Nagatoro 2nd Attack",
+              "native": "イジらないで、長瀞さん 2nd Attack",
+              "userPreferred": "Ijiranaide, Nagatoro-san 2nd Attack"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": 1,
+              "day": 8
+            },
+            "trailer": {
+              "id": "DbTbFCkIdss"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx140596-RP415uHlXSVr.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx140596-RP415uHlXSVr.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx140596-RP415uHlXSVr.jpg",
+              "color": "#e4ae50"
+            }
+          },
+          {
+            "title": {
+              "romaji": "TECHNOROID: OVERMIND",
+              "english": null,
+              "native": "テクノロイド オーバーマインド",
+              "userPreferred": "TECHNOROID: OVERMIND"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": 1,
+              "day": 5
+            },
+            "trailer": {
+              "id": "p79e5sw7CAI"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx141062-CLJ8b2WEHbdR.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx141062-CLJ8b2WEHbdR.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx141062-CLJ8b2WEHbdR.jpg",
+              "color": "#50aef1"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Tonikaku Kawaii 2nd Season",
+              "english": "TONIKAWA: Over The Moon For You Season 2",
+              "native": "トニカクカワイイ 第2期",
+              "userPreferred": "Tonikaku Kawaii 2nd Season"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": null,
+              "day": null
+            },
+            "trailer": {
+              "id": "cksQYKGvr6U"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx141208-nukmyN3vGv96.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx141208-nukmyN3vGv96.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx141208-nukmyN3vGv96.jpg",
+              "color": "#d6431a"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Bungou Stray Dogs 4th Season",
+              "english": "Bungo Stray Dogs Season 4",
+              "native": "文豪ストレイドッグス 第4シーズン",
+              "userPreferred": "Bungou Stray Dogs 4th Season"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": 1,
+              "day": 5
+            },
+            "trailer": {
+              "id": "z9ZhVooqA-Y"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx141249-ImrSA8WJj0sk.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx141249-ImrSA8WJj0sk.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx141249-ImrSA8WJj0sk.jpg",
+              "color": "#e4a15d"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Nanatsu no Taizai: Ensa no Edinburgh",
+              "english": "The Seven Deadly Sins: Grudge of Edinburgh Part 1",
+              "native": "七つの大罪 怨嗟のエジンバラ",
+              "userPreferred": "Nanatsu no Taizai: Ensa no Edinburgh"
+            },
+            "startDate": {
+              "year": 2022,
+              "month": 12,
+              "day": 20
+            },
+            "trailer": {
+              "id": "aaW4Gib1F-M"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx141352-5GzCzHxoH29X.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx141352-5GzCzHxoH29X.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx141352-5GzCzHxoH29X.jpg",
+              "color": "#f19350"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Mononogatari",
+              "english": "Malevolent Spirits: Mononogatari",
+              "native": "もののがたり",
+              "userPreferred": "Mononogatari"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": 1,
+              "day": 10
+            },
+            "trailer": {
+              "id": "T9aokABLYOM"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx141785-h8nTtfiUhKCy.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx141785-h8nTtfiUhKCy.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx141785-h8nTtfiUhKCy.jpg",
+              "color": "#e4bbae"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Mato Seihei no Slave",
+              "english": null,
+              "native": "魔都精兵のスレイブ",
+              "userPreferred": "Mato Seihei no Slave"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": null,
+              "day": null
+            },
+            "trailer": {
+              "id": "G8pkEAfILI8"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx141821-zcb9vufIMobK.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx141821-zcb9vufIMobK.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx141821-zcb9vufIMobK.jpg",
+              "color": "#e46b50"
+            }
+          },
+          {
+            "title": {
+              "romaji": "Showtime! 2: Uta no Onee-san datte Shitai",
+              "english": null,
+              "native": "しょうたいむ！２～歌のお姉さんだってしたい",
+              "userPreferred": "Showtime! 2: Uta no Onee-san datte Shitai"
+            },
+            "startDate": {
+              "year": 2023,
+              "month": 1,
+              "day": null
+            },
+            "trailer": {
+              "id": "_UffqTROzpY"
+            },
+            "coverImage": {
+              "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142136-IfRvyT2SrGdc.jpg",
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx142136-IfRvyT2SrGdc.jpg",
+              "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx142136-IfRvyT2SrGdc.jpg",
+              "color": "#f1e435"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

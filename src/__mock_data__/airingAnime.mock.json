@@ -1,0 +1,1964 @@
+{
+  "airingAnime": {
+    "loading": false,
+    "hasError": false,
+    "response": {
+      "data": {
+        "Page": {
+          "pageInfo": {
+            "total": 5000,
+            "perPage": 50,
+            "currentPage": 1,
+            "lastPage": 100,
+            "hasNextPage": true
+          },
+          "media": [
+            {
+              "id": 127230,
+              "idMal": 44511,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "Denji is a teenage boy living with a Chainsaw Devil named Pochita. Due to the debt his father left behind, he has been living a rock-bottom life while repaying his debt by harvesting devil corpses with Pochita.<br><br>\nOne day, Denji is betrayed and killed. As his consciousness fades, he makes a contract with Pochita and gets revived as \"Chainsaw Man\" — a man with a devil\\'s heart.<br>\n<br>\n(Source: Crunchyroll)",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 12
+              },
+              "endDate": {
+                "year": 2022,
+                "month": 12,
+                "day": 28
+              },
+              "episodes": 12,
+              "duration": 25,
+              "title": {
+                "romaji": "Chainsaw Man",
+                "english": "Chainsaw Man",
+                "userPreferred": "Chainsaw Man"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127230-FlochcFsyoF4.png",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx127230-FlochcFsyoF4.png",
+                "color": "#6b1a1a"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/127230-lf01ya5ny8aH.jpg",
+              "genres": [
+                "Action",
+                "Comedy",
+                "Drama",
+                "Horror",
+                "Supernatural"
+              ],
+              "averageScore": 86,
+              "nextAiringEpisode": {
+                "id": 338399
+              }
+            },
+            {
+              "id": 140439,
+              "idMal": 50172,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "The third season of <i>Mob Psycho 100</i>. <br><br>\nThe appearance of a divine tree and new religion turns Mob and Reigen\\'s city upside down!<br><br>\n(Source: Crunchyroll)\n",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 6
+              },
+              "endDate": {
+                "year": 2022,
+                "month": 12,
+                "day": 22
+              },
+              "episodes": 12,
+              "duration": 24,
+              "title": {
+                "romaji": "Mob Psycho 100 III",
+                "english": "Mob Psycho 100 III",
+                "userPreferred": "Mob Psycho 100 III"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx140439-qpBzXkvVqSx3.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx140439-qpBzXkvVqSx3.jpg",
+                "color": "#1ac9ff"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/140439-r9SRh0q0UgX1.jpg",
+              "genres": [
+                "Action",
+                "Comedy",
+                "Psychological",
+                "Slice of Life",
+                "Supernatural"
+              ],
+              "averageScore": 85,
+              "nextAiringEpisode": {
+                "id": 337028
+              }
+            },
+            {
+              "id": 130298,
+              "idMal": 48316,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "Some people just aren’t suited to playing the part of the flashy, in-your-face hero or the dastardly, mustache-twirling villain with larger-than-life panache. Instead, they operate in the shadows and pull the strings of society through wit and cleverness. That’s the role Cid wants to play when he’s transported to another world. Cid spins a yarn or three and becomes the unlikely leader of the underground Shadow Garden organization that fights against a menacing cult (which he totally made up). However, there’s a catch even his wild imagination didn’t see coming: the cult he concocted actually exists, and they’re beyond displeased that his power fantasy just got in the way of their evil plans!<br>\n<br>\n(Source: HIDIVE)",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 5
+              },
+              "endDate": {
+                "year": null,
+                "month": null,
+                "day": null
+              },
+              "episodes": 20,
+              "duration": 24,
+              "title": {
+                "romaji": "Kage no Jitsuryokusha ni Naritakute!",
+                "english": "The Eminence in Shadow",
+                "userPreferred": "Kage no Jitsuryokusha ni Naritakute!"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx130298-O7nR1Wrav2dH.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx130298-O7nR1Wrav2dH.jpg",
+                "color": "#d61a1a"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/130298-9yxFlFvKMwRk.jpg",
+              "genres": [
+                "Action",
+                "Comedy",
+                "Fantasy"
+              ],
+              "averageScore": 76,
+              "nextAiringEpisode": {
+                "id": 339846
+              }
+            },
+            {
+              "id": 21,
+              "idMal": 21,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "Gold Roger was known as the Pirate King, the strongest and most infamous being to have sailed the Grand Line. The capture and death of Roger by the World Government brought a change throughout the world. His last words before his death revealed the location of the greatest treasure in the world, One Piece. It was this revelation that brought about the Grand Age of Pirates, men who dreamed of finding One Piece (which promises an unlimited amount of riches and fame), and quite possibly the most coveted of titles for the person who found it, the title of the Pirate King.<br><br>\nEnter Monkey D. Luffy, a 17-year-old boy that defies your standard definition of a pirate. Rather than the popular persona of a wicked, hardened, toothless pirate who ransacks villages for fun, Luffy’s reason for being a pirate is one of pure wonder; the thought of an exciting adventure and meeting new and intriguing people, along with finding One Piece, are his reasons of becoming a pirate. Following in the footsteps of his childhood hero, Luffy and his crew travel across the Grand Line, experiencing crazy adventures, unveiling dark mysteries and battling strong enemies, all in order to reach One Piece.<br><br>\n<b>*This includes following special episodes:</b><br>\n- Chopperman to the Rescue! Protect the TV Station by the Shore! (Episode 336)<br>\n- The Strongest Tag-Team! Luffy and Toriko\\'s Hard Struggle! (Episode 492)<br>\n- Team Formation! Save Chopper (Episode 542)<br>\n- History\\'s Strongest Collaboration vs. Glutton of the Sea (Episode 590)<br>\n- 20th Anniversary! Special Romance Dawn (Episode 907)",
+              "startDate": {
+                "year": 1999,
+                "month": 10,
+                "day": 20
+              },
+              "endDate": {
+                "year": null,
+                "month": null,
+                "day": null
+              },
+              "episodes": null,
+              "duration": 24,
+              "title": {
+                "romaji": "ONE PIECE",
+                "english": "ONE PIECE",
+                "userPreferred": "ONE PIECE"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx21-tXMN3Y20PIL9.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx21-tXMN3Y20PIL9.jpg",
+                "color": "#e4a15d"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/21-wf37VakJmZqs.jpg",
+              "genres": [
+                "Action",
+                "Adventure",
+                "Comedy",
+                "Drama",
+                "Fantasy"
+              ],
+              "averageScore": 87,
+              "nextAiringEpisode": {
+                "id": 340986
+              }
+            },
+            {
+              "id": 151379,
+              "idMal": 52193,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "Akihabara is the center of the universe for the coolest hobbies and quirkiest amusements. In the spring of 1999, bright-eyed Nagomi Wahira moves there with dreams of joining a maid café. She quickly dons an apron at café Ton Tokoton, AKA the Pig Hut. But adjusting to life in bustling Akihabara isn’t as easy as serving tea and delighting customers. Paired with the dour Ranko who never seems to smile, Nagomi must do her best to elevate the Pig Hut over all other maid cafés vying for top ranking. Along the way she’ll slice out a place for herself amid the frills and thrills of life at the Pig Hut. Just when Nagomi’s dreams are within her grasp, she discovers not everything is as it seems amid the maid cafés of Akihabara.<br>\n<br>\n(Source: HIDIVE)",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 7
+              },
+              "endDate": {
+                "year": 2022,
+                "month": 12,
+                "day": 23
+              },
+              "episodes": 12,
+              "duration": 24,
+              "title": {
+                "romaji": "Akiba Meido Sensou",
+                "english": "Akiba Maid War",
+                "userPreferred": "Akiba Meido Sensou"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx151379-DCl9Lhl2wCSB.png",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx151379-DCl9Lhl2wCSB.png",
+                "color": "#e4c943"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/151379-9adZHzFGBTpV.jpg",
+              "genres": [
+                "Action",
+                "Comedy",
+                "Drama"
+              ],
+              "averageScore": 72,
+              "nextAiringEpisode": {
+                "id": 337878
+              }
+            },
+            {
+              "id": 142838,
+              "idMal": 50602,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "The second half of <i>SPYxFAMILY</i>.",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 1
+              },
+              "endDate": {
+                "year": 2022,
+                "month": 12,
+                "day": 24
+              },
+              "episodes": 13,
+              "duration": 24,
+              "title": {
+                "romaji": "SPY×FAMILY Part 2",
+                "english": "SPY x FAMILY Cour 2",
+                "userPreferred": "SPY×FAMILY Part 2"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142838-ECZSqfknAqAT.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx142838-ECZSqfknAqAT.jpg",
+                "color": "#28bbfe"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/142838-tynuN00wxmKO.jpg",
+              "genres": [
+                "Action",
+                "Comedy",
+                "Slice of Life",
+                "Supernatural"
+              ],
+              "averageScore": 84,
+              "nextAiringEpisode": {
+                "id": 338000
+              }
+            },
+            {
+              "id": 137822,
+              "idMal": 49596,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "After a disastrous defeat at the 2018 World Cup, Japan\\'s team struggles to regroup. But what\\'s missing? An absolute Ace Striker, who can guide them to the win. The Japan Football Union is hell-bent on creating a striker who hungers for goals and thirsts for victory, and who can be the decisive instrument in turning around a losing match...and to do so, they\\'ve gathered 300 of Japan\\'s best and brightest youth players. Who will emerge to lead the team...and will they be able to out-muscle and out-ego everyone who stands in their way? <br>\n<br>\n(Source: Kodansha USA)<br>\n<br>\n<i>Note: The first episode received a pre-screening at the AnimagiC convention on August 6, 2022.</i>",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 9
+              },
+              "endDate": {
+                "year": null,
+                "month": null,
+                "day": null
+              },
+              "episodes": 24,
+              "duration": 25,
+              "title": {
+                "romaji": "Blue Lock",
+                "english": "BLUELOCK",
+                "userPreferred": "Blue Lock"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx137822-4dVWMSHLpGf8.png",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx137822-4dVWMSHLpGf8.png",
+                "color": "#286be4"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/137822-c5BPEeXDEgtW.jpg",
+              "genres": [
+                "Action",
+                "Drama",
+                "Sports"
+              ],
+              "averageScore": 79,
+              "nextAiringEpisode": {
+                "id": 339591
+              }
+            },
+            {
+              "id": 116674,
+              "idMal": 41467,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "Was it all just a coincidence, or was it inevitable?\n<br><br>\nIchigo Kurosaki gained the powers of a Soul Reaper through a chance encounter. As a Substitute\nSoul Reaper, Ichigo became caught in the turmoil of the Soul Society, a place where deceased\nsouls gather. But with help from his friends, Ichigo overcame every challenge to become even\nstronger.\n<br><br>\nWhen new Soul Reapers and a new enemy appear in his hometown of Karakura, Ichigo jumps\nback into the battlefield with his Zanpakuto to help those in need. Meanwhile, the Soul Society\nis observing a sudden surge in the number of Hollows being destroyed in the World of the Living.\nThey also receive separate reports of residents in the Rukon District having gone missing. Finally,\nthe Seireitei, home of the Soul Reapers, comes under attack by a group calling themselves the\nWandenreich.\n<br><br>\nLed by Yhwach, the father of all Quincies, the Wandenreich declare war against the Soul Reapers\nwith the following message: <i>\"Five days from now, the Soul Society will be annihilated by the\nWandenreich.\"</i>\n<br><br>\nThe history and truth kept hidden by the Soul Reapers for a thousand long years is finally brought\nto light.\n<br><br>\nAll things must come to an end as Ichigo Kurosaki\\'s final battle begins!",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 11
+              },
+              "endDate": {
+                "year": 2022,
+                "month": 12,
+                "day": 27
+              },
+              "episodes": 13,
+              "duration": 24,
+              "title": {
+                "romaji": "BLEACH: Sennen Kessen-hen",
+                "english": "BLEACH: Thousand-Year Blood War",
+                "userPreferred": "BLEACH: Sennen Kessen-hen"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx116674-p3zK4PUX2Aag.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx116674-p3zK4PUX2Aag.jpg",
+                "color": "#e45043"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/116674-l2YlIyJzvGSV.jpg",
+              "genres": [
+                "Action",
+                "Adventure",
+                "Supernatural"
+              ],
+              "averageScore": 89,
+              "nextAiringEpisode": {
+                "id": 345451
+              }
+            },
+            {
+              "id": 130003,
+              "idMal": 47917,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "Hitori Gotou is a high school girl who starting learning to playing the guitar because she dreams of being in a band, but she\\'s so shy that she hasn\\'t made a single friend. However, her dream might come true after she meets Nijika Ijichi, a girl who plays the drums and is looking for a new guitarist for her band.",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 9
+              },
+              "endDate": {
+                "year": 2022,
+                "month": 12,
+                "day": 25
+              },
+              "episodes": 12,
+              "duration": 24,
+              "title": {
+                "romaji": "Bocchi the Rock!",
+                "english": "BOCCHI THE ROCK!",
+                "userPreferred": "Bocchi the Rock!"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx130003-5Y8rYzg982sq.png",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx130003-5Y8rYzg982sq.png",
+                "color": "#e4bb50"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/130003-Ht7myAxpdNPo.jpg",
+              "genres": [
+                "Comedy",
+                "Music",
+                "Slice of Life"
+              ],
+              "averageScore": 86,
+              "nextAiringEpisode": {
+                "id": 339284
+              }
+            },
+            {
+              "id": 139630,
+              "idMal": 49918,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "The sixth season of <i>Boku no Hero Academia</i>.",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 1
+              },
+              "endDate": {
+                "year": null,
+                "month": null,
+                "day": null
+              },
+              "episodes": 25,
+              "duration": 24,
+              "title": {
+                "romaji": "Boku no Hero Academia 6",
+                "english": "My Hero Academia Season 6",
+                "userPreferred": "Boku no Hero Academia 6"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx139630-oc4l8OtJ4tRQ.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx139630-oc4l8OtJ4tRQ.jpg",
+                "color": "#e4935d"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/139630-XLc90c6CJjZv.jpg",
+              "genres": [
+                "Action",
+                "Adventure",
+                "Comedy"
+              ],
+              "averageScore": 81,
+              "nextAiringEpisode": {
+                "id": 340213
+              }
+            },
+            {
+              "id": 131516,
+              "idMal": 48542,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "Building furniture and friendships have a lot in common. Intention, effort, and hard work are needed for both crafts. This is a story of girls in a DIY club building both as they carve out their futures. None of it comes easy, but that doesn’t stop any of ’em. Furniture, friendships, and the future—they’re building it all with their own hands! <br>\n<br>\n(Source: Crunchyroll)",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 6
+              },
+              "endDate": {
+                "year": 2022,
+                "month": 12,
+                "day": 22
+              },
+              "episodes": 12,
+              "duration": 24,
+              "title": {
+                "romaji": "Do It Yourself!!",
+                "english": "Do It Yourself!!",
+                "userPreferred": "Do It Yourself!!"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx131516-kLB37ISBeOX0.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx131516-kLB37ISBeOX0.jpg",
+                "color": "#d6e478"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/131516-0Ez5rstneZ3X.jpg",
+              "genres": [
+                "Comedy",
+                "Slice of Life"
+              ],
+              "averageScore": 73,
+              "nextAiringEpisode": {
+                "id": 340789
+              }
+            },
+            {
+              "id": 144533,
+              "idMal": 50923,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "Known as the Bibliophile Princess for her unquenchable love of books, Lady Eliana Bernstein wants nothing more than to shirk social duties in favor of retreating to the library. So, when the handsome Crown Prince Christopher promises to shield her from high-society drudgery in exchange for pretending to be his fiancée, she jumps at the chance to hide behind their sham relationship and read to her heart’s content (especially since he’s offered her access to the palace library). But much like the plot of her favorite novel, soon Eli’s feelings for the prince develop in unexpected ways, and she realizes she can’t always judge a royal book by its cover.\n\n<br><br> (Source: HIDIVE)",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 6
+              },
+              "endDate": {
+                "year": 2022,
+                "month": 12,
+                "day": 22
+              },
+              "episodes": 12,
+              "duration": 24,
+              "title": {
+                "romaji": "Mushikaburi-hime",
+                "english": "Bibliophile Princess",
+                "userPreferred": "Mushikaburi-hime"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx144533-DqgPeBmWZPYQ.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx144533-DqgPeBmWZPYQ.jpg",
+                "color": "#e49350"
+              },
+              "bannerImage": null,
+              "genres": [
+                "Drama",
+                "Romance"
+              ],
+              "averageScore": 67,
+              "nextAiringEpisode": {
+                "id": 338306
+              }
+            },
+            {
+              "id": 146676,
+              "idMal": 51403,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "Asahi Kashiwagi lives the typical life of an average high school student — until the day a TV fortune teller’s predictions come true one after another, culminating in a series of risqué encounters! Destiny seemingly draws five beautiful girls into Asahi’s path, and soon he finds himself fielding not one, not two, but five love confessions. Asahi will need to follow his heart to find the perfect love for him, or else his love fortunes may end in one epic flail and flop.<br>\n<br>\n(Source: HIDIVE)",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 12
+              },
+              "endDate": {
+                "year": 2022,
+                "month": 12,
+                "day": 28
+              },
+              "episodes": 12,
+              "duration": 24,
+              "title": {
+                "romaji": "Renai Flops",
+                "english": "LOVE FLOPS",
+                "userPreferred": "Renai Flops"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx146676-8hkJxhY3b4tX.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx146676-8hkJxhY3b4tX.jpg",
+                "color": "#f14378"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/146676-puPd4socxvXT.jpg",
+              "genres": [
+                "Comedy",
+                "Ecchi",
+                "Romance",
+                "Sci-Fi"
+              ],
+              "averageScore": 62,
+              "nextAiringEpisode": {
+                "id": 338415
+              }
+            },
+            {
+              "id": 135806,
+              "idMal": 49220,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "​Seventeen years ago, Takafumi\\'s uncle fell into a coma, but now he\\'s back like a man risen from his grave. Soon, Takafumi discovers two bizarre things: His uncle treasures video games above all else, and, while comatose, he was actually transported to another world as some heroic guardian! Now, not only does Takafumi have to room with an uncle who is literally magical, he also has to catch the guy up on two decades of history—smartphones, high-speed internet, modern anime tropes…and the traumatic outcome of the \\'90s console war!  <br>\n<br>\n(Source: Yen Press)",
+              "startDate": {
+                "year": 2022,
+                "month": 7,
+                "day": 6
+              },
+              "endDate": {
+                "year": 2022,
+                "month": 12,
+                "day": 29
+              },
+              "episodes": 13,
+              "duration": 24,
+              "title": {
+                "romaji": "Isekai Oji-san",
+                "english": "Uncle from Another World",
+                "userPreferred": "Isekai Oji-san"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx135806-NwyVfDvm0O3G.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx135806-NwyVfDvm0O3G.jpg",
+                "color": "#f1a15d"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/135806-UMdwegnPLWli.jpg",
+              "genres": [
+                "Adventure",
+                "Comedy",
+                "Fantasy"
+              ],
+              "averageScore": 77,
+              "nextAiringEpisode": {
+                "id": 338441
+              }
+            },
+            {
+              "id": 141949,
+              "idMal": 50425,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "Third-year high school student Jirou Yakuin hoped to partner with Shiori Sakurazaka of the same class in the mandatory \"Couple Practical\" course. In this practical, students must demonstrate that they have the necessary skillset to live with a partner of the opposite sex while presenting a certain level of harmony to the video surveillance that grades them.<br>\n<br>\nUnfortunately, random chance put his slightly subdued self into the practical with the person polar opposite to him, the gyaru Akari Watanabe. Akari on the other hand hoped to be paired with her crush Minami Tenjin.<br>\n<br>\nTheir hopes are doubly dashed when they find out that Shiori and Minami are assigned together. Thus, they reluctantly decide to cooperate to reach the top ten, which would give them the right to exchange partners if both couples agree. To that end, Jirou steals Akari\\'s first kiss without realizing what he\\'d done, while giving a hurried good-bye kiss...",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 9
+              },
+              "endDate": {
+                "year": 2022,
+                "month": 12,
+                "day": 25
+              },
+              "episodes": 12,
+              "duration": 24,
+              "title": {
+                "romaji": "Fuufu Ijou, Koibito Miman.",
+                "english": "More than a Married Couple, but Not Lovers.",
+                "userPreferred": "Fuufu Ijou, Koibito Miman."
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx141949-tViCIRHPZAyG.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx141949-tViCIRHPZAyG.jpg",
+                "color": "#d6e45d"
+              },
+              "bannerImage": null,
+              "genres": [
+                "Comedy",
+                "Drama",
+                "Ecchi",
+                "Romance"
+              ],
+              "averageScore": 74,
+              "nextAiringEpisode": {
+                "id": 338257
+              }
+            },
+            {
+              "id": 145604,
+              "idMal": 51098,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "Ittoki Sakuraba was an ordinary student, until his life was turned upside down! He finds out that he is the 19th heir of the famous Iga Ninjas. The Iga must try to defend what is theirs from the Koga, a rivaling clan seeking to end Ittoki’s life. Ittoki is left with no choice but to become a shinobi that’s strong enough to not only protect himself, but also his village. Now a student at Kokuten Ninja Academy, a high school specializing in shinobi techniques, Ittoki learns the way of the modern-day ninja, equipped with high-tech suits and gadgets. Together with students from other villages, Ittoki clashes with the Koga in an attempt to end the rivalry once and for all.<br>\n<br>\n(Source: Crunchyroll)",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 4
+              },
+              "endDate": {
+                "year": 2022,
+                "month": 12,
+                "day": 20
+              },
+              "episodes": 12,
+              "duration": 24,
+              "title": {
+                "romaji": "Shinobi no Ittoki",
+                "english": "Shinobi no Ittoki",
+                "userPreferred": "Shinobi no Ittoki"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx145604-FQ8gN4CPaiui.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx145604-FQ8gN4CPaiui.jpg",
+                "color": "#86e41a"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/145604-yOXZ8JmZyCcY.jpg",
+              "genres": [
+                "Action"
+              ],
+              "averageScore": 59,
+              "nextAiringEpisode": {
+                "id": 335294
+              }
+            },
+            {
+              "id": 143277,
+              "idMal": 50710,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "When an alien race known as the Oni invade Earth, the chronically unlucky and unapologetically lecherous Ataru Moroboshi is selected as humanity’s representative in a duel for the fate of the planet! His opponent is Lum, the Oni’s very pretty princess, and it’s only thanks to Ataru’s unscrupulous behavior that he’s able to scrape out a win in a treacherous game of tag against her. Ataru thinks he’s had his lucky break at last, but when Lum takes a shine to him off the battlefield, the conflict follows him home as Lum invades not only planet Earth, but also the womanizing Ataru’s love life!<br>\n<br>\n(Source: HIDIVE)",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 14
+              },
+              "endDate": {
+                "year": null,
+                "month": null,
+                "day": null
+              },
+              "episodes": 23,
+              "duration": 23,
+              "title": {
+                "romaji": "Urusei Yatsura (2022)",
+                "english": "Urusei Yatsura (2022)",
+                "userPreferred": "Urusei Yatsura (2022)"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx143277-BJYg1aFUE8tV.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx143277-BJYg1aFUE8tV.jpg",
+                "color": "#1ad6bb"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/143277-tdi4PEWPbuuB.jpg",
+              "genres": [
+                "Comedy",
+                "Romance",
+                "Sci-Fi",
+                "Supernatural"
+              ],
+              "averageScore": 71,
+              "nextAiringEpisode": {
+                "id": 341117
+              }
+            },
+            {
+              "id": 146233,
+              "idMal": 51212,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "Kikuru Madan, is a monster hunter with excellent performance, because of his particular job in the forest, but he decided to quit it because of fear wasting his own youth...",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 5
+              },
+              "endDate": {
+                "year": 2022,
+                "month": 12,
+                "day": 21
+              },
+              "episodes": 12,
+              "duration": 24,
+              "title": {
+                "romaji": "Futoku no Guild",
+                "english": null,
+                "userPreferred": "Futoku no Guild"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx146233-iJW5lfwNFH5a.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx146233-iJW5lfwNFH5a.jpg",
+                "color": "#e4785d"
+              },
+              "bannerImage": null,
+              "genres": [
+                "Action",
+                "Comedy",
+                "Ecchi",
+                "Fantasy"
+              ],
+              "averageScore": 59,
+              "nextAiringEpisode": {
+                "id": 338874
+              }
+            },
+            {
+              "id": 138565,
+              "idMal": 49709,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "The second season of <i>Fumetsu no Anata e</i>. <br><br>\nFushi battles against the Nokkers after 40 years in isolation, bringing them to brand-new lands.\n<br><br>\n(Source: Crunchyroll)",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 23
+              },
+              "endDate": {
+                "year": null,
+                "month": null,
+                "day": null
+              },
+              "episodes": 20,
+              "duration": 25,
+              "title": {
+                "romaji": "Fumetsu no Anata e Season 2",
+                "english": "To Your Eternity Season 2",
+                "userPreferred": "Fumetsu no Anata e Season 2"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx138565-JzvDqH84ILzi.png",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx138565-JzvDqH84ILzi.png",
+                "color": "#e4c950"
+              },
+              "bannerImage": null,
+              "genres": [
+                "Adventure",
+                "Drama",
+                "Fantasy",
+                "Psychological",
+                "Supernatural"
+              ],
+              "averageScore": 77,
+              "nextAiringEpisode": {
+                "id": 338340
+              }
+            },
+            {
+              "id": 139274,
+              "idMal": 49828,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "A.S. (Ad Stella) 122―\n<br><br>\nAn era when a multitude of corporations have entered space and built a huge economic system. A lone girl from the remote planet Mercury transfers to the Asticassia School of Technology, run by the Beneritt Group which dominates the mobile suit industry.\n<br><br>\nHer name is Suletta Mercury. With a scarlet light burning in her pure heart, this girl walks step by step through a new world.\n<br><br>\n(Source: Official Website)",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 2
+              },
+              "endDate": {
+                "year": 2023,
+                "month": 1,
+                "day": 8
+              },
+              "episodes": 12,
+              "duration": 24,
+              "title": {
+                "romaji": "Kidou Senshi Gundam: Suisei no Majo",
+                "english": "Mobile Suit Gundam: The Witch from Mercury",
+                "userPreferred": "Kidou Senshi Gundam: Suisei no Majo"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx139274-nzHOkKMoCxvD.png",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx139274-nzHOkKMoCxvD.png",
+                "color": "#c9a11a"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/139274-UPB510uuZxnL.jpg",
+              "genres": [
+                "Mecha",
+                "Sci-Fi"
+              ],
+              "averageScore": 77,
+              "nextAiringEpisode": {
+                "id": 344263
+              }
+            },
+            {
+              "id": 139092,
+              "idMal": 49784,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "The third season of <i>Mairimashita! Iruma-kun</i>.<br>\n<br>\nThis time it\\'s the jungle!<br>\n<br>\nHuman boy Suzuki Iruma becomes \"grandson\" to the great demon Sullivan and begins attending demon school where \"Grandpa\" serves as chairman. Winning friends -- and rising in demon rank, too -- Iruma thrives in his new environment, overcoming the harrowing ordeals thrown his way! In the new season, further challenges await... it\\'s harvest season, and time for the annual test where students wade into the expansive and extremely dangerous (!) jungle to compete for food!! Classmates become rivals, and what erupts is a gargantuan battle of brawn and wits?<br>\n<br>\n(Source: NHK)",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 8
+              },
+              "endDate": {
+                "year": null,
+                "month": null,
+                "day": null
+              },
+              "episodes": 21,
+              "duration": 25,
+              "title": {
+                "romaji": "Mairimashita! Iruma-kun 3",
+                "english": "Welcome to Demon School! Iruma-kun Season 3",
+                "userPreferred": "Mairimashita! Iruma-kun 3"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx139092-q521Du1fkosV.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx139092-q521Du1fkosV.jpg",
+                "color": "#ffae35"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/139092-gcuDazzfT0uC.jpg",
+              "genres": [
+                "Comedy",
+                "Fantasy",
+                "Supernatural"
+              ],
+              "averageScore": 79,
+              "nextAiringEpisode": {
+                "id": 343190
+              }
+            },
+            {
+              "id": 124395,
+              "idMal": 42962,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "The second season of <i>Uzaki-chan wa Asobitai!</i>.",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 1
+              },
+              "endDate": {
+                "year": 2022,
+                "month": 12,
+                "day": 24
+              },
+              "episodes": 13,
+              "duration": 24,
+              "title": {
+                "romaji": "Uzaki-chan wa Asobitai! ω",
+                "english": "Uzaki-chan Wants to Hang Out! Season 2",
+                "userPreferred": "Uzaki-chan wa Asobitai! ω"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx124395-9GeigGh1Ae2f.png",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx124395-9GeigGh1Ae2f.png",
+                "color": "#e4c96b"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/124395-288D9DRXMv04.jpg",
+              "genres": [
+                "Comedy",
+                "Ecchi",
+                "Romance",
+                "Slice of Life"
+              ],
+              "averageScore": 70,
+              "nextAiringEpisode": {
+                "id": 339555
+              }
+            },
+            {
+              "id": 150695,
+              "idMal": 52046,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "Because Rain was a weak and simple beast tamer, he was expelled from the hero\\'s group but that didn\\'t stop his desire to be an adventurer. By taking simple quests afterwards he has a destined encounter with a strong cat girl.",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 1
+              },
+              "endDate": {
+                "year": 2022,
+                "month": 12,
+                "day": 24
+              },
+              "episodes": 13,
+              "duration": 24,
+              "title": {
+                "romaji": "Yuusha Party wo Tsuihou Sareta Beast Tamer, Saikyoushu no Nekomimi Shoujo to Deau",
+                "english": "Beast Tamer",
+                "userPreferred": "Yuusha Party wo Tsuihou Sareta Beast Tamer, Saikyoushu no Nekomimi Shoujo to Deau"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx150695-UOQF6Zz2iCTX.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx150695-UOQF6Zz2iCTX.jpg",
+                "color": "#5dbbe4"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/150695-w0Mbe0FpxICk.jpg",
+              "genres": [
+                "Adventure",
+                "Fantasy"
+              ],
+              "averageScore": 67,
+              "nextAiringEpisode": {
+                "id": 340570
+              }
+            },
+            {
+              "id": 139369,
+              "idMal": 49849,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "Orphaned Sarasa just graduated from the Royal Alchemist Academy, and that means her longed-for life of elegance and riches is close at hand! As a graduation gift, her teacher gifts her a house to set up shop — but Sarasa’s dilapidated new digs are beyond far-flung. What’s a novice alchemist to do when they\\'re stuck in the middle of nowhere with a business to run and supplies to gather from a very dangerous natural world? Whether it’s facing down frightening fantasy creatures or finding creative ways to attract customers, Sarasa has her work cut out for her as she achieves her dream of becoming the greatest alchemist around!<br>\n<br>\n(Source: HIDIVE)",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 3
+              },
+              "endDate": {
+                "year": 2022,
+                "month": 12,
+                "day": 19
+              },
+              "episodes": 12,
+              "duration": 24,
+              "title": {
+                "romaji": "Shinmai Renkinjutsushi no Tenpo Keiei",
+                "english": "Management of a Novice Alchemist",
+                "userPreferred": "Shinmai Renkinjutsushi no Tenpo Keiei"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx139369-uwq21xa6v1JJ.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx139369-uwq21xa6v1JJ.jpg",
+                "color": "#a1e4a1"
+              },
+              "bannerImage": null,
+              "genres": [
+                "Fantasy",
+                "Slice of Life"
+              ],
+              "averageScore": 63,
+              "nextAiringEpisode": {
+                "id": 338318
+              }
+            },
+            {
+              "id": 140660,
+              "idMal": 50205,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "In the land of Terra, natural disasters of unknown causes have been occurring irregularly in many areas. Therefore, the majority of the people, in order to escape those natural disasters, came to live in mobile cities developed over the years. The Originium left behind at the site of such Catastrophes, has led to the rapid progress of civilization due to their immense energy. But it also brought something else with it — an incurable disease called Oripathy.\n<br><br>\nBecause the bodies of those with Oripathy gradually crystalize and become a new source of infection at the time of death, in many countries, the Infected are subject to persecution under regimes of segregation and forced labor. Those who were oppressed by the governments are starting to rebel. Rhodes Island, a pharmaceutical company researching a cure for Oripathy, takes up their arms and starts a conquest trying to save all the people from the disease.\n<br><br>\n(Source: Official Site, translated, edited)",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 29
+              },
+              "endDate": {
+                "year": 2022,
+                "month": 12,
+                "day": 17
+              },
+              "episodes": 8,
+              "duration": 24,
+              "title": {
+                "romaji": "Arknights: Reimei Zensou",
+                "english": "Arknights: Prelude to Dawn",
+                "userPreferred": "Arknights: Reimei Zensou"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx140660-iJAS9omOJdzU.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx140660-iJAS9omOJdzU.jpg",
+                "color": null
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/140660-NUPbNxp8Ed2L.jpg",
+              "genres": [
+                "Action",
+                "Fantasy"
+              ],
+              "averageScore": 72,
+              "nextAiringEpisode": {
+                "id": 340142
+              }
+            },
+            {
+              "id": 97938,
+              "idMal": 34566,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "Naruto was a young shinobi with an incorrigible knack for mischief. He achieved his dream to become the greatest ninja in the village and his face sits atop the Hokage monument. But this is not his story... A new generation of ninja are ready to take the stage, led by Naruto\\'s own son, Boruto!<br><br>\n\n(Source: VIZ Media)",
+              "startDate": {
+                "year": 2017,
+                "month": 4,
+                "day": 5
+              },
+              "endDate": {
+                "year": null,
+                "month": null,
+                "day": null
+              },
+              "episodes": null,
+              "duration": 24,
+              "title": {
+                "romaji": "BORUTO: NARUTO NEXT GENERATIONS",
+                "english": "Boruto: Naruto Next Generations",
+                "userPreferred": "BORUTO: NARUTO NEXT GENERATIONS"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97938-BnF6M5yTaNB1.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx97938-BnF6M5yTaNB1.jpg",
+                "color": "#00c9ff"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/97938-cT6wkSRifTEC.jpg",
+              "genres": [
+                "Action",
+                "Adventure"
+              ],
+              "averageScore": 58,
+              "nextAiringEpisode": {
+                "id": 318983
+              }
+            },
+            {
+              "id": 141400,
+              "idMal": 50348,
+              "type": "ANIME",
+              "format": "TV_SHORT",
+              "description": "The second season of <i>Peter Grill to Kenja no Jikan</i>. <br><br>\nPeter Grill is back and ready for action! Between quelling a goblin incursion, improving trade negotiations with the dwarves and placating a watchful sister who might just go berserk to keep him in line, Peter has his work cut out for him. He’s the most sought-after hero in the land…and that’s before counting the myriad woman interested in his “other” talents. It will take every last scrap of Peter’s willpower to keep his focus on heroing in another raunchy season of <i>Peter Grill and the Philosopher’s Time - Super Extra!</i> <br><br>\n\n(Source: Sentai Filmworks)",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 10
+              },
+              "endDate": {
+                "year": 2022,
+                "month": 12,
+                "day": 26
+              },
+              "episodes": 12,
+              "duration": 12,
+              "title": {
+                "romaji": "Peter Grill to Kenja no Jikan: Super Extra",
+                "english": "Peter Grill and the Philosopher’s Time: Super Extra",
+                "userPreferred": "Peter Grill to Kenja no Jikan: Super Extra"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx141400-IHU8WRGMWrCh.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx141400-IHU8WRGMWrCh.jpg",
+                "color": "#e4865d"
+              },
+              "bannerImage": null,
+              "genres": [
+                "Comedy",
+                "Ecchi",
+                "Fantasy"
+              ],
+              "averageScore": 58,
+              "nextAiringEpisode": {
+                "id": 334979
+              }
+            },
+            {
+              "id": 142701,
+              "idMal": 50590,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "Deep within the inner palace lives a special consort who does not serve the emperor despite her position as a consort. She is known as the Raven Consort. People who have seen her say she looks like an old woman, while others say she looks like a young girl. Stories tell of her use of mysterious arts, and how she can take on any request, be it death curses or finding lost things. Koushun, the current emperor, goes to visit the Raven Consort with that intention. Without knowing that their fated meeting will become a taboo that will overturn history.\n<br><br>\n(Source: Shikkarito)",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 1
+              },
+              "endDate": {
+                "year": 2022,
+                "month": 12,
+                "day": 24
+              },
+              "episodes": 13,
+              "duration": 24,
+              "title": {
+                "romaji": "Koukyuu no Karasu",
+                "english": "Raven of the Inner Palace",
+                "userPreferred": "Koukyuu no Karasu"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142701-jyjYorMpj3lf.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx142701-jyjYorMpj3lf.jpg",
+                "color": "#f1d65d"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/142701-rZzG4VtrvwsG.jpg",
+              "genres": [
+                "Mystery"
+              ],
+              "averageScore": 70,
+              "nextAiringEpisode": {
+                "id": 340388
+              }
+            },
+            {
+              "id": 147885,
+              "idMal": 51680,
+              "type": "ANIME",
+              "format": "TV_SHORT",
+              "description": "Enter: a bunch of cool guys who look like they got that unapproachable swag. But let\\'s be real—that\\'s not the true them. They\\'re just a bunch of dorks who\\'ve got the act down pat. So sit back, grab some popcorn and enjoy watching a bunch of goofy guys try to look cool all day every day.<br>\n<br>\n(Source: Yen Press)",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 11
+              },
+              "endDate": {
+                "year": null,
+                "month": null,
+                "day": null
+              },
+              "episodes": 24,
+              "duration": 11,
+              "title": {
+                "romaji": "Cool Doji Danshi",
+                "english": "Play It Cool, Guys",
+                "userPreferred": "Cool Doji Danshi"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx147885-RuqC9lZH9ao6.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx147885-RuqC9lZH9ao6.jpg",
+                "color": "#f1e4c9"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/147885-aK0JXzYT5Sig.jpg",
+              "genres": [
+                "Comedy",
+                "Slice of Life"
+              ],
+              "averageScore": 72,
+              "nextAiringEpisode": {
+                "id": 338362
+              }
+            },
+            {
+              "id": 145815,
+              "idMal": 51128,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "Al Wayne loves farming — and we don’t mean the video game sim. He wants to be a literal farmer, but in the process of improving his agriculture skills, he somehow winds up maxing out his overall character stats! He’s superpowered in the most unexpected of ways with abilities even the strongest of heroes would envy. Alas, all he wants is an idyllic farmer\\'s life, but with demons and monsters invading the realm, Al may have to take up the mantle of hero just to keep his dreams from withering away!<br>\n<br>\n(Source: Sentai Filmworks)",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 1
+              },
+              "endDate": {
+                "year": 2022,
+                "month": 12,
+                "day": 17
+              },
+              "episodes": 12,
+              "duration": 24,
+              "title": {
+                "romaji": "Noumin Kanren no Skill Bakka Agetetara Naze ka Tsuyoku Natta.",
+                "english": "I\\'ve Somehow Gotten Stronger When I Improved My Farm-Related Skills",
+                "userPreferred": "Noumin Kanren no Skill Bakka Agetetara Naze ka Tsuyoku Natta."
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx145815-XsgcXy7WzgtK.png",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx145815-XsgcXy7WzgtK.png",
+                "color": "#50aef1"
+              },
+              "bannerImage": null,
+              "genres": [
+                "Adventure",
+                "Comedy",
+                "Fantasy",
+                "Slice of Life"
+              ],
+              "averageScore": 56,
+              "nextAiringEpisode": {
+                "id": 337810
+              }
+            },
+            {
+              "id": 235,
+              "idMal": 235,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "Kudo Shinichi is a seventeen year-old high school detective whom people call the \"Modern Sherlock Holmes.\" However, one night after a date with his childhood sweetheart, Ran, Shinichi witnessed an illegal trade and, caught off his guard, was knocked unconscious and fed a drug that was supposed to kill him... but he woke up and found himself shrunken to a seven year-old. In order to track down the men who did this to him, Shinichi hid his identity and lived with Ran, whose father happened to be a hopeless detective, and with that came a series of murders and mysteries that he must solve. <br><br>\n(Source: Anime News Network)\n<br><br>\n<i>Note:<br>\n- Includes Keisatsu Gakkou-hen - Wild Police Story in episodes 1029, 1038, 1042, 1061<br>\n- Episodes 11, 52, 76, 118, 162, 184, 208, 342, 356, 449, 452, 487, 488, 489, 490, 515, 516, 521, 522, 651, 734, 804, 805, 927, 928 aired with a runtime of ~50 minutes as opposed to the standard 25 minute long episode.<br>\n- Episodes 96, 129, 174, 219, 263, 304, 383, 479 aired with a runtime of ~90 minutes as opposed to the standard 25 minute long episode.<br>\n- Episode 345, 425 aired with a runtime of ~115 minutes as opposed to the standard 25 minute long episode.<br>\n</i>",
+              "startDate": {
+                "year": 1996,
+                "month": 1,
+                "day": 8
+              },
+              "endDate": {
+                "year": null,
+                "month": null,
+                "day": null
+              },
+              "episodes": null,
+              "duration": 25,
+              "title": {
+                "romaji": "Meitantei Conan",
+                "english": "Case Closed",
+                "userPreferred": "Meitantei Conan"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx235-XucEZpR3CRaV.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx235-XucEZpR3CRaV.jpg",
+                "color": "#28a1e4"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/235-MTmiz0uB0fMd.jpg",
+              "genres": [
+                "Adventure",
+                "Comedy",
+                "Mystery",
+                "Psychological"
+              ],
+              "averageScore": 81,
+              "nextAiringEpisode": {
+                "id": 345108
+              }
+            },
+            {
+              "id": 112153,
+              "idMal": 40351,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "Pokémon Trainer Satoshi has a new plan: see the world! But first, he and his partner Pikachu are headed to the opening of the Sakuragi Institute, a research facility dedicated to uncovering the mysteries of Pokémon in every region. Satoshi meets Gou, another boy with boundless curiosity about Pokémon, and both are overjoyed when Professor Sakuragi asks them to become official research fellows. With Satoshi as determined as ever to become a Pokémon Master, and Gou aiming to catch one of every Pokémon (including the Mythical Mew), our heroes are in for adventure and excitement as they explore the wide world of Pokémon!\n<br><br>\n(Source: Pokémon TV)",
+              "startDate": {
+                "year": 2019,
+                "month": 11,
+                "day": 17
+              },
+              "endDate": {
+                "year": null,
+                "month": null,
+                "day": null
+              },
+              "episodes": null,
+              "duration": 24,
+              "title": {
+                "romaji": "Pocket Monsters (2019)",
+                "english": "Pokémon Journeys: The Series",
+                "userPreferred": "Pocket Monsters (2019)"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx112153-LK1lpFz3vlvl.png",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx112153-LK1lpFz3vlvl.png",
+                "color": "#35bbf1"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/112153-01RDuvgGTXjp.jpg",
+              "genres": [
+                "Adventure",
+                "Comedy",
+                "Fantasy"
+              ],
+              "averageScore": 72,
+              "nextAiringEpisode": {
+                "id": 344984
+              }
+            },
+            {
+              "id": 21294,
+              "idMal": 30455,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "A sequel to <i>Kantai Collection: KanColle</i>.<br><br>\nShigure finds herself assigned to the 1st Striking Force 3rd Division for an important upcoming operation along with a surprising variety of other Fleet Girls. What will their role in the next big offensive against the Abyssals be?<br><br>\n(Source: Crunchyroll)",
+              "startDate": {
+                "year": 2022,
+                "month": 11,
+                "day": 4
+              },
+              "endDate": {
+                "year": null,
+                "month": null,
+                "day": null
+              },
+              "episodes": 8,
+              "duration": 24,
+              "title": {
+                "romaji": "KanColle: Itsuka Ano Umi de",
+                "english": "KanColle Season 2: Let\\'s Meet at Sea",
+                "userPreferred": "KanColle: Itsuka Ano Umi de"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21294-lsg0PPbVF03T.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21294-lsg0PPbVF03T.jpg",
+                "color": "#93aef1"
+              },
+              "bannerImage": null,
+              "genres": [
+                "Action",
+                "Sci-Fi"
+              ],
+              "averageScore": 62,
+              "nextAiringEpisode": {
+                "id": 343322
+              }
+            },
+            {
+              "id": 142985,
+              "idMal": 50638,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "The second season of <i>Muv-Luv Alternative</i>.",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 6
+              },
+              "endDate": {
+                "year": 2022,
+                "month": 12,
+                "day": 22
+              },
+              "episodes": 12,
+              "duration": 23,
+              "title": {
+                "romaji": "Muv-Luv Alternative 2nd Season",
+                "english": "Muv-Luv Alternative Season 2",
+                "userPreferred": "Muv-Luv Alternative 2nd Season"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142985-3p9pJI1rOTYf.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx142985-3p9pJI1rOTYf.jpg",
+                "color": "#2886a1"
+              },
+              "bannerImage": null,
+              "genres": [
+                "Action",
+                "Drama",
+                "Mecha",
+                "Sci-Fi"
+              ],
+              "averageScore": 60,
+              "nextAiringEpisode": {
+                "id": 337822
+              }
+            },
+            {
+              "id": 155011,
+              "idMal": 52976,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "Kentaro Miura\\'s legendary series returns in <i>Berserk: The Golden Age Arc - Memorial Edition.</i><br><br>\n\nThe lone mercenary Guts travels a land where a century-old war is raging. His ferocity and skill in battle attract the attention of Griffith, the leader of a group of mercenaries called the Band of the Hawk. Guts becomes Griffith’s closest ally and confidant, but despite all their victories, Guts begins to question why he fights for another man’s dream of ruling his own kingdom. Unknown to Guts, Griffith’s unyielding ambition is about to bestow a horrible fate on them both. <br><br>\n(Source: Crunchyroll, Viz Media)<br><br>\n<i>Note: This is a TV broadcast of the Golden Age film trilogy, with hundreds of new cuts including the \"Bonfire of Dreams\" scene and new music by Susumu Hirasawa and Shiro Sagisu.</i>",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 2
+              },
+              "endDate": {
+                "year": null,
+                "month": null,
+                "day": null
+              },
+              "episodes": 13,
+              "duration": 26,
+              "title": {
+                "romaji": "Berserk: Ougon Jidai-hen - MEMORIAL EDITION ",
+                "english": "Berserk: The Golden Age Arc - Memorial Edition",
+                "userPreferred": "Berserk: Ougon Jidai-hen - MEMORIAL EDITION "
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx155011-dCGHIBUyI2km.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx155011-dCGHIBUyI2km.jpg",
+                "color": "#e4ae50"
+              },
+              "bannerImage": null,
+              "genres": [
+                "Action",
+                "Adventure",
+                "Drama",
+                "Fantasy",
+                "Horror",
+                "Supernatural"
+              ],
+              "averageScore": 72,
+              "nextAiringEpisode": {
+                "id": 345032
+              }
+            },
+            {
+              "id": 143086,
+              "idMal": 50663,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "The second season of <i>Poputepipikku</i>.",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 2
+              },
+              "endDate": {
+                "year": 2022,
+                "month": 12,
+                "day": 18
+              },
+              "episodes": 12,
+              "duration": 24,
+              "title": {
+                "romaji": "Poputepipikku 2",
+                "english": "Pop Team Epic Season 2",
+                "userPreferred": "Poputepipikku 2"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx143086-ewIxO4RXqMuM.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx143086-ewIxO4RXqMuM.jpg",
+                "color": "#e4bb5d"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/143086-ws1b4ohToeKx.jpg",
+              "genres": [
+                "Comedy"
+              ],
+              "averageScore": 73,
+              "nextAiringEpisode": {
+                "id": 338294
+              }
+            },
+            {
+              "id": 137309,
+              "idMal": 49515,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "Sightings of mysterious creatures known as \"Hologram Ghosts\" have been a popular topic on social networks for the past few years. According to the rumors, several people have fallen victim to these specters. Those fortunate to survive their encounters with the paranormal beings claim that they resembled glitched holograms.<br>\n<br>\nHazakura Academy middle school student Hiro Amanokawa believes these sightings are merely an urban legend. However, as the incidents start to increase in frequency, he is reminded of the day his father suddenly vanished, with strange digital watches serving as the only relics of his disappearance. Much like the other sightings, what happened to Hiro\\'s father cannot be explained by conventional logic.<br>\n<br>\nOne day, when a fellow student in the academy is attacked by a Hologram Ghost, Hiro and his friend Kiyoshirou Higashimitarai decide to look into the matter. Little does Hiro know that this investigation will be their first step toward discovering a dangerous world previously unknown to mankind.<br>\n<br>\n(Source: MAL Rewrite)",
+              "startDate": {
+                "year": 2021,
+                "month": 10,
+                "day": 3
+              },
+              "endDate": {
+                "year": null,
+                "month": null,
+                "day": null
+              },
+              "episodes": null,
+              "duration": 23,
+              "title": {
+                "romaji": "Digimon Ghost Game",
+                "english": "Digimon Ghost Game",
+                "userPreferred": "Digimon Ghost Game"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx137309-1TTkC932WbYn.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx137309-1TTkC932WbYn.jpg",
+                "color": "#78e443"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/137309-FY8EoCpLsbHJ.jpg",
+              "genres": [
+                "Action",
+                "Adventure",
+                "Fantasy",
+                "Horror"
+              ],
+              "averageScore": 65,
+              "nextAiringEpisode": {
+                "id": 345089
+              }
+            },
+            {
+              "id": 156001,
+              "idMal": 53406,
+              "type": "ANIME",
+              "format": "ONA",
+              "description": "Mini animations featuring characters from the <i>Kage no Jitsuryokusha ni Naritakute!</i> anime posted on the KADOKAWA Anime YouTube channel.",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 27
+              },
+              "endDate": {
+                "year": null,
+                "month": null,
+                "day": null
+              },
+              "episodes": null,
+              "duration": 2,
+              "title": {
+                "romaji": "Kage-Jitsu!",
+                "english": "KAGE-JITSU!",
+                "userPreferred": "Kage-Jitsu!"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx156001-Sudx5O8jCIQ4.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx156001-Sudx5O8jCIQ4.jpg",
+                "color": "#e4a15d"
+              },
+              "bannerImage": null,
+              "genres": [
+                "Comedy",
+                "Fantasy"
+              ],
+              "averageScore": 60,
+              "nextAiringEpisode": null
+            },
+            {
+              "id": 152207,
+              "idMal": 52381,
+              "type": "ANIME",
+              "format": "TV_SHORT",
+              "description": "The slapstick comedy revolves around a protagonist who was reincarnated into a dummy head microphone (a microphone embedded in a fake human head to faithfully record the aural ambience). That dummy head microphone happens to be used by Yuri and other high school girls in an ASMR club, who have their sights set on the \"ASMR Koushien\" high school championships. (ASMR or Autonomous Sensory Meridian Response is the nerve-tingling or relaxing sensation one gets in response to stimuli such as certain sounds or sights.)<br>\n<br>\n(Source: Anime News Network)",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 13
+              },
+              "endDate": {
+                "year": null,
+                "month": null,
+                "day": null
+              },
+              "episodes": null,
+              "duration": 4,
+              "title": {
+                "romaji": "Aru Asa Dummy Head Mic ni Natteita Ore-kun no Jinsei",
+                "english": null,
+                "userPreferred": "Aru Asa Dummy Head Mic ni Natteita Ore-kun no Jinsei"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx152207-mIwJEH12H9d0.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx152207-mIwJEH12H9d0.jpg",
+                "color": "#f19335"
+              },
+              "bannerImage": null,
+              "genres": [
+                "Comedy",
+                "Slice of Life"
+              ],
+              "averageScore": 46,
+              "nextAiringEpisode": {
+                "id": 339891
+              }
+            },
+            {
+              "id": 150117,
+              "idMal": 51940,
+              "type": "ANIME",
+              "format": "TV_SHORT",
+              "description": "The year is 20XX... A time when every household owns cute maid robots known as OrderMaids. Average grade-schooler Bondo dreams of having his very own robot. But what he got was... Unable to compute!!! Life is gonna get a whole lot weirder when Roboco, the most powerful clumsy maid ever created, shows up at his door!\n<br><br>\n(Source: MANGA Plus)",
+              "startDate": {
+                "year": 2022,
+                "month": 12,
+                "day": 5
+              },
+              "endDate": {
+                "year": null,
+                "month": null,
+                "day": null
+              },
+              "episodes": null,
+              "duration": 5,
+              "title": {
+                "romaji": "Boku to Roboco",
+                "english": null,
+                "userPreferred": "Boku to Roboco"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx150117-CPFegorubia4.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx150117-CPFegorubia4.jpg",
+                "color": "#f14335"
+              },
+              "bannerImage": null,
+              "genres": [
+                "Comedy",
+                "Slice of Life"
+              ],
+              "averageScore": 48,
+              "nextAiringEpisode": {
+                "id": 339741
+              }
+            },
+            {
+              "id": 142343,
+              "idMal": 50528,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "The fourth season of <i>Golden Kamuy</i>.",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 3
+              },
+              "endDate": {
+                "year": 2022,
+                "month": 12,
+                "day": 26
+              },
+              "episodes": 13,
+              "duration": 24,
+              "title": {
+                "romaji": "Golden Kamuy 4th Season",
+                "english": "Golden Kamuy Season 4",
+                "userPreferred": "Golden Kamuy 4th Season"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142343-o8gkjIF434qZ.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx142343-o8gkjIF434qZ.jpg",
+                "color": null
+              },
+              "bannerImage": null,
+              "genres": [
+                "Action",
+                "Adventure",
+                "Comedy"
+              ],
+              "averageScore": 80,
+              "nextAiringEpisode": null
+            },
+            {
+              "id": 142481,
+              "idMal": 50552,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "The fifth season of <i>Yowamushi Pedal</i>.",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 9
+              },
+              "endDate": {
+                "year": null,
+                "month": null,
+                "day": null
+              },
+              "episodes": 25,
+              "duration": 25,
+              "title": {
+                "romaji": "Yowamushi Pedal: LIMIT BREAK",
+                "english": "Yowamushi Pedal Limit Break",
+                "userPreferred": "Yowamushi Pedal: LIMIT BREAK"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142481-eWLX6PtcvlYl.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx142481-eWLX6PtcvlYl.jpg",
+                "color": "#ffe435"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/142481-bmz1tYLZOJ9u.jpg",
+              "genres": [
+                "Comedy",
+                "Drama",
+                "Sports"
+              ],
+              "averageScore": 70,
+              "nextAiringEpisode": {
+                "id": 343776
+              }
+            },
+            {
+              "id": 128890,
+              "idMal": 46654,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "The second cour of the third season of <i>IDOLiSH7</i>.",
+              "startDate": {
+                "year": 2022,
+                "month": 10,
+                "day": 2
+              },
+              "endDate": {
+                "year": null,
+                "month": null,
+                "day": null
+              },
+              "episodes": null,
+              "duration": 24,
+              "title": {
+                "romaji": "IDOLiSH7: Third BEAT! Part 2",
+                "english": "IDOLiSH7 Third BEAT! Part 2",
+                "userPreferred": "IDOLiSH7: Third BEAT! Part 2"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx128890-gx7O2sOT2tFy.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx128890-gx7O2sOT2tFy.jpg",
+                "color": "#5daee4"
+              },
+              "bannerImage": null,
+              "genres": [
+                "Music"
+              ],
+              "averageScore": 74,
+              "nextAiringEpisode": {
+                "id": 337693
+              }
+            },
+            {
+              "id": 148042,
+              "idMal": 51692,
+              "type": "ANIME",
+              "format": "TV_SHORT",
+              "description": "When Fuuta comes home tired at night, all he wants to do is spend time with his new cat. All the mysterious habits and mannerisms of house cats are carefully reproduced in this relaxed and cute comedy about living with an adorable furball!<br>\n<br>\n(Source: Yen Press)",
+              "startDate": {
+                "year": 2022,
+                "month": 8,
+                "day": 4
+              },
+              "endDate": {
+                "year": null,
+                "month": null,
+                "day": null
+              },
+              "episodes": null,
+              "duration": 3,
+              "title": {
+                "romaji": "Yoru wa Neko to Issho",
+                "english": null,
+                "userPreferred": "Yoru wa Neko to Issho"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx148042-4ECbzpkrQOWg.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx148042-4ECbzpkrQOWg.jpg",
+                "color": "#50a1e4"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/148042-ksQMpGLIHkG2.jpg",
+              "genres": [
+                "Comedy",
+                "Slice of Life"
+              ],
+              "averageScore": 68,
+              "nextAiringEpisode": {
+                "id": 343268
+              }
+            },
+            {
+              "id": 144323,
+              "idMal": 50891,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "One day, unremarkable college student Yuuhi Amamiya meets a talking lizard who asks for his help saving Earth from a crisis. Before he can refuse, Yuuhi is turned into a member of the Beast Knights and given a ring that gives him the psychic power “domain control.” He is then immediately attacked by an enemy! But just as all seems lost, he’s saved by the girl next door, Samidare.<br>\n<br>\nBut it turns out Samidare isn’t really a savior of any kind… she’s actually a demon lord who wants to conquer Earth! Drawn to her absurd strength and evil charms, Yuuhi becomes her devoted servant and acts to support her wicked schemes.<br>\n<br>\n(Source: Crunchyroll)",
+              "startDate": {
+                "year": 2022,
+                "month": 7,
+                "day": 9
+              },
+              "endDate": {
+                "year": null,
+                "month": null,
+                "day": null
+              },
+              "episodes": 24,
+              "duration": 24,
+              "title": {
+                "romaji": "Hoshi no Samidare",
+                "english": "Lucifer and the Biscuit Hammer",
+                "userPreferred": "Hoshi no Samidare"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx144323-BU9YN8Yphagr.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx144323-BU9YN8Yphagr.jpg",
+                "color": "#2893f1"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/144323-xtWjunaY4XrB.jpg",
+              "genres": [
+                "Action",
+                "Comedy",
+                "Drama",
+                "Psychological",
+                "Supernatural"
+              ],
+              "averageScore": 48,
+              "nextAiringEpisode": {
+                "id": 339812
+              }
+            },
+            {
+              "id": 137341,
+              "idMal": 49533,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "Throughout time, supernatural, shapeshifting tanuki loved playing tricks on humankind. One plucky tanuki, Mameda, is no different. But there\\'s one big problem. She wasn’t born in the days of yore — she was born in modern, more cynical times! How can she fulfill her mischievous tanuki destiny when supernatural hijinks are a thing of the past? She finds an angle when she meets Bunko, a master of the Japanese art of rakugo, which uses storytelling to beguile its audience. Mameda is determined to use rakugo to cast a spell on humanity, but first this tanuki trickster must convince the no-nonsense Bunko to take her on as an apprentice.<br>\n<br>\n(Source: HIDIVE)",
+              "startDate": {
+                "year": 2022,
+                "month": 9,
+                "day": 30
+              },
+              "endDate": {
+                "year": 2022,
+                "month": 12,
+                "day": 23
+              },
+              "episodes": 13,
+              "duration": 24,
+              "title": {
+                "romaji": "Uchi no Shishou wa Shippo ga Nai",
+                "english": "My Master Has No Tail",
+                "userPreferred": "Uchi no Shishou wa Shippo ga Nai"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx137341-vb51oAS0lx37.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx137341-vb51oAS0lx37.jpg",
+                "color": "#ffae35"
+              },
+              "bannerImage": null,
+              "genres": [
+                "Comedy",
+                "Fantasy",
+                "Slice of Life"
+              ],
+              "averageScore": 59,
+              "nextAiringEpisode": {
+                "id": 339982
+              }
+            },
+            {
+              "id": 142080,
+              "idMal": 50281,
+              "type": "ANIME",
+              "format": "TV",
+              "description": "The mysterious, delicious world of CooKingdom, which rules over all the cuisine in this world. CooKingdom has closely guarded the Recipe-Bon, in which it\\'s written how to prepare any dish. But, oh no! One day, it gets stolen by the Bundoru Gang! The Bundoru Gang plans to monopolize everything for themselves, and their next target is the Cuisine Fairy Recipeppi... The Energy Fairies have come to Oishi-Na Town in the human world in search of the Recipe-Bon. With their help, an unexpected turn of events leads to three ordinary girls transforming into Pretty Cures!\n<br></br>\n(Source: Crunchyroll)",
+              "startDate": {
+                "year": 2022,
+                "month": 2,
+                "day": 6
+              },
+              "endDate": {
+                "year": null,
+                "month": null,
+                "day": null
+              },
+              "episodes": null,
+              "duration": null,
+              "title": {
+                "romaji": "Delicious Party♡Precure",
+                "english": null,
+                "userPreferred": "Delicious Party♡Precure"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142080-nCk0catlOELJ.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx142080-nCk0catlOELJ.jpg",
+                "color": "#d61abb"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/142080-GMSelgwWq15N.jpg",
+              "genres": [
+                "Action",
+                "Fantasy",
+                "Mahou Shoujo"
+              ],
+              "averageScore": 67,
+              "nextAiringEpisode": {
+                "id": 342457
+              }
+            },
+            {
+              "id": 118123,
+              "idMal": 44042,
+              "type": "ANIME",
+              "format": "ONA",
+              "description": "From unraveling the secrets of opening and closing doors to defusing surprise packages more commonly known as bombs, there is never a dull day at the Hololive Production office! <i>Holo no Graffiti</i> follows an eccentric cast of Virtual YouTubers, also known as \"VTubers,\" going about their absurd yet hilarious daily lives, detailing all their cute moments and mishaps.\n<br><br>\n(Source: MAL Rewrite)",
+              "startDate": {
+                "year": 2019,
+                "month": 5,
+                "day": 5
+              },
+              "endDate": {
+                "year": null,
+                "month": null,
+                "day": null
+              },
+              "episodes": null,
+              "duration": 2,
+              "title": {
+                "romaji": "Holo no Graffiti",
+                "english": null,
+                "userPreferred": "Holo no Graffiti"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx118123-xqn5fYsjKXJU.png",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx118123-xqn5fYsjKXJU.png",
+                "color": "#e4ae5d"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/118123-BvHyzWd850nZ.jpg",
+              "genres": [
+                "Action",
+                "Adventure",
+                "Comedy"
+              ],
+              "averageScore": 80,
+              "nextAiringEpisode": {
+                "id": 339050
+              }
+            },
+            {
+              "id": 140842,
+              "idMal": 50250,
+              "type": "ANIME",
+              "format": "TV_SHORT",
+              "description": "The sometimes happy, sometimes sad, and a tad stressful daily life of \"some sort of small, cute creature\" known as Chiikawa. Chiikawa enjoys delicious food with bees and rabbits, toils hard every day for the rewards of work, and still maintains a smile.<br>\n<br>\n(Source: Anime News Network)\n",
+              "startDate": {
+                "year": 2022,
+                "month": 4,
+                "day": 4
+              },
+              "endDate": {
+                "year": null,
+                "month": null,
+                "day": null
+              },
+              "episodes": null,
+              "duration": 2,
+              "title": {
+                "romaji": "Chiikawa",
+                "english": "Chiikawa",
+                "userPreferred": "Chiikawa"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx140842-m0G8JQ2Q51cS.png",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx140842-m0G8JQ2Q51cS.png",
+                "color": "#d6e4ae"
+              },
+              "bannerImage": null,
+              "genres": [
+                "Comedy"
+              ],
+              "averageScore": 53,
+              "nextAiringEpisode": null
+            },
+            {
+              "id": 134469,
+              "idMal": 49944,
+              "type": "ANIME",
+              "format": "OVA",
+              "description": "Puberty is a time when many become interested in the opposite sex for the first time, but Kasuga is hit more than most. She becomes so obsessed with thoughts of penises and balls that her grades are affected. Thus, when her childhood friend, Kobayashi, bets her that he will have a higher score on the next test, with the winner being able to request anything from the other, she sees her opportunity to witness male genitalia in the real world.",
+              "startDate": {
+                "year": 2021,
+                "month": 12,
+                "day": 17
+              },
+              "endDate": {
+                "year": null,
+                "month": null,
+                "day": null
+              },
+              "episodes": null,
+              "duration": 16,
+              "title": {
+                "romaji": "Shishunki no Obenkyou",
+                "english": null,
+                "userPreferred": "Shishunki no Obenkyou"
+              },
+              "coverImage": {
+                "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b134469-Ku4foJLXK4Sl.jpg",
+                "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b134469-Ku4foJLXK4Sl.jpg",
+                "color": "#f1d6c9"
+              },
+              "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/134469-6fn65hKn0SBn.jpg",
+              "genres": [
+                "Hentai"
+              ],
+              "averageScore": 69,
+              "nextAiringEpisode": {
+                "id": 344884
+              }
+            }
+          ]
+        }
+      }
+    },
+    "hasErrors": false
+  }
+}
