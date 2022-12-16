@@ -78,9 +78,7 @@ export const airingToday = (page = 1, perPage = 50) => {
           bannerImage,
           genres,
           averageScore,
-          nextAiringEpisode {
-            id
-          }
+          status
         }
       }
     }`;

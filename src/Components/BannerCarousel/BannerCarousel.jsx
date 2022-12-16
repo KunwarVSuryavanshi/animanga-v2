@@ -24,7 +24,7 @@ function Carousel(props) {
           setIndex(0);
         }
       }
-    }, 6000);
+    }, 600000);
     return () => {
       clearInterval(interval.current);
     };
@@ -81,7 +81,7 @@ function Carousel(props) {
                 <Button
                   variant="outlined"
                   className="btn_mui"
-                  sx={{ border: "3px solid #1976d280" }}
+                  sx={{ border: "2px solid #1976d280" }}
                 >
                   <PlayCircleOutlineIcon /> Watch now
                 </Button>

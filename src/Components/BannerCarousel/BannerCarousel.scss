@@ -112,3 +112,9 @@
     opacity: 1;
   }
 }
+.MuiButtonBase-root {
+  &.MuiButton-root:hover{
+    border: 3px solid #1976d2;
+    // font-size: 1rem;
+  }
+}

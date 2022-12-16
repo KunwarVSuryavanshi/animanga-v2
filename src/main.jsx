@@ -17,15 +17,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Suspense fallback={'Loading...'}><LandingPage/></Suspense>,
+        element: <Suspense fallback={null}><LandingPage/></Suspense>,
       },
       {
         path: "/anime",
-        element: <Suspense fallback={'Loading...'}><HomePage/></Suspense>,
+        element: <Suspense fallback={null}><HomePage/></Suspense>,
       },
       {
         path: "/manga",
-        element: <Suspense fallback={'Loading...'}><Manga/></Suspense>,
+        element: <Suspense fallback={null}><Manga/></Suspense>,
       },
     ],
   },

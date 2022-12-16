@@ -1,5 +1,5 @@
 export const cleanHTML = (html) => {
-  return html.replace(/<[^>]*>?/gm, "");
+  return html?.replace(/<[^>]*>?/gm, "");
 };
 
 export const getSeason = () => {
