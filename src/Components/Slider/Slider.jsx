@@ -1,10 +1,11 @@
 import React, { useRef, useState } from "react";
 import "./Slider.scss";
 import Skeleton from "@mui/material/Skeleton";
-import { Chip, Popover } from "@mui/material";
+import { Chip, ClickAwayListener, Popover, Popper } from "@mui/material";
 import { cleanHTML } from "../../Common/utils";
 import StarIcon from "@mui/icons-material/Star";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import TableRowsIcon from "@mui/icons-material/TableRows";
 
 function Slider(props) {
   const [anchorElem, setAnchorElem] = useState(null);
@@ -60,6 +61,7 @@ function Slider(props) {
       e.target.parentElement.style.border = `3px solid ${
         item?.coverImage?.color ?? "#4504f7"
       }`;
+      handleClose();
     }
   };
 
@@ -142,52 +144,68 @@ function Slider(props) {
                 </div>
               );
             })}
-        <Popover
+        <Popper
           id={open ? `card_popover` : undefined}
           open={open}
           anchorEl={anchorElem?.target}
-          onClose={handleClose}
-          anchorOrigin={{
-            vertical: "center",
-            horizontal: "right",
-          }}
-          transformOrigin={{
-            vertical: "top",
-            horizontal: "left",
-          }}
+          // onClose={handleClose}
+          // anchorOrigin={{
+          //   vertical: "center",
+          //   horizontal: "right",
+          // }}
+          placement={"right"}
+          // transformOrigin={{
+          //   vertical: "top",
+          //   horizontal: "left",
+          // }}
+          disablePortal
+          // transition
+          modifiers={[
+            {
+              name: "offset",
+              options: {
+                offset: [20, 20],
+              },
+            },
+          ]}
         >
-          <div
-            className="popover_root"
-            //  style={{backgroundColor: anchorElem?.data?.coverImage?.color}}
-          >
-            <div className="title">
-              {anchorElem?.data?.title?.english ??
-                anchorElem?.data?.title?.romaji}
-            </div>
-            <div className="rating">
-              <div className="rate">
-                <span>
-                  <StarIcon /> &nbsp;
-                  {anchorElem?.data?.averageScore / 10}
-                </span>
+          <ClickAwayListener onClickAway={handleClose}>
+            <div
+              className="popover_root"
+              //  style={{backgroundColor: anchorElem?.data?.coverImage?.color}}
+            >
+              <div className="title">
+                {anchorElem?.data?.title?.english ??
+                  anchorElem?.data?.title?.romaji}
               </div>
-              <div className="episodes">
-                Ep - {anchorElem?.data?.episodes ?? `NA`}
+              <div className="rating">
+                <div className="rate">
+                  <span>
+                    <StarIcon /> &nbsp;
+                    {anchorElem?.data?.averageScore / 10}
+                  </span>
+                </div>
+                <div className="episodes">
+                  <span>
+                    <TableRowsIcon /> &nbsp;
+                    {anchorElem?.data?.episodes ?? `NA`}
+                  </span>
+                </div>
+                <div className="type">{anchorElem?.data?.format}</div>
               </div>
-              <div className="type">{anchorElem?.data?.format}</div>
+              <div className="description">
+                {cleanHTML(anchorElem?.data?.description)}
+              </div>
+              <div className="genres">
+                Genres: {anchorElem?.data?.genres?.slice(0, 5)?.join(", ")}
+              </div>
+              <div className="status">Status: {anchorElem?.data?.status}</div>
+              <div className="btn">
+                <Chip icon={<PlayArrowIcon />} label="Watch Now" />
+              </div>
             </div>
-            <div className="description">
-              {cleanHTML(anchorElem?.data?.description)}
-            </div>
-            <div className="genres">
-              Genres: {anchorElem?.data?.genres?.slice(0, 5)?.join(", ")}
-            </div>
-            <div className="status">Status: {anchorElem?.data?.status}</div>
-            <div className="btn">
-              <Chip icon={<PlayArrowIcon />} label="Watch Now" />
-            </div>
-          </div>
-        </Popover>
+          </ClickAwayListener>
+        </Popper>
       </div>
     </div>
   );
