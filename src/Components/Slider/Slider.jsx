@@ -14,7 +14,7 @@ function Slider(props) {
   const slideRef = useRef();
   const cardRef = useRef();
   const arr = new Array(7).fill(1);
-  
+
   const handleHover = (e, item) => {
     if (e.target.getAttribute("name") === "card") {
       e.target.parentElement.style.border = `3px solid ${
@@ -40,12 +40,14 @@ function Slider(props) {
   };
 
   const handleLeftScroll = () => {
-    slideRef.current.scrollLeft -= cardRef?.current?.offsetWidth * 2;
-  }
+    slideRef.current.scrollLeft -=
+      cardRef?.current?.previousSibling?.offsetWidth * 2;
+  };
 
   const handleRightScroll = () => {
-    slideRef.current.scrollLeft += cardRef?.current?.offsetWidth * 2;
-  }
+    slideRef.current.scrollLeft +=
+      cardRef?.current?.previousSibling?.offsetWidth * 2;
+  };
 
   const open = Boolean(anchorElem?.target);
 

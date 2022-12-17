@@ -1,0 +1,27 @@
+.root_footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15vh;
+  .title{
+    font-size: 1.5rem;
+    // div{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    // }
+    a{
+      text-decoration: none;
+      color: aliceblue;
+      cursor: pointer;
+    }
+  }
+  .social{
+    svg{
+      font-size: 2rem;
+      padding: 2vh 1vw;
+    }
+  }
+}

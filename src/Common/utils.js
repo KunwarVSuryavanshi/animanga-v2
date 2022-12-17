@@ -21,5 +21,9 @@ export const getQuotes = () => {
     return res?.default?.[
       Math.floor(Math.random() * (res.default?.length - 1))
     ];
-  })
+  }).catch(err => ({
+    "anime": "Naruto",
+    "character": "Yashamaru",
+    "quote": "Physical wounds will definitely bleed and may look painful \nbut over time they heal by themselves and if you apply medicine, \nthey will heal faster. What's troublesome are wounds of the heart. Nothing is harder to heal."
+  }))
 }

@@ -1,0 +1,21 @@
+.manga_root{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  .icon{
+    margin: 15vh;
+    svg{
+      font-size:10rem;
+    }
+  }
+  .text{
+    display: flex;
+    align-items: center;
+    svg {
+      font-size: 3rem;
+      padding-left: 1vw;
+    }
+  }
+}
