@@ -8,7 +8,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const HomePage = lazy(() => import('./Components/HomePage/HomePage'))
 const Manga = lazy(() => import('./Components/Manga/Manga'))
 const LandingPage = lazy(() => import('./LandingPage/LandingPage'))
+import { inject } from "@vercel/analytics";
 
+inject();
 const router = createBrowserRouter([
   {
     path: "/",
