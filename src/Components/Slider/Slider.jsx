@@ -148,7 +148,6 @@ function Slider(props) {
           id={open ? `card_popover` : undefined}
           open={open}
           anchorEl={anchorElem?.target}
-          // onClose={handleClose}
           // anchorOrigin={{
           //   vertical: "center",
           //   horizontal: "right",
