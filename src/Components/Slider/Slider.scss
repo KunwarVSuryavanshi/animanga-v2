@@ -11,6 +11,17 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     margin-left: 1vw;
+    .scroll-btn{
+      float: right;
+      .MuiSvgIcon-root{
+        font-size: 6vh;
+        cursor: pointer;
+      }
+      .MuiSvgIcon-root:hover{
+        transition: all .25s;
+        scale: 1.5;
+      }
+    }
   }
 
   &_container {
@@ -77,6 +88,7 @@
 
 .snaps-inline {
   scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 }
 
 .snaps-inline>* {

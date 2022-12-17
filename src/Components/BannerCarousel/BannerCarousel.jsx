@@ -24,7 +24,7 @@ function Carousel(props) {
           setIndex(0);
         }
       }
-    }, 600000);
+    }, 6000);
     return () => {
       clearInterval(interval.current);
     };

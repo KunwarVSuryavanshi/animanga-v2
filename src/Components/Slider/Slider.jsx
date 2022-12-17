@@ -6,55 +6,14 @@ import { cleanHTML } from "../../Common/utils";
 import StarIcon from "@mui/icons-material/Star";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import TableRowsIcon from "@mui/icons-material/TableRows";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 
 function Slider(props) {
   const [anchorElem, setAnchorElem] = useState(null);
   const slideRef = useRef();
+  const cardRef = useRef();
   const arr = new Array(7).fill(1);
-  // let pressed = false;
-
-  // const handleMouseClick = (e) => { // Clicking
-  //   console.log('Event', e.screenX)
-  //   setClickPos(e.screenX)
-  //   pressed = true;
-  //   slideRef.current.style.cursor = 'grabbing'
-  //   console.log(slideRef)
-  // }
-
-  // const handleMouseLeave = (e) => { //
-  //   // slideRef.current.style.cursor = "default";
-  // }
-
-  // const handleMouseEnter = (e) => { // Hover
-  //     e.preventDefault();
-  //     slideRef.current.style.cursor = "grab";
-  // }
-
-  // const handleMouseUp = (e) => { // Releasing click
-  //   pressed = false;
-  //   e.preventDefault();
-  //   slideRef.current.style.cursor = "grab";
-  // }
-
-  // const handleMouseMove = (e) => {
-  // if (!pressed) return;
-  // e.preventDefault();
-  // slideRef.current.style.cursor = "grabbing";
-  // console.log(e.target.offsetLeft, clickPos, e.screenX,e)
-  // slideRef.current.style.left = `${e.target.offsetLeft - clickPos}`;
-  // slideRef.current.style.cursor = "default";
-  // console.log(e, slideRef)
-  // }
-
-  // const handleClick = (e) => {
-  //   console.log(
-  //     "E---->",
-  //     e.target.parentElement,
-  //     e.target.parentElement.nextElementSibling,
-  //     e
-  //   );
-  //   e.target.parentElement.parentElement.scrollRight = 200 + e.clientX;
-  // }
 
   const handleHover = (e, item) => {
     if (e.target.getAttribute("name") === "card") {
@@ -80,12 +39,26 @@ function Slider(props) {
     setAnchorElem(null);
   };
 
+  const handleLeftScroll = () => {
+    slideRef.current.scrollLeft -=
+      cardRef?.current?.previousSibling?.offsetWidth * 2;
+  };
+
+  const handleRightScroll = () => {
+    slideRef.current.scrollLeft +=
+      cardRef?.current?.previousSibling?.offsetWidth * 2;
+  };
+
   const open = Boolean(anchorElem?.target);
-  console.log(anchorElem);
+
   return (
     <div className="slider_root">
       <div className="slider_title">
         {props.icon} {props.title}
+        <span className="scroll-btn">
+          <NavigateBeforeIcon onClick={handleLeftScroll} />
+          <NavigateNextIcon onClick={handleRightScroll} />
+        </span>
       </div>
       <div
         ref={slideRef}
@@ -96,7 +69,7 @@ function Slider(props) {
           ? props.data?.map((item, key) => {
               return (
                 <div
-                  // ref={cardRef}
+                  ref={cardRef}
                   id={`card_${key}`}
                   className={`card`}
                   onClick={(e) => handleClick(e, item)}
