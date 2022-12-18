@@ -84,41 +84,49 @@ export const airingToday = (page = 1, perPage = 50) => {
     }`;
 };
 
-//   `query {
-//   Page(page: ${page}, perPage: ${perPage}) {
-//     pageInfo {
-//       total
-//       perPage
-//       currentPage
-//       lastPage
-//       hasNextPage
-//     }
-//     airingSchedules( notYetAired: true, sort: TIME) {
-//       airingAt
-//       episode
-//       media {
-//         id
-//         description
-//         idMal
-//         title {
-//           romaji
-//           english
-//           userPreferred
-//           native
-//         }
-//         countryOfOrigin
-//         description
-//         popularity
-//         bannerImage
-//         coverImage {
-//           large
-//           color
-//         }
-//         genres
-//         averageScore
-//         seasonYear
-//         format
-//       }
-//     }
-//   }
-// }`;
+export const topAnime = (page= 1) => {
+  return `{ 
+      Page(page: ${page}, perPage: 50) { 
+        pageInfo { 
+          total 
+          perPage 
+          currentPage 
+          lastPage 
+          hasNextPage
+        } 
+        media(countryOfOrigin: JP, status: FINISHED, sort: SCORE_DESC, type: ANIME){
+          id,
+          idMal,
+          type,
+          format,
+          description,
+          startDate {
+            year
+            month
+            day
+          },
+          endDate {
+            year
+            month
+            day
+          },
+          episodes,
+          duration,
+          title {
+            romaji
+            english
+            userPreferred
+          },
+          coverImage {
+            extraLarge
+            large
+            color
+          },
+          bannerImage,
+          genres,
+          averageScore,
+          status
+        }
+      }
+    }`;
+};

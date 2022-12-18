@@ -12,8 +12,13 @@ function Footer() {
         <br />
         <div>
           If you liked it, star the repo on{" "}
-          <a href="https://github.com/KunwarVSuryavanshi/animanga-v2" target="_blank">Github</a>{" "}
-          xD
+          <a
+            href="https://github.com/KunwarVSuryavanshi/animanga-v2"
+            target="_blank"
+          >
+            Github
+          </a>{" "}
+          &#128517;
         </div>
       </div>
       <br />

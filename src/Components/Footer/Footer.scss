@@ -1,9 +1,14 @@
+@use '../../variables.scss';
+
 .root_footer{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 15vh;
+  padding-top: 10vh;
+  background-color: variables.$black_grey;
+  border-radius: 10px;
   .title{
     font-size: 1.5rem;
     // div{
@@ -16,12 +21,31 @@
       text-decoration: none;
       color: aliceblue;
       cursor: pointer;
+      // animation: 4s linear 1s infinite grow;
     }
+    // a:hover{
+    //   transform: scale(2)
+    // }
   }
   .social{
     svg{
       font-size: 2rem;
       padding: 2vh 1vw;
     }
+  }
+}
+
+@keyframes grow {
+  0%{
+    opacity: 1;
+  }
+  25%{
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
   }
 }

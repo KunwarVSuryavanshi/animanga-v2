@@ -1,7 +1,7 @@
 {
   "notAiring": {
     "loading": false,
-    "hasErrors": false,
+    "hasError": false,
     "response": {
       "Page": {
         "pageInfo": {
