@@ -1,4 +1,5 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import ReactPlayer from 'react-player';
 import { useLocation, useParams } from 'react-router-dom'
 import './Player.scss';
@@ -6,12 +7,53 @@ import './Player.scss';
 function Player() {
   const { epInfo } = useParams();
   const state = useLocation();
+  const [animeInfo, setAnimeInfo] = useState(null);
 
+  useEffect(() => {
+    if (epInfo) {
+      axios
+        .get(`https://api.consumet.org/meta/anilist/info/${epInfo}`)
+        .then(res => setAnimeInfo(res.data))
+    }
+  }, [epInfo])
+  
   return (
-    <div>
-      EPinfo - {epInfo}
-      {console.log(state)}
-      <div className="player">
+    <div className="player_root">
+      {console.log(animeInfo)}
+      <div className="details">
+        <div
+          className="cover-image"
+          style={{ backgroundImage: `url(${animeInfo?.cover})` }}
+        >
+          <div className="details_container">
+            <div className="banner">
+              <div
+                className="banner_image"
+                style={{ backgroundImage: `url(${animeInfo?.image})` }}
+              />
+            </div>
+            <div className="about">
+              <div className="title">
+                {animeInfo?.title?.romaji ?? animeInfo?.title?.english}
+              </div>
+              <div className="score">{animeInfo?.rating / 10 ?? "NA"}</div>
+              <div className="description">
+                {animeInfo?.description ?? "NA"}
+              </div>
+              <div className="status">{animeInfo?.status}</div>
+              <div className="format">{animeInfo?.format}</div>
+              {/* <div className="popularity">{animeInfo?.poularity}</div>*/}
+              <div className="genres">
+                {animeInfo?.genres?.map((item) => (
+                  <span>{item}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="genres"></div>
+      </div>
+      {/* <div className="player">
         <ReactPlayer
           className="react-player"
           url={
@@ -23,7 +65,7 @@ function Player() {
           controls={true}
           light={true}
         />
-      </div>
+      </div> */}
     </div>
   );
 }

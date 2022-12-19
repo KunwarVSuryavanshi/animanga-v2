@@ -10,6 +10,8 @@
   top: 0;
   height: 8vh;
   font-weight: 700;
+  position: sticky;
+  z-index: 10;
 
   &_logo,
   &_nav {

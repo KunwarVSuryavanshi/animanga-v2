@@ -53,8 +53,8 @@ function Slider(props) {
   };
 
   const handleWatch = (data) => {
-    console.log('Hello', data);
-    navigate(`/watch/${data.idMal}`, {state: data})
+    console.log("data--->", data);
+    navigate(`/watch/${data.id}`)
   }
 
   return (
