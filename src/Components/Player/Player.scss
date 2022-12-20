@@ -1,11 +1,13 @@
-.player_root{
+.player_root {
   max-width: 100vw;
   min-height: 90vh;
   position: relative;
-  .details{
+
+  .details {
     max-width: 100vw;
     min-height: 80vh;
-    .cover-image{
+
+    .cover-image {
       min-width: 100%;
       height: 70vh;
       background-repeat: no-repeat;
@@ -15,32 +17,89 @@
       // background-color: rgba(0,0,0,0.1);
       position: absolute;
       cursor: default;
-      .details_container{
+
+      .details_container {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
         background-color: rgba(0, 0, 0, 0.71);
         height: 70vh;
+
         .banner {
-          &_image{
+          &_image {
             width: 30%;
             min-height: 40vh;
             min-width: 20vw;
             background-position: center;
             background-repeat: no-repeat;
             background-size: contain;
-            border-radius: 60px;
           }
         }
-        .about{
+
+        .about {
           width: 70%;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
           justify-content: flex-start;
+          text-shadow: 1px 1px black;
+          .title {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 4vh;
+          }
+
+          .anime_info {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 1vh;
+            div{
+              margin-right: 2vw;
+              // justify-content: center;
+              display: flex;
+              // justify-content: center;
+            }
+          }
+        }
+        .genres{
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: flex-start;
+          // width: 100%;
+          margin-top: 2vh;
+          .MuiChip-root{
+            margin-right: 1vw;
+            background-color: #22a426 !important;
+            font-size: 1rem;
+            padding: 0.2vh 0.2vw;
+          }
+        }
+        .description{
+          -webkit-line-clamp: 6;
+          display: -webkit-box;
+          overflow: hidden;
+          -webkit-box-orient: vertical;
+        }
+        .studio{
+          font-size: 1.35rem;
+          font-weight: 600;
+          margin-top: 2vh;
+          border: 2px solid rgb(32, 224, 220);
+          border-radius: 2px;
+          padding: 1vh 0.6vw;
         }
       }
+
       // .details_container{
       //   display: grid;
       //   grid-template-rows: 15vh 40vh 15vh;
