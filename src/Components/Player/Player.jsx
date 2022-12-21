@@ -6,7 +6,7 @@ import { useLocation, useParams } from "react-router-dom";
 import "./Player.scss";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import PlaylistPlayIcon from "@mui/icons-material/PlaylistPlay";
+import TableRowsIcon from "@mui/icons-material/TableRows";
 import CellTowerIcon from "@mui/icons-material/CellTower";
 import { cleanHTML } from "../../Common/utils";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
@@ -22,6 +22,7 @@ function Player() {
         .get(`https://api.consumet.org/meta/anilist/info/${epInfo}`)
         .then((res) => setAnimeInfo(res.data));
     }
+    window.scroll({top: 0, left: 0, behavior: 'smooth'})
   }, [epInfo]);
 
   return (
@@ -59,7 +60,7 @@ function Player() {
                     <CellTowerIcon /> &nbsp;{animeInfo?.status}
                   </div>
                   <div className="ep_count">
-                    <PlaylistPlayIcon /> &nbsp;
+                    <TableRowsIcon /> &nbsp;
                     {animeInfo?.totalEpisodes}
                   </div>
                   <div className="duration">

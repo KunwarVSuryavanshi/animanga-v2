@@ -18,10 +18,14 @@
       align-items: center;
     // }
     a{
-      text-decoration: none;
-      color: aliceblue;
+      // text-decoration: none;
+      color: hsl(192, 83%, 45%);
       cursor: pointer;
       // animation: 4s linear 1s infinite grow;
+
+      span{
+        color: hsl(192, 83%, 45%);
+      }
     }
     // a:hover{
     //   transform: scale(2)

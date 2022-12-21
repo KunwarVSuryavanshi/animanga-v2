@@ -2,6 +2,7 @@ import React from 'react'
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import './Footer.scss'
 
 function Footer() {
@@ -11,12 +12,12 @@ function Footer() {
         <div>This website has been (or rather, is being) developed by KvS.</div>
         <br />
         <div>
-          If you liked it, star the repo on{" "}
+          If you liked the website, star the repo on{" "}
           <a
             href="https://github.com/KunwarVSuryavanshi/animanga-v2"
             target="_blank"
           >
-            Github
+            <span>Github</span>
           </a>{" "}
           &#128517;
         </div>

@@ -71,9 +71,14 @@
       }
 
       &_title {
-        white-space: nowrap;
+        // white-space: nowrap;
+        // overflow: hidden;
+        // text-overflow: ellipsis;
+        padding-top: 2vh;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
         overflow: hidden;
-        text-overflow: ellipsis;
         width: 12vw;
         text-align: center;
         cursor: pointer;
