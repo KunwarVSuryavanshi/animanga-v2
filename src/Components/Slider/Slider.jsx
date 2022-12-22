@@ -8,12 +8,15 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import TableRowsIcon from "@mui/icons-material/TableRows";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
+import { useNavigate } from "react-router-dom";
 
 function Slider(props) {
   const [anchorElem, setAnchorElem] = useState(null);
   const slideRef = useRef();
   const cardRef = useRef();
   const arr = new Array(7).fill(1);
+  const open = Boolean(anchorElem?.target);
+  const navigate = useNavigate();
 
   const handleHover = (e, item) => {
     if (e.target.getAttribute("name") === "card") {
@@ -49,7 +52,10 @@ function Slider(props) {
       cardRef?.current?.previousSibling?.offsetWidth * 2;
   };
 
-  const open = Boolean(anchorElem?.target);
+  const handleWatch = (data) => {
+    console.log("data--->", data);
+    navigate(`/watch/${data.id}`)
+  }
 
   return (
     <div className="slider_root">
@@ -173,7 +179,11 @@ function Slider(props) {
               </div>
               <div className="status">Status: {anchorElem?.data?.status}</div>
               <div className="btn">
-                <Chip icon={<PlayArrowIcon />} label="Watch Now" />
+                <Chip
+                  icon={<PlayArrowIcon />}
+                  label="Watch Now"
+                  onClick={() => handleWatch(anchorElem?.data)}
+                />
               </div>
             </div>
           </ClickAwayListener>

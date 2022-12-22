@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getQuotes } from "../Common/utils";
+import { getQuotes } from "../../Common/utils";
 import './LandingPage.scss'
 
 function LandingPage() {

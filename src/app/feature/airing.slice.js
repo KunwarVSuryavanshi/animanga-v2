@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { airingToday } from "../Common/queries";
+import { airingToday } from "../../Common/queries";
 
 const initialState = {
   loading: true,
@@ -17,11 +17,11 @@ const airingSlice = createSlice({
     },
     getAiringSuccess(state, { payload }) {
       (state.loading = false),
-        (state.hasErrors = false),
+        (state.hasError = false),
         (state.response = payload);
     },
     getAiringError(state) {
-      (state.loading = false), (state.hasErrors = true);
+      (state.loading = false), (state.hasError = true);
     },
   },
 });
@@ -31,8 +31,8 @@ const fetchAiringAnime = () => {
     dispatch(getAiringLoading());
     try {
       let url = "https://graphql.anilist.co";
-      const response = await axios.post(url, { query: airingToday() })
-        // await axios.get("https://api.consumet.org/meta/anilist/trending?perPage=20");
+      const response = await axios.post(url, { query: airingToday() });
+      // await axios.get("https://api.consumet.org/meta/anilist/trending?perPage=20");
       // dispatch(airingSlice.actions.getAiringSuccess(response.data)); NOTE: THIS IS ALSO CORRECT
       dispatch(getAiringSuccess(response.data));
     } catch (err) {

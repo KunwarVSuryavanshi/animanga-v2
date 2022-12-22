@@ -6,7 +6,8 @@ body {
 }
 body::-webkit-scrollbar {
   background-color: rgba(0, 0, 0, 0) !important;
-  width: 0.5vw !important
+  width: 0.5vw !important;
+  height: 0.5vw !important;
 }
 
 body::-webkit-scrollbar-track {

@@ -7,8 +7,9 @@ import './index.scss'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const HomePage = lazy(() => import('./Components/HomePage/HomePage'))
 const Manga = lazy(() => import('./Components/Manga/Manga'))
-const LandingPage = lazy(() => import('./LandingPage/LandingPage'))
+const LandingPage = lazy(() => import('./Components/LandingPage/LandingPage'))
 import { inject } from "@vercel/analytics";
+import Player from './Components/Player/Player'
 
 inject();
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
         path: "/manga",
         element: <Suspense fallback={null}><Manga/></Suspense>,
       },
+      {
+        path: '/watch/:epInfo',
+        element: <Suspense><Player/></Suspense>
+      }
     ],
   },
 ]);
