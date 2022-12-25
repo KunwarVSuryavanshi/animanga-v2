@@ -1,3 +1,5 @@
+@use '../../variables.scss';
+
 .player_root {
   max-width: 100vw;
   min-height: 90vh;
@@ -5,7 +7,7 @@
 
   .details {
     max-width: 100vw;
-    min-height: 80vh;
+    min-height: 72vh;
 
     .cover-image {
       min-width: 100%;
@@ -44,14 +46,16 @@
           align-items: flex-start;
           justify-content: flex-start;
           text-shadow: 1px 1px black;
+
           .title {
             display: flex;
             flex-direction: row;
             align-items: flex-start;
             justify-content: flex-start;
-            font-size: 2rem;
+            font-size: 2.4rem;
             font-weight: 900;
             margin-bottom: 4vh;
+            line-height: 6vh;
           }
 
           .anime_info {
@@ -62,7 +66,8 @@
             font-size: 1.15rem;
             font-weight: 600;
             margin-bottom: 1vh;
-            div{
+
+            div {
               margin-right: 2vw;
               // justify-content: center;
               display: flex;
@@ -70,27 +75,31 @@
             }
           }
         }
-        .genres{
+
+        .genres {
           display: flex;
           flex-direction: row;
           align-items: flex-start;
           justify-content: flex-start;
           // width: 100%;
           margin-top: 2vh;
-          .MuiChip-root{
+
+          .MuiChip-root {
             margin-right: 1vw;
             background-color: #22a426 !important;
             font-size: 1rem;
             padding: 0.2vh 0.2vw;
           }
         }
-        .description{
+
+        .description {
           -webkit-line-clamp: 6;
           display: -webkit-box;
           overflow: hidden;
           -webkit-box-orient: vertical;
         }
-        .studio{
+
+        .studio {
           font-size: 1.35rem;
           font-weight: 600;
           margin-top: 2vh;
@@ -127,5 +136,154 @@
       //   }
       // }
     }
+  }
+
+  .episodes {
+    margin-top: 2vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    .title {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 2vh;
+    }
+    // scroll-snap-align: start;
+    .ep-list {
+      min-width: 20vw;
+      max-height: 50vh;
+      display: flex;
+      flex-direction: row;
+      overflow: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      .ep_card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 1vh 0.5vw;
+
+        .ep_image {
+          width: 28vw;
+          height: 35vh;
+          border-radius: 10px;
+          background-position: center;
+          background-size: cover;
+          display: flex;
+          cursor: pointer;
+          // flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          // transition: all 0.4s;
+          .MuiSvgIcon-root {
+            font-size: 4rem;
+            border-radius: 50%;
+            // background-color: #1c201d94;
+            // color: rgba(0, 0, 0, 0.508);
+            background-color: #161616d9;
+            color: white;
+            transition: all 0.2s 0.2s;
+          }
+        }
+
+        .ep_name {
+          line-clamp: 2;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-align: center;
+          cursor: default;
+        }
+      }
+    }
+    .ep-list>* {
+      scroll-snap-align: start;
+    }
+  }
+}
+
+.modal_root{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-height: 100%;
+  background-color: variables.$black_grey;
+  left: 18%;
+  right: 18%;
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  // .thumbnail{
+  //   width: 100%;
+  //   height: 100%;
+  // }
+}
+
+.modal_root:focus-visible{
+  outline: none;
+}
+
+.ep-list::-webkit-scrollbar {
+  background-color: rgba(0, 0, 0, 0) !important;
+  width: 0.5vw !important;
+  height: 0.5vw !important;
+}
+
+.ep-list::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0) !important;
+}
+
+.ep-list::-webkit-scrollbar-thumb {
+  background-color: #737171c2 !important;
+  border-radius: 16px !important;
+  // border: 4px solid rgba(255, 255, 255, 0)
+}
+
+.ep_image:hover {
+  .MuiSvgIcon-root {
+    transform: scale(1.1);
+    // transition: all 0.2s 0.4s;
+    // background-color: #161616d9;
+    color: white;
+  }
+}
+
+.play-icon{
+  .MuiSvgIcon-root {
+      font-size: 4rem;
+      border-radius: 50%;
+      // background-color: #1c201d94;
+      // color: rgba(0, 0, 0, 0.508);
+      background-color: #161616d9;
+      color: white;
+    }
+}
+
+.hidden {
+  display: none;
+}
+
+/* SPINNER STYLES */
+
+.spinner {
+  fill: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  width: 60px;
+  height: 60px;
+}
+
+.spinner>.path {
+  transform-origin: center;
+  animation: spin 0.75s infinite linear;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
   }
 }

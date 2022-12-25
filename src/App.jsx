@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div style={{minHeight: '100vh'}}>
+      <div className="Outlet" style={{minHeight: '100vh', maxHeight: '100%', width: '100vw', maxWidth:'100%'}}>
         <Outlet />
       </div>
       <Footer/>
