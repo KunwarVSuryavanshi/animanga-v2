@@ -1,3 +1,5 @@
+@use '../../variables.scss';
+
 .player_root {
   max-width: 100vw;
   min-height: 90vh;
@@ -201,6 +203,28 @@
   }
 }
 
+.modal_root{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-height: 100%;
+  background-color: variables.$black_grey;
+  left: 18%;
+  right: 18%;
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  // .thumbnail{
+  //   width: 100%;
+  //   height: 100%;
+  // }
+}
+
+.modal_root:focus-visible{
+  outline: none;
+}
+
 .ep-list::-webkit-scrollbar {
   background-color: rgba(0, 0, 0, 0) !important;
   width: 0.5vw !important;
@@ -223,5 +247,43 @@
     // transition: all 0.2s 0.4s;
     // background-color: #161616d9;
     color: white;
+  }
+}
+
+.play-icon{
+  .MuiSvgIcon-root {
+      font-size: 4rem;
+      border-radius: 50%;
+      // background-color: #1c201d94;
+      // color: rgba(0, 0, 0, 0.508);
+      background-color: #161616d9;
+      color: white;
+    }
+}
+
+.hidden {
+  display: none;
+}
+
+/* SPINNER STYLES */
+
+.spinner {
+  fill: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  width: 60px;
+  height: 60px;
+}
+
+.spinner>.path {
+  transform-origin: center;
+  animation: spin 0.75s infinite linear;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
   }
 }

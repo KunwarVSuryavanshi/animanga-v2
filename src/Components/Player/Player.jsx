@@ -1,4 +1,4 @@
-import { Chip, LinearProgress } from "@mui/material";
+import { Chip, LinearProgress, Modal } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
@@ -10,14 +10,31 @@ import TableRowsIcon from "@mui/icons-material/TableRows";
 import CellTowerIcon from "@mui/icons-material/CellTower";
 import { cleanHTML } from "../../Common/utils";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
-import PlayCircleFilledIcon from "@mui/icons-material/PlayCircleFilled";
-import PlayCircleFilledWhiteIcon from "@mui/icons-material/PlayCircleFilledWhite";
 import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
 
 function Player() {
   const { epInfo } = useParams();
   const [animeInfo, setAnimeInfo] = useState(null);
+  const [openModal, setOpenModal] = useState(false);
+  const [playEp, setPlayEp] = useState(null);
+  const [sources, setSources] = useState(null);
+  const [loading, setLoading] = useState(true);
+  // const [buffering, setLoading] = useState(true);
+
   const formatter = Intl.NumberFormat("en", { notation: "compact" });
+
+  const handleOpen = (item) => {
+    // console.log(item)
+    setLoading(true)
+    axios.get(`https://api.consumet.org/meta/anilist/watch/${item?.id}`).then(res => {setSources(res?.data?.sources); setLoading(false);});
+    setPlayEp(item)
+    setOpenModal(true);
+  }
+
+  const handleClose = () => {
+    setPlayEp(null);
+    setOpenModal(false);
+  }
 
   useEffect(() => {
     if (epInfo) {
@@ -30,9 +47,10 @@ function Player() {
 
   return (
     <div className="player_root">
-      {console.log(animeInfo)}
+      {/* {console.log(animeInfo)} */}
+      {console.log('Loading', loading)}
       {!animeInfo ? (
-        <div style={{ position: "sticky", top: "8vh" }}>
+        <div style={{ position: "sticky", top: "8vh", height: "100vh" }}>
           <LinearProgress color="primary" />
         </div>
       ) : (
@@ -105,7 +123,6 @@ function Player() {
               )}
             </div>
           </div>
-          <div className="genres"></div>
         </div>
       )}
       <div className="episodes">
@@ -113,19 +130,65 @@ function Player() {
         <div className="ep-list">
           {animeInfo?.episodes?.map((item, key) => {
             return (
-              <div className="ep_card" key={item?.number}>
+              <div
+                className="ep_card"
+                key={item?.number}
+                onClick={() => handleOpen(item)}
+              >
                 <div
                   className="ep_image"
                   style={{ backgroundImage: `url(${item.image})` }}
                 >
                   <PlayCircleOutlineIcon />
                 </div>
-                <div className="ep_no">Episode - {item?.number ?? key+1}</div>
+                <div className="ep_no">Episode - {item?.number ?? key + 1}</div>
                 <div className="ep_name">{item.title}</div>
               </div>
-            );})}
+            );
+          })}
         </div>
       </div>
+      <Modal
+        aria-labelledby="spring-modal-title"
+        aria-describedby="spring-modal-description"
+        open={openModal}
+        onClose={handleClose}
+        closeAfterTransition
+      >
+        <div className="modal_root">
+          <svg
+            className={`spinner ${!loading && "hidden"}`}
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+              opacity=".25"
+            />
+            <path
+              d="M12,4a8,8,0,0,1,7.89,6.7A1.53,1.53,0,0,0,21.38,12h0a1.5,1.5,0,0,0,1.48-1.75,11,11,0,0,0-21.72,0A1.5,1.5,0,0,0,2.62,12h0a1.53,1.53,0,0,0,1.49-1.3A8,8,0,0,1,12,4Z"
+              className="path"
+            />
+          </svg>
+          <ReactPlayer
+            className="react-player"
+            url={sources?.[0]?.url}
+            // file={}
+            width="100%"
+            height="100%"
+            controls={true}
+            light={true} // replace with image tag
+            // playIcon={
+            //   <div className="play-icon">
+            //     <PlayCircleOutlineIcon />
+            //   </div>
+            // }
+            playIcon={loading ? <></> : null}
+            onBuffer={() => setLoading(true)}
+            onBufferEnd={() => setLoading(false)}
+            pip={false}
+          ></ReactPlayer>
+        </div>
+      </Modal>
     </div>
   );
 }
