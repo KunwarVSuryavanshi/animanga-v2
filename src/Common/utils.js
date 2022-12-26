@@ -27,3 +27,7 @@ export const getQuotes = () => {
     "quote": "Physical wounds will definitely bleed and may look painful \nbut over time they heal by themselves and if you apply medicine, \nthey will heal faster. What's troublesome are wounds of the heart. Nothing is harder to heal."
   }))
 }
+
+export const getRandomeColor = () => {
+  return `#${Math.floor(Math.random() * 0xfffff)}`
+}
