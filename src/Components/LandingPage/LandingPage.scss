@@ -1,4 +1,4 @@
-.container_lp{
+.container_lp {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,52 +9,101 @@
   animation: opacity_change 2.5s ease-in;
   flex: 0 0 80vw;
   position: relative; // For using left
-  .greeting{
+
+  .greeting {
     font-size: 2rem;
-    .japanese, .english{
+
+    .japanese,
+    .english {
       padding-bottom: 10vh;
     }
   }
-  .quotes_container{
+
+  .quotes_container {
     max-width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
+
     // animation: move 1.5s linear;
-    .quote{
+    .quote {
       font-size: 1.7rem;
       text-align: center;
       line-height: 2.7rem;
       animation: opacity_change 3s ease-in;
     }
-    .character{
+
+    .character {
       font-size: 1.3rem;
       font-style: oblique 80deg;
       padding-top: 4vh;
       animation: opacity_change 4s ease-in;
       position: relative;
+      text-align: center;
     }
   }
 }
 
-@keyframes opacity_change{
-  0%{
+@keyframes opacity_change {
+  0% {
     opacity: 0;
   }
-  50%{
+
+  50% {
     opacity: 0.5;
   }
-  100%{
+
+  100% {
     opacity: 1;
   }
 }
+
 @keyframes move {
-  from{
+  from {
     transform: translateX(-100vw);
   }
-  to{
+
+  to {
     // left: 0;
     transform: translateX(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .container_lp {
+    height: 55vh;
+    .greeting {
+      font-size: 1.5rem;
+      .japanese,
+      .english {
+        padding-bottom: 10vh;
+        font-size: 1.25rem;
+        text-align: center;
+      }
+    }
+
+    .quotes_container {
+      max-width: 70%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+
+      // animation: move 1.5s linear;
+      .quote {
+        font-size: 1rem;
+        text-align: center;
+        line-height: 1.5rem;
+      }
+
+      .character {
+        font-size: 0.8rem;
+        font-style: oblique 80deg;
+        padding-top: 4vw;
+        animation: opacity_change 4s ease-in;
+        text-align: center;
+      }
+    }
   }
 }

@@ -2,13 +2,12 @@
 .header {
   display: flex;
   flex-direction: row;
-  flex: 1;
   flex-wrap: wrap;
   justify-content: space-between;
-  font-size: 4.8vh;
+  font-size: 2.4vw;
   background-color: variables.$background_main;
   top: 0;
-  height: 8vh;
+  height: 4vw;
   font-weight: 700;
   position: sticky;
   z-index: 10;
@@ -18,27 +17,69 @@
     margin-top: auto;
     margin-bottom: auto;
     padding-left: 2vw;
-    padding-right: 2vw;
     font-family: 'Rubik Vinyl', cursive;
-    // color: rgb(255, 0, 47);
   }
 
   &_nav {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
     font-weight: 500;
-    font-size: 3vh;
+    font-size: 1.5vw;
 
     &-links {
-      margin-left: 10vw;
+      // margin-left: 10vw;
       cursor: pointer;
+      width: 10vw;
       font-family: 'Montserrat', sans-serif;
       font-weight: 800;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+  }
+  .searchbar {
+    margin-right: 2vw;
+    // text-align: center;
+    display: flex;
+    align-items: center;
   }
 }
 .link{
   text-decoration: none;
   color: white;
+}
+
+@media (max-width: 600px){
+  .header {
+      font-size: 4.2vw;
+      top: 0;
+      height: 14vw;
+      font-weight: 700;
+  
+      &_logo,
+      &_nav {
+        margin-top: auto;
+        margin-bottom: auto;
+        padding-left: 2vw;
+      }
+  
+      &_nav {
+        font-weight: 500;
+        font-size: 2.5vw;
+  
+        &-links {
+          width: 15vw;
+          font-weight: 800;
+        }
+      }
+  
+      .searchbar {
+        margin-right: 2vw;
+        svg{
+          font-size: 1.3rem;
+        }
+      }
+    }
 }
