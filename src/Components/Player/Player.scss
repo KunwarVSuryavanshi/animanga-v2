@@ -31,7 +31,7 @@
         .banner {
           &_image {
             width: 30%;
-            min-height: 40vh;
+            min-height: 50vh;
             min-width: 20vw;
             background-position: center;
             background-repeat: no-repeat;
@@ -146,6 +146,12 @@
       font-size: 1.5rem;
       font-weight: 500;
       margin-bottom: 2vh;
+      display: flex;
+      // justify-content: center;
+      align-items: center;
+      .MuiSvgIcon-root {
+          font-size: 2rem;
+      }
     }
     // scroll-snap-align: start;
     .ep-list {
@@ -161,7 +167,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        margin: 1vh 0.5vw;
+        margin: 1vh 0.5vw 2vh;
 
         .ep_image {
           width: 28vw;
@@ -199,6 +205,32 @@
     }
     .ep-list>* {
       scroll-snap-align: start;
+    }
+  }
+  .recommended_slider, .related_slider, .character_slider{
+    margin-top: 4vh;
+    .slider_title{
+      display: flex;
+      align-items: center;
+      .MuiSvgIcon-root{
+        font-size: 2rem;
+        margin-right: 1vw;
+      }
+      .scroll-btn{
+        width: 100%;
+        float: right;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+      }
+    }
+  }
+  .character_slider{
+    .slider_container{
+      .card_image{
+        cursor: default !important;
+        border-radius: 50%;
+      }
     }
   }
 }
@@ -270,8 +302,8 @@
 .spinner {
   fill: white;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 44%;
+  left: 47%;
   z-index: 9999;
   width: 60px;
   height: 60px;

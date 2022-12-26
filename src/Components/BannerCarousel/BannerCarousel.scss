@@ -52,7 +52,7 @@
       align-items: flex-start;
       justify-content: space-between;
       margin-top: 5%;
-      font-weight: 300;
+      font-weight: 600;
       div{
         padding-right: 2vw;
         display: flex;
@@ -63,13 +63,20 @@
     }
     &_about{
       padding-top: 5%;
+      font-weight: 600;
     }
     .btn{
       // float: inline-end;
       position: absolute;
       bottom: 11vh;
+      font-weight: 600;
       &_mui{
-        padding: 1.5vh 1vw;
+        padding: 1.5vh 0.7vw;
+        font-weight: 600;
+        font-size: 1rem;
+        // .MuiButtonBase-root {
+        //   border: 3px solid transparent;
+        // }
       }
     }
   }
@@ -114,7 +121,7 @@
 }
 .MuiButtonBase-root {
   &.MuiButton-root:hover{
-    border: 3px solid #1976d2;
+    border: 2px solid #1976d2;
     // font-size: 1rem;
   }
 }

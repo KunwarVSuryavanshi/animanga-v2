@@ -47,7 +47,7 @@ export const airingToday = (page = 1, perPage = 50) => {
           lastPage 
           hasNextPage
         } 
-        media(countryOfOrigin: JP, status: RELEASING, sort: TRENDING_DESC, type: ANIME){
+        media(countryOfOrigin: JP, status: RELEASING, sort: POPULARITY_DESC, type: ANIME, isAdult: false){
           id,
           idMal,
           type,

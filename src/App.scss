@@ -1,0 +1,14 @@
+.Outlet{
+  min-height: 100vh;
+  max-height: 100%;
+  width: 100vw;
+  max-width: 100%
+}
+
+@media (max-width: 600px){
+  .Outlet{
+    min-height: 60vh;
+    width: 100vw;
+    max-width: 100%
+  }
+}

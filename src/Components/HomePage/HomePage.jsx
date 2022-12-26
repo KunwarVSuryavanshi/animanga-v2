@@ -63,6 +63,7 @@ function HomePage() {
           title={"UPCOMING..."}
           data={upcomingAnime?.response?.Page?.media}
           icon={<AutoAwesomeIcon />}
+          trailer={true}  
         />
       </div>
       <div className="sliderr airing">

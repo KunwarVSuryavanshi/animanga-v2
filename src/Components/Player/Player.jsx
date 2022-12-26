@@ -11,6 +11,10 @@ import CellTowerIcon from "@mui/icons-material/CellTower";
 import { cleanHTML } from "../../Common/utils";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
+import Slider from "../Slider/Slider";
+import LightbulbIcon from "@mui/icons-material/Lightbulb";
+import StyleIcon from '@mui/icons-material/Style';
+import TheaterComedyIcon from "@mui/icons-material/TheaterComedy";
 
 function Player() {
   const { epInfo } = useParams();
@@ -24,17 +28,22 @@ function Player() {
   const formatter = Intl.NumberFormat("en", { notation: "compact" });
 
   const handleOpen = (item) => {
-    // console.log(item)
-    setLoading(true)
-    axios.get(`https://api.consumet.org/meta/anilist/watch/${item?.id}`).then(res => {setSources(res?.data?.sources); setLoading(false);});
-    setPlayEp(item)
+    console.log(item);
+    setLoading(true);
+    axios
+      .get(`https://api.consumet.org/meta/anilist/watch/${item?.id}`)
+      .then((res) => {
+        setSources(res?.data?.sources);
+        setLoading(false);
+      });
+    setPlayEp(item);
     setOpenModal(true);
-  }
+  };
 
   const handleClose = () => {
     setPlayEp(null);
     setOpenModal(false);
-  }
+  };
 
   useEffect(() => {
     if (epInfo) {
@@ -43,12 +52,14 @@ function Player() {
         .then((res) => setAnimeInfo(res.data));
       window.scroll({ top: 0, left: 0, behavior: "smooth" });
     }
+    return () => {
+      setAnimeInfo(null);
+    }
   }, [epInfo]);
 
   return (
     <div className="player_root">
-      {/* {console.log(animeInfo)} */}
-      {console.log('Loading', loading)}
+      {console.log(animeInfo)}
       {!animeInfo ? (
         <div style={{ position: "sticky", top: "8vh", height: "100vh" }}>
           <LinearProgress color="primary" />
@@ -125,8 +136,16 @@ function Player() {
           </div>
         </div>
       )}
+      <div className="character_slider">
+        <Slider
+          title={"Characters..."}
+          data={animeInfo?.characters}
+          icon={<TheaterComedyIcon />}
+          play={true}
+        />
+      </div>
       <div className="episodes">
-        <div className="title">Episodes</div>
+        <div className="title"><TableRowsIcon/> &nbsp;Episodes</div>
         <div className="ep-list">
           {animeInfo?.episodes?.map((item, key) => {
             return (
@@ -147,6 +166,23 @@ function Player() {
             );
           })}
         </div>
+      </div>
+      <div className="related_slider">
+        <Slider
+          title={"Related..."}
+          data={animeInfo?.relations}
+          icon={<StyleIcon />}
+          play={true}
+        />
+      </div>
+      <div className="recommended_slider">
+        <Slider
+          title={"Recommendations..."}
+          data={animeInfo?.recommendations}
+          // watch={true}
+          play={true}
+          icon={<LightbulbIcon />}
+        />
       </div>
       <Modal
         aria-labelledby="spring-modal-title"
@@ -176,7 +212,7 @@ function Player() {
             width="100%"
             height="100%"
             controls={true}
-            light={true} // replace with image tag
+            light={playEp?.image} // replace with image tag
             // playIcon={
             //   <div className="play-icon">
             //     <PlayCircleOutlineIcon />

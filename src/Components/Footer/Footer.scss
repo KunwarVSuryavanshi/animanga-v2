@@ -9,6 +9,7 @@
   padding-top: 10vh;
   background-color: variables.$black_grey;
   border-radius: 10px;
+  text-align: center;
   .title{
     font-size: 1.5rem;
     // div{
@@ -52,4 +53,26 @@
   100% {
     opacity: 0.5;
   }
+}
+
+@media (max-width: 600px){
+  .root_footer {
+      margin-top: 0vh;
+      padding-top: 5vh;
+      bottom: 0px;
+      position: absolute;
+      width: 100%;
+      .title {
+        font-size: .75rem;
+        padding-right: 2vw;
+        padding-left: 2vw;
+      }
+      .social {
+        padding-bottom: 3vw;
+        svg {
+          font-size: 1.2rem;
+          padding: 0.2vh 1vw;
+        }
+      }
+    }
 }
