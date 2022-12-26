@@ -39,6 +39,7 @@
       padding: 1vw;
       border: 3px solid transparent;
       border-radius: 10px;
+      // justify-content: space-between;
 
       &_image {
         width: 12vw;
@@ -82,6 +83,12 @@
         width: 12vw;
         text-align: center;
         cursor: pointer;
+      }
+      .related_tag{
+        margin-top: 1vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
   }

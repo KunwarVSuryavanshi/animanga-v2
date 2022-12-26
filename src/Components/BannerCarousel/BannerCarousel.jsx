@@ -5,12 +5,20 @@ import "./BannerCarousel.scss";
 import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import PlaylistPlayIcon from "@mui/icons-material/PlaylistPlay";
-import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
+// import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
+import StarIcon from "@mui/icons-material/Star";
+import { useNavigate } from "react-router-dom";
+
 function Carousel(props) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
-
+  const navigate = useNavigate();
+  
   let interval = useRef();
+
+  const handleWatchNow = (data) => {
+    navigate(`/watch/${data.id}`);
+  }
 
   useEffect(() => {
     let temp = index; // Closure beesh :P
@@ -43,7 +51,9 @@ function Carousel(props) {
               <div
                 className={`container_img`}
                 style={{
-                  backgroundImage: `url(${item?.bannerImage ?? item?.coverImage?.extraLarge})`,
+                  backgroundImage: `url(${
+                    item?.bannerImage ?? item?.coverImage?.extraLarge
+                  })`,
                 }}
               ></div>
             </div>
@@ -67,7 +77,7 @@ function Carousel(props) {
                 </div>
                 <div>
                   <span>
-                    <ThumbUpOffAltIcon />
+                    <StarIcon />
                   </span>
                   {item?.averageScore / 10}
                 </div>
@@ -82,8 +92,9 @@ function Carousel(props) {
                   variant="outlined"
                   className="btn_mui"
                   sx={{ border: "2px solid #1976d280" }}
+                  onClick={() => handleWatchNow(item)}
                 >
-                  <PlayCircleOutlineIcon /> Watch now
+                  <PlayCircleOutlineIcon/> &nbsp; Watch now
                 </Button>
               </div>
             </div>

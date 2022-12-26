@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import "./Slider.scss";
 import Skeleton from "@mui/material/Skeleton";
 import { Chip, ClickAwayListener, Popover, Popper } from "@mui/material";
-import { cleanHTML } from "../../Common/utils";
+import { cleanHTML, getRandomeColor } from "../../Common/utils";
 import StarIcon from "@mui/icons-material/Star";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import TableRowsIcon from "@mui/icons-material/TableRows";
@@ -21,7 +21,7 @@ function Slider(props) {
   const handleHover = (e, item) => {
     if (e.target.getAttribute("name") === "card") {
       e.target.parentElement.style.border = `3px solid ${
-        item?.coverImage?.color ?? "#4504f7"
+        item?.coverImage?.color ?? item?.color ?? getRandomeColor()
       }`;
       handleClose();
     }
@@ -34,8 +34,12 @@ function Slider(props) {
   };
 
   const handleClick = (event, data) => {
-    if (event.target.getAttribute("name") === "card" && props.watch)
+    if (event.target.getAttribute("name") === "card" && props.watch) {
       setAnchorElem({ target: event.target, data });
+    } else if (props.play) {
+      navigate(`/watch/${data.id}`);
+      event.target.parentElement.style.border = "3px solid transparent";
+    }
   };
 
   const handleClose = () => {
@@ -53,9 +57,8 @@ function Slider(props) {
   };
 
   const handleWatch = (data) => {
-    console.log("data--->", data);
-    navigate(`/watch/${data.id}`)
-  }
+    navigate(`/watch/${data.id}`);
+  };
 
   return (
     <div className="slider_root">
@@ -93,13 +96,22 @@ function Slider(props) {
                     onMouseLeave={(e) => handleMouseLeave(e)}
                     name="card"
                   >
-                    {props?.watch && (
-                      <div className="rating">{item?.averageScore / 10}</div>
+                    {(props?.watch || item?.rating) && (
+                      <div className="rating">
+                        {isNaN(item?.averageScore / 10)
+                          ? item?.rating / 10
+                          : item?.averageScore / 10}
+                      </div>
                     )}
                   </div>
                   <div title={`${item?.title?.romaji}`} className="card_title">
-                    {item?.title?.english ?? item?.title?.romaji}
+                    {item?.title?.english ?? item?.title?.romaji ?? item?.name?.full}
                   </div>
+                  {/* {props.related && item.relationType && (
+                    <div className="related_tag">
+                      <Chip label={item.relationType} color="primary" />
+                    </div>
+                  )} */}
                   {/* {props.watch && (
                   <div className="details">
                     <span>{item?.type}</span>
