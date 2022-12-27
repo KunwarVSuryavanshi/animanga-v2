@@ -32,7 +32,7 @@ function Carousel(props) {
           setIndex(0);
         }
       }
-    }, 6000);
+    }, 600000);
     return () => {
       clearInterval(interval.current);
     };

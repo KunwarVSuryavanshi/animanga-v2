@@ -125,3 +125,52 @@
     // font-size: 1rem;
   }
 }
+
+@media (max-width: 600px){
+  .container {
+      &_gradient {
+        height: 30vh;
+      }
+      &_img {
+        border-radius: 10px;
+        box-shadow: inset 50px 0px 80px -25px variables.$background_main;
+      }
+  
+      .description {
+        margin: 2vh 5vw;
+        width: 60%;
+        text-shadow: 3px 2px 2px black;
+  
+        &_title {
+          font-size: 1.25rem;
+          width: 125%;
+          // text-overflow: ellipsis;
+          word-wrap: break-word;
+          white-space: break-spaces;
+          display: -webkit-box;
+          text-overflow: hidden;
+          -webkit-line-clamp: 4;
+          -webkit-box-orient: vertical;
+        }
+  
+        &_epDetails {
+          display: none;
+        }
+  
+        &_about {
+          display: none;
+        }
+  
+        .btn {
+          bottom: 5vh;
+          font-weight: 600;
+  
+          &_mui {
+            padding: .95vh 1vw;
+            font-weight: 900;
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+}

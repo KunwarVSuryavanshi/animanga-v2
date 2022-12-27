@@ -11,7 +11,8 @@
   font-weight: 700;
   position: sticky;
   z-index: 10;
-
+  width: 100%;
+  
   &_logo,
   &_nav {
     margin-top: auto;
@@ -53,7 +54,7 @@
 
 @media (max-width: 600px){
   .header {
-      font-size: 4.2vw;
+      font-size: 5.2vw;
       top: 0;
       height: 14vw;
       font-weight: 700;
@@ -67,7 +68,7 @@
   
       &_nav {
         font-weight: 500;
-        font-size: 2.5vw;
+        font-size: 3.25vw;
   
         &-links {
           width: 15vw;

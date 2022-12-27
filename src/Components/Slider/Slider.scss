@@ -116,22 +116,6 @@
   }
 }
 
-//  Slider customisation below
-// .slider_container::-webkit-scrollbar {
-//   background-color: rgba(0, 0, 0, 0) !important;
-//   width: 0.5vw !important;
-//   height: 0.5vw;
-// }
-
-// .slider_container::-webkit-scrollbar-track {
-//   background-color: rgba(255, 255, 255, 0) !important;
-// }
-
-// .slider_container::-webkit-scrollbar-thumb {
-//   background-color: #737171c2 !important;
-//   border-radius: 16px !important;
-//   // border: 4px solid rgba(255, 255, 255, 0)
-// }
 .popover_root {
   border-radius: 10px;
   background-color: rgb(33 34 68);
@@ -209,4 +193,122 @@
 
 #card_popover{
   z-index: 5;
+}
+
+@media (max-width: 600px){
+  .slider {
+      &_root {
+        padding: 2vh 2vw;
+      }
+  
+      &_title {
+        font-size: 1.4rem;
+        margin-bottom: 3vh;
+        font-weight: 600;
+        margin-left: 1vw;
+
+        .MuiSvgIcon-root {
+          font-size: 6.4vw;
+          padding-top: 1vw;
+        }
+  
+        .scroll-btn {
+          .MuiSvgIcon-root {
+            font-size: 8.4vw;
+          }
+        }
+      }
+  
+      &_container {
+        padding-bottom: 1vh;
+  
+        .card {
+          padding: 1vw;
+          border: 3px solid transparent;
+          border-radius: 10px;  
+          &_image {
+            width: 35vw;
+            min-height: 30vh;
+            padding: 0.2vh;
+            .rating {
+              font-weight: 700;
+              font-size: 0.9rem;
+              left: 1.5%;
+              width: 8vw;
+              border-radius: 45%;
+            }
+          }
+  
+          &_title {
+            width: 35vw;
+          }
+  
+          .related_tag {
+            margin-top: 1vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+    }
+    .popover_root {
+      border-radius: 10px;
+      max-width: 42vw;
+      font-size: 1rem;
+      padding: 2.5vw;
+      div {
+        margin-bottom: 1.5vh;
+      }
+
+      .title {
+        display: none;
+      }
+
+      .rating {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        // flex-shrink: ;
+        margin-top: 4vw;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        flex: 1;
+        .rate,
+        .episodes {
+          span {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+      .description {
+        display: none;
+      }
+
+      .btn {
+        width: 100%;
+        height: 6vh;
+        margin-top: 1.5vw;
+
+        .MuiChip-root {
+          &.MuiChip-filled {
+            min-width: 15vw;
+            font-size: 0.95rem;
+            height: 5vh;
+            color: aliceblue;
+            background-color: rgb(36, 210, 210);
+          }
+        }
+
+        .MuiChip-root {
+          &.MuiChip-icon {
+            color: rgb(3, 137, 255);
+          }
+        }
+      }
+    }
 }

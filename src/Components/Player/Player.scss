@@ -319,3 +319,124 @@
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 600px){
+  .player_root {
+      .details {
+        max-width: 100vw;
+        min-height: 50vh;
+  
+        .cover-image {
+          height: 50vh;
+          width: 100vw;
+          .details_container {
+            flex-wrap: wrap;
+            align-items: flex-start;
+            height: 50vh;
+            padding: 3vw;
+            .banner {
+              &_image {
+                display: none;
+              }
+            }
+  
+            .about {
+              width: 100%;
+              flex-wrap: wrap;
+
+              .title {
+                flex-wrap: wrap;
+                font-size: 1.25rem;
+                font-weight: 600;
+                margin-bottom: 2vh;
+              }
+  
+              .anime_info {
+                flex-wrap: wrap;
+                gap: 1rem;
+                font-size: 1rem;
+                font-weight: 500;
+                margin-bottom: 2vh;
+              }
+            }
+            .genres {
+              flex-wrap: wrap;
+              margin-top: 2vh;
+              div{
+                margin-bottom: 2vh;
+              }
+              .MuiChip-root {
+                margin-right: 1vw;
+                background-color: #259763 !important;
+                font-size: 1rem;
+                padding: 2vh 0.5vw;
+              }
+            }
+            .description {
+              -webkit-line-clamp: 5;
+            }
+          }
+        }
+      }
+  
+      .episodes {
+        .title{
+          font-size: 1.25rem;
+          .MuiSvgIcon-root {
+              font-size: 1.5rem;
+            }
+        }
+        .ep-list {
+          max-height: 35vh;
+          display: flex;
+          flex-direction: row;
+          overflow: auto;
+          scroll-snap-type: x mandatory;
+          scroll-behavior: smooth;
+  
+          .ep_card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 1vh 0.5vw 2vh;
+  
+            .ep_image {
+              width: 40vw;
+              height: 20vh;
+              background-position: center;
+              background-size: contain;
+              background-repeat: no-repeat;
+  
+              .MuiSvgIcon-root {
+                font-size: 3rem;
+              }
+            }
+          }
+        }
+        .ep-list>* {
+          scroll-snap-align: start;
+        }
+      }
+  
+      .recommended_slider,
+      .related_slider,
+      .character_slider {
+        .slider_title {
+          .MuiSvgIcon-root {
+            font-size: 1.5rem;
+          }
+        }
+      }
+  
+      .character_slider {
+        .slider_container {
+          // height: 10vh;
+          .card_image {
+            cursor: default !important;
+            border-radius: 10%;
+          }
+        }
+      }
+    }
+}

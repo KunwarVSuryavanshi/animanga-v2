@@ -141,7 +141,6 @@ function Player() {
           title={"Characters..."}
           data={animeInfo?.characters}
           icon={<TheaterComedyIcon />}
-          play={true}
         />
       </div>
       <div className="episodes">
