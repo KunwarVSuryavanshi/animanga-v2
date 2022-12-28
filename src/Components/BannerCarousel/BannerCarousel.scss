@@ -64,6 +64,10 @@
     &_about{
       padding-top: 5%;
       font-weight: 600;
+      -webkit-line-clamp: 7;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
     .btn{
       // float: inline-end;
@@ -74,6 +78,7 @@
         padding: 1.5vh 0.7vw;
         font-weight: 600;
         font-size: 1rem;
+        z-index: 2;
         // .MuiButtonBase-root {
         //   border: 3px solid transparent;
         // }
@@ -94,6 +99,7 @@
   animation-fill-mode: forwards;
   position: absolute;
   left: 0;
+  z-index: 4;
 }
 
 @keyframes hideAnimation {
@@ -126,6 +132,11 @@
   }
 }
 
+@media (max-width: 800px){
+  .description_about{
+    -webkit-line-clamp: 4;
+  }
+}
 @media (max-width: 600px){
   .container {
       &_gradient {
@@ -169,6 +180,7 @@
             padding: .95vh 1vw;
             font-weight: 900;
             font-size: 0.8rem;
+            z-index: 1;
           }
         }
       }
