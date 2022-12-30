@@ -9,7 +9,7 @@ function NotFound() {
       <div className="root_nf">
         <div className="container">
           <div className="title">404 - Not Found &#127882;</div>
-          <div className="description">
+          <div className="desc">
             Hmmmm....The page you requested can not be found. <br/>
             Please check with the developer for more on this.
           </div>
