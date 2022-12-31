@@ -84,7 +84,7 @@ export const airingToday = (page = 1, perPage = 50) => {
     }`;
 };
 
-export const topAnime = (page= 1) => {
+export const topAnime = (page = 1) => {
   return `{ 
       Page(page: ${page}, perPage: 50) { 
         pageInfo { 
@@ -126,6 +126,47 @@ export const topAnime = (page= 1) => {
           genres,
           averageScore,
           status
+        }
+      }
+    }`;
+};
+
+export const searchAnime = (page = 1, perPage = 50, searchText) => {
+  // console.log(page, per)
+  return `query { 
+      Page(page: ${page}, perPage: ${perPage}) { 
+        pageInfo { 
+          total 
+          perPage 
+          currentPage 
+          lastPage 
+          hasNextPage
+        } 
+        media(search: "${searchText}", sort: SCORE_DESC, isAdult: false){
+          title {
+            romaji
+            english
+            native
+            userPreferred
+          },
+          startDate {
+            year
+            month
+            day
+          },
+          trailer {
+            id
+          },
+          coverImage {
+            extraLarge
+            large
+            medium
+            color
+          },
+          format,
+      		averageScore,
+      		id,
+      		idMal
         }
       }
     }`;
