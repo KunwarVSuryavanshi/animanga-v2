@@ -11,6 +11,7 @@ const initialState = {
 export const fetchtopAnime = createAsyncThunk(
   "topAnimes/fetchtopAnime",
   (page) => {
+    console.log(page)
     let url = "https://graphql.anilist.co";
     return axios
       .post(url, { query: topAnime(page) })

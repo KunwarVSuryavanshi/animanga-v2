@@ -17,22 +17,24 @@ function Carousel(props) {
   let interval = useRef();
 
   const handleWatchNow = (data) => {
+    console.log("data", data);
     navigate(`/watch/${data.id}`);
   }
 
   useEffect(() => {
     let temp = index; // Closure beesh :P
-    interval.current = setInterval(() => {
-      if (!paused) {
-        if (temp < props.data.length - 1) {
-          temp++;
-          setIndex((prev) => prev + 1);
-        } else {
-          temp = 0;
-          setIndex(0);
+    if (props?.data?.length)
+      interval.current = setInterval(() => {
+        if (!paused) {
+          if (temp < props.data.length - 1) {
+            temp++;
+            setIndex((prev) => prev + 1);
+          } else {
+            temp = 0;
+            setIndex(0);
+          }
         }
-      }
-    }, 6000);
+      }, 6000);
     return () => {
       clearInterval(interval.current);
     };
@@ -46,6 +48,7 @@ function Carousel(props) {
             className={`container ${key !== index ? "hide_img" : "show_img"}`}
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
+            key={key}
           >
             <div className="container_gradient">
               <div
@@ -83,9 +86,7 @@ function Carousel(props) {
                 </div>
               </div>
               <div className="description_about">
-                {item?.description?.length > 400
-                  ? cleanHTML(item.description.slice(0, 400)) + "..."
-                  : cleanHTML(item.description)}
+                {cleanHTML(item.description)}
               </div>
               <div className="btn">
                 <Button

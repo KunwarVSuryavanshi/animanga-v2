@@ -12,7 +12,7 @@ export const anilistNotAiringScheduleQuery = (date, page = 1, perPage = 50) => {
         } 
         media(countryOfOrigin: JP, status: NOT_YET_RELEASED, type: ANIME, startDate_greater: ${
           date.getFullYear() + "" + date.getMonth() + "" + date.getDate()
-        }){
+        }, sort: START_DATE){
           title {
             romaji
             english
@@ -84,7 +84,7 @@ export const airingToday = (page = 1, perPage = 50) => {
     }`;
 };
 
-export const topAnime = (page= 1) => {
+export const topAnime = (page = 1) => {
   return `{ 
       Page(page: ${page}, perPage: 50) { 
         pageInfo { 
@@ -126,6 +126,47 @@ export const topAnime = (page= 1) => {
           genres,
           averageScore,
           status
+        }
+      }
+    }`;
+};
+
+export const searchAnime = (page = 1, perPage = 50, searchText) => {
+  // console.log(page, per)
+  return `query { 
+      Page(page: ${page}, perPage: ${perPage}) { 
+        pageInfo { 
+          total 
+          perPage 
+          currentPage 
+          lastPage 
+          hasNextPage
+        } 
+        media(search: "${searchText}", sort: SCORE_DESC, isAdult: false){
+          title {
+            romaji
+            english
+            native
+            userPreferred
+          },
+          startDate {
+            year
+            month
+            day
+          },
+          trailer {
+            id
+          },
+          coverImage {
+            extraLarge
+            large
+            medium
+            color
+          },
+          format,
+      		averageScore,
+      		id,
+      		idMal
         }
       }
     }`;

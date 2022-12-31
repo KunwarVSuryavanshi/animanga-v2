@@ -10,6 +10,8 @@
   background-color: variables.$black_grey;
   border-radius: 10px;
   text-align: center;
+  // position: absolute;
+  width: 100%;
   .title{
     font-size: 1.5rem;
     // div{
@@ -60,10 +62,8 @@
       margin-top: 0vh;
       padding-top: 5vh;
       bottom: 0px;
-      position: absolute;
-      width: 100%;
       .title {
-        font-size: .75rem;
+        font-size: 1rem;
         padding-right: 2vw;
         padding-left: 2vw;
       }

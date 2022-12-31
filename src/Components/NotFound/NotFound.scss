@@ -1,0 +1,25 @@
+.root_nf{
+  .container{
+    background-image: url(../../assets/kaguya.jpg);
+    background-position: center;
+    max-width: 100vw;
+    height: 92vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .title{
+      font-size: 4rem;
+      padding-bottom: 4vh;
+    }
+    .desc{
+      font-size: 1.5rem;
+      width: 50%;
+      text-align: center;
+      padding-top: 5vh;
+      line-height: 4.5vh;
+    }
+  }
+}

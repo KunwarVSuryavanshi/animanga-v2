@@ -10,13 +10,15 @@ const Manga = lazy(() => import('./Components/Manga/Manga'))
 const LandingPage = lazy(() => import('./Components/LandingPage/LandingPage'))
 import { inject } from "@vercel/analytics";
 import Player from './Components/Player/Player'
+import NotFound from './Components/NotFound/NotFound'
+import SearchPage from './Components/SearchPage/SearchPage'
 
 inject();
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <div>Not Found</div>,
+    errorElement: <NotFound/>,
     children: [
       {
         path: "/",
@@ -32,7 +34,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/watch/:epInfo',
-        element: <Suspense><Player/></Suspense>
+        element: <Suspense fallback={null}><Player/></Suspense>
+      },
+      {
+        path: '/search/:id',
+        element: <Suspense fallbak={null}><SearchPage/></Suspense>
       }
     ],
   },
