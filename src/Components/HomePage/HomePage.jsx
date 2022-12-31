@@ -32,7 +32,7 @@ function HomePage() {
       dispatch(fetchUpcoming());
     }
     if (!topAnime.response && !topAnime?.hasError) {
-      dispatch(fetchtopAnime()).then();
+      dispatch(fetchtopAnime());
     }
   }, []);
 
@@ -63,7 +63,7 @@ function HomePage() {
           title={"UPCOMING..."}
           data={upcomingAnime?.response?.Page?.media}
           icon={<AutoAwesomeIcon />}
-          trailer={true}  
+          trailer={true}
         />
       </div>
       <div className="sliderr airing">

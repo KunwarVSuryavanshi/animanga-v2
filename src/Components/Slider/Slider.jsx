@@ -64,6 +64,7 @@ function Slider(props) {
     <div className="slider_root">
       <div className="slider_title">
         {props.icon} {props.title}
+        {/* <span className="">&#9432;</span> */}
         <span className="scroll-btn">
           <NavigateBeforeIcon onClick={handleLeftScroll} />
           <NavigateNextIcon onClick={handleRightScroll} />
@@ -82,6 +83,7 @@ function Slider(props) {
                   id={`card_${key}`}
                   className={`card`}
                   onClick={(e) => handleClick(e, item)}
+                  key={key}
                 >
                   <div
                     className="card_image"
@@ -105,7 +107,9 @@ function Slider(props) {
                     )}
                   </div>
                   <div title={`${item?.title?.romaji}`} className="card_title">
-                    {item?.title?.english ?? item?.title?.romaji ?? item?.name?.full}
+                    {item?.title?.english ??
+                      item?.title?.romaji ??
+                      item?.name?.full}
                   </div>
                   {/* {props.related && item.relationType && (
                     <div className="related_tag">
@@ -121,9 +125,9 @@ function Slider(props) {
                 </div>
               );
             })
-          : arr.map((item) => {
+          : arr.map((item, index) => {
               return (
-                <div className={`card`}>
+                <div className={`card`} key={index}>
                   <div className="card_image">
                     <Skeleton
                       variant="rectangular"

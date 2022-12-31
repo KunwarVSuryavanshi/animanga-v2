@@ -11,6 +11,11 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     margin-left: 1vw;
+    .info-icon {
+      // font-size: 0.1rem;
+      height: 1vw;
+      width: 1vw;
+    }
     .scroll-btn{
       float: right;
       .MuiSvgIcon-root{
@@ -206,7 +211,6 @@
         margin-bottom: 3vh;
         font-weight: 600;
         margin-left: 1vw;
-
         .MuiSvgIcon-root {
           font-size: 6.4vw;
           padding-top: 1vw;

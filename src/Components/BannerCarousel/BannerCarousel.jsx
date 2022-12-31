@@ -34,7 +34,7 @@ function Carousel(props) {
             setIndex(0);
           }
         }
-      }, 600000);
+      }, 6000);
     return () => {
       clearInterval(interval.current);
     };
@@ -48,6 +48,7 @@ function Carousel(props) {
             className={`container ${key !== index ? "hide_img" : "show_img"}`}
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
+            key={key}
           >
             <div className="container_gradient">
               <div
