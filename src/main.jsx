@@ -9,7 +9,7 @@ const HomePage = lazy(() => import('./Components/HomePage/HomePage'))
 const Manga = lazy(() => import('./Components/Manga/Manga'))
 const LandingPage = lazy(() => import('./Components/LandingPage/LandingPage'))
 import { inject } from "@vercel/analytics";
-import Player from './Components/Player/Player'
+import WatchPage from './Components/WatchPage/WatchPage'
 import NotFound from './Components/NotFound/NotFound'
 import SearchPage from './Components/SearchPage/SearchPage'
 
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/watch/:epInfo',
-        element: <Suspense fallback={null}><Player/></Suspense>
+        element: <Suspense fallback={null}><WatchPage/></Suspense>
       },
       {
         path: '/search/:id',

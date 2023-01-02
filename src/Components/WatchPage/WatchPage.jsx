@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import { useParams } from "react-router-dom";
-import "./Player.scss";
+import "./WatchPage.scss";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import TableRowsIcon from "@mui/icons-material/TableRows";
@@ -16,7 +16,7 @@ import LightbulbIcon from "@mui/icons-material/Lightbulb";
 import StyleIcon from '@mui/icons-material/Style';
 import TheaterComedyIcon from "@mui/icons-material/TheaterComedy";
 
-function Player() {
+function WatchPage() {
   const { epInfo } = useParams();
   const [animeInfo, setAnimeInfo] = useState(null);
   const [openModal, setOpenModal] = useState(false);
@@ -228,4 +228,4 @@ function Player() {
   );
 }
 
-export default Player;
+export default WatchPage;
