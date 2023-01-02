@@ -45,7 +45,7 @@ function SearchPage() {
         </div>
       ) : (
         <div className="no_result">
-          The term u searched didn't bring up anything
+          The term you searched, didn't bring up anything :/
         </div>
       )}
     </div>

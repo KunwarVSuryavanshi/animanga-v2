@@ -1,21 +1,47 @@
-.manga_root{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  .icon{
-    margin: 15vh;
-    svg{
-      font-size:10rem;
-    }
-  }
-  .text{
+.manga_root {
+  .cards {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    svg {
-      font-size: 3rem;
-      padding-left: 1vw;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    // gap: 2rem;
+    row-gap: 3rem;
+    // margin: 2vh 2vw;
+
+    .card_wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: 12vw;
+      height: 60vh;
+      // margin: 2vh 1vw;
+
+      // gap: 1rem;
+      .image {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        height: 80%;
+        border-radius: 10px;
+      }
+
+      .title {
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        overflow: hidden;
+        text-align: center;
+        width: 100%;
+      }
+
+      .type {
+        text-align: center;
+        width: 100%;
+        font-weight: 600;
+      }
     }
   }
 }

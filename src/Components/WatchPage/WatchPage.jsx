@@ -144,7 +144,7 @@ function WatchPage() {
         />
       </div>
       <div className="episodes">
-        <div className="title"><TableRowsIcon/> &nbsp;Episodes</div>
+        {animeInfo?.episodes?.length > 0 && <div className="title"><TableRowsIcon/> &nbsp;Episodes</div>}
         <div className="ep-list">
           {animeInfo?.episodes?.map((item, key) => {
             return (
@@ -172,6 +172,7 @@ function WatchPage() {
           data={animeInfo?.relations}
           icon={<StyleIcon />}
           play={true}
+          related={true}
         />
       </div>
       <div className="recommended_slider">

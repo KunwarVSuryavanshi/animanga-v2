@@ -207,6 +207,11 @@
       scroll-snap-align: start;
     }
   }
+  .related_type{
+    text-align: center;
+    font-weight: 600;
+    margin-top: 1vh;
+  }
   .recommended_slider, .related_slider, .character_slider{
     margin-top: 4vh;
     .slider_title{

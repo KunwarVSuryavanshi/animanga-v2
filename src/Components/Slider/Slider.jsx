@@ -80,7 +80,7 @@ function Slider(props) {
   return (
     <div className="slider_root">
       <div className="slider_title">
-        {props.icon} {props.title}
+        {props.data?.length > 0 && <>{props.icon} {props.title}</>}
         {/* <span className="">&#9432;</span> */}
         <span className="scroll-btn">
           <NavigateBeforeIcon onClick={handleLeftScroll} />
@@ -126,7 +126,8 @@ function Slider(props) {
                   <div title={`${item?.title?.romaji}`} className="card_title">
                     {item?.title?.english ??
                       item?.title?.romaji ??
-                      item?.name?.full}
+                      item?.name?.full}{" "}
+                    {/* {props.related && <span className="related_type">({item?.relationType})</span>} */}
                   </div>
                   {/* {props.trailer && (
                     <div className="startDate">
@@ -141,6 +142,9 @@ function Slider(props) {
                         : item?.startDate?.year}
                     </div>
                   )} */}
+                  {props.related && (
+                    <div className="related_type">({item?.relationType})</div>
+                  )}
                 </div>
               );
             })
