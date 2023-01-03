@@ -14,10 +14,13 @@
       flex-direction: column;
       align-items: flex-start;
       justify-content: flex-start;
-      width: 12vw;
-      height: 60vh;
-      // margin: 2vh 1vw;
-
+      width: 14vw;
+      height: 55vh;
+      margin: 0;
+      padding: 2vh 1vw 0 1vw;
+      border-radius: 10px;
+      border: 3px solid transparent;
+      cursor: pointer;
       // gap: 1rem;
       .image {
         background-size: cover;
@@ -35,6 +38,7 @@
         overflow: hidden;
         text-align: center;
         width: 100%;
+        margin-bottom: 0;
       }
 
       .type {

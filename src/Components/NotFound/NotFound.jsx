@@ -2,12 +2,12 @@ import React from 'react'
 import Header from '../Header/Header';
 import './NotFound.scss';
 
-function NotFound() {
+function NotFound(props) {
   return (
     <>
-      <Header/>
+      {!props?.noHeader && <Header />}
       <div className="root_nf">
-        <div className="container">
+        <div className="container" style={{height: props?.noHeader && '120vh' }}>
           <div className="title">404 - Not Found &#127882;</div>
           <div className="desc">
             Hmmmm....The page you requested can not be found. <br/>

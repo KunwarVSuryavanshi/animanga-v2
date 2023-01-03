@@ -44,7 +44,6 @@ function Slider(props) {
 
   const handleClick = (event, data) => {
     if (props.trailer) {
-      console.log(data);
       setOpenModal(true);
       setSources([
         {
