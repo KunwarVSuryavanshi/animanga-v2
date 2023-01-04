@@ -7,8 +7,7 @@ import { getRandomeColor } from "../../Common/utils";
 
 function Manga() {
   const dispatch = useDispatch();
-  const [page, setPage] = useState(1);
-  let timer;
+  const page = useRef(null);
   const { topManga } = useSelector((state) => {
     return {
       topManga: state.topManga,
@@ -19,8 +18,9 @@ function Manga() {
     rootMargin: "0px",
     threshold: 1.0,
   };
-  const observer = new IntersectionObserver(handleDebounce, options);
+  const observer = new IntersectionObserver((entries) => handleDebounce(entries), options);
   const mangaRef = useRef();
+  let timer;
 
   const handleCardHover = (item, e) => {
     e.stopPropagation();
@@ -44,29 +44,32 @@ function Manga() {
     }
   };
 
-  function handleDebounce() {
+  function handleDebounce(entries) {
     if (mangaRef?.current) {
-      console.log('Timer--->', timer)
       clearTimeout(timer);
-      timer = setTimeout(handleObserver, 5000);
+      timer = setTimeout(() => handleObserver(entries), 800);
     }
   }
 
-  function handleObserver(e, obs) {
-    // dispatch(fetchtopManga(page));
-    setPage(prev => prev + 1);
-    console.log("Handle observer called--------------\n Will \ncall \nAPI \nhere");
+  function handleObserver(e) {
+    if (e?.[0]?.isIntersecting && page.current < 5) {
+      dispatch(fetchtopManga(page.current));
+      page.current += 1;
+    }
   }
 
   useEffect(() => {
     if (!topManga?.response) {
-      dispatch(fetchtopManga(page));
+      dispatch(fetchtopManga());
+      page.current = 2;
     }
   }, []);
 
   useEffect(() => {
-    if (mangaRef.current) observer.observe(mangaRef?.current);
-  }, [mangaRef.current]);
+    if (topManga?.response?.Page?.media?.length === 50) {
+      observer.observe(mangaRef?.current);
+    }
+  }, [topManga?.response?.Page?.media]);
 
   return (
     <div className="manga_root">
@@ -108,8 +111,7 @@ function Manga() {
                   );
                 })}
               </div>
-              <div ref={mangaRef}>
-              </div>
+              <div className="loader"ref={mangaRef}></div>
             </>
           )}
         </>

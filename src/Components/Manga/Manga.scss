@@ -1,4 +1,6 @@
 .manga_root {
+  position: relative;
+
   .cards {
     display: flex;
     flex-direction: row;
@@ -21,6 +23,7 @@
       border-radius: 10px;
       border: 3px solid transparent;
       cursor: pointer;
+
       // gap: 1rem;
       .image {
         background-size: cover;
@@ -47,5 +50,12 @@
         font-weight: 600;
       }
     }
+  }
+
+  .loader {
+    height: 10vh;
+    background-color: red;
+    position: absolute;
+    bottom: 80vh;
   }
 }
