@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Manga.scss";
 import { fetchtopManga } from "../../app/feature/topManga.slice";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,6 +7,7 @@ import { getRandomeColor } from "../../Common/utils";
 
 function Manga() {
   const dispatch = useDispatch();
+  const [page, setPage] = useState(1);
   let timer;
   const { topManga } = useSelector((state) => {
     return {
@@ -45,23 +46,21 @@ function Manga() {
 
   function handleDebounce() {
     if (mangaRef?.current) {
-      if (!timer) {
-        timer = setTimeout(handleObserver, 5000);
-      }
-      else {
-        clearTimeout(timer);
-        timer = setTimeout(handleObserver, 5000);
-      }
+      console.log('Timer--->', timer)
+      clearTimeout(timer);
+      timer = setTimeout(handleObserver, 5000);
     }
   }
 
   function handleObserver(e, obs) {
+    // dispatch(fetchtopManga(page));
+    setPage(prev => prev + 1);
     console.log("Handle observer called--------------\n Will \ncall \nAPI \nhere");
   }
 
   useEffect(() => {
     if (!topManga?.response) {
-      dispatch(fetchtopManga());
+      dispatch(fetchtopManga(page));
     }
   }, []);
 
