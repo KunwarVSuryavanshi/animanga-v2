@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import { Link, useNavigate, useNavigation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Header.scss';
 import SearchIcon from "@mui/icons-material/Search";
 import { Button, TextField } from '@mui/material';
 import CloseIcon from "@mui/icons-material/Close";
+import { useEffect } from 'react';
 
 function Header() {
   const [toggleClass, setToggleClass] = useState(false);
   const [searchText, setSearchText] = useState('');
-
+  const location = useLocation();
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -24,6 +25,13 @@ function Header() {
     navigate(`search/${searchText}`)
   }
 
+  useEffect(() => {
+    if (location?.pathname) {
+      console.log(location)
+      window.scroll({top: 0, left: 0, behavior: 'smooth'})
+    }
+  }, [location?.pathname])
+  
   return (
     <div className="header">
       <div className="header_logo">

@@ -28,16 +28,22 @@ function Slider(props) {
   };
 
   const handleHover = (e, item) => {
-    if (e.target.getAttribute("name") === "card") {
+    if (e.target?.parentElement?.getAttribute("name") === "card") {
       e.target.parentElement.style.border = `3px solid ${
         item?.coverImage?.color ?? item?.color ?? getRandomeColor()
       }`;
       handleClose();
+    } else if (e.target.getAttribute("name") === "card") {
+      e.target.style.border = `3px solid ${
+        item?.coverImage?.color ?? item?.color ?? getRandomeColor()
+      }`;
     }
   };
 
   const handleMouseLeave = (e) => {
     if (e.target.getAttribute("name") === "card") {
+      e.target.style.border = "3px solid transparent";
+    } else if (e.target?.parentElement?.getAttribute("name") === "card") {
       e.target.parentElement.style.border = "3px solid transparent";
     }
   };
@@ -50,7 +56,10 @@ function Slider(props) {
           url: `https://www.youtube.com/watch?v=${data?.trailer?.id}`,
         },
       ]);
-    } else if (event.target.getAttribute("name") === "card" && props.watch) {
+    } else if (
+      event.target.parentElement.getAttribute("name") === "card" &&
+      props.watch
+    ) {
       setAnchorElem({ target: event.target, data });
     } else if (props.play) {
       navigate(`/watch/${data.id}`);
@@ -79,7 +88,11 @@ function Slider(props) {
   return (
     <div className="slider_root">
       <div className="slider_title">
-        {props.data?.length > 0 && <>{props.icon} {props.title}</>}
+        {props.data?.length > 0 && (
+          <>
+            {props.icon} {props.title}
+          </>
+        )}
         {/* <span className="">&#9432;</span> */}
         <span className="scroll-btn">
           <NavigateBeforeIcon onClick={handleLeftScroll} />
@@ -98,8 +111,11 @@ function Slider(props) {
                   ref={cardRef}
                   id={`card_${key}`}
                   className={`card`}
-                  onClick={(e) => handleClick(e, item)}
                   key={key}
+                  onClick={(e) => handleClick(e, item)}
+                  onMouseOver={(e) => handleHover(e, item)}
+                  onMouseLeave={(e) => handleMouseLeave(e)}
+                  name="card"
                 >
                   <div
                     className="card_image"
@@ -110,9 +126,6 @@ function Slider(props) {
                         item?.image
                       })`,
                     }}
-                    onMouseOver={(e) => handleHover(e, item)}
-                    onMouseLeave={(e) => handleMouseLeave(e)}
-                    name="card"
                   >
                     {(props?.watch || item?.rating) && (
                       <div className="rating">
@@ -122,7 +135,10 @@ function Slider(props) {
                       </div>
                     )}
                   </div>
-                  <div title={`${item?.title?.romaji}`} className="card_title">
+                  <div
+                    title={`${item?.title?.english ?? item?.title?.romaji}`}
+                    className="card_title"
+                  >
                     {item?.title?.english ??
                       item?.title?.romaji ??
                       item?.name?.full}{" "}
@@ -214,9 +230,12 @@ function Slider(props) {
                 {cleanHTML(anchorElem?.data?.description)}
               </div>
               <div className="genres">
-                Genres: {anchorElem?.data?.genres?.slice(0, 5)?.join(", ")}
+                <span>Genres:</span>{" "}
+                {anchorElem?.data?.genres?.slice(0, 5)?.join(", ")}
               </div>
-              <div className="status">Status: {anchorElem?.data?.status}</div>
+              <div className="status">
+                <span>Status:</span> {anchorElem?.data?.status}
+              </div>
               <div className="btn">
                 <Chip
                   icon={<PlayArrowIcon />}

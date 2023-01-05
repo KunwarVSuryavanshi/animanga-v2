@@ -26,8 +26,6 @@ function WatchPage() {
   const [sources, setSources] = useState(null);
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState(false);
-  const nextEpTimer = useRef(null);
-  const [render, setRender] = useState(null);
   // const [buffering, setLoading] = useState(true);
 
   const formatter = Intl.NumberFormat("en", { notation: "compact" });
@@ -247,7 +245,10 @@ function WatchPage() {
           </svg>
           <ReactPlayer
             className="react-player"
-            url={sources?.[0]?.url}
+            url={
+              sources?.filter((item) => item.quality === "1080p")?.[0]?.url ??
+              sources?.[0]?.url
+            }
             // file={}
             width="100%"
             height="100%"
@@ -261,6 +262,7 @@ function WatchPage() {
             playIcon={loading ? <></> : null}
             onBuffer={() => setLoading(true)}
             onBufferEnd={() => setLoading(false)}
+            volume={0.5}
             pip={false}
           ></ReactPlayer>
         </div>

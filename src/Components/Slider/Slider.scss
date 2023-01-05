@@ -11,7 +11,6 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     margin-left: 1vw;
-
     .info-icon {
       // font-size: 0.1rem;
       height: 1vw;
@@ -95,7 +94,7 @@
         overflow: hidden;
         width: 12vw;
         text-align: center;
-        cursor: deafult;
+        cursor: default;
       }
 
       // .related_tag {
@@ -177,6 +176,12 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
     padding-bottom: 0;
+  }
+
+  .genres, .status{
+    span{
+      font-weight: 700;
+    }
   }
 
   .btn {
