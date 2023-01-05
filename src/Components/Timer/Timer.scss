@@ -1,0 +1,35 @@
+.root_timer{
+  padding:2vh 2vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  .header{
+    font-size: 1.5rem;
+    display: inline-block;
+    width: max-content;
+    height: fit-content;
+    text-align: center;
+    margin-right: 2vw;
+  }
+  .timer{
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    font-weight: 600;
+    > span{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1.25vw;
+      border: 2px solid white;
+      border-radius: 10px;
+      margin: 2vh 2vw;
+    }
+  }
+}
