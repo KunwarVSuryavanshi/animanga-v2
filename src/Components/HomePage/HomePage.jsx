@@ -60,7 +60,7 @@ function HomePage() {
       </div>
       <div className="sliderr">
         <Slider
-          title={"UPCOMING..."}
+          title={"UPCOMING"}
           data={upcomingAnime?.response?.Page?.media}
           icon={<AutoAwesomeIcon />}
           trailer={true}
@@ -68,7 +68,7 @@ function HomePage() {
       </div>
       <div className="sliderr airing">
         <Slider
-          title={"AIRING..."}
+          title={"AIRING"}
           data={airingAnimeResponse?.response?.data?.Page?.media}
           watch={true}
           icon={<SatelliteAltIcon />}
@@ -76,7 +76,7 @@ function HomePage() {
       </div>
       <div className="sliderr top">
         <Slider
-          title={"ALL TIME TOP..."}
+          title={"ALL TIME TOP"}
           data={topAnime?.response?.Page?.media}
           watch={true}
           icon={<TrendingUpIcon />}

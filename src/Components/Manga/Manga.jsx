@@ -47,7 +47,7 @@ function Manga() {
   function handleDebounce(entries) {
     if (mangaRef?.current) {
       clearTimeout(timer);
-      timer = setTimeout(() => handleObserver(entries), 800);
+      timer = setTimeout(() => handleObserver(entries), 500);
     }
   }
 
