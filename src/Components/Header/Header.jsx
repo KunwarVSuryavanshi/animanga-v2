@@ -27,7 +27,6 @@ function Header() {
 
   useEffect(() => {
     if (location?.pathname) {
-      console.log(location)
       window.scroll({top: 0, left: 0, behavior: 'smooth'})
     }
   }, [location?.pathname])
