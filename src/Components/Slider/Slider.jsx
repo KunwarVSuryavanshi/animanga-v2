@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import "./Slider.scss";
 import Skeleton from "@mui/material/Skeleton";
-import { Chip, ClickAwayListener, Popover, Popper } from "@mui/material";
+import { Chip, ClickAwayListener, Popper } from "@mui/material";
 import { cleanHTML, getRandomeColor } from "../../Common/utils";
 import StarIcon from "@mui/icons-material/Star";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
@@ -9,14 +9,23 @@ import TableRowsIcon from "@mui/icons-material/TableRows";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import { useNavigate } from "react-router-dom";
+import CustomPlayer from "../CustomPlayer/CustomPlayer";
 
 function Slider(props) {
   const [anchorElem, setAnchorElem] = useState(null);
+  const [openModal, setOpenModal] = useState(false);
+  const [sources, setSources] = useState([]);
+  const [loading, setLoading] = useState(true);
   const slideRef = useRef();
   const cardRef = useRef();
   const arr = new Array(7).fill(1);
   const open = Boolean(anchorElem?.target);
   const navigate = useNavigate();
+
+  const handleCloseModal = () => {
+    setLoading(true);
+    setOpenModal(false);
+  };
 
   const handleHover = (e, item) => {
     if (e.target.getAttribute("name") === "card") {
@@ -34,7 +43,14 @@ function Slider(props) {
   };
 
   const handleClick = (event, data) => {
-    if (event.target.getAttribute("name") === "card" && props.watch) {
+    if (props.trailer) {
+      setOpenModal(true);
+      setSources([
+        {
+          url: `https://www.youtube.com/watch?v=${data?.trailer?.id}`,
+        },
+      ]);
+    } else if (event.target.getAttribute("name") === "card" && props.watch) {
       setAnchorElem({ target: event.target, data });
     } else if (props.play) {
       navigate(`/watch/${data.id}`);
@@ -63,7 +79,7 @@ function Slider(props) {
   return (
     <div className="slider_root">
       <div className="slider_title">
-        {props.icon} {props.title}
+        {props.data?.length > 0 && <>{props.icon} {props.title}</>}
         {/* <span className="">&#9432;</span> */}
         <span className="scroll-btn">
           <NavigateBeforeIcon onClick={handleLeftScroll} />
@@ -109,19 +125,25 @@ function Slider(props) {
                   <div title={`${item?.title?.romaji}`} className="card_title">
                     {item?.title?.english ??
                       item?.title?.romaji ??
-                      item?.name?.full}
+                      item?.name?.full}{" "}
+                    {/* {props.related && <span className="related_type">({item?.relationType})</span>} */}
                   </div>
-                  {/* {props.related && item.relationType && (
-                    <div className="related_tag">
-                      <Chip label={item.relationType} color="primary" />
+                  {/* {props.trailer && (
+                    <div className="startDate">
+                      {item?.startDate?.day
+                        ? (item?.startDate?.day +
+                          "/" +
+                          item?.startDate?.month +
+                          "/" +
+                          item?.startDate?.year)
+                        : item?.startDate?.month
+                        ? (item?.startDate?.month + "/" + item?.startDate?.year)
+                        : item?.startDate?.year}
                     </div>
                   )} */}
-                  {/* {props.watch && (
-                  <div className="details">
-                    <span>{item?.type}</span>
-                    <span style={{float: 'right'}}>{item?.totalEpisodes} Episodes</span>
-                  </div>
-                )} */}
+                  {props.related && (
+                    <div className="related_type">({item?.relationType})</div>
+                  )}
                 </div>
               );
             })
@@ -162,6 +184,7 @@ function Slider(props) {
               },
             },
           ]}
+          // draggable
         >
           <ClickAwayListener onClickAway={handleClose}>
             <div
@@ -204,6 +227,16 @@ function Slider(props) {
             </div>
           </ClickAwayListener>
         </Popper>
+        {openModal && (
+          <CustomPlayer
+            handleClose={handleCloseModal}
+            openModal={true}
+            sources={sources}
+            pip={true}
+            loading={loading}
+            setLoading={setLoading}
+          />
+        )}
       </div>
     </div>
   );

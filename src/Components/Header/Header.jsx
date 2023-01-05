@@ -51,7 +51,8 @@ function Header() {
           <TextField
             value={searchText}
             onChange={handleChange}
-            placeholder='Search Anime/Manga'
+            placeholder="Search Anime/Manga"
+            focused
           />
           <Button
             variant="contained"

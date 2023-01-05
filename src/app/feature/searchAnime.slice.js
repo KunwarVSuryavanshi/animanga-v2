@@ -27,7 +27,6 @@ const searchSlice = createSlice({
   initialState,
   reducers: {
     clearSearchData(state) {
-      console.log("clearing store search")
       state.loading= true,
       state.list= null,
       state.error= false,

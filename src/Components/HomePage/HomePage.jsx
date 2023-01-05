@@ -52,7 +52,7 @@ function HomePage() {
               return <Carousel item={item} key={key} />;
             })} */}
             <BannerCarousel
-              data={airingAnimeResponse?.response?.data?.Page?.media}
+              data={airingAnimeResponse?.response?.data?.Page?.media?.slice(0, 20)}
             />
             {/* <div className="carousel_container_right-btn"></div> */}
           </div>
