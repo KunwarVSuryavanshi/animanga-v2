@@ -28,25 +28,25 @@ function Timer({ time }) {
   return (
     <div className="root_timer">
       <span className="header">Next<br/>Episode</span>
-      {/* <AccessAlarmsIcon /> */}:
+      {/* <AccessAlarmsIcon /> */}
       <span className="timer">
         <span className="day">
-          <span>{timeLeft?.d}</span>
+          <span>{timeLeft?.d ?? '0'}</span>
           <span>DAYS</span>
         </span>
         :
         <span className="hour">
-          <span>{timeLeft?.h}</span>
+          <span>{timeLeft?.h ?? '0'}</span>
           <span>HOURS</span>
         </span>
         :
         <span className="min">
-          <span>{timeLeft?.m}</span>
+          <span>{timeLeft?.m ?? '0'}</span>
           <span>MINS</span>
         </span>
         :
         <span className="second">
-          <span>{timeLeft?.s}</span>
+          <span>{timeLeft?.s ?? '0'}</span>
           <span>SECONDS</span>
           </span>
       </span>
