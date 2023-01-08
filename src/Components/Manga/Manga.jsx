@@ -4,9 +4,11 @@ import { fetchtopManga } from "../../app/feature/topManga.slice";
 import { useDispatch, useSelector } from "react-redux";
 import { LinearProgress } from "@mui/material";
 import { getRandomeColor } from "../../Common/utils";
+import { useNavigate } from "react-router-dom";
 
 function Manga() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const page = useRef(null);
   const { topManga } = useSelector((state) => {
     return {
@@ -58,6 +60,11 @@ function Manga() {
     }
   }
 
+  const handleClick = (id) => {
+    console.log('Id', id)
+    navigate(`${id}`);
+  }
+
   useEffect(() => {
     if (!topManga?.response) {
       dispatch(fetchtopManga());
@@ -93,6 +100,7 @@ function Manga() {
                       className="card_wrap"
                       onMouseOver={(e) => handleCardHover(item, e)}
                       onMouseLeave={(e) => handleMouseLeave(e)}
+                      onClick={() => handleClick(item?.id)}
                     >
                       <div
                         name="child"

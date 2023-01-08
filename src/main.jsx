@@ -12,6 +12,10 @@ import { inject } from "@vercel/analytics";
 import WatchPage from "./Components/WatchPage/WatchPage";
 import NotFound from "./Components/NotFound/NotFound";
 import SearchPage from "./Components/SearchPage/SearchPage";
+import MangaInfo from "./Components/MangaInfo/MangaInfo";
+import AboutManga from "./Components/MangaInfo/AboutManga/AboutManga";
+import RelatedManga from "./Components/MangaInfo/RelatedManga/RelatedManga";
+import Reader from "./Components/MangaInfo/Reader/Reader";
 
 inject();
 const router = createBrowserRouter([
@@ -21,7 +25,7 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       {
-        path: "/",
+        path: "",
         element: (
           <Suspense fallback={null}>
             <LandingPage />
@@ -29,7 +33,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/anime",
+        path: "anime",
         element: (
           <Suspense fallback={null}>
             <HomePage />
@@ -37,7 +41,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/manga",
+        path: "manga",
         element: (
           <Suspense fallback={null}>
             <Manga />
@@ -45,7 +49,41 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/watch/:epInfo",
+        path: "manga/:id",
+        element: (
+          <Suspense fallback={null}>
+            <MangaInfo />
+          </Suspense>
+        ),
+        children: [
+          {
+            path: "",
+            element: (
+              <Suspense fallback={null}>
+                <AboutManga />
+              </Suspense>
+            ),
+          },
+          {
+            path: "chapter",
+            element: (
+              <Suspense fallback={null}>
+                <Reader />
+              </Suspense>
+            ),
+          },
+          {
+            path: "related",
+            element: (
+              <Suspense fallback={null}>
+                <RelatedManga />
+              </Suspense>
+            ),
+          },
+        ],
+      },
+      {
+        path: "watch/:epInfo",
         element: (
           <Suspense fallback={null}>
             <WatchPage />
