@@ -10,7 +10,6 @@ function AboutManga(props) {
     <div>
       {console.log("ABOUT", meta.state.mangaDetails)}
       AboutManga
-      
       {meta?.state?.mangaDetails?.characters && (
         <div className="characters">
           <Slider
