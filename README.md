@@ -1,4 +1,4 @@
-<h1 align="center">Animanga<h1/>
+<h1 align="center">Animanga &nbsp;&nbsp; | &nbsp;&nbsp; アニマンガ<h1/>
 <p align="center"> 
   <h3 align="center"> Animanga is an Ad free responsive web application where you can stream Anime and read Manga.</h3>
 <p/>
