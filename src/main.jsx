@@ -14,7 +14,6 @@ import NotFound from "./Components/NotFound/NotFound";
 import SearchPage from "./Components/SearchPage/SearchPage";
 import MangaInfo from "./Components/MangaInfo/MangaInfo";
 import AboutManga from "./Components/MangaInfo/AboutManga/AboutManga";
-import RelatedManga from "./Components/MangaInfo/RelatedManga/RelatedManga";
 import Reader from "./Components/MangaInfo/Reader/Reader";
 
 inject();
@@ -71,15 +70,7 @@ const router = createBrowserRouter([
                 <Reader />
               </Suspense>
             ),
-          },
-          {
-            path: "related",
-            element: (
-              <Suspense fallback={null}>
-                <RelatedManga />
-              </Suspense>
-            ),
-          },
+          }
         ],
       },
       {

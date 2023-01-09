@@ -5,21 +5,103 @@
   -webkit-box-reflect: below 0px linear-gradient(transparent, rgba(94, 92, 92, 0.152));
   // background-position: center;
   // background-repeat: no-repeat;
+  // background-size: cover !important;
 }
 .navbar{
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   align-items: center;
-  justify-content: center;
-  margin-top: 2vh;
+  justify-content: flex-start;
+  margin: 2vh 0 2vh 2vw;
   &_item{
     font-weight: 600;
     cursor: pointer;
     a{
       text-decoration: none;
       color: white;
+    }
+  }
+}
+
+//About Manga Tab
+
+.about_manga_container{
+  margin-top: 4vh;
+  margin-left: 2vw;
+  .info{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    .cover{
+      min-height: 50vh;
+      min-width: 15vw;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 10px;
+    }
+    .detail{
+      max-width: 70vw;
+      // margin-left: 2vw;
+    }
+  }
+  .title{
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgb(10, 244, 166);
+    margin-bottom: 3vh;
+    line-height: 2.5rem;
+  }
+  .description{
+    margin-top: 2vh;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-right: 4vw;
+  }
+  .genres{
+    margin: 2vh 0;
+    div{
+      margin: 0 1vw;
+    }
+    div:nth-child(1){
+      margin-left: 0;
+    }
+  }
+  .wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 7rem;
+    .rating, .popularity{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: 1rem;
+      font-weight: 600;
+      > span{
+        padding-right: 1vw;
+        svg, span{
+          display: flex;
+        }
+      }
+      .MuiRating-icon{
+        color: rgb(231, 183, 13);
+      }
+    }
+  }
+  .status{
+    font-weight: 800;
+    font-size: 1.25rem;
+  }
+  .characters{
+    margin-left: -2vw;
+    .slider_title{
+      margin-left: 0;
     }
   }
 }

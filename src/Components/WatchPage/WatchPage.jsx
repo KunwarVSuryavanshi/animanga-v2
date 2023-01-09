@@ -209,7 +209,7 @@ function WatchPage() {
           {animeInfo?.recommendations?.length ? (
             <div className="recommended_slider">
               <Slider
-                title={"Recommendations..."}
+                title={"Recommendations"}
                 data={animeInfo?.recommendations}
                 // watch={true}
                 play={true}
