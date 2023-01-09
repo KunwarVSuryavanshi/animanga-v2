@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import './Header.scss';
 import SearchIcon from "@mui/icons-material/Search";
 import { Button, TextField } from '@mui/material';
@@ -43,14 +43,14 @@ function Header() {
         style={{ display: toggleClass ? `none` : "" }}
       >
         <div className="header_nav-links">
-          <Link to={"anime"} className="link">
+          <NavLink to={"anime"} className="link">
             Anime
-          </Link>
+          </NavLink>
         </div>
         <div className="header_nav-links">
-          <Link to={"manga"} className="link">
+          <NavLink end={true} to={"manga"} className="link">
             Manga
-          </Link>
+          </NavLink>
         </div>
       </div>
       <div className="search">
