@@ -2,7 +2,7 @@ import { LinearProgress } from '@mui/material';
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useEffect } from 'react'
-import { Link, Outlet, useParams } from 'react-router-dom'
+import { NavLink, Outlet, useParams } from 'react-router-dom'
 import './MangaInfo.scss';
 
 function MangaInfo() {
@@ -32,12 +32,12 @@ function MangaInfo() {
           ></div>
           <div className="navbar">
             <div className="navbar_item about">
-              <Link to={""}>
+              <NavLink to={""} end={true}>
                 About
-              </Link>
+              </NavLink>
             </div>
             <div className="navbar_item about">
-              <Link to={"chapter"}>Chapters</Link>
+              <NavLink to={"chapter"}>Chapters</NavLink>
             </div>
           </div>
           <div id="Manga_Outlet" className="manga-outlet">

@@ -1,4 +1,4 @@
-.manga_banner{
+.manga_banner {
   min-height: 50vh;
   max-height: 60vh;
   // width:;
@@ -7,7 +7,8 @@
   // background-repeat: no-repeat;
   // background-size: cover !important;
 }
-.navbar{
+
+.navbar {
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -15,29 +16,58 @@
   align-items: center;
   justify-content: flex-start;
   margin: 2vh 0 2vh 2vw;
-  &_item{
+
+  &_item {
     font-weight: 600;
     cursor: pointer;
-    a{
+
+    a::after {
+      content: '';
+      // width: 100%;
+      height: 3px;
+      border-radius: 5px;
+      background-color: #00a6ff;
+      position: absolute;
+      // bottom: 0;
+      top: 100%;
+      left: 50%;
+      right: 50%;
+      transition: all 0.25s ease-in-out;
+    }
+
+    a:hover::after {
+      // width: 100%;
+      right: 0%;
+      left: 0%;
+    }
+
+    a {
       text-decoration: none;
       color: white;
+      position: relative;
+      &.active::after {
+        right: 0%;
+        left: 0%;
+      }
     }
   }
 }
 
 //About Manga Tab
 
-.about_manga_container{
+.about_manga_container {
   margin-top: 4vh;
   margin-left: 2vw;
-  .info{
+
+  .info {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
     gap: 3rem;
-    .cover{
+
+    .cover {
       min-height: 50vh;
       min-width: 15vw;
       background-position: center;
@@ -45,62 +75,78 @@
       background-repeat: no-repeat;
       border-radius: 10px;
     }
-    .detail{
+
+    .detail {
       max-width: 70vw;
       // margin-left: 2vw;
     }
   }
-  .title{
+
+  .title {
     font-size: 2rem;
     font-weight: 700;
     color: rgb(10, 244, 166);
     margin-bottom: 3vh;
     line-height: 2.5rem;
   }
-  .description{
+
+  .description {
     margin-top: 2vh;
     font-size: 1rem;
     font-weight: 500;
     margin-right: 4vw;
   }
-  .genres{
+
+  .genres {
     margin: 2vh 0;
-    div{
+
+    div {
       margin: 0 1vw;
     }
-    div:nth-child(1){
+
+    div:nth-child(1) {
       margin-left: 0;
     }
   }
-  .wrapper{
+
+  .wrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 7rem;
-    .rating, .popularity{
+
+    .rating,
+    .popularity {
       display: flex;
       flex-direction: row;
       align-items: center;
       font-size: 1rem;
       font-weight: 600;
-      > span{
+
+      >span {
         padding-right: 1vw;
-        svg, span{
+
+        svg,
+        span {
           display: flex;
         }
       }
-      .MuiRating-icon{
+
+      .MuiRating-icon {
         color: rgb(231, 183, 13);
       }
     }
   }
-  .status{
+
+  .status {
     font-weight: 800;
     font-size: 1.25rem;
   }
-  .characters{
+
+  .characters {
     margin-left: -2vw;
-    .slider_title{
+
+    .slider_title {
       margin-left: 0;
     }
   }
