@@ -66,7 +66,7 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 3rem;
-
+    margin-bottom: 6vh;
     .cover {
       min-height: 50vh;
       min-width: 15vw;
@@ -101,7 +101,7 @@
     margin: 2vh 0;
 
     div {
-      margin: 0 1vw;
+      margin: 0 0.75vw;
     }
 
     div:nth-child(1) {
