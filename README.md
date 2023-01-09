@@ -1,11 +1,14 @@
 <h1 align="center">Animanga<h1/>
-
-<p align="center"> <h3> Animanga is an Ad free responsive web application where you can stream Anime and read Manga.</h3><p/>
+<p align="center"> 
+  <h3 align="center"> Animanga is an Ad free responsive web application where you can stream Anime and read Manga.</h3>
+<p/>
 
 <br />
 
 # Screenshots
+
 ## Desktop
+
 <br/>
 
 ![banner](./blob/banner.png)
@@ -31,12 +34,12 @@
 <tr>
   <td>
 
-  ![mobile](./blob/localhost_6969_(Pixel%205).png)
+![mobile](<./blob/localhost_6969_(Pixel%205).png>)
 
   </td>
   <td>
 
-  ![mobile](./blob/related.png)
+![mobile](./blob/related.png)
 
   </td>
 </tr>
@@ -44,10 +47,8 @@
 
 <br />
 
-
-
 # Credit
 
-`Anilist` - For fetching anime related information.
+`Anilist` - For anime related information.
 
-`Consumet` - For getting streaming link, do check their repo and give it a star. &#128521;
+`Consumet` - For streaming link + Info. (Do check their repo and give it a star. &#128521;)
