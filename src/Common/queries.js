@@ -142,7 +142,7 @@ export const searchAnime = (page = 1, perPage = 50, searchText) => {
           lastPage 
           hasNextPage
         } 
-        media(search: "${searchText}", sort: SCORE_DESC, isAdult: false){
+        media(search: "${searchText}", sort: POPULARITY_DESC, isAdult: false){
           title {
             romaji
             english

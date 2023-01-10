@@ -1,3 +1,4 @@
+import { LinearProgress } from "@mui/material";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -15,9 +16,9 @@ function SearchPage() {
     if (param?.id) {
       dispatch(searchAnimes({ page: 1, perPage: 50, text: param.id }));
     }
-    return (() => {
-      dispatch(clearSearchData())
-    })
+    return () => {
+      dispatch(clearSearchData());
+    };
   }, [param?.id]);
 
   return (
@@ -42,6 +43,10 @@ function SearchPage() {
               </div>
             );
           })}
+        </div>
+      ) : searchResult?.loading ? (
+        <div style={{ position: "sticky", top: "8vh", height: "100vh" }}>
+          <LinearProgress color="primary" />
         </div>
       ) : (
         <div className="no_result">
