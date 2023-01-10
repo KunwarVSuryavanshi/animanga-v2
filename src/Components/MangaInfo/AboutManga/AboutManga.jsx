@@ -8,9 +8,8 @@ import TrendingUp from "@mui/icons-material/TrendingUp";
 import LightbulbIcon from "@mui/icons-material/Lightbulb";
 import StyleIcon from "@mui/icons-material/Style";
 
-function AboutManga(props) {
+function AboutManga() {
   const meta = useOutletContext();
-  const [metaData, setMetaData] = useState(null);
   const formatter = Intl.NumberFormat("en", {
     notation: "compact",
     compactDisplay: "short",
@@ -18,7 +17,7 @@ function AboutManga(props) {
 
   return (
     <div className="about_manga_container">
-      {console.log("render", props, meta)}
+      {/* {console.log("render", meta)} */}
       <div className="info">
         <div
           className="cover"

@@ -1,6 +1,6 @@
 <h1 align="center">Animanga &nbsp;&nbsp; | &nbsp;&nbsp; アニマンガ<h1/>
 <p align="center"> 
-  <h3 align="center"> Animanga is an Ad free responsive web application where you can stream Anime and read Manga.</h3>
+  <h3 align="center"> Animanga is an Ad free, responsive web application where you can stream Anime and read Manga.</h3>
 <p/>
 
 <br />
@@ -12,6 +12,7 @@
 <br/>
 
 ![banner](./blob/banner.png)
+
 <br/>
 
 ![airing](./blob/airing.png)
@@ -26,7 +27,7 @@
 
 <br/>
 
-## Mobile
+## Mobile (WIP)
 
 <br/>
 

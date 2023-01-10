@@ -1,24 +1,25 @@
-import { LinearProgress } from '@mui/material';
-import axios from 'axios'
-import React, { useState } from 'react'
-import { useEffect } from 'react'
-import { NavLink, Outlet, useParams } from 'react-router-dom'
-import './MangaInfo.scss';
+import { LinearProgress } from "@mui/material";
+import axios from "axios";
+import React, { useState } from "react";
+import { useEffect } from "react";
+import { NavLink, Outlet, useParams } from "react-router-dom";
+import "./MangaInfo.scss";
 
 function MangaInfo() {
-  const param = useParams()
+  const param = useParams();
   const [mangaDetails, setMangaDetails] = useState(null);
-
+  const [error, setError] = useState(null);
   useEffect(() => {
     if (param?.id && !mangaDetails) {
       axios
         .get(
-          `https://api.consumet.org/meta/anilist-manga/info/${param.id}?provider=mangahere`
+          `https://api.consumet.org/meta/anilist-manga/info/${param.id}?provider=mangakakalot`
         )
-        .then((res) => setMangaDetails(res.data));
+        .then((res) => setMangaDetails(res.data))
+        .catch((err) => setError(err));
     }
-  }, [param?.id])
-  
+  }, [param?.id]);
+
   return (
     <>
       {mangaDetails ? (
@@ -41,9 +42,11 @@ function MangaInfo() {
             </div>
           </div>
           <div id="Manga_Outlet" className="manga-outlet">
-            <Outlet context={{mangaDetails}} />
+            <Outlet context={{ mangaDetails }} />
           </div>
         </div>
+      ) : error ? (
+        <div className="error"></div>
       ) : (
         <div style={{ position: "sticky", top: "8vh", height: "100vh" }}>
           <LinearProgress color="primary" />
@@ -53,4 +56,4 @@ function MangaInfo() {
   );
 }
 
-export default MangaInfo
+export default MangaInfo;
