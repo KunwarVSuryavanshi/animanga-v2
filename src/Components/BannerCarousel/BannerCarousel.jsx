@@ -17,7 +17,6 @@ function Carousel(props) {
   let interval = useRef();
 
   const handleWatchNow = (data) => {
-    console.log("data", data);
     navigate(`/watch/${data.id}`);
   }
 

@@ -31,7 +31,6 @@ function WatchPage() {
   const formatter = Intl.NumberFormat("en", { notation: "compact" });
 
   const handleOpen = (item) => {
-    console.log(item);
     setLoading(true);
     axios
       .get(`https://api.consumet.org/meta/anilist/watch/${item?.id}`)

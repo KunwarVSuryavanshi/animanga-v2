@@ -83,7 +83,12 @@ export const airingToday = (page = 1, perPage = 50) => {
     }`;
 };
 
-export const topAnime = (page = 1, type = 'ANIME') => {
+export const topAnime = (
+  page = 1,
+  type = "ANIME",
+  status = "FINISHED",
+  sort = "SCORE_DESC"
+) => {
   return `{ 
       Page(page: ${page}, perPage: 50) { 
         pageInfo { 
@@ -93,7 +98,7 @@ export const topAnime = (page = 1, type = 'ANIME') => {
           lastPage 
           hasNextPage
         } 
-        media(countryOfOrigin: JP, status: FINISHED, sort: SCORE_DESC, type: ${type}){
+        media(countryOfOrigin: JP, status: ${status}, sort: ${sort}, type: ${type}){
           id,
           idMal,
           type,

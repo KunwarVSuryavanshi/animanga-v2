@@ -116,3 +116,32 @@
     opacity: 1;
   }
 }
+
+@media (max-width: 600px) {
+  .cards {
+    row-gap: 1rem;
+    margin: 8vh 2vw;
+
+    .card_wrap {
+      width: 43vw;
+      height: 50vh;
+      .title{
+        margin-bottom: 0;
+        font-size: 0.9rem;
+      }
+      .type{
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .search-bar {
+    padding: 1vh 4vw;
+    .MuiButtonBase-root{
+      &.MuiButton-root{
+        font-size: 0.65rem;
+      }
+    } 
+  }
+
+}

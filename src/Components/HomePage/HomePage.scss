@@ -34,3 +34,10 @@
     z-index: 2;
   }
 }
+@media (max-width: 600px){
+  .sliderr{
+    &.top{
+      padding-bottom: 0vh !important;
+    }
+  } 
+}

@@ -24,7 +24,6 @@ function SearchPage() {
   };
 
   const handleRoute = (e, item) => {
-    console.log(item)
     if (item.type === 'MANGA') {
       navigate(`/manga/${item.id}`)
     } else {
