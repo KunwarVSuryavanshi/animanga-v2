@@ -58,7 +58,6 @@ function Slider(props) {
         },
       ]);
     } else if (props.redirect) {  // Redirect to manga or anime page
-      console.log("Data--->", data);
       if (data.type === "MANGA") {
         navigate(`/manga/${data.id}`);
       } else {

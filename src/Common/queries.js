@@ -30,7 +30,6 @@ export const anilistNotAiringScheduleQuery = (date, page = 1, perPage = 50) => {
           coverImage {
             extraLarge
             large
-            medium
             color
           },
         }
@@ -160,13 +159,13 @@ export const searchAnime = (page = 1, perPage = 50, searchText) => {
           coverImage {
             extraLarge
             large
-            medium
             color
           },
           format,
       		averageScore,
       		id,
-      		idMal
+      		idMal,
+          type
         }
       }
     }`;
