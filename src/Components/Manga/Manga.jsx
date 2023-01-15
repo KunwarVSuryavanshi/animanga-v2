@@ -61,7 +61,6 @@ function Manga() {
   }
 
   const handleClick = (id) => {
-    console.log('Id', id)
     navigate(`${id}`);
   }
 

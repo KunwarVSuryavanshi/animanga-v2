@@ -199,7 +199,7 @@ function WatchPage() {
                 title={"Related"}
                 data={animeInfo?.relations}
                 icon={<StyleIcon />}
-                play={true}
+                redirect={true}
                 related={true}
               />
             </div>
@@ -212,7 +212,7 @@ function WatchPage() {
                 title={"Recommendations"}
                 data={animeInfo?.recommendations}
                 // watch={true}
-                play={true}
+                redirect={true}
                 icon={<LightbulbIcon />}
               />
             </div>

@@ -67,7 +67,7 @@ function AboutManga() {
           </div>
         </div>
       </div>
-      {meta?.mangaDetails?.characters && (
+      {meta?.mangaDetails?.characters?.length > 0 && (
         <div className="characters">
           <Slider
             title={"Characters"}
@@ -76,21 +76,24 @@ function AboutManga() {
           />
         </div>
       )}
-      {meta?.mangaDetails?.relations && (
+      {meta?.mangaDetails?.relations?.length > 0 && (
         <div className="characters">
           <Slider
             title={"Relations"}
             data={meta?.mangaDetails?.relations}
             icon={<StyleIcon />}
+            related={true}
+            redirect={true}
           />
         </div>
       )}
-      {meta?.mangaDetails?.recommendations && (
+      {meta?.mangaDetails?.recommendations?.length > 0 && (
         <div className="characters">
           <Slider
             title={"Recommendation"}
             data={meta?.mangaDetails?.recommendations}
             icon={<LightbulbIcon />}
+            redirect={true}
           />
         </div>
       )}

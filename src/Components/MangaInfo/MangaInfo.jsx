@@ -8,16 +8,39 @@ import "./MangaInfo.scss";
 function MangaInfo() {
   const param = useParams();
   const [mangaDetails, setMangaDetails] = useState(null);
+  const [provider, setProvider] = useState(null);
   const [error, setError] = useState(null);
+
   useEffect(() => {
-    if (param?.id && !mangaDetails) {
+    if (param?.id) {
       axios
         .get(
-          `https://api.consumet.org/meta/anilist-manga/info/${param.id}?provider=mangakakalot`
+          // `https://api.consumet.org/meta/anilist-manga/info/${param.id}?provider=mangadex`
+          `https://api.consumet.org/meta/anilist-manga/info/${param.id}?provider=mangahere`
         )
-        .then((res) => setMangaDetails(res.data))
-        .catch((err) => setError(err));
+        .then((res) => {
+          setMangaDetails(res.data);
+          // setProvider("mangadex");
+          setProvider("mangahere");
+        })
+        .catch((err) => {
+          axios
+            .get(
+              `https://api.consumet.org/meta/anilist-manga/info/${param.id}?provider=mangahere`
+            )
+            .then((res) => {
+              setMangaDetails(res.data);
+              setProvider("mangahere");
+            })
+            .catch((err) => setError(err));
+        });
     }
+    return (() => {
+      console.log('Clearing')
+      setMangaDetails(null);
+      setProvider(null);
+      setError(null);
+    })
   }, [param?.id]);
 
   return (
@@ -42,7 +65,7 @@ function MangaInfo() {
             </div>
           </div>
           <div id="Manga_Outlet" className="manga-outlet">
-            <Outlet context={{ mangaDetails }} />
+            <Outlet context={{ mangaDetails, provider }} />
           </div>
         </div>
       ) : error ? (
