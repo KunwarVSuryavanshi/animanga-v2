@@ -7,7 +7,8 @@
   // background-repeat: no-repeat;
   // background-size: cover !important;
 }
-.error{
+
+.error {
   background-image: url(../../assets/manga_404.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -18,6 +19,7 @@
   position: absolute;
   width: 100%;
 }
+
 .navbar {
   display: flex;
   flex-direction: row;
@@ -167,20 +169,24 @@
 //Reader
 .reader_container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   // justify-content: space-evenly;
   // align-items: center;
   margin-left: 2vw;
   gap: 2rem;
+  position: relative;
+
   // width: 100%;
   .chapters {
     max-height: 100vh;
     width: 20%;
     margin-top: 3rem;
-    .left-top-panel{
+
+    .left-top-panel {
       display: flex;
       flex-direction: row;
     }
+
     .ch_header {
       font-size: 1.5rem;
       width: 100%;
@@ -195,6 +201,7 @@
       overflow-y: scroll;
       scroll-snap-type: y mandatory;
       scroll-behavior: smooth;
+
       .ch_btn {
         margin-bottom: 1rem;
         min-height: 6vh;
@@ -203,6 +210,7 @@
         border: 2px solid rgb(11, 159, 151);
         border-radius: 15px;
         margin-right: 1rem;
+
         .title {
           font-size: 1rem;
           font-weight: 600;
@@ -216,9 +224,11 @@
         }
       }
     }
-    .container>*{
+
+    .container>* {
       scroll-snap-align: start;
     }
+
     .container::-webkit-scrollbar {
       background-color: rgba(0, 0, 0, 0) !important;
       width: 0.5vw !important;
@@ -236,31 +246,139 @@
     }
   }
 
-  .viewer{
+  .viewer {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
     gap: 4rem;
     margin-top: 3rem;
-    width: 76%;
+    // width: 76%;
     height: max-content;
     overflow: auto;
+
     // position: relative;
-    .page{
+    .page {
       // min-height: 100vh;
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
     }
-    .left-btn, .right-btn{
+
+    .left-btn,
+    .right-btn {
       position: absolute;
-      // background-color: red;
-      height: 115%;
+      background-color: red;
+      height: 90%;
       width: 25%;
     }
-    .right-btn{
+
+    .right-btn {
       right: 0;
     }
   }
+
+  .chapters-drop {
+    margin-top: 3vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    .head{
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+    .MuiSvgIcon-root {
+      color: white !important;
+    }
+  }
+
+  #chapter-selector {
+    width: 10vw;
+
+    .dr_header {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+}
+
+.MuiMenu-root {
+  &.MuiModal-root {
+    .MuiPaper-root {
+      &.MuiPaper-elevation {
+        &.MuiPaper-rounded {
+          color: white;
+
+          .MuiList-root {
+            .Mui-selected {
+              background-color: #0798e6a3 !important;
+            }
+            li {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              font-size: 1rem;
+              width: 100%
+            }
+
+            li:hover {
+              background-color: #00a6ff;
+            }
+
+            .sub-header {
+              font-size: 0.7rem;
+            }
+          }
+        }
+      }
+    }
+
+    .MuiPaper-root::-webkit-scrollbar {
+      background-color: rgba(0, 0, 0, 0) !important;
+      width: 0.5vw !important;
+      height: 0.5vw !important;
+    }
+
+    .MuiPaper-root::-webkit-scrollbar-track {
+      background-color: rgba(255, 255, 255, 0) !important;
+    }
+
+    .MuiPaper-root::-webkit-scrollbar-thumb {
+      background-color: #737171c2 !important;
+      border-radius: 16px !important;
+      // border: 4px solid rgba(255, 255, 255, 0)
+    }
+  }
+
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border-color: #00a6ff !important;
+
+  legend {
+    opacity: 1;
+    height: max-content;
+
+    span {
+      color: #00a6ff !important;
+      opacity: 1;
+      font-size: 0.75rem;
+    }
+  }
+}
+
+.MuiInputBase-root {
+  .sub-header {
+    display: none !important;
+  }
+}
+
+.dr_header,
+.sub-header {
+  white-space: pre-wrap;
+  text-align: center;
+  color: white;
 }

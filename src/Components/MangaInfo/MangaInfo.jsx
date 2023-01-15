@@ -15,13 +15,13 @@ function MangaInfo() {
     if (param?.id) {
       axios
         .get(
-          // `https://api.consumet.org/meta/anilist-manga/info/${param.id}?provider=mangadex`
-          `https://api.consumet.org/meta/anilist-manga/info/${param.id}?provider=mangahere`
+          `https://api.consumet.org/meta/anilist-manga/info/${param.id}?provider=mangadex`
+          // `https://api.consumet.org/meta/anilist-manga/info/${param.id}?provider=mangahere`
         )
         .then((res) => {
           setMangaDetails(res.data);
-          // setProvider("mangadex");
-          setProvider("mangahere");
+          setProvider("mangadex");
+          // setProvider("mangahere");
         })
         .catch((err) => {
           axios
