@@ -50,21 +50,26 @@ function Slider(props) {
 
   const handleClick = (event, data) => {
     if (props.trailer) {
+      // Open modal and play the trailer
       setOpenModal(true);
       setSources([
         {
           url: `https://www.youtube.com/watch?v=${data?.trailer?.id}`,
         },
       ]);
-    } else if (
+    } else if (props.redirect) {  // Redirect to manga or anime page
+      if (data.type === "MANGA") {
+        navigate(`/manga/${data.id}`);
+      } else {
+        navigate(`/watch/${data.id}`);
+      }
+      event.target.parentElement.style.border = "3px solid transparent";
+    } else if ( // Sets the anchor element for the pop over watch now
       event.target.parentElement.getAttribute("name") === "card" &&
       props.watch
     ) {
       setAnchorElem({ target: event.target, data });
-    } else if (props.play) {
-      navigate(`/watch/${data.id}`);
-      event.target.parentElement.style.border = "3px solid transparent";
-    }
+    } 
   };
 
   const handleClose = () => {

@@ -1,4 +1,5 @@
 @use '../../variables';
+
 .header {
   display: flex;
   flex-direction: row;
@@ -12,7 +13,7 @@
   position: sticky;
   z-index: 10;
   width: 100%;
-  
+
   &_logo,
   &_nav {
     margin-top: auto;
@@ -38,10 +39,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      a{
+
+      a {
         position: relative;
       }
-      a::after{
+
+      a::after {
         content: '';
         // width: 100%;
         height: 3px;
@@ -54,96 +57,91 @@
         right: 50%;
         transition: all 0.25s ease-in-out;
       }
-      a:hover::after{
+
+      a:hover::after {
         // width: 100%;
         right: 0%;
         left: 0%;
       }
-      // a {
-      //   &.active::after{
-      //     right: 0%;
-      //     left: 0%;
-      //   }
-      // }
+
     }
   }
+
   .search {
-    display: flex;
-    align-items: center;
-    overflow-x: hidden;
-    .search-bar{
-      height: 70%;
-      top: -100%;
-      position: relative;
-      display: none;
-      // margin: 1vh 0vw;
-      div{
-        height: 100%;
-        width: 100%;
-        color: white;
-        min-width: 20vw;
-      }
-    }
-    .display_bar{
-      display: flex;
-      flex-direction: row;
-      gap: 1rem;
-      animation: right 0.5s ease-in-out both;
-      // animation: name duration timing-function delay iteration-count direction fill-mode;
-      button{
-        padding: 0 1.5vw;
-      }
-      .MuiButtonBase-root.MuiButton-root:hover{
-        border: none;
-      }
-    }
     .search-icon {
-      margin: 0 2vw;
-      cursor: pointer;
-      svg {
-        font-size: 1.7rem;
-      }
+      position: relative;
+    }
+
+    .search-icon::after {
+      content: '';
+      height: 3px;
+      border-radius: 5px;
+      background-color: #00a6ff;
+      position: absolute;
+      // bottom: 0;
+      top: 120%;
+      left: 50%;
+      right: 50%;
+      transition: all 0.25s ease-in-out;
+    }
+
+    .search-icon:hover::after {
+      // width: 100%;
+      right: 0%;
+      left: 0%;
     }
   }
+
 }
-.link{
+
+
+.link {
   text-decoration: none;
   color: white;
 }
 
-@media (max-width: 600px){
-  .header {
-      font-size: 5.2vw;
-      top: 0;
-      height: 14vw;
-      font-weight: 700;
-  
-      &_logo,
-      &_nav {
-        margin-top: auto;
-        margin-bottom: auto;
-        padding-left: 2vw;
-      }
-  
-      &_nav {
-        font-weight: 500;
-        font-size: 3.25vw;
-  
-        &-links {
-          width: 15vw;
-          font-weight: 800;
-        }
-      }
-    }
+.search {
+  display: flex;
+  align-items: center;
+  margin: 0 2vw;
+
+  &-icon {
+    cursor: pointer;
+  }
+
+  svg {
+    font-size: 1.7rem;
+  }
 }
 
-@keyframes right {
-  0%{
-    top: -100%;
-    opacity: 0;
+@media (max-width: 600px) {
+  .header {
+    font-size: 5.2vw;
+    top: 0;
+    height: 14vw;
+    font-weight: 700;
+
+    &_logo,
+    &_nav {
+      margin-top: auto;
+      margin-bottom: auto;
+      padding-left: 2vw;
+    }
+
+    &_nav {
+      font-weight: 500;
+      font-size: 3.25vw;
+
+      &-links {
+        width: 15vw;
+        font-weight: 800;
+      }
+    }
   }
-  100%{
-    top: 0%;
-    opacity: 1;
+
+  .search {
+    svg {
+      font-size: 1.2rem;
+    }
   }
 }

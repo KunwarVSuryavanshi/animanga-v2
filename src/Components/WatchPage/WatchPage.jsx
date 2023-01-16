@@ -31,7 +31,6 @@ function WatchPage() {
   const formatter = Intl.NumberFormat("en", { notation: "compact" });
 
   const handleOpen = (item) => {
-    console.log(item);
     setLoading(true);
     axios
       .get(`https://api.consumet.org/meta/anilist/watch/${item?.id}`)
@@ -199,7 +198,7 @@ function WatchPage() {
                 title={"Related"}
                 data={animeInfo?.relations}
                 icon={<StyleIcon />}
-                play={true}
+                redirect={true}
                 related={true}
               />
             </div>
@@ -212,7 +211,7 @@ function WatchPage() {
                 title={"Recommendations"}
                 data={animeInfo?.recommendations}
                 // watch={true}
-                play={true}
+                redirect={true}
                 icon={<LightbulbIcon />}
               />
             </div>

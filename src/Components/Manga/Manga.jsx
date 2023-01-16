@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Manga.scss";
 import { fetchtopManga } from "../../app/feature/topManga.slice";
 import { useDispatch, useSelector } from "react-redux";
-import { LinearProgress } from "@mui/material";
+import { CircularProgress, LinearProgress } from "@mui/material";
 import { getRandomeColor } from "../../Common/utils";
 import { useNavigate } from "react-router-dom";
 
@@ -18,9 +18,12 @@ function Manga() {
   const options = {
     root: null,
     rootMargin: "0px",
-    threshold: 1.0,
+    threshold: 0.25,
   };
-  const observer = new IntersectionObserver((entries) => handleDebounce(entries), options);
+  const observer = new IntersectionObserver(
+    (entries) => handleDebounce(entries),
+    options
+  );
   const mangaRef = useRef();
   let timer;
 
@@ -61,9 +64,8 @@ function Manga() {
   }
 
   const handleClick = (id) => {
-    console.log('Id', id)
     navigate(`${id}`);
-  }
+  };
 
   useEffect(() => {
     if (!topManga?.response) {
@@ -119,7 +121,18 @@ function Manga() {
                   );
                 })}
               </div>
-              <div className="loader"ref={mangaRef}></div>
+              <div className="loader" ref={mangaRef}></div>
+              {page.current < 5 && (
+                <div className="c_spinner">
+                  <CircularProgress />
+                </div>
+              )}
+              {page.current >= 5 && (
+                <div className="c_spinner" style={{fontSize: '1.25rem'}}>
+                  &#128161;Pro-Tip: Try searching for the manga you are looking
+                  for
+                </div>
+              )}
             </>
           )}
         </>

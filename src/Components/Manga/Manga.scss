@@ -53,9 +53,25 @@
   }
 
   .loader {
-    height: 40vh;
-    background-color: red;
+    height: 60vh;
     position: absolute;
-    bottom: 120vh;
+    bottom: 130vh;
+  }
+
+  .c_spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .manga_root {
+    .cards {
+      row-gap: 1rem;
+      .card_wrap {
+        width: 44vw;
+      }
+    }
   }
 }

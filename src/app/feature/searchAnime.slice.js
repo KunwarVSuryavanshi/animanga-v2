@@ -3,7 +3,7 @@ import { searchAnime } from "../../Common/queries";
 import axios from "axios";
 
 const initialState = {
-  loading: true,
+  loading: false,
   list: null,
   error: false,
   errorMessage: "",
@@ -27,7 +27,7 @@ const searchSlice = createSlice({
   initialState,
   reducers: {
     clearSearchData(state) {
-      state.loading= true,
+      state.loading= false,
       state.list= null,
       state.error= false,
       state.errorMessage= ""

@@ -13,7 +13,7 @@ export const fetchtopManga = createAsyncThunk(
   (page) => {
     let url = "https://graphql.anilist.co";
     return axios
-      .post(url, { query: topAnime(page, 'MANGA') })
+      .post(url, { query: topAnime(page, 'MANGA', 'RELEASING' ,'TRENDING_DESC') })
       .then((response) => response.data);
   }
 );
