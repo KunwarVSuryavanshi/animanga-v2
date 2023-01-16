@@ -128,6 +128,7 @@
     flex-direction: row;
     align-items: center;
     gap: 7rem;
+    flex-wrap: wrap;
 
     .rating,
     .popularity {
@@ -303,6 +304,8 @@
     flex-direction: row;
     align-items: center;
     gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
 
     .head {
       font-size: 1.25rem;
@@ -315,7 +318,8 @@
   }
 
   #chapter-selector {
-    width: 10vw;
+    min-width: 10vw;
+    max-width: max-content;
 
     .dr_header {
       text-overflow: ellipsis;
@@ -412,8 +416,64 @@
   }
 }
 
-@media (max-width: 600px){
-  .pages {
-      min-width: auto !important;
+@media (max-width: 600px) {
+  .about_manga_container {
+    .info {
+      gap: 1rem;
+      justify-content: center;
+
+      .cover {
+        min-height: 35vh;
+        min-width: 45vw;
+      }
+
+      .detail {
+        max-width: 100vw;
+      }
     }
+
+    .title {
+      text-align: center;
+    }
+
+    .description {
+      margin-top: 2vh;
+      font-size: 1rem;
+      font-weight: 500;
+      margin: 1vh 4vw;
+      text-align: center;
+    }
+
+    .genres {
+      margin: 2vh 2vw;
+      text-align: center;
+
+      div {
+        margin: 1vh 3vw;
+      }
+    }
+
+    .wrapper {
+      gap: 2rem;
+      margin: 1vh 4vw;
+    }
+
+    .status {
+      font-weight: 600;
+    }
+
+    .characters {
+      margin-left: -2vw;
+
+      .slider_title {
+        margin-left: 0;
+      }
+    }
+  }
+  .pages {
+    min-width: auto !important;
+  }
+  .chapters-drop{
+    justify-content: center;
+  }
 }

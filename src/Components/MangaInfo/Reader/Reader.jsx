@@ -64,13 +64,21 @@ function Reader() {
   };
 
   const handleLeft = () => {
+    console.log(
+      viewRef.current.scrollLeft,
+      pageRef?.current?.previousSibling?.offsetWidth
+    );
     viewRef.current.scrollLeft -=
-      pageRef?.current?.previousSibling?.offsetWidth * 2;
+      pageRef?.current?.previousSibling?.offsetWidth * 2 > 0 ? pageRef?.current?.previousSibling?.offsetWidth * 2 : 200* 2;
   };
 
   const handleRight = () => {
+        console.log(
+          viewRef.current.scrollLeft, pageRef,
+          pageRef?.current?.previousSibling?.offsetWidth
+        );
     viewRef.current.scrollLeft +=
-      pageRef?.current?.previousSibling?.offsetWidth * 2;
+      pageRef?.current?.previousSibling?.offsetWidth * 2 > 0 ? pageRef?.current?.previousSibling?.offsetWidth * 2 : 200* 2;
   };
 
   useEffect(() => {
