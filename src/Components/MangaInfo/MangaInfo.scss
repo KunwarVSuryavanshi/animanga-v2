@@ -128,6 +128,7 @@
     flex-direction: row;
     align-items: center;
     gap: 7rem;
+    flex-wrap: wrap;
 
     .rating,
     .popularity {
@@ -228,22 +229,6 @@
     .container>* {
       scroll-snap-align: start;
     }
-
-    .container::-webkit-scrollbar {
-      background-color: rgba(0, 0, 0, 0) !important;
-      width: 0.5vw !important;
-      height: 0.5vw !important;
-    }
-
-    .container::-webkit-scrollbar-track {
-      background-color: rgba(255, 255, 255, 0) !important;
-    }
-
-    .container::-webkit-scrollbar-thumb {
-      background-color: #717373c2 !important;
-      border-radius: 16px !important;
-      // border: 4px solid rgba(255, 255, 255, 0)
-    }
   }
 
   .viewer {
@@ -256,6 +241,9 @@
     // width: 76%;
     height: max-content;
     overflow: auto;
+    max-height: 100vh;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
 
     // position: relative;
     .page {
@@ -269,13 +257,45 @@
     .right-btn {
       position: absolute;
       // background-color: red;
-      height: 90%;
+      height: 78%;
       width: 25%;
+      max-height: 100vh;
+      cursor: pointer;
+      z-index: 4;
+      background-color: #00ffc83f;
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        font-size: 2rem;
+        // margin: auto;
+        font-weight: 500;
+        text-shadow: rgb(12, 12, 12) 4px 4px 10px;
+        animation: visiblity 6s ease-in-out forwards;
+      }
+
+      animation: visiblity 6s ease-in-out forwards;
+      // direction fill-mode;
+    }
+
+    .pages {
+      max-height: 100vh;
+      min-width: 30vw;
+    }
+
+    .images {
+      scale: 1;
+      height: max-content;
+      max-height: 90vh;
     }
 
     .right-btn {
       right: 0;
     }
+
   }
 
   .chapters-drop {
@@ -284,23 +304,35 @@
     flex-direction: row;
     align-items: center;
     gap: 1rem;
-    .head{
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .head {
       font-size: 1.25rem;
       font-weight: 500;
     }
+
     .MuiSvgIcon-root {
       color: white !important;
     }
   }
 
   #chapter-selector {
-    width: 10vw;
+    min-width: 10vw;
+    max-width: max-content;
 
     .dr_header {
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
     }
+  }
+
+  .loader {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -315,6 +347,7 @@
             .Mui-selected {
               background-color: #0798e6a3 !important;
             }
+
             li {
               display: flex;
               flex-direction: column;
@@ -334,22 +367,6 @@
           }
         }
       }
-    }
-
-    .MuiPaper-root::-webkit-scrollbar {
-      background-color: rgba(0, 0, 0, 0) !important;
-      width: 0.5vw !important;
-      height: 0.5vw !important;
-    }
-
-    .MuiPaper-root::-webkit-scrollbar-track {
-      background-color: rgba(255, 255, 255, 0) !important;
-    }
-
-    .MuiPaper-root::-webkit-scrollbar-thumb {
-      background-color: #737171c2 !important;
-      border-radius: 16px !important;
-      // border: 4px solid rgba(255, 255, 255, 0)
     }
   }
 
@@ -381,4 +398,82 @@
   white-space: pre-wrap;
   text-align: center;
   color: white;
+}
+
+@keyframes visiblity {
+  0% {
+    // display: flex;
+  }
+
+  100% {
+    // display: none;
+    background-color: transparent;
+    color: transparent;
+    text-shadow: none;
+    // span{
+    //   display: none;
+    // }
+  }
+}
+
+@media (max-width: 600px) {
+  .about_manga_container {
+    .info {
+      gap: 1rem;
+      justify-content: center;
+
+      .cover {
+        min-height: 35vh;
+        min-width: 45vw;
+      }
+
+      .detail {
+        max-width: 100vw;
+      }
+    }
+
+    .title {
+      text-align: center;
+    }
+
+    .description {
+      margin-top: 2vh;
+      font-size: 1rem;
+      font-weight: 500;
+      margin: 1vh 4vw;
+      text-align: center;
+    }
+
+    .genres {
+      margin: 2vh 2vw;
+      text-align: center;
+
+      div {
+        margin: 1vh 3vw;
+      }
+    }
+
+    .wrapper {
+      gap: 2rem;
+      margin: 1vh 4vw;
+    }
+
+    .status {
+      font-weight: 600;
+    }
+
+    .characters {
+      margin-left: -2vw;
+
+      .slider_title {
+        margin-left: 0;
+      }
+    }
+  }
+  .pages {
+    min-width: auto !important;
+  }
+  .chapters-drop{
+    justify-content: center;
+  }
 }

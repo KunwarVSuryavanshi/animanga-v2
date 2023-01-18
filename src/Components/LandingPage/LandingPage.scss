@@ -72,7 +72,7 @@
 
 @media (max-width: 600px) {
   .container_lp {
-    height: 55vh;
+    min-height: 55vh;
     .greeting {
       font-size: 1.9rem;
       .japanese,

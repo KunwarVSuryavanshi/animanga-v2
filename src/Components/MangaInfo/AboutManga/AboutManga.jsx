@@ -60,7 +60,7 @@ function AboutManga() {
           <div className="genres">
             {meta?.mangaDetails?.genres
               ?.slice(0, 6)
-              ?.map((item) => item && <Chip label={item} color="secondary" />)}
+              ?.map((item, key) => item && <Chip label={item} key={key} color="secondary" />)}
           </div>
           <div className="description">
             {cleanHTML(meta?.mangaDetails?.description)}

@@ -36,7 +36,6 @@ function MangaInfo() {
         });
     }
     return (() => {
-      console.log('Clearing')
       setMangaDetails(null);
       setProvider(null);
       setError(null);

@@ -275,22 +275,6 @@
   outline: none;
 }
 
-.ep-list::-webkit-scrollbar {
-  background-color: rgba(0, 0, 0, 0) !important;
-  width: 0.5vw !important;
-  height: 0.5vw !important;
-}
-
-.ep-list::-webkit-scrollbar-track {
-  background-color: rgba(255, 255, 255, 0) !important;
-}
-
-.ep-list::-webkit-scrollbar-thumb {
-  background-color: #737171c2 !important;
-  border-radius: 16px !important;
-  // border: 4px solid rgba(255, 255, 255, 0)
-}
-
 .ep_image:hover {
   .MuiSvgIcon-root {
     transform: scale(1.1);
