@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import { FormControl, MenuItem, OutlinedInput, Select } from "@mui/material";
 import { useRef } from "react";
+import { Buffer } from "buffer";
 
 function Reader() {
   const meta = useOutletContext();
@@ -24,43 +25,96 @@ function Reader() {
   const loadImage = (element) => {
     let src = element?.getAttribute("data-src");
     element.src = src;
-  }
+  };
 
   const handleLazyLoad = (items, observer) => {
     // console.log("Lazy loading--->", items);
-    items?.forEach(item => {
+    items?.forEach((item) => {
       if (item?.isIntersecting) {
         loadImage(item?.target?.children?.[0]);
-        observer.unobserve(item.target)
+        observer.unobserve(item.target);
       }
-    })
+    });
   };
 
   const handleChapterFetch = (event) => {
     setChap(event.target?.value);
     setLoading(true);
-    let url = `https://api.consumet.org/manga/${meta?.provider}/read/${event.target?.value?.id}`;
-    if (meta.provider === "mangahere") {
-      url = `https://api.consumet.org/manga/mangahere/read?chapterId=${event.target?.value?.id}`;
-    }
+    // let url = `https://api.consumet.org/manga/${meta?.provider}/read/${event.target?.value?.id}`;
+    // if (meta.provider === "mangahere") {
+    let url = `https://yametekudasai.vercel.app/manga/${meta?.provider}/read?chapterId=${event.target?.value?.id}`;
+    // }
     axios
       .get(url)
       .then((res) => {
-        if (meta.provider !== "mangahere") setChapter(res.data);
-        else promisifyAll(res.data);
+        // if (meta.provider !== "mangahere") setChapter(res.data);
+        // else
+        promisifyAll(res.data);
       })
       .catch((err) => console.error(err))
-      .finally(() => setLoading(false));
+      // .finally(() => setLoading(false));
   };
 
-  const promisifyAll = (items) => {
-    Promise.all(
+  const promisifyAll = async (items) => {
+    // console.log("Promisifying--->", items);
+    const data = await Promise.allSettled(
       items?.map((item) =>
         axios.get(
-          `https://api.consumet.org/utils/image-proxy?url=${item.img}&referer=${item.headerForImage.Referer}`
+          `https://yametekudasai.vercel.app/utils/image-proxy?url=${
+            item.img
+          }&referer=${
+            item?.headerForImage?.Referer ?? `https://${meta?.provider}.org/`
+          }`,
+          {
+            responseType: "arraybuffer",
+          }
         )
       )
-    ).then((res) => setChapter(res.data));
+    );
+    // console.log(
+    //   "data-->",
+    //   data.map((item) => {
+    //     if (item.status === "fulfilled")
+    //       return btoa(
+    //         new Uint8Array(item?.value?.data).reduce(
+    //           (data, byte) => data + String.fromCharCode(byte),
+    //           ""
+    //         )
+    //       );
+    //   })
+    // );
+    setChapter(
+      data.map((item) => {
+        if (item.status === "fulfilled") {
+          let image = btoa(
+            new Uint8Array(item?.value?.data).reduce(
+              (data, byte) => data + String.fromCharCode(byte),
+              ""
+            )
+          );
+          return `data:${item?.value?.headers[
+            "content-type"
+          ].toLowerCase()};base64,${image}`;
+        }
+      })
+    );
+
+    setLoading(false)
+    // setChapter(
+    //   data.map((item) => {
+    //     if (item.status === "fulfilled") {
+    //       let image = Buffer.from(item.data, "binary").toString("base64");
+    //       return `data:${item?.value?.headers[
+    //         "content-type"
+    //       ].toLowerCase()};base64,${image}`
+    //     }
+    //   })
+    // );
+    // setChapter(Buffer.from(response.data, "binary").toString("base64"));
+    // console.log('data--->',data);
+    // .then((res) => setChapter(res.map(item => { if (item.status === "fulfilled") return item?.value?.data })))
+    // .then((res) => console.log('res--->',res))
+    // .catch((err) => console.error(err));
   };
 
   const handleLeft = () => {
@@ -69,24 +123,23 @@ function Reader() {
       pageRef?.current?.previousSibling?.offsetWidth
     );
     viewRef.current.scrollLeft -=
-      pageRef?.current?.previousSibling?.offsetWidth * 2 > 0 ? pageRef?.current?.previousSibling?.offsetWidth * 2 : 200* 2;
+      pageRef?.current?.previousSibling?.offsetWidth * 2 > 0
+        ? pageRef?.current?.previousSibling?.offsetWidth * 2
+        : 200 * 2;
   };
 
   const handleRight = () => {
-        console.log(
-          viewRef.current.scrollLeft, pageRef,
-          pageRef?.current?.previousSibling?.offsetWidth
-        );
     viewRef.current.scrollLeft +=
-      pageRef?.current?.previousSibling?.offsetWidth * 2 > 0 ? pageRef?.current?.previousSibling?.offsetWidth * 2 : 200* 2;
+      pageRef?.current?.previousSibling?.offsetWidth * 2 > 0
+        ? pageRef?.current?.previousSibling?.offsetWidth * 2
+        : 200 * 2;
   };
 
   useEffect(() => {
     if (chap && viewRef?.current && pageRef.current) {
-      [...viewRef?.current?.children]?.slice(
-        1,
-        [...viewRef?.current?.children]?.length - 1
-      ).forEach(item => observer.observe(item))
+      [...viewRef?.current?.children]
+        ?.slice(1, [...viewRef?.current?.children]?.length - 1)
+        .forEach((item) => observer.observe(item));
     }
   }, [chap, viewRef?.current, pageRef?.current]);
 
@@ -157,15 +210,16 @@ function Reader() {
                 <span>Left</span>
               </div>
             )}
+            {/* {console.log("Chpater--->", chapter)} */}
             {chapter?.map((item, key) => {
               return (
                 <div
-                  className={`pages page_${item?.page}`}
+                  className={`pages page_${key}`}
                   // style={{ backgroundImage: `url(${item.img})` }}
                   ref={pageRef}
                   key={key}
                 >
-                  <img className="images" data-src={item.img} />
+                  <img className="images" data-src={item} />
                 </div>
               );
             })}
