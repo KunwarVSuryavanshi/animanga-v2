@@ -290,6 +290,7 @@
       scale: 1;
       height: max-content;
       max-height: 90vh;
+      max-width: 100%;
     }
 
     .right-btn {
@@ -402,14 +403,13 @@
 
 @keyframes visiblity {
   0% {
-    // display: flex;
   }
 
   100% {
-    // display: none;
     background-color: transparent;
     color: transparent;
     text-shadow: none;
+    font-size: 0;
     // span{
     //   display: none;
     // }
