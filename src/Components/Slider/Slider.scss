@@ -47,6 +47,9 @@
       padding: 1vw;
       border: 3px solid transparent;
       border-radius: 10px;
+      min-width: 10vw;
+      max-width: fit-content;
+      flex-shrink: 0;
       // justify-content: space-between;
 
       &_image {
