@@ -8,7 +8,8 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
     // gap: 2rem;
-    row-gap: 3rem;
+    row-gap: 1rem;
+    margin-top: 1vh;
     // margin: 2vh 2vw;
 
     .card_wrap {
@@ -17,7 +18,7 @@
       align-items: flex-start;
       justify-content: flex-start;
       width: 14vw;
-      height: 55vh;
+      height: 60vh;
       margin: 0;
       padding: 2vh 1vw 0 1vw;
       border-radius: 10px;
@@ -71,6 +72,7 @@
       row-gap: 1rem;
       .card_wrap {
         width: 44vw;
+        height: 40vh;
       }
     }
   }

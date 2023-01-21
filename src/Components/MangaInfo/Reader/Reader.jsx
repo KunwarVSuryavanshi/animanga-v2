@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import { FormControl, MenuItem, OutlinedInput, Select } from "@mui/material";
 import { useRef } from "react";
-import { Buffer } from "buffer";
 
 function Reader() {
   const meta = useOutletContext();
