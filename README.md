@@ -4,6 +4,17 @@
 <p/>
 
 <br />
+<p align="center">
+  <a href="https://beta.reactjs.org/">
+    <img src="https://img.shields.io/github/package-json/dependency-version/KunwarVSuryavanshi/animanga-v2/react?filename=package.json&color=5fd9fb&logo=react&labelColor=222435&style=flat-square">
+  </a>
+  <a href="https://redux-toolkit.js.org/">
+    <img src="https://img.shields.io/github/package-json/dependency-version/KunwarVSuryavanshi/animanga-v2/@reduxjs/toolkit?filename=package.json&label=redux-toolkit&color=593d88&logo=redux&labelColor=242526&style=flat-square&logoColor=b58bf7">
+  </a>
+  <a href="https://mui.com/">
+    <img src="https://img.shields.io/github/package-json/dependency-version/KunwarVSuryavanshi/animanga-v2/@mui/material?filename=package.json&label=mui&color=007FFF&logo=mui&labelColor=242526&style=flat-square&logoColor=007FFF">
+  </a>
+</p>
 
 # Screenshots
 
