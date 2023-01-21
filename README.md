@@ -15,6 +15,7 @@
     <img src="https://img.shields.io/github/package-json/dependency-version/KunwarVSuryavanshi/animanga-v2/@mui/material?filename=package.json&label=mui&color=007FFF&logo=mui&labelColor=242526&style=flat-square&logoColor=007FFF">
   </a>
 </p>
+
 # Screenshots
 
 ## Desktop
