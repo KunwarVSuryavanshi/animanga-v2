@@ -17,15 +17,15 @@ function Slider(props) {
 	const [openModal, setOpenModal] = useState(false);
 	const [sources, setSources] = useState([]);
 	const [loading, setLoading] = useState(true);
-	const slideRef = useRef();
-	const cardRef = useRef();
+	const slideRef = useRef(null);
+	const cardRef = useRef(null);
 	const arr = new Array(7).fill(1);
 	const open = Boolean(anchorElem?.target);
 	const navigate = useNavigate();
 	const lazyRef = useRef(null);
 	const options = {
 		root: null,
-		rootMargin: '0px',
+		rootMargin: '0px 200px',
 		threshold: 0,
 	};
 	const observer = new IntersectionObserver(

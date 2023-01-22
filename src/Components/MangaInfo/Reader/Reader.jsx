@@ -13,7 +13,7 @@ function Reader() {
 	const pageRef = useRef();
 	const options = {
 		root: null,
-		rootMargin: '0%',
+		rootMargin: '0px 200px', // +ve means pre load
 		threshold: 0,
 	};
 	const observer = new IntersectionObserver(
@@ -28,6 +28,7 @@ function Reader() {
 	};
 
 	const handleLazyLoad = (items, observer) => {
+		console.log('Lazy load---->', items);
 		items?.forEach(item => {
 			if (item?.isIntersecting) {
 				loadImage(item?.target?.children?.[0]);
@@ -93,12 +94,13 @@ function Reader() {
 	};
 
 	useEffect(() => {
-		if (chap && viewRef?.current && pageRef.current) {
+		if (chapter?.length && viewRef?.current && pageRef.current) {
+			console.log('Observing thing--->', viewRef?.current?.children);
 			[...viewRef?.current?.children]
 				?.slice(1, [...viewRef?.current?.children]?.length - 1)
 				.forEach(item => observer.observe(item));
 		}
-	}, [chap, viewRef?.current, pageRef?.current]);
+	}, [chapter]);
 
 	return (
 		<div className='reader_container'>

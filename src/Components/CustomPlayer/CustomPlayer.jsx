@@ -41,7 +41,7 @@ function CustomPlayer(props) {
               light={props?.playEp?.image} // replace with image tag
               playIcon={props?.loading ? <></> : null}
               onReady={() => props?.setLoading(false)}
-              onBuffer={() => props?.setLoading(true)}
+              // onBuffer={() => props?.setLoading(true)}
               onBufferEnd={() => props?.setLoading(false)}
               pip={props.pip ?? false}
             ></ReactPlayer>

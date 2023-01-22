@@ -129,6 +129,7 @@
     align-items: center;
     gap: 7rem;
     flex-wrap: wrap;
+    justify-content: center;
 
     .rating,
     .popularity {
@@ -407,7 +408,9 @@
 @keyframes visiblity {
   0% {
   }
-
+  99%{
+    font-size: 2rem;
+  }
   100% {
     background-color: transparent;
     color: transparent;
@@ -420,6 +423,10 @@
 }
 
 @media (max-width: 600px) {
+  .manga_banner{
+    min-height: 12vh;
+    // max-height: fit-content
+  }
   .about_manga_container {
     .info {
       gap: 1rem;

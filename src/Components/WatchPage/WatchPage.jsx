@@ -71,203 +71,204 @@ function WatchPage() {
   // }, [animeInfo])
 
   return err ? (
-    <NotFound noHeader={true} />
-  ) : (
-    <div className="player_root">
-      {!animeInfo ? (
-        <div style={{ position: "sticky", top: "8vh", height: "100vh" }}>
-          <LinearProgress color="primary" />
-        </div>
-      ) : (
-        <>
-          <div className="details">
-            <div
-              className="cover-image"
-              style={{
-                backgroundImage: `url(${
-                  animeInfo?.cover ??
-                  animeInfo?.coverImage?.extraLarge ??
-                  animeInfo?.coverImage?.large
-                })`,
-              }}
-            >
-              <div className="details_container">
-                <div className="banner">
-                  <div
-                    className="banner_image"
-                    style={{ backgroundImage: `url(${animeInfo?.image})` }}
-                  />
-                </div>
-                {animeInfo && (
-                  <div className="about">
-                    <div className="title">
-                      {/* {animeInfo?.title?.native && (
+		<NotFound noHeader={true} />
+	) : (
+		<div className='player_root'>
+			{!animeInfo ? (
+				<div style={{ position: 'sticky', top: '8vh', height: '100vh' }}>
+					<LinearProgress color='primary' />
+				</div>
+			) : (
+				<>
+					<div className='details'>
+						<div
+							className='cover-image'
+							style={{
+								backgroundImage: `url(${
+									animeInfo?.cover ??
+									animeInfo?.coverImage?.extraLarge ??
+									animeInfo?.coverImage?.large
+								})`,
+							}}
+						>
+							<div className='details_container'>
+								<div className='banner'>
+									<div
+										className='banner_image'
+										style={{ backgroundImage: `url(${animeInfo?.image})` }}
+									/>
+								</div>
+								{animeInfo && (
+									<div className='about'>
+										<div className='title'>
+											{/* {animeInfo?.title?.native && (
                           <div className="title_jp">
                             {animeInfo?.title?.native} || &nbsp;
                           </div>
                         )} */}
-                      {animeInfo?.title?.romaji ?? animeInfo?.title?.english}
-                    </div>
-                    <div className="anime_info">
-                      <div className="type">{animeInfo?.type}</div>
-                      <div className="score">
-                        <ThumbUpOffAltIcon /> &nbsp;
-                        {animeInfo?.rating / 10 ?? "NA"}
-                      </div>
-                      <div className="status">
-                        <CellTowerIcon /> &nbsp;{animeInfo?.status}
-                      </div>
-                      <div className="ep_count">
-                        <TableRowsIcon /> &nbsp;
-                        {animeInfo?.totalEpisodes}
-                      </div>
-                      <div className="duration">
-                        <AccessTimeIcon /> &nbsp;
-                        {animeInfo?.duration}
-                      </div>
-                      <div className="popularity">
-                        <TrendingUpIcon /> &nbsp;
-                        {formatter.format(animeInfo?.popularity)}
-                      </div>
-                    </div>
-                    <div className="description">
-                      {cleanHTML(animeInfo?.description) ?? "NA"}
-                    </div>
-                    {/* <div className="popularity">{animeInfo?.poularity}</div>*/}
-                    <div className="genres">
-                      {animeInfo?.genres
-                        ?.slice(0, 6)
-                        ?.map(
-                          (item) =>
-                            item && <Chip label={item} color="secondary" />
-                        )}
-                    </div>
-                    {/* <div className="studio" title='Studio'>
+											{animeInfo?.title?.romaji ?? animeInfo?.title?.english}
+										</div>
+										<div className='anime_info'>
+											<div className='type'>{animeInfo?.type}</div>
+											<div className='score'>
+												<ThumbUpOffAltIcon /> &nbsp;
+												{animeInfo?.rating / 10 ?? 'NA'}
+											</div>
+											<div className='status'>
+												<CellTowerIcon /> &nbsp;{animeInfo?.status}
+											</div>
+											<div className='ep_count'>
+												<TableRowsIcon /> &nbsp;
+												{animeInfo?.totalEpisodes}
+											</div>
+											<div className='duration'>
+												<AccessTimeIcon /> &nbsp;
+												{animeInfo?.duration}
+											</div>
+											<div className='popularity'>
+												<TrendingUpIcon /> &nbsp;
+												{formatter.format(animeInfo?.popularity)}
+											</div>
+										</div>
+										<div className='description'>
+											{cleanHTML(animeInfo?.description) ?? 'NA'}
+										</div>
+										{/* <div className="popularity">{animeInfo?.poularity}</div>*/}
+										<div className='genres'>
+											{animeInfo?.genres
+												?.slice(0, 6)
+												?.map(
+													item =>
+														item && <Chip label={item} color='secondary' />
+												)}
+										</div>
+										{/* <div className="studio" title='Studio'>
                         {animeInfo?.studios?.[0]}
                       </div> */}
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
+									</div>
+								)}
+							</div>
+						</div>
+					</div>
 
-          {animeInfo?.nextAiringEpisode?.timeUntilAiring && (
-            <div className="timer">
-              <Timer time={animeInfo?.nextAiringEpisode?.timeUntilAiring} />
-            </div>
-          )}
-          <div className="character_slider">
-            <Slider
-              title={"Characters"}
-              data={animeInfo?.characters}
-              icon={<TheaterComedyIcon />}
-            />
-          </div>
-          <div className="episodes">
-            {animeInfo?.episodes?.length > 0 && (
-              <div className="title">
-                <TableRowsIcon /> &nbsp;Episodes
-              </div>
-            )}
-            <div className="ep-list">
-              {animeInfo?.episodes?.map((item, key) => {
-                return (
-                  <div
-                    className="ep_card"
-                    key={item?.number}
-                    onClick={() => handleOpen(item)}
-                  >
-                    <div
-                      className="ep_image"
-                      style={{ backgroundImage: `url(${item.image})` }}
-                    >
-                      <PlayCircleOutlineIcon />
-                    </div>
-                    <div className="ep_no">
-                      Episode - {item?.number ?? key + 1}
-                    </div>
-                    <div className="ep_name">{item.title}</div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-          {animeInfo?.relations?.length ? (
-            <div className="related_slider">
-              <Slider
-                title={"Related"}
-                data={animeInfo?.relations}
-                icon={<StyleIcon />}
-                redirect={true}
-                related={true}
-              />
-            </div>
-          ) : (
-            ""
-          )}
-          {animeInfo?.recommendations?.length ? (
-            <div className="recommended_slider">
-              <Slider
-                title={"Recommendations"}
-                data={animeInfo?.recommendations}
-                // watch={true}
-                redirect={true}
-                icon={<LightbulbIcon />}
-              />
-            </div>
-          ) : (
-            ""
-          )}
-        </>
-      )}
+					{animeInfo?.nextAiringEpisode?.timeUntilAiring && (
+						<div className='timer'>
+							<Timer time={animeInfo?.nextAiringEpisode?.timeUntilAiring} />
+						</div>
+					)}
+					<div className='character_slider'>
+						<Slider
+							title={'Characters'}
+							data={animeInfo?.characters}
+							icon={<TheaterComedyIcon />}
+						/>
+					</div>
+					<div className='episodes'>
+						{animeInfo?.episodes?.length > 0 && (
+							<div className='title'>
+								<TableRowsIcon /> &nbsp;Episodes
+							</div>
+						)}
+						<div className='ep-list'>
+							{animeInfo?.episodes?.map((item, key) => {
+								return (
+									<div
+										className='ep_card'
+										key={item?.number}
+										onClick={() => handleOpen(item)}
+									>
+										<div
+											className='ep_image'
+											style={{ backgroundImage: `url(${item.image})` }}
+										>
+											<PlayCircleOutlineIcon />
+										</div>
+										<div className='ep_no'>
+											Episode - {item?.number ?? key + 1}
+										</div>
+										<div className='ep_name'>{item.title}</div>
+									</div>
+								);
+							})}
+						</div>
+					</div>
+					{animeInfo?.relations?.length ? (
+						<div className='related_slider'>
+							<Slider
+								title={'Related'}
+								data={animeInfo?.relations}
+								icon={<StyleIcon />}
+								redirect={true}
+								related={true}
+							/>
+						</div>
+					) : (
+						''
+					)}
+					{animeInfo?.recommendations?.length ? (
+						<div className='recommended_slider'>
+							<Slider
+								title={'Recommendations'}
+								data={animeInfo?.recommendations}
+								// watch={true}
+								redirect={true}
+								icon={<LightbulbIcon />}
+							/>
+						</div>
+					) : (
+						''
+					)}
+				</>
+			)}
 
-      <Modal
-        aria-labelledby="spring-modal-title"
-        aria-describedby="spring-modal-description"
-        open={openModal}
-        onClose={handleClose}
-        closeAfterTransition
-      >
-        <div className="modal_root">
-          <svg
-            className={`spinner ${!loading && "hidden"}`}
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
-              opacity=".25"
-            />
-            <path
-              d="M12,4a8,8,0,0,1,7.89,6.7A1.53,1.53,0,0,0,21.38,12h0a1.5,1.5,0,0,0,1.48-1.75,11,11,0,0,0-21.72,0A1.5,1.5,0,0,0,2.62,12h0a1.53,1.53,0,0,0,1.49-1.3A8,8,0,0,1,12,4Z"
-              className="path"
-            />
-          </svg>
-          <ReactPlayer
-            className="react-player"
-            url={
-              sources?.filter((item) => item.quality === "1080p")?.[0]?.url ??
-              sources?.[0]?.url
-            }
-            // file={}
-            width="100%"
-            height="100%"
-            controls={true}
-            light={playEp?.image} // replace with image tag
-            // playIcon={
-            //   <div className="play-icon">
-            //     <PlayCircleOutlineIcon />
-            //   </div>
-            // }
-            playIcon={loading ? <></> : null}
-            onBuffer={() => setLoading(true)}
-            onBufferEnd={() => setLoading(false)}
-            volume={0.5}
-            pip={false}
-          ></ReactPlayer>
-        </div>
-      </Modal>
-    </div>
-  );
+			<Modal
+				aria-labelledby='spring-modal-title'
+				aria-describedby='spring-modal-description'
+				open={openModal}
+				onClose={handleClose}
+				closeAfterTransition
+			>
+				<div className='modal_root'>
+					<svg
+						className={`spinner ${!loading && 'hidden'}`}
+						viewBox='0 0 24 24'
+					>
+						<path
+							d='M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z'
+							opacity='.25'
+						/>
+						<path
+							d='M12,4a8,8,0,0,1,7.89,6.7A1.53,1.53,0,0,0,21.38,12h0a1.5,1.5,0,0,0,1.48-1.75,11,11,0,0,0-21.72,0A1.5,1.5,0,0,0,2.62,12h0a1.53,1.53,0,0,0,1.49-1.3A8,8,0,0,1,12,4Z'
+							className='path'
+						/>
+					</svg>
+					<ReactPlayer
+						className='react-player'
+						url={
+							sources?.filter(item => item.quality === '1080p')?.[0]?.url ??
+							sources?.[0]?.url
+						}
+						// file={}
+						width='100%'
+						height='100%'
+						controls={true}
+						light={playEp?.image} // replace with image tag
+						// playIcon={
+						//   <div className="play-icon">
+						//     <PlayCircleOutlineIcon />
+						//   </div>
+						// }
+						onReady={() => props?.setLoading(false)}
+						playIcon={loading ? <></> : null}
+						// onBuffer={() => setLoading(true)}
+						// onBufferEnd={() => setLoading(false)}
+						volume={0.5}
+						pip={false}
+					></ReactPlayer>
+				</div>
+			</Modal>
+		</div>
+	);
 }
 
 export default WatchPage;
