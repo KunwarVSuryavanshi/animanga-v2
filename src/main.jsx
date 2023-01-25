@@ -15,82 +15,91 @@ import SearchPage from "./Components/SearchPage/SearchPage";
 import MangaInfo from "./Components/MangaInfo/MangaInfo";
 import AboutManga from "./Components/MangaInfo/AboutManga/AboutManga";
 import Reader from "./Components/MangaInfo/Reader/Reader";
+import Login from "./Components/Login/Login";
 
 inject();
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: <NotFound />,
-    children: [
-      {
-        path: "",
-        element: (
-          <Suspense fallback={null}>
-            <LandingPage />
-          </Suspense>
-        ),
-      },
-      {
-        path: "anime",
-        element: (
-          <Suspense fallback={null}>
-            <HomePage />
-          </Suspense>
-        ),
-      },
-      {
-        path: "manga",
-        element: (
-          <Suspense fallback={null}>
-            <Manga />
-          </Suspense>
-        ),
-      },
-      {
-        path: "manga/:id",
-        element: (
-          <Suspense fallback={null}>
-            <MangaInfo />
-          </Suspense>
-        ),
-        children: [
-          {
-            path: "",
-            element: (
-              <Suspense fallback={null}>
-                <AboutManga />
-              </Suspense>
-            ),
-          },
-          {
-            path: "chapter",
-            element: (
-              <Suspense fallback={null}>
-                <Reader />
-              </Suspense>
-            ),
-          }
-        ],
-      },
-      {
-        path: "watch/:epInfo",
-        element: (
-          <Suspense fallback={null}>
-            <WatchPage />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/search",
-        element: (
-          <Suspense fallbak={null}>
-            <SearchPage />
-          </Suspense>
-        ),
-      },
-    ],
-  },
+	{
+		path: '/',
+		element: <App />,
+		errorElement: <NotFound />,
+		children: [
+			{
+				path: '',
+				element: (
+					<Suspense fallback={null}>
+						<LandingPage />
+					</Suspense>
+				),
+			},
+			{
+				path: 'anime',
+				element: (
+					<Suspense fallback={null}>
+						<HomePage />
+					</Suspense>
+				),
+			},
+			{
+				path: 'manga',
+				element: (
+					<Suspense fallback={null}>
+						<Manga />
+					</Suspense>
+				),
+			},
+			{
+				path: 'manga/:id',
+				element: (
+					<Suspense fallback={null}>
+						<MangaInfo />
+					</Suspense>
+				),
+				children: [
+					{
+						path: '',
+						element: (
+							<Suspense fallback={null}>
+								<AboutManga />
+							</Suspense>
+						),
+					},
+					{
+						path: 'chapter',
+						element: (
+							<Suspense fallback={null}>
+								<Reader />
+							</Suspense>
+						),
+					},
+				],
+			},
+			{
+				path: 'watch/:epInfo',
+				element: (
+					<Suspense fallback={null}>
+						<WatchPage />
+					</Suspense>
+				),
+			},
+			{
+				path: '/search',
+				element: (
+					<Suspense fallbak={null}>
+						<SearchPage />
+					</Suspense>
+				),
+			},
+			{
+				path: '/login',
+				element: (
+					<Suspense fallbak={null}>
+						<Login />
+					</Suspense>
+				),
+			},
+		],
+	},
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
