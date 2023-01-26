@@ -12,20 +12,32 @@ import { Fade, Popover, Tooltip } from '@mui/material';
 function Header() {
 	const location = useLocation();
 	const navigate = useNavigate();
-	const userData = useContext(AuthContext);
-	const [profileModal, setProfileModal] = useState(false);
+	const { userInfo, setUserInfo } = useContext(AuthContext);
+	const [anchor, setAnchor] = useState(null);
+	const open = Boolean(anchor);
+	const id = open ? 'simple-popover' : undefined;
 
 	const handleLogin = () => {
 		navigate('/login');
 	};
 
+	const handleSignOut = async () => {
+		const data = await supabase.auth.signOut();
+		setUserInfo(null);
+		setAnchor(null);
+	}
+
 	const handleSearch = () => {
 		navigate(`search`);
 	};
 
-	const handlePopper = (event) => {
+	const handlePopperOpen = event => {
+		setAnchor(event.currentTarget);
+	};
 
-	}
+	const handlePopperClose = () => {
+		setAnchor(null);
+	};
 
 	useEffect(() => {
 		if (location?.pathname) {
@@ -33,7 +45,7 @@ function Header() {
 		}
 	}, [location?.pathname]);
 
-	console.log('Info--->', userData);
+	console.log('Info--->', userInfo);
 	return (
 		<div className='header'>
 			<div className='header_logo'>
@@ -63,11 +75,8 @@ function Header() {
 				>
 					<SearchIcon onClick={handleSearch} />
 				</span>
-				{userData?.data?.user?.aud === 'authenticated' ? (
-					<span
-						className='avatar'
-						onClick={handlePopper}
-					>
+				{userInfo?.data?.user?.aud === 'authenticated' ? (
+					<span className='avatar' onClick={handlePopperOpen}>
 						{/* <Tooltip
 							PopperProps={{
 								disablePortal: true,
@@ -79,9 +88,9 @@ function Header() {
 							title='Add'
 						> */}
 						<Avatar
-							alt={userData?.data?.user?.user_metadata?.full_name}
-							src={userData?.data?.user?.user_metadata?.avatar_url}
-							sx={{ width: 30, height: 30 }}
+							alt={userInfo?.data?.user?.user_metadata?.full_name}
+							src={userInfo?.data?.user?.user_metadata?.avatar_url}
+							sx={{ width: 35, height: 35 }}
 						/>
 						{/* </Tooltip> */}
 					</span>
@@ -98,6 +107,10 @@ function Header() {
         </div> */}
 			</div>
 			<Popover
+				id={id}
+				open={open}
+				anchorEl={anchor}
+				onClose={handlePopperClose}
 				anchorOrigin={{
 					vertical: 'bottom',
 					horizontal: 'left',
@@ -107,7 +120,14 @@ function Header() {
 					horizontal: 'center',
 				}}
 			>
-				The content of the Popover.
+				<div className="pop-acc">
+					<div>
+						My Profile
+					</div>
+					<div onClick={handleSignOut}>
+						Sign Out
+					</div>
+				</div>
 			</Popover>
 		</div>
 	);

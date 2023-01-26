@@ -20,7 +20,7 @@ function App() {
 			})();
 	}, []);
 	return (
-		<AuthContext.Provider value={userInfo}>
+		<AuthContext.Provider value={{userInfo, setUserInfo}}>
 			<div className='App'>
 				{location?.pathname !== '/login' && <Header />}
 				<div
