@@ -12,6 +12,7 @@ import SatelliteAltIcon from '@mui/icons-material/SatelliteAlt';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import { fetchtopAnime } from '../../app/feature/topAnime.slice';
 import { supabase } from '../../config/supabase';
+import { TvOutlined } from '@mui/icons-material';
 
 function HomePage() {
 	const dispatch = useDispatch();
@@ -27,7 +28,7 @@ function HomePage() {
 	const [watchList, setWatchList] = useState(null);
 
 	const getUserData = async () => {
-    let { data, error } = await supabase.from('animeHistory').select();
+    let { data, error } = await supabase.from('animeWatchList').select("watchList");
     if (error) {
       console.error('Error while fetching user details--->', error);
     } else {
@@ -46,8 +47,10 @@ function HomePage() {
 		if (!topAnime.response && !topAnime?.hasError) {
 			dispatch(fetchtopAnime());
     }
-    getUserData();
+    // getUserData();
 	}, []);
+
+	// console.log('Supabase---->',supabase, supabase.auth);
 
 	return (
 		<>
@@ -73,6 +76,14 @@ function HomePage() {
 						{/* <div className="carousel_container_right-btn"></div> */}
 					</div>
 				)}
+			</div>
+			<div className="sliderr watchlist">
+				<Slider
+					title="Continue Watching"
+					data={watchList}
+					icon={<TvOutlined />}
+					watch={true}
+				/>
 			</div>
 			<div className='sliderr'>
 				<Slider
