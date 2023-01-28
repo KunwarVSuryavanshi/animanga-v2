@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAiringAnime } from '../../app/feature/airing.slice';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -12,7 +12,9 @@ import SatelliteAltIcon from '@mui/icons-material/SatelliteAlt';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import { fetchtopAnime } from '../../app/feature/topAnime.slice';
 import { supabase } from '../../config/supabase';
-import { TvOutlined } from '@mui/icons-material';
+import { AuthContext } from '../../Common/AuthContext';
+import LiveTvIcon from '@mui/icons-material/LiveTv';
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 
 function HomePage() {
 	const dispatch = useDispatch();
@@ -26,15 +28,17 @@ function HomePage() {
 		}
 	);
 	const [watchList, setWatchList] = useState(null);
+	const { userInfo: userMeta } = useContext(AuthContext);
 
 	const getUserData = async () => {
-    let { data, error } = await supabase.from('animeWatchList').select("watchList");
-    if (error) {
-      console.error('Error while fetching user details--->', error);
-    } else {
-      console.log('Data--->', data);
-      setWatchList(data)
-    }
+		let { data, error } = await supabase
+			.from('animeWatchList')
+			.select('aniListId, epDetails');
+		if (error) {
+			console.error('Error while fetching user details--->', error);
+		} else {
+			setWatchList(data);
+		}
 	};
 
 	useEffect(() => {
@@ -46,9 +50,14 @@ function HomePage() {
 		}
 		if (!topAnime.response && !topAnime?.hasError) {
 			dispatch(fetchtopAnime());
-    }
-    // getUserData();
+		}
 	}, []);
+
+	useEffect(() => {
+		if (userMeta?.data?.user) {
+			getUserData();
+		}
+	}, [userMeta?.data?.user]);
 
 	// console.log('Supabase---->',supabase, supabase.auth);
 
@@ -77,14 +86,42 @@ function HomePage() {
 					</div>
 				)}
 			</div>
-			<div className="sliderr watchlist">
-				<Slider
-					title="Continue Watching"
-					data={watchList}
-					icon={<TvOutlined />}
-					watch={true}
-				/>
-			</div>
+
+			{/* ------------------------------Continue Watching section---------------------- */}
+			{watchList && (
+				<div className='episodes'>
+					{watchList?.length > 0 && (
+						<div className='title'>
+							<LiveTvIcon /> &nbsp;CONTINUE WATCHING
+						</div>
+					)}
+					<div className='ep-list'>
+						{watchList?.map((item, key) => {
+							return (
+								<div
+									className='ep_card'
+									key={item?.epDetails?.number}
+									// onClick={() => openPlayer(item)}
+								>
+									<div
+										className='ep_image'
+										style={{
+											backgroundImage: `url(${item?.epDetails?.image})`,
+										}}
+									>
+										<PlayCircleOutlineIcon />
+									</div>
+									<div className='ep_no'>
+										Episode - {item?.epDetails?.number ?? key + 1}
+									</div>
+									<div className='ep_name'>{item?.epDetails?.title}</div>
+								</div>
+							);
+						})}
+					</div>
+				</div>
+			)}
+			{/* ------------------------------ UPCOMING --------------------------------------- */}
 			<div className='sliderr'>
 				<Slider
 					title={'UPCOMING'}
@@ -93,6 +130,7 @@ function HomePage() {
 					trailer={true}
 				/>
 			</div>
+			{/* ------------------------------ AIRING --------------------------------------- */}
 			<div className='sliderr airing'>
 				<Slider
 					title={'AIRING'}
@@ -101,6 +139,7 @@ function HomePage() {
 					icon={<SatelliteAltIcon />}
 				/>
 			</div>
+			{/* ------------------------------ ALL TIME TOP --------------------------------------- */}
 			<div className='sliderr top'>
 				<Slider
 					title={'ALL TIME TOP'}

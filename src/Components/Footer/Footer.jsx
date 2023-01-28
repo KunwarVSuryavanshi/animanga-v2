@@ -24,6 +24,9 @@ function Footer() {
       </div>
       <br />
       <br />
+      <div className="disclaimer">
+        
+      </div>
       <div className="social">
         <FacebookIcon titleAccess="Yet to create :/" />
         <InstagramIcon titleAccess="Yet to create :/" />

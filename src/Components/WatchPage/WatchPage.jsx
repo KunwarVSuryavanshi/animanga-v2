@@ -1,76 +1,95 @@
-import { Chip, LinearProgress, Modal } from "@mui/material";
-import axios from "axios";
-import React, { useEffect, useRef, useState } from "react";
-import ReactPlayer from "react-player";
-import { useParams } from "react-router-dom";
-import "./WatchPage.scss";
-import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import TableRowsIcon from "@mui/icons-material/TableRows";
-import CellTowerIcon from "@mui/icons-material/CellTower";
-import { cleanHTML, secondsToDhms } from "../../Common/utils";
-import TrendingUpIcon from "@mui/icons-material/TrendingUp";
-import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
-import Slider from "../Slider/Slider";
-import LightbulbIcon from "@mui/icons-material/Lightbulb";
-import StyleIcon from "@mui/icons-material/Style";
-import TheaterComedyIcon from "@mui/icons-material/TheaterComedy";
-import NotFound from "../NotFound/NotFound";
-import Timer from "../Timer/Timer";
+import { Chip, LinearProgress, Modal } from '@mui/material';
+import axios from 'axios';
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import ReactPlayer from 'react-player';
+import { useParams } from 'react-router-dom';
+import './WatchPage.scss';
+import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import TableRowsIcon from '@mui/icons-material/TableRows';
+import CellTowerIcon from '@mui/icons-material/CellTower';
+import { cleanHTML, secondsToDhms } from '../../Common/utils';
+import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
+import Slider from '../Slider/Slider';
+import LightbulbIcon from '@mui/icons-material/Lightbulb';
+import StyleIcon from '@mui/icons-material/Style';
+import TheaterComedyIcon from '@mui/icons-material/TheaterComedy';
+import NotFound from '../NotFound/NotFound';
+import Timer from '../Timer/Timer';
+import { AuthContext } from '../../Common/AuthContext';
+import { supabase } from '../../config/supabase';
 
 function WatchPage() {
-  const { epInfo } = useParams();
-  const [animeInfo, setAnimeInfo] = useState(null);
-  const [openModal, setOpenModal] = useState(false);
-  const [playEp, setPlayEp] = useState(null);
-  const [sources, setSources] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [err, setErr] = useState(false);
-  // const [buffering, setLoading] = useState(true);
+	const { epInfo } = useParams();
+	const [animeInfo, setAnimeInfo] = useState(null);
+	const [openModal, setOpenModal] = useState(false);
+	const [playEp, setPlayEp] = useState(null);
+	const [sources, setSources] = useState(null);
+	const [loading, setLoading] = useState(true);
+	const [err, setErr] = useState(false);
+	const { userInfo: userMeta } = useContext(AuthContext);
+	// const [buffering, setLoading] = useState(true);
 
-  const formatter = Intl.NumberFormat("en", { notation: "compact" });
+	const formatter = Intl.NumberFormat('en', { notation: 'compact' });
 
-  const handleOpen = (item) => {
-    setLoading(true);
-    axios
-      .get(`https://api.consumet.org/meta/anilist/watch/${item?.id}`)
-      .then((res) => {
-        setSources(res?.data?.sources);
-        setLoading(false);
-      });
-    setPlayEp(item);
-    setOpenModal(true);
-  };
+	const openPlayer = item => {
+		console.log('Item--->', item);
+		setLoading(true);
+		axios
+			.get(`https://api.consumet.org/meta/anilist/watch/${item?.id}`)
+			.then(res => {
+				setSources(res?.data?.sources);
+				setLoading(false);
+			});
+		setPlayEp(item);
+		setOpenModal(true);
+	};
 
-  const handleClose = () => {
-    setPlayEp(null);
-    setOpenModal(false);
-  };
+	const handleClose = () => {
+		setPlayEp(null);
+		setOpenModal(false);
+	};
 
-  useEffect(() => {
-    if (epInfo) {
-      axios
-        .get(`https://api.consumet.org/meta/anilist/info/${epInfo}`)
-        .then((res) => setAnimeInfo(res.data))
-        .catch((err) => {
-          console.error("Error with comsumet API call--->", err);
-          setErr(true);
-        });
-      window.scroll({ top: 0, left: 0, behavior: "smooth" });
-    }
-    return () => {
-      setAnimeInfo(null);
-    };
-  }, [epInfo]);
+	const handleStart = async () => {
+		if (userMeta?.data?.user?.id) {
+			const error = await supabase.from('animeWatchList').upsert(
+				{
+					email: userMeta?.data.user.email,
+					epDetails: playEp,
+					aniListId: epInfo,
+					ani_user_id: `${epInfo}_${userMeta?.data.user.email}`,
+				},
+				{ onConflict: 'ani_user_id' }
+			);
+			console.error('Error--->', error);
+		}
+	};
 
-  // useEffect(() => {
-  //   if (animeInfo?.nextAiringEpisode?.timeUntilAiring) {
-  //     // setNextEpTimer(new Date(animeInfo?.nextAiringEpisode?.timeUntilAiring));
-  //     startTimer(animeInfo?.nextAiringEpisode?.timeUntilAiring);
-  //   }
-  // }, [animeInfo])
+	useEffect(() => {
+		if (epInfo) {
+			axios
+				.get(`https://api.consumet.org/meta/anilist/info/${epInfo}`)
+				.then(res => setAnimeInfo(res.data))
+				.catch(err => {
+					console.error('Error with comsumet API call--->', err);
+					setErr(true);
+				});
+			window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+		}
+		return () => {
+			setAnimeInfo(null);
+		};
+	}, [epInfo]);
 
-  return err ? (
+	// useEffect(() => {
+	//   if (animeInfo?.nextAiringEpisode?.timeUntilAiring) {
+	//     // setNextEpTimer(new Date(animeInfo?.nextAiringEpisode?.timeUntilAiring));
+	//     startTimer(animeInfo?.nextAiringEpisode?.timeUntilAiring);
+	//   }
+	// }, [animeInfo])
+
+	return err ? (
 		<NotFound noHeader={true} />
 	) : (
 		<div className='player_root'>
@@ -175,7 +194,7 @@ function WatchPage() {
 									<div
 										className='ep_card'
 										key={item?.number}
-										onClick={() => handleOpen(item)}
+										onClick={() => openPlayer(item)}
 									>
 										<div
 											className='ep_image'
@@ -252,14 +271,15 @@ function WatchPage() {
 						width='100%'
 						height='100%'
 						controls={true}
-						light={playEp?.image} // replace with image tag
+						// light={playEp?.image} // replace with image tag
 						// playIcon={
 						//   <div className="play-icon">
 						//     <PlayCircleOutlineIcon />
 						//   </div>
 						// }
+						onStart={handleStart}
 						onReady={() => props?.setLoading(false)}
-						playIcon={loading ? <></> : null}
+						// playIcon={loading ? <></> : null}
 						// onBuffer={() => setLoading(true)}
 						// onBufferEnd={() => setLoading(false)}
 						volume={0.5}
