@@ -258,21 +258,47 @@
 }
 
 .modal_root {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
   background-color: variables.$black_grey;
   left: 18%;
   right: 18%;
   position: absolute;
-  top: 10%;
-  bottom: 10%;
+  top: 6%;
+  bottom: 6%;
+  height: fit-content;
+  max-height: 90vh;
+  min-height: 60vh;
+  // padding: 2vw;
   // .thumbnail{
   //   width: 100%;
   //   height: 100%;
   // }
+  .player-ep {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin: 0.5vh 0.9vh;
+    .eplist {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 1.4rem;
+      align-items: center;
+      margin: 2vh 0;
+      .ep_no {
+        min-height: 1vh;
+        min-width: 2vw;
+        max-width: fit-content;
+        padding: 1vh 1vh;
+        text-align: center;
+        // margin: 1vh 0.5vw;
+        border: 2px solid var(--accent);
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+  }
 }
 
 .modal_root:focus-visible {

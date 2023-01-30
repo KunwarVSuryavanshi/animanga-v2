@@ -285,6 +285,25 @@ function WatchPage() {
 						volume={0.5}
 						pip={false}
 					></ReactPlayer>
+					<div className='player-ep'>
+						{animeInfo?.episodes?.length > 0 &&(
+							<div className='eplist'>
+								{animeInfo?.episodes?.map((item, key) => {
+									return (
+										<>
+											<div
+												className='ep_no'
+												key={item?.number + '_list'}
+												onClick={() => openPlayer(item)}
+											>
+												{item?.number ?? key + 1}
+											</div>
+										</>
+									);
+								})}
+							</div>
+						)}
+					</div>
 				</div>
 			</Modal>
 		</div>
