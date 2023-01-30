@@ -6,7 +6,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
   font-size: 2.5rem;
-  background-color: variables.$background_main;
+  background-color: #0e0e0ee4;
+  backdrop-filter: blur(5px);
   top: 0;
   height: 8vh;
   font-weight: 700;
@@ -47,9 +48,9 @@
       a::after {
         content: '';
         // width: 100%;
-        height: 4px;
-        border-radius: 5px;
-        background-color: var(--yellow);
+        height: 3px;
+        border-radius: 2px;
+        background-color: red;
         position: absolute;
         // bottom: 0;
         top: 120%;
@@ -75,9 +76,9 @@
 
     .search-icon::after, .signin::after {
       content: '';
-      height: 4px;
-      border-radius: 5px;
-      background-color: var(--yellow);
+      height: 2px;
+      border-radius: 2px;
+      background-color: red;
       position: absolute;
       // bottom: 0;
       top: 120%;

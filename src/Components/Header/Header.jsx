@@ -4,7 +4,6 @@ import './Header.scss';
 import SearchIcon from '@mui/icons-material/Search';
 import { useEffect } from 'react';
 import Avatar from '@mui/material/Avatar';
-import PersonPinIcon from '@mui/icons-material/PersonPin';
 import { supabase } from '../../config/supabase';
 import { AuthContext } from '../../Common/AuthContext';
 import { Fade, Popover, Tooltip } from '@mui/material';

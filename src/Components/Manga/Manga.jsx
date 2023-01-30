@@ -76,7 +76,7 @@ function Manga() {
 
   useEffect(() => {
     if (topManga?.response?.Page?.media?.length === 50) {
-      observer.observe(mangaRef?.current);
+      // observer.observe(mangaRef?.current);
     }
   }, [topManga?.response?.Page?.media]);
 
@@ -86,13 +86,13 @@ function Manga() {
         <EngineeringIcon />
       </div>
       <div className="text">Still Under development. &#128517;</div> */}
-      {topManga?.loading ? (
+      {topManga?.loading || true ? (
         <div style={{ position: "sticky", top: "8vh", height: "100vh" }}>
           <LinearProgress color="primary" />
         </div>
       ) : (
         <>
-          {topManga?.response?.Page?.media?.length > 0 && (
+          {/* {topManga?.response?.Page?.media?.length > 0 && (
             <>
               <div className="cards">
                 {topManga?.response?.Page?.media?.map((item, key) => {
@@ -134,7 +134,7 @@ function Manga() {
                 </div>
               )}
             </>
-          )}
+          )} */}
         </>
       )}
     </div>
