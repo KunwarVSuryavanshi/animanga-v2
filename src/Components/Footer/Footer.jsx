@@ -26,7 +26,7 @@ function Footer() {
 			<br />
 			<div className='disclaimer'>
 				(NOTE: AniManga does not store any files on our server, we only link to media
-				hosted on third party services.)
+				hosted on third party services. <br/> Also this project is merely just out of hobby, nothing more nothing less.)
 			</div>
 			<div className='social'>
 				<FacebookIcon titleAccess='Yet to create :/' />

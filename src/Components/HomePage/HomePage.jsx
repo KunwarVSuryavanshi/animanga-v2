@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAiringAnime } from '../../app/feature/airing.slice';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -15,6 +15,9 @@ import { supabase } from '../../config/supabase';
 import { AuthContext } from '../../Common/AuthContext';
 import LiveTvIcon from '@mui/icons-material/LiveTv';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
+import { Modal } from '@mui/material';
+import ReactPlayer from 'react-player';
+import axios from 'axios';
 
 function HomePage() {
 	const dispatch = useDispatch();
@@ -29,6 +32,45 @@ function HomePage() {
 	);
 	const [watchList, setWatchList] = useState(null);
 	const { userInfo: userMeta } = useContext(AuthContext);
+	const [openModal, setOpenModal] = useState(false);
+	const [loading, setLoading] = useState(true);
+	const [sources, setSources] = useState(null);
+	const [animeInfo, setAnimeInfo] = useState(null);
+	const playerRef = useRef(null);
+	const timeRef = useRef(null);
+
+	const openPlayer = (item, flag = true) => {
+		setLoading(true);
+		if (flag)
+			axios
+				.get(
+					`https://yametekudasai.vercel.app/meta/anilist/info/${item?.aniListId}`
+				)
+				.then(res => setAnimeInfo(res.data))
+				.catch(err => {
+					console.error('Error with API call--->', err);
+				});
+		axios
+			.get(
+				`https://api.consumet.org/meta/anilist/watch/${
+					item?.epDetails?.id ?? item?.id
+				}`
+			)
+			.then(res => {
+				setSources(res?.data?.sources);
+				timeRef.current = item?.epDetails?.time;
+				setLoading(false);
+			});
+		setOpenModal(true);
+	};
+
+	const handleClose = () => {
+		setOpenModal(false);
+	};
+
+	const handleStart = () => {
+		playerRef?.current?.seekTo(timeRef?.current, 'seconds');
+	};
 
 	const getUserData = async () => {
 		let { data, error } = await supabase
@@ -72,24 +114,19 @@ function HomePage() {
 					<div>Oooops something went wrong</div>
 				) : (
 					<div className='carousel_container'>
-						{/* <div className="carousel_container_left-btn"></div> */}
-						{/* {airingAnimeResponse?.response?.data?.map((item, key) => {
-              return <Carousel item={item} key={key} />;
-            })} */}
 						<BannerCarousel
 							data={airingAnimeResponse?.response?.data?.Page?.media?.slice(
 								0,
 								20
 							)}
 						/>
-						{/* <div className="carousel_container_right-btn"></div> */}
 					</div>
 				)}
 			</div>
 
 			{/* ------------------------------Continue Watching section---------------------- */}
 			{watchList && (
-				<div className='episodes'>
+				<div className='episodes_'>
 					{watchList?.length > 0 && (
 						<div className='title'>
 							<LiveTvIcon /> &nbsp;CONTINUE WATCHING
@@ -100,8 +137,8 @@ function HomePage() {
 							return (
 								<div
 									className='ep_card'
-									key={item?.epDetails?.number}
-									// onClick={() => openPlayer(item)}
+									key={key}
+									onClick={() => openPlayer(item)}
 								>
 									<div
 										className='ep_image'
@@ -109,7 +146,9 @@ function HomePage() {
 											backgroundImage: `url(${item?.epDetails?.image})`,
 										}}
 									>
-										<PlayCircleOutlineIcon />
+										<div className='play'>
+											<PlayCircleOutlineIcon />
+										</div>
 									</div>
 									<div className='ep_no'>
 										Episode - {item?.epDetails?.number ?? key + 1}
@@ -148,6 +187,74 @@ function HomePage() {
 					icon={<TrendingUpIcon />}
 				/>
 			</div>
+			<Modal
+				aria-labelledby='spring-modal-title'
+				aria-describedby='spring-modal-description'
+				open={openModal}
+				onClose={handleClose}
+				closeAfterTransition
+			>
+				<div className='modal_root'>
+					<svg
+						className={`spinner ${!loading && 'hidden'}`}
+						viewBox='0 0 24 24'
+					>
+						<path
+							d='M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z'
+							opacity='.25'
+						/>
+						<path
+							d='M12,4a8,8,0,0,1,7.89,6.7A1.53,1.53,0,0,0,21.38,12h0a1.5,1.5,0,0,0,1.48-1.75,11,11,0,0,0-21.72,0A1.5,1.5,0,0,0,2.62,12h0a1.53,1.53,0,0,0,1.49-1.3A8,8,0,0,1,12,4Z'
+							className='path'
+						/>
+					</svg>
+					<ReactPlayer
+						className='react-player'
+						url={
+							sources?.filter(item => item.quality === '1080p')?.[0]?.url ??
+							sources?.[0]?.url
+						}
+						// file={}
+						ref={playerRef}
+						width='100%'
+						height='100%'
+						controls={true}
+						// light={playEp?.image} // replace with image tag
+						// playIcon={
+						//   <div className="play-icon">
+						//     <PlayCircleOutlineIcon />
+						//   </div>
+						// }
+						onReady={() => props?.setLoading(false)}
+						// playIcon={loading ? <></> : null}
+						// onBuffer={() => setLoading(true)}
+						// onBufferEnd={() => setLoading(false)}
+						playing={true}
+						onStart={handleStart}
+						volume={0.5}
+						pip={false}
+					></ReactPlayer>
+					<div className={`player-ep ${loading && 'hidden'}`}>
+						{animeInfo?.episodes?.length > 0 && (
+							<div className='eplist'>
+								{animeInfo?.episodes?.map((item, key) => {
+									return (
+										<>
+											<div
+												className='ep_no'
+												key={item?.number + '_list'}
+												onClick={() => openPlayer(item, false)}
+											>
+												{item?.number ?? key + 1}
+											</div>
+										</>
+									);
+								})}
+							</div>
+						)}
+					</div>
+				</div>
+			</Modal>
 		</>
 	);
 }

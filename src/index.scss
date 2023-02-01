@@ -32,6 +32,7 @@ body {
   --spring_b: #BFFFF0;
   --accent: #09bbb2;
   --yellow: #eedf07;
+  --blue: #0ab8f1;
 }
 
 // @media (prefers-color-scheme: light) {
@@ -51,8 +52,8 @@ body {
 
 ::-webkit-scrollbar {
   background-color: rgba(0, 0, 0, 0) !important;
-  width: 0.5vw !important;
-  height: 0.5vw !important;
+  width: 0.4vw !important;
+  height: 0.4vw !important;
 }
 
 ::-webkit-scrollbar-track {

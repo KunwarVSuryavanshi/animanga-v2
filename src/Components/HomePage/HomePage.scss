@@ -24,10 +24,11 @@
   padding-bottom: 10vh;
 }
 
-.episodes {
-  margin-top: 2vh;
+.episodes_ {
+  margin-top: 8vh;
   margin-left: 2vw;
   margin-right: 2vw;
+  margin-bottom: 4vh;
 
   .title {
     font-size: 1.7rem;
@@ -37,8 +38,10 @@
     // justify-content: center;
     align-items: center;
     margin-left: 1vw;
+
     .MuiSvgIcon-root {
       font-size: 2rem;
+      margin-top: -1vh;
     }
   }
 
@@ -71,6 +74,20 @@
         justify-content: center;
         align-items: center;
 
+        .play {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: all 0.5s ease-in-out;
+          border-radius: 10px;
+        }
+
+        .play:hover {
+          backdrop-filter: saturate(0.9) brightness(0.85) blur(1px);
+        }
+
         // transition: all 0.4s;
         .MuiSvgIcon-root {
           font-size: 4rem;
@@ -82,9 +99,11 @@
           transition: all 0.2s 0.2s;
         }
       }
-      .ep_no{
+
+      .ep_no {
         margin-top: 1vh;
       }
+
       .ep_name {
         line-clamp: 2;
         display: -webkit-box;

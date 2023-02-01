@@ -30,11 +30,11 @@ function WatchPage() {
 	const [err, setErr] = useState(false);
 	const { userInfo: userMeta } = useContext(AuthContext);
 	// const [buffering, setLoading] = useState(true);
-
+	const volume = useRef(0.5);
 	const formatter = Intl.NumberFormat('en', { notation: 'compact' });
+	const playerRef = useRef(null);
 
 	const openPlayer = item => {
-		console.log('Item--->', item);
 		setLoading(true);
 		axios
 			.get(`https://api.consumet.org/meta/anilist/watch/${item?.id}`)
@@ -47,22 +47,28 @@ function WatchPage() {
 	};
 
 	const handleClose = () => {
+		handleWatchList()
 		setPlayEp(null);
 		setOpenModal(false);
 	};
 
-	const handleStart = async () => {
+	const handleWatchList = async () => {
 		if (userMeta?.data?.user?.id) {
-			const error = await supabase.from('animeWatchList').upsert(
+			await supabase.from('animeWatchList').upsert(
 				{
 					email: userMeta?.data.user.email,
-					epDetails: playEp,
+					epDetails: {
+						id: playEp?.id,
+						image: playEp?.image,
+						title: playEp?.title,
+						number: playEp?.number,
+						time: Math.round(playerRef?.current?.getCurrentTime())
+					},
 					aniListId: epInfo,
 					ani_user_id: `${epInfo}_${userMeta?.data.user.email}`,
 				},
 				{ onConflict: 'ani_user_id' }
 			);
-			console.error('Error--->', error);
 		}
 	};
 
@@ -200,7 +206,9 @@ function WatchPage() {
 											className='ep_image'
 											style={{ backgroundImage: `url(${item.image})` }}
 										>
-											<PlayCircleOutlineIcon />
+											<div className='play'>
+												<PlayCircleOutlineIcon />
+											</div>
 										</div>
 										<div className='ep_no'>
 											Episode - {item?.number ?? key + 1}
@@ -267,6 +275,7 @@ function WatchPage() {
 							sources?.filter(item => item.quality === '1080p')?.[0]?.url ??
 							sources?.[0]?.url
 						}
+						ref={playerRef}
 						// file={}
 						width='100%'
 						height='100%'
@@ -277,16 +286,16 @@ function WatchPage() {
 						//     <PlayCircleOutlineIcon />
 						//   </div>
 						// }
-						onStart={handleStart}
+						// onEnded={handleStart}
 						onReady={() => props?.setLoading(false)}
 						// playIcon={loading ? <></> : null}
 						// onBuffer={() => setLoading(true)}
 						// onBufferEnd={() => setLoading(false)}
-						volume={0.5}
+						volume={volume?.current ?? 0.5}
 						pip={false}
 					></ReactPlayer>
-					<div className='player-ep'>
-						{animeInfo?.episodes?.length > 0 &&(
+					<div className={`player-ep ${loading && 'hidden'}`}>
+						{animeInfo?.episodes?.length > 0 && (
 							<div className='eplist'>
 								{animeInfo?.episodes?.map((item, key) => {
 									return (

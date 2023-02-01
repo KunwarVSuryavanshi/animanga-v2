@@ -1,8 +1,8 @@
 import { Modal } from '@mui/material';
 import React from 'react'
-import { useEffect } from 'react';
 import ReactPlayer from 'react-player';
 import Saitama from '../../assets/saitama_NT.png'
+import './CustomPlayer.scss';
 
 function CustomPlayer(props) {
 
@@ -14,7 +14,7 @@ function CustomPlayer(props) {
       onClose={props?.handleClose}
       closeAfterTransition
     >
-      <div className="modal_root">
+      <div className="modal_root_custom">
         {
           ReactPlayer.canPlay(props?.sources?.[0]?.url) ?
           <>
@@ -43,7 +43,8 @@ function CustomPlayer(props) {
               onReady={() => props?.setLoading(false)}
               // onBuffer={() => props?.setLoading(true)}
               onBufferEnd={() => props?.setLoading(false)}
-              pip={props.pip ?? false}
+                pip={props.pip ?? false}
+                volume={0.5}
             ></ReactPlayer>
           </>
             :
