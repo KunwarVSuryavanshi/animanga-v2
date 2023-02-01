@@ -105,13 +105,14 @@
       }
 
       .ep_name {
-        line-clamp: 2;
+        -webkit-line-clamp: 2;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-align: center;
         cursor: default;
         // font-size: 1rem;
+        max-width: 27vw;
         margin-top: 0.5vh;
       }
     }
@@ -144,5 +145,47 @@
     &.top {
       padding-bottom: 0vh !important;
     }
+  }
+  .episodes_{
+    .ep-list {
+        height: 30vh;
+        display: flex;
+        flex-direction: row;
+        overflow: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+    
+        .ep_card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          margin: 0vh 0.9vw 2vh;
+    
+          .ep_image {
+            width: 60vw;
+            height: 18vh;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+    
+            .MuiSvgIcon-root {
+              font-size: 3rem;
+            }
+          }
+        }
+        .ep_no, .ep_name{
+          font-size: 0.8rem;
+          margin-top: 0vh !important;
+          max-width: 60vw !important;
+        }
+      }
+  }
+
+  .modal_root {
+    left: 1%;
+    right: 1%;
+    top: 25%;
+    bottom: 25%;
   }
 }

@@ -6,7 +6,9 @@ import { useEffect } from 'react';
 import Avatar from '@mui/material/Avatar';
 import { supabase } from '../../config/supabase';
 import { AuthContext } from '../../Common/AuthContext';
-import { Fade, Popover, Tooltip } from '@mui/material';
+import Badge from '@mui/material/Badge';
+import Popover from '@mui/material/Popover';
+import { styled } from '@mui/material/styles';
 
 function Header() {
 	const location = useLocation();
@@ -15,6 +17,34 @@ function Header() {
 	const [anchor, setAnchor] = useState(null);
 	const open = Boolean(anchor);
 	const id = open ? 'simple-popover' : undefined;
+	const StyledBadge = styled(Badge)(({ theme }) => ({
+		'& .MuiBadge-badge': {
+			backgroundColor: '#44b700',
+			color: '#44b700',
+			boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
+			'&::after': {
+				position: 'absolute',
+				top: 0,
+				left: 0,
+				width: '100%',
+				height: '100%',
+				borderRadius: '50%',
+				animation: 'ripple 1.2s infinite ease-in-out',
+				border: '1px solid currentColor',
+				content: '""',
+			},
+		},
+		'@keyframes ripple': {
+			'0%': {
+				transform: 'scale(.8)',
+				opacity: 1,
+			},
+			'100%': {
+				transform: 'scale(2.4)',
+				opacity: 0,
+			},
+		},
+	}));
 
 	const handleLogin = () => {
 		navigate('/login');
@@ -24,7 +54,7 @@ function Header() {
 		const data = await supabase.auth.signOut();
 		setUserInfo(null);
 		setAnchor(null);
-	}
+	};
 
 	const handleSearch = () => {
 		navigate(`search`);
@@ -86,11 +116,17 @@ function Header() {
 							open={profileModal}
 							title='Add'
 						> */}
-						<Avatar
-							alt={userInfo?.data?.user?.user_metadata?.full_name}
-							src={userInfo?.data?.user?.user_metadata?.avatar_url}
-							sx={{ width: 35, height: 35 }}
-						/>
+						<StyledBadge
+							overlap='circular'
+							anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+							variant='dot'
+						>
+							<Avatar
+								alt={userInfo?.data?.user?.user_metadata?.full_name}
+								src={userInfo?.data?.user?.user_metadata?.avatar_url}
+								sx={{ width: 35, height: 35 }}
+							/>
+						</StyledBadge>
 						{/* </Tooltip> */}
 					</span>
 				) : (
@@ -119,13 +155,9 @@ function Header() {
 					horizontal: 'center',
 				}}
 			>
-				<div className="pop-acc">
-					<div>
-						My Profile
-					</div>
-					<div onClick={handleSignOut}>
-						Sign Out
-					</div>
+				<div className='pop-acc'>
+					<div>My Profile</div>
+					<div onClick={handleSignOut}>Sign Out</div>
 				</div>
 			</Popover>
 		</div>

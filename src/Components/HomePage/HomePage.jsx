@@ -150,6 +150,29 @@ function HomePage() {
 											<PlayCircleOutlineIcon />
 										</div>
 									</div>
+									<div
+										className='time-wrap'
+										style={{
+											display: 'flex',
+											width: '100%',
+											marginTop: '-0.5vh',
+											backgroundColor: '#565f49',
+											borderRadius: '10px',
+											zIndex: '4',
+										}}
+									>
+										<div
+											className='time-line'
+											style={{
+												width: item?.epDetails?.time
+													? `${(item?.epDetails?.time / 60) * 5}%`
+													: '8px',
+												backgroundColor: 'red',
+												height: '0.5vh',
+												borderRadius: '10px',
+											}}
+										></div>
+									</div>
 									<div className='ep_no'>
 										Episode - {item?.epDetails?.number ?? key + 1}
 									</div>
@@ -193,6 +216,7 @@ function HomePage() {
 				open={openModal}
 				onClose={handleClose}
 				closeAfterTransition
+				id='player'
 			>
 				<div className='modal_root'>
 					<svg

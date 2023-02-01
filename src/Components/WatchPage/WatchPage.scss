@@ -213,12 +213,13 @@
         }
 
         .ep_name {
-          line-clamp: 2;
+          -webkit-line-clamp: 2;
           display: -webkit-box;
           -webkit-box-orient: vertical;
           overflow: hidden;
           text-align: center;
           cursor: default;
+          max-width: 28vw;
         }
       }
     }
