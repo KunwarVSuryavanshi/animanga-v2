@@ -13,7 +13,7 @@ function Reader() {
 	const pageRef = useRef();
 	const options = {
 		root: null,
-		rootMargin: '0px 200px', // +ve means pre load
+		rootMargin: '0px 500px 0px 0px', // +ve means pre load
 		threshold: 0,
 	};
 	const observer = new IntersectionObserver(
