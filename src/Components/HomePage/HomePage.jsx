@@ -36,6 +36,7 @@ function HomePage() {
 	const [loading, setLoading] = useState(true);
 	const [sources, setSources] = useState(null);
 	const [animeInfo, setAnimeInfo] = useState(null);
+	const [playEp, setPlayEp] = useState(null);
 	const playerRef = useRef(null);
 	const timeRef = useRef(null);
 
@@ -44,7 +45,9 @@ function HomePage() {
 		if (flag)
 			axios
 				.get(
-					`https://yametekudasai.vercel.app/meta/anilist/info/${item?.aniListId}`
+					`https://${import.meta.env.VITE_SECONDARY_API}/meta/anilist/info/${
+						item?.aniListId
+					}`
 				)
 				.then(res => setAnimeInfo(res.data))
 				.catch(err => {
@@ -52,7 +55,7 @@ function HomePage() {
 				});
 		axios
 			.get(
-				`https://api.consumet.org/meta/anilist/watch/${
+				`https://${import.meta.env.VITE_PRIMARY_API}/meta/anilist/watch/${
 					item?.epDetails?.id ?? item?.id
 				}`
 			)
@@ -61,15 +64,39 @@ function HomePage() {
 				timeRef.current = item?.epDetails?.time;
 				setLoading(false);
 			});
+		setPlayEp(item);
 		setOpenModal(true);
 	};
 
 	const handleClose = () => {
+		handleWatchList();
+		setPlayEp(null);
+		setSources(null);
 		setOpenModal(false);
 	};
 
+	const handleWatchList = async () => {
+		if (userMeta?.data?.user?.id) {
+			await supabase.from(import.meta.env.VITE_ANIME_TABLE).upsert(
+				{
+					email: userMeta?.data.user.email,
+					epDetails: {
+						id: playEp?.id,
+						image: playEp?.image,
+						title: playEp?.title,
+						number: playEp?.number,
+						time: Math.round(playerRef?.current?.getCurrentTime() ?? 0),
+					},
+					aniListId: +animeInfo?.id,
+					ani_user_id: `${animeInfo?.id}_${userMeta?.data.user.email}`,
+				},
+				{ onConflict: 'ani_user_id' }
+			);
+		}
+	};
+
 	const handleStart = () => {
-		playerRef?.current?.seekTo(timeRef?.current, 'seconds');
+		playerRef?.current?.seekTo(timeRef?.current ?? 0, 'seconds');
 	};
 
 	const getUserData = async () => {

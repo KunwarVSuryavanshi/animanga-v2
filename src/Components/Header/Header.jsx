@@ -4,7 +4,7 @@ import './Header.scss';
 import SearchIcon from '@mui/icons-material/Search';
 import { useEffect } from 'react';
 import Avatar from '@mui/material/Avatar';
-import { supabase } from '../../config/supabase';
+import { supabase } from '../../config/supabase';			
 import { AuthContext } from '../../Common/AuthContext';
 import Badge from '@mui/material/Badge';
 import Popover from '@mui/material/Popover';

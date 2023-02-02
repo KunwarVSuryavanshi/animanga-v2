@@ -37,7 +37,7 @@ function WatchPage() {
 	const openPlayer = item => {
 		setLoading(true);
 		axios
-			.get(`https://api.consumet.org/meta/anilist/watch/${item?.id}`)
+			.get(`https://${import.meta.env.VITE_PRIMARY_API}/meta/anilist/watch/${item?.id}`)
 			.then(res => {
 				setSources(res?.data?.sources);
 				setLoading(false);
@@ -54,7 +54,7 @@ function WatchPage() {
 
 	const handleWatchList = async () => {
 		if (userMeta?.data?.user?.id) {
-			await supabase.from('animeWatchList').upsert(
+			await supabase.from(import.meta.env.VITE_ANIME_TABLE).upsert(
 				{
 					email: userMeta?.data.user.email,
 					epDetails: {
@@ -62,7 +62,7 @@ function WatchPage() {
 						image: playEp?.image,
 						title: playEp?.title,
 						number: playEp?.number,
-						time: Math.round(playerRef?.current?.getCurrentTime())
+						time: Math.round(playerRef?.current?.getCurrentTime()),
 					},
 					aniListId: epInfo,
 					ani_user_id: `${epInfo}_${userMeta?.data.user.email}`,
@@ -75,10 +75,10 @@ function WatchPage() {
 	useEffect(() => {
 		if (epInfo) {
 			axios
-				.get(`https://api.consumet.org/meta/anilist/info/${epInfo}`)
+				.get(`https://${import.meta.env.VITE_PRIMARY_API}/meta/anilist/info/${epInfo}`)
 				.then(res => setAnimeInfo(res.data))
 				.catch(err => {
-					console.error('Error with comsumet API call--->', err);
+					console.error('Error with API call--->', err);
 					setErr(true);
 				});
 			window.scroll({ top: 0, left: 0, behavior: 'smooth' });
