@@ -129,7 +129,6 @@
     align-items: center;
     gap: 7rem;
     flex-wrap: wrap;
-    justify-content: center;
 
     .rating,
     .popularity {
@@ -466,6 +465,7 @@
     .wrapper {
       gap: 2rem;
       margin: 1vh 4vw;
+      justify-content: center;
     }
 
     .status {
