@@ -128,7 +128,6 @@ function HomePage() {
 		}
 	}, [userMeta?.data?.user]);
 
-	// console.log('Supabase---->',supabase, supabase.auth);
 
 	return (
 		<>

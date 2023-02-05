@@ -11,12 +11,10 @@ function App() {
 	const [userInfo, setUserInfo] = useState(null);
 
 	useEffect(() => {
-		console.log('App')
 		if (!userInfo)
 			(async function () {
 				const res = await supabase.auth.getUser();
 				setUserInfo(res);
-				console.log('async');
 			})();
 	}, []);
 	return (

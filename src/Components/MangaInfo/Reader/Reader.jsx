@@ -80,10 +80,6 @@ function Reader() {
 	};
 
 	const handleLeft = () => {
-		console.log(
-			viewRef.current.scrollLeft,
-			pageRef?.current?.previousSibling?.offsetWidth
-		);
 		viewRef.current.scrollLeft -=
 			pageRef?.current?.previousSibling?.offsetWidth * 2 > 0
 				? pageRef?.current?.previousSibling?.offsetWidth * 2
@@ -99,7 +95,6 @@ function Reader() {
 
 	useEffect(() => {
 		if (chapter?.length && viewRef?.current && pageRef.current) {
-			console.log('Observing thing--->', viewRef?.current?.children);
 			[...viewRef?.current?.children]
 				?.slice(1, [...viewRef?.current?.children]?.length - 1)
 				.forEach(item => observer.observe(item));

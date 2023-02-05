@@ -74,7 +74,6 @@ function Header() {
 		}
 	}, [location?.pathname]);
 
-	console.log('Info--->', userInfo);
 	return (
 		<div className='header'>
 			<div className='header_logo'>

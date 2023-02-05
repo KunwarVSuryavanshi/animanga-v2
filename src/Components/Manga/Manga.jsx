@@ -76,7 +76,7 @@ function Manga() {
 
 	useEffect(() => {
 		if (topManga?.response?.Page?.media?.length === 50) {
-			// observer.observe(mangaRef?.current);
+			observer.observe(mangaRef?.current);
 		}
 	}, [topManga?.response?.Page?.media]);
 
