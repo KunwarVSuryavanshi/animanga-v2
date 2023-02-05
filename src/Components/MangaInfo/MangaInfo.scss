@@ -38,7 +38,7 @@
       // width: 100%;
       height: 2px;
       border-radius: 5px;
-      background-color: #00a6ff;
+      background-color: red;
       position: absolute;
       // bottom: 0;
       top: 120%;
@@ -274,7 +274,7 @@
         // margin: auto;
         font-weight: 500;
         text-shadow: rgb(12, 12, 12) 4px 4px 10px;
-        animation: visiblity 6s ease-in-out forwards;
+        animation: visiblity 6s ease-in-out 2s forwards;
       }
 
       animation: visiblity 6s ease-in-out forwards;
@@ -407,7 +407,9 @@
 @keyframes visiblity {
   0% {
   }
-
+  99%{
+    font-size: 2rem;
+  }
   100% {
     background-color: transparent;
     color: transparent;
@@ -420,6 +422,10 @@
 }
 
 @media (max-width: 600px) {
+  .manga_banner{
+    min-height: 12vh;
+    // max-height: fit-content
+  }
   .about_manga_container {
     .info {
       gap: 1rem;
@@ -459,6 +465,7 @@
     .wrapper {
       gap: 2rem;
       margin: 1vh 4vw;
+      justify-content: center;
     }
 
     .status {

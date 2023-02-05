@@ -1,0 +1,38 @@
+.login_container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  background-image: url('../../assets/cr-gj2.jpg');
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+
+  .form {
+    min-width: 20vw;
+    min-height: 60vh;
+    max-width: fit-content;
+    background-color: var(--black_grey);
+    padding: 6vh 2vw 2vh;
+    border-radius: 10px;
+    // border: 2px solid var(--spring_g);
+    // animation: shadows 1.5s ease-in-out infinite both;
+    box-shadow: 0 0 1.5rem 0.25rem #05e0d559;
+    margin-left: 10vw;
+  }
+}
+
+@keyframes shadows {
+  0% {
+    box-shadow: 0 0 1rem 0rem var(--accent);
+  }
+
+  50% {
+    box-shadow: 0 0 0rem 0rem var(--accent);
+  }
+
+  100% {
+    box-shadow: 0 0 1rem 0rem var(--accent);
+  }
+}

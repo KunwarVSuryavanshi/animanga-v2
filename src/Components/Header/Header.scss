@@ -6,7 +6,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
   font-size: 2.5rem;
-  background-color: variables.$background_main;
+  background-color: #0e0e0ee4;
+  backdrop-filter: blur(5px);
   top: 0;
   height: 8vh;
   font-weight: 700;
@@ -48,8 +49,8 @@
         content: '';
         // width: 100%;
         height: 3px;
-        border-radius: 5px;
-        background-color: #00a6ff;
+        border-radius: 2px;
+        background-color: red;
         position: absolute;
         // bottom: 0;
         top: 120%;
@@ -70,13 +71,14 @@
   .search {
     .search-icon {
       position: relative;
+      margin-right: 1vw;
     }
 
-    .search-icon::after {
+    .search-icon::after, .signin::after {
       content: '';
-      height: 3px;
-      border-radius: 5px;
-      background-color: #00a6ff;
+      height: 2px;
+      border-radius: 2px;
+      background-color: red;
       position: absolute;
       // bottom: 0;
       top: 120%;
@@ -85,10 +87,20 @@
       transition: all 0.25s ease-in-out;
     }
 
-    .search-icon:hover::after {
+    .search-icon:hover::after, .signin:hover::after {
       // width: 100%;
       right: 0%;
       left: 0%;
+    }
+    .avatar{
+      font-size: 1rem;
+      cursor: pointer;
+      margin-left: 1rem;
+    }
+    .signin{
+      position: relative;
+      font-size: 0.90rem;
+      cursor: pointer;
     }
   }
 
@@ -113,7 +125,21 @@
     font-size: 1.7rem;
   }
 }
-
+.pop-acc{
+  color: white;
+  min-height: 12vh;
+  width: 5vw;
+  padding: 0.5vh 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 0.9rem;
+  gap: 0.5rem;
+  div{
+    cursor: pointer;
+  }
+}
 @media (max-width: 600px) {
   .header {
     font-size: 5.2vw;

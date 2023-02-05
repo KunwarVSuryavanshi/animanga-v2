@@ -13,7 +13,7 @@ function Reader() {
 	const pageRef = useRef();
 	const options = {
 		root: null,
-		rootMargin: '0%',
+		rootMargin: '0px 500px 0px 0px', // +ve means pre load
 		threshold: 0,
 	};
 	const observer = new IntersectionObserver(
@@ -23,11 +23,12 @@ function Reader() {
 
 	const loadImage = async element => {
 		let src = element?.getAttribute('data-src');
-    let proxiedImg = await proxyReq(src);
+		let proxiedImg = await proxyReq(src);
 		element.src = proxiedImg;
 	};
 
 	const handleLazyLoad = (items, observer) => {
+		console.log('Lazy load---->', items);
 		items?.forEach(item => {
 			if (item?.isIntersecting) {
 				loadImage(item?.target?.children?.[0]);
@@ -39,7 +40,9 @@ function Reader() {
 	const handleChapterFetch = event => {
 		setChap(event.target?.value);
 		setLoading(true);
-		let url = `https://yametekudasai.vercel.app/manga/${meta?.provider}/read?chapterId=${event.target?.value?.id}`;
+		let url = `https://${import.meta.env.VITE_SECONDARY_API}/manga/${
+			meta?.provider
+		}/read?chapterId=${event.target?.value?.id}`;
 		axios
 			.get(url)
 			.then(res => {
@@ -51,9 +54,9 @@ function Reader() {
 
 	const proxyReq = async (url, referer) => {
 		const data = await axios.get(
-			`https://yametekudasai.vercel.app/utils/image-proxy?url=${
-				url
-			}&referer=${
+			`https://${
+				import.meta.env.VITE_SECONDARY_API
+			}/utils/image-proxy?url=${url}&referer=${
 				referer ?? `https://${meta?.provider}.org/`
 			}`,
 			{
@@ -61,17 +64,19 @@ function Reader() {
 			}
 		);
 
-    let proxyImg = '';
-    if (data.status === 200) {
-      let image = btoa(
-        new Uint8Array(data?.data).reduce(
-          (data, byte) => data + String.fromCharCode(byte),
-          ''
-        )
-      );
-      proxyImg = `data:${data.headers['content-type'].toLowerCase()};base64,${image}`;
-    }
-    return proxyImg;
+		let proxyImg = '';
+		if (data.status === 200) {
+			let image = btoa(
+				new Uint8Array(data?.data).reduce(
+					(data, byte) => data + String.fromCharCode(byte),
+					''
+				)
+			);
+			proxyImg = `data:${data.headers[
+				'content-type'
+			].toLowerCase()};base64,${image}`;
+		}
+		return proxyImg;
 	};
 
 	const handleLeft = () => {
@@ -93,12 +98,13 @@ function Reader() {
 	};
 
 	useEffect(() => {
-		if (chap && viewRef?.current && pageRef.current) {
+		if (chapter?.length && viewRef?.current && pageRef.current) {
+			console.log('Observing thing--->', viewRef?.current?.children);
 			[...viewRef?.current?.children]
 				?.slice(1, [...viewRef?.current?.children]?.length - 1)
 				.forEach(item => observer.observe(item));
 		}
-	}, [chap, viewRef?.current, pageRef?.current]);
+	}, [chapter]);
 
 	return (
 		<div className='reader_container'>

@@ -47,6 +47,9 @@
       padding: 1vw;
       border: 3px solid transparent;
       border-radius: 10px;
+      min-width: 10vw;
+      max-width: fit-content;
+      flex-shrink: 0;
       // justify-content: space-between;
 
       &_image {
@@ -262,7 +265,7 @@
 
         &_image {
           width: 35vw;
-          min-height: 30vh;
+          min-height: 25vh;
           padding: 0.2vh;
 
           .rating {

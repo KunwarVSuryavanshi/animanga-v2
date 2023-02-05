@@ -1,0 +1,13 @@
+.modal_root_custom {
+  background-color: var(--background_main);
+  left: 8%;
+  right: 8%;
+  position: absolute;
+  top: 6%;
+  bottom: 6%;
+  max-height: 90vh;
+  min-height: 60vh;
+}
+#player{
+  backdrop-filter: blur(10px);
+}

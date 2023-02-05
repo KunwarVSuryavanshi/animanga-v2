@@ -22,6 +22,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  --background_main: #0e0e0e;
+  --purple_tint: #363c48;
+  --black_grey: #171d21;
+  --secondary: #8E05C2;
+  --tertiary: #700B97;
+  --spring_o: #FF5D5D;
+  --spring_g: #B6FFCE;
+  --spring_b: #BFFFF0;
+  --accent: #09bbb2;
+  --yellow: #eedf07;
+  --blue: #0ab8f1;
 }
 
 // @media (prefers-color-scheme: light) {
@@ -41,8 +52,8 @@ body {
 
 ::-webkit-scrollbar {
   background-color: rgba(0, 0, 0, 0) !important;
-  width: 0.5vw !important;
-  height: 0.5vw !important;
+  width: 0.4vw !important;
+  height: 0.4vw !important;
 }
 
 ::-webkit-scrollbar-track {
