@@ -151,7 +151,7 @@ function Reader() {
 									ref={pageRef}
 									key={key}
 								>
-									<img className='images' data-src={item?.img} />
+									<img className='images' data-src={item?.img} loading='lazy'/>
 								</div>
 							);
 						})}

@@ -150,10 +150,24 @@
       display: flex;
       // justify-content: center;
       align-items: center;
-
+      justify-content: space-between;
+      span{
+        display: flex;
+        align-items: center;
+      }
       .MuiSvgIcon-root {
         font-size: 2rem;
       }
+      .MuiFormControl-root{
+        &.MuiTextField-root{
+          label{
+            color: white;
+          }
+          input{
+            color: white;
+          }
+        }
+      } 
     }
 
     // scroll-snap-align: start;

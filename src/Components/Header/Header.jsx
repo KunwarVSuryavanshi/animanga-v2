@@ -9,6 +9,7 @@ import { AuthContext } from '../../Common/AuthContext';
 import Badge from '@mui/material/Badge';
 import Popover from '@mui/material/Popover';
 import { styled } from '@mui/material/styles';
+import logo from '../../assets/tv-logo.svg'
 
 function Header() {
 	const location = useLocation();
@@ -51,7 +52,7 @@ function Header() {
 	};
 
 	const handleSignOut = async () => {
-		const data = await supabase.auth.signOut();
+		await supabase.auth.signOut();
 		setUserInfo(null);
 		setAnchor(null);
 	};
@@ -78,7 +79,7 @@ function Header() {
 		<div className='header'>
 			<div className='header_logo'>
 				<Link to={'/'} className='link'>
-					AniManga
+					<img className='logo' src={logo} alt='AniManga-logo'/>AniManga
 				</Link>
 			</div>
 			<div

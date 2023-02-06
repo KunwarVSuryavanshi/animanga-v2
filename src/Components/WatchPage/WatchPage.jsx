@@ -1,4 +1,4 @@
-import { Chip, LinearProgress, Modal } from '@mui/material';
+import { Chip, LinearProgress, Modal, TextField } from '@mui/material';
 import axios from 'axios';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import ReactPlayer from 'react-player';
@@ -28,16 +28,22 @@ function WatchPage() {
 	const [sources, setSources] = useState(null);
 	const [loading, setLoading] = useState(true);
 	const [err, setErr] = useState(false);
+	const [ep, setEp] = useState('');
 	const { userInfo: userMeta } = useContext(AuthContext);
 	// const [buffering, setLoading] = useState(true);
 	const volume = useRef(0.5);
 	const formatter = Intl.NumberFormat('en', { notation: 'compact' });
 	const playerRef = useRef(null);
+	const epRef = useRef(null);
 
 	const openPlayer = item => {
 		setLoading(true);
 		axios
-			.get(`https://${import.meta.env.VITE_PRIMARY_API}/meta/anilist/watch/${item?.id}`)
+			.get(
+				`https://${import.meta.env.VITE_PRIMARY_API}/meta/anilist/watch/${
+					item?.id
+				}`
+			)
 			.then(res => {
 				setSources(res?.data?.sources);
 				setLoading(false);
@@ -47,9 +53,33 @@ function WatchPage() {
 	};
 
 	const handleClose = () => {
-		handleWatchList()
+		handleWatchList();
 		setPlayEp(null);
 		setOpenModal(false);
+	};
+
+	const handleEpNav = e => {
+		let val = +e.target.value;
+		if (val <= animeInfo?.episodes?.length && val >= 0) {
+			setEp(val);
+		}
+	};
+
+	const handleScroll = e => {
+		console.log('Scroll', epRef.current.scrollLeft, e.key, ep);
+		const key = e.key;
+		if (ep > 0) {
+			if (key === 'Backspace' || key === 'Delete') {
+				epRef.current.scrollLeft = 0;
+			} else if (key === 'Enter') {
+				// epRef.current.scrollLeft = 0;
+				epRef.current.scrollLeft +=
+					epRef?.current?.lastChild?.offsetWidth * (ep - 1);
+				setEp('');
+			}
+		} else {
+			epRef.current.scrollLeft = 0;
+		}
 	};
 
 	const handleWatchList = async () => {
@@ -73,9 +103,13 @@ function WatchPage() {
 	};
 
 	useEffect(() => {
-		if (epInfo) {
+		if (epInfo && !animeInfo) {
 			axios
-				.get(`https://${import.meta.env.VITE_PRIMARY_API}/meta/anilist/info/${epInfo}`)
+				.get(
+					`https://${
+						import.meta.env.VITE_PRIMARY_API
+					}/meta/anilist/info/${epInfo}`
+				)
 				.then(res => setAnimeInfo(res.data))
 				.catch(err => {
 					console.error('Error with API call--->', err);
@@ -191,10 +225,23 @@ function WatchPage() {
 					<div className='episodes'>
 						{animeInfo?.episodes?.length > 0 && (
 							<div className='title'>
-								<TableRowsIcon /> &nbsp;Episodes
+								<span>
+									<TableRowsIcon /> &nbsp;Episodes
+								</span>
+								<div>
+									<TextField
+										id='standard-basic'
+										label='Go to'
+										variant='standard'
+										value={ep}
+										type='number'
+										onChange={handleEpNav}
+										onKeyDown={handleScroll}
+									/>
+								</div>
 							</div>
 						)}
-						<div className='ep-list'>
+						<div className='ep-list' ref={epRef}>
 							{animeInfo?.episodes?.map((item, key) => {
 								return (
 									<div
