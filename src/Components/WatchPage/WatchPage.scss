@@ -28,6 +28,7 @@
         background-color: rgba(0, 0, 0, 0.71);
         height: 70vh;
         backdrop-filter: blur(3px);
+
         .banner {
           &_image {
             width: 30%;
@@ -108,33 +109,6 @@
           padding: 1vh 0.6vw;
         }
       }
-
-      // .details_container{
-      //   display: grid;
-      //   grid-template-rows: 15vh 40vh 15vh;
-      //   grid-template-columns: 0.25fr 2fr 4fr 0.25fr;
-      //   opacity: 1;
-      //   background-color: rgba(0, 0, 0, 0.71);
-      //   // gap: 1rem;
-      //   // height: 70vh;
-      //   .banner{
-      //     grid-area: 2/2/3/3;
-      //     // background-color: aqua;
-      //     justify-self: start;
-      //     &_image{
-      //       min-height: 40vh;
-      //       min-width: 20vw;
-      //       background-position: center;
-      //       background-repeat: no-repeat;
-      //       background-size: contain;
-      //       border-radius: 10px;
-      //     }
-      //   }
-      //   .about{
-      //     grid-area: 2/3/3/4;
-      //     // background-color: yellow;
-      //   }
-      // }
     }
   }
 
@@ -151,23 +125,27 @@
       // justify-content: center;
       align-items: center;
       justify-content: space-between;
-      span{
+
+      span {
         display: flex;
         align-items: center;
       }
+
       .MuiSvgIcon-root {
         font-size: 2rem;
       }
-      .MuiFormControl-root{
-        &.MuiTextField-root{
-          label{
+
+      .MuiFormControl-root {
+        &.MuiTextField-root {
+          label {
             color: white;
           }
-          input{
+
+          input {
             color: white;
           }
         }
-      } 
+      }
     }
 
     // scroll-snap-align: start;
@@ -186,6 +164,7 @@
         align-items: center;
         justify-content: flex-start;
         margin: 1vh 0.5vw 2vh;
+        position: relative;
 
         .ep_image {
           width: 28vw;
@@ -198,28 +177,33 @@
           // flex-direction: column;
           justify-content: center;
           align-items: center;
-          .play{
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: all 0.5s ease-in-out;
-            border-radius: 10px;
-          }
-          .play:hover{
-            backdrop-filter: saturate(0.9) brightness(0.85) blur(1px);
-          }
-          // transition: all 0.4s;
-          .MuiSvgIcon-root {
-            font-size: 4rem;
-            border-radius: 50%;
-            // background-color: #1c201d94;
-            // color: rgba(0, 0, 0, 0.508);
-            background-color: #161616d9;
-            color: white;
-            transition: all 0.2s ease-in-out;
-          }
+        }
+
+        .play {
+          width: 28vw;
+          height: 35vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: all 0.5s ease-in-out;
+          border-radius: 10px;
+          position: absolute;
+          cursor: pointer;
+        }
+
+        .play:hover {
+          backdrop-filter: saturate(0.9) brightness(0.85) blur(1px);
+        }
+
+        // transition: all 0.4s;
+        .MuiSvgIcon-root {
+          font-size: 4rem;
+          border-radius: 50%;
+          // background-color: #1c201d94;
+          // color: rgba(0, 0, 0, 0.508);
+          background-color: #161616d9;
+          color: white;
+          transition: all 0.2s ease-in-out;
         }
 
         .ep_no {
@@ -297,6 +281,7 @@
   min-height: 60vh;
   padding: 0.5vw;
   border-radius: 10px;
+
   // padding: 2vw;
   // .thumbnail{
   //   width: 100%;
@@ -307,6 +292,7 @@
     overflow-x: auto;
     overflow-y: hidden;
     margin: 0.5vh 0.9vh;
+
     .eplist {
       display: flex;
       flex-direction: row;
@@ -314,6 +300,7 @@
       gap: 1.4rem;
       align-items: center;
       margin: 2vh 0;
+
       .ep_no {
         min-height: 1vh;
         min-width: 2vw;
@@ -333,7 +320,7 @@
   outline: none;
 }
 
-.ep_image:hover {
+.play:hover {
   .MuiSvgIcon-root {
     transform: scale(1.1);
     // transition: all 0.2s 0.4s;
@@ -519,5 +506,11 @@
     //   width: 100%;
     //   height: 100%;
     // }
+  }
+}
+
+#watchPage {
+  .MuiBackdrop-root {
+    backdrop-filter: blur(10px);
   }
 }

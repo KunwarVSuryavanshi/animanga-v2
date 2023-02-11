@@ -13,7 +13,7 @@ function Reader() {
 	const pageRef = useRef();
 	const options = {
 		root: null,
-		rootMargin: '0px 500px 0px 0px', // +ve means pre load
+		rootMargin: '0px 0px 0px 1000px', // +ve means pre load
 		threshold: 0,
 	};
 	const observer = new IntersectionObserver(
@@ -151,7 +151,7 @@ function Reader() {
 									ref={pageRef}
 									key={key}
 								>
-									<img className='images' data-src={item?.img} loading='lazy'/>
+									<img className='images' data-src={item?.img}/>
 								</div>
 							);
 						})}

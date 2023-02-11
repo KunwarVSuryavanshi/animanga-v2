@@ -249,14 +249,16 @@ function WatchPage() {
 										key={item?.number}
 										onClick={() => openPlayer(item)}
 									>
-										<div
+										<img
 											className='ep_image'
-											style={{ backgroundImage: `url(${item.image})` }}
-										>
+											// style={{ backgroundImage: `url(${item.image})` }}
+											src={item.image}
+											loading="lazy"
+										/>
 											<div className='play'>
 												<PlayCircleOutlineIcon />
 											</div>
-										</div>
+										{/* </img> */}
 										<div className='ep_no'>
 											Episode - {item?.number ?? key + 1}
 										</div>
@@ -301,6 +303,7 @@ function WatchPage() {
 				open={openModal}
 				onClose={handleClose}
 				closeAfterTransition
+				id='watchPage'
 			>
 				<div className='modal_root'>
 					<svg
