@@ -16,6 +16,7 @@ import MangaInfo from "./Components/MangaInfo/MangaInfo";
 import AboutManga from "./Components/MangaInfo/AboutManga/AboutManga";
 import Reader from "./Components/MangaInfo/Reader/Reader";
 import Login from "./Components/Login/Login";
+// import scriptt from './Common/mini';
 
 inject();
 const router = createBrowserRouter([

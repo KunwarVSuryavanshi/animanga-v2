@@ -4,12 +4,12 @@ import './Header.scss';
 import SearchIcon from '@mui/icons-material/Search';
 import { useEffect } from 'react';
 import Avatar from '@mui/material/Avatar';
-import { supabase } from '../../config/supabase';			
+import { supabase } from '../../config/supabase';
 import { AuthContext } from '../../Common/AuthContext';
 import Badge from '@mui/material/Badge';
 import Popover from '@mui/material/Popover';
 import { styled } from '@mui/material/styles';
-import logo from '../../assets/tv-logo.svg'
+import logo from '../../assets/tv-logo.svg';
 
 function Header() {
 	const location = useLocation();
@@ -79,7 +79,8 @@ function Header() {
 		<div className='header'>
 			<div className='header_logo'>
 				<Link to={'/'} className='link'>
-					<img className='logo' src={logo} alt='AniManga-logo'/>AniManga
+					<img className='logo' src={logo} alt='AniManga-logo' />
+					AniManga
 				</Link>
 			</div>
 			<div
@@ -156,7 +157,14 @@ function Header() {
 				}}
 			>
 				<div className='pop-acc'>
-					<div>My Profile</div>
+					<div
+						style={{
+							// pointerEvents: 'none',
+							cursor: 'not-allowed'
+						}}
+					>
+						My Profile
+					</div>
 					<div onClick={handleSignOut}>Sign Out</div>
 				</div>
 			</Popover>
