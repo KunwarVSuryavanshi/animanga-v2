@@ -12,7 +12,7 @@ export const anilistNotAiringScheduleQuery = (date, page = 1, perPage = 50) => {
         } 
         media(countryOfOrigin: JP, status: NOT_YET_RELEASED, type: ANIME, startDate_greater: ${
           date.getFullYear() + "" + (date.getMonth()+1 > 9 ? (date.getMonth()+1) : '0'+(date.getMonth()+1)) + "" + (date.getDate() > 9 ? date.getDate() : '0'+date.getDate())
-        }, sort: START_DATE, isAdult: false){
+        }, sort: POPULARITY_DESC, isAdult: false){
           title {
             romaji
             english

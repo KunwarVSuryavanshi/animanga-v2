@@ -8,6 +8,13 @@
   max-height: 90vh;
   min-height: 60vh;
 }
-#player{
+
+#player {
   backdrop-filter: blur(10px);
+}
+
+#customPlayer {
+  .MuiBackdrop-root {
+    backdrop-filter: blur(10px);
+  }
 }
