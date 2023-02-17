@@ -361,6 +361,21 @@
   animation: spin 0.75s infinite linear;
 }
 
+.MuiInputBase-root {
+  &.MuiInput-root {
+    border-bottom: white !important;
+
+    svg {
+      color: white;
+    }
+  }
+
+  &.MuiInput-root::before,
+  &.MuiInput-root::after {
+    border-bottom: 2px solid white !important;
+  }
+}
+
 @keyframes spin {
   100% {
     transform: rotate(360deg);

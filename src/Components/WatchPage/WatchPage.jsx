@@ -1,4 +1,13 @@
-import { Chip, LinearProgress, Modal, TextField } from '@mui/material';
+import {
+	Chip,
+	FormControl,
+	InputLabel,
+	LinearProgress,
+	MenuItem,
+	Modal,
+	Select,
+	TextField,
+} from '@mui/material';
 import axios from 'axios';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import ReactPlayer from 'react-player';
@@ -29,6 +38,7 @@ function WatchPage() {
 	const [loading, setLoading] = useState(true);
 	const [err, setErr] = useState(false);
 	const [ep, setEp] = useState('');
+	const [quality, setQuality] = useState(null);
 	const { userInfo: userMeta } = useContext(AuthContext);
 	// const [buffering, setLoading] = useState(true);
 	const volume = useRef(0.5);
@@ -47,6 +57,7 @@ function WatchPage() {
 			.then(res => {
 				setSources(res?.data?.sources);
 				setLoading(false);
+				setQuality();
 			});
 		setPlayEp(item);
 		setOpenModal(true);
@@ -56,6 +67,10 @@ function WatchPage() {
 		handleWatchList();
 		setPlayEp(null);
 		setOpenModal(false);
+	};
+
+	const handleQualityChange = item => {
+		setQuality(item?.target?.value);
 	};
 
 	const handleEpNav = e => {
@@ -198,7 +213,13 @@ function WatchPage() {
 												?.slice(0, 6)
 												?.map(
 													item =>
-														item && <Chip label={item} color='secondary' />
+														item && (
+															<Chip
+																label={item}
+																key={item + '_key'}
+																color='secondary'
+															/>
+														)
 												)}
 										</div>
 										{/* <div className="studio" title='Studio'>
@@ -253,11 +274,11 @@ function WatchPage() {
 											className='ep_image'
 											// style={{ backgroundImage: `url(${item.image})` }}
 											src={item.image}
-											loading="lazy"
+											loading='lazy'
 										/>
-											<div className='play'>
-												<PlayCircleOutlineIcon />
-											</div>
+										<div className='play'>
+											<PlayCircleOutlineIcon />
+										</div>
 										{/* </img> */}
 										<div className='ep_no'>
 											Episode - {item?.number ?? key + 1}
@@ -322,11 +343,11 @@ function WatchPage() {
 					<ReactPlayer
 						className='react-player'
 						url={
+							quality ??
 							sources?.filter(item => item.quality === '1080p')?.[0]?.url ??
 							sources?.[0]?.url
 						}
 						ref={playerRef}
-						// file={}
 						width='100%'
 						height='100%'
 						controls={true}
@@ -345,6 +366,30 @@ function WatchPage() {
 						pip={false}
 					></ReactPlayer>
 					<div className={`player-ep ${loading && 'hidden'}`}>
+						<div className='quality'>
+							<FormControl variant='standard' sx={{ m: 1, minWidth: 120 }}>
+								<InputLabel id='select-filled-label' style={{ color: 'white' }}>
+									Quality
+								</InputLabel>
+								<Select
+									labelId='quality-select'
+									id='quality-select'
+									value={quality}
+									label='Quality'
+									onChange={handleQualityChange}
+									defaultValue={'1080p'}
+									style={{ color: 'white' }}
+								>
+									{sources?.map(item => {
+										return (
+											<MenuItem value={item?.url} key={item?.quality}>
+												{item?.quality}
+											</MenuItem>
+										);
+									})}
+								</Select>
+							</FormControl>
+						</div>
 						{animeInfo?.episodes?.length > 0 && (
 							<div className='eplist'>
 								{animeInfo?.episodes?.map((item, key) => {
