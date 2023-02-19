@@ -211,7 +211,7 @@ function SearchPage() {
 					Search
 				</Button>
 			</div>
-			<div className='filter-genres filter-bar'>
+			<div className='filter-genres filter-bar adv-text'>
 				<span>
 					Not sure what to look for? Try{' '}
 					<span className='adv' onClick={openAdvancedSearch}>
