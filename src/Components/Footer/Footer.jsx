@@ -30,8 +30,10 @@ function Footer() {
 				<TwitterIcon titleAccess='Yet to create :/' />
 			</div> */}
 			<div className='disclaimer'>
-				(NOTE: AniManga does not store any files on our server, we only link to media
-				hosted on third party services. <br/> Also this project is merely just out of hobby to test my skill as developer, nothing more nothing less.)
+				(<b>NOTE:</b> AniManga does not store any files on our server, we only
+				link to media hosted on third party services. <br /> Also this project
+				is merely just out of hobby to test my skill as developer, nothing more
+				nothing less.)
 			</div>
 		</footer>
 	);

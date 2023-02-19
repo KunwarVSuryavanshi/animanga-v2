@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import { Auth, ThemeSupa } from '@supabase/auth-ui-react';
-import {supabase} from '../../config/supabase';
+import { supabase } from '../../config/supabase';
 import './Login.scss';
 
 function Login() {
@@ -33,10 +33,16 @@ function Login() {
 					socialLayout='horizontal'
 					socialButtonSize='tiny'
 					providers={['google', 'discord', 'github']}
+					redirectTo={
+						import.meta.env?.DEV
+							? 'http://localhost:6969/'
+							: 'https://animanga-v2.vercel.app/'
+					}
+					magicLink={true}
 				/>
 			</div>
 		</div>
 	);
 }
 
-export default Login
+export default Login;
