@@ -148,8 +148,16 @@
     }
   }
   .episodes_{
+    margin-top: 2vh;
+    .title{
+      font-size: 1rem;
+      .MuiSvgIcon-root{
+        font-size: 1.5rem;
+        margin-top: -0.5vh;
+      }
+    }
     .ep-list {
-        height: 30vh;
+        height: 45vw;
         display: flex;
         flex-direction: row;
         overflow: auto;
@@ -161,11 +169,10 @@
           flex-direction: column;
           align-items: center;
           justify-content: flex-start;
-          margin: 0vh 0.9vw 2vh;
+          margin: 0vh 0.9vw 1.5vh;
     
           .ep_image {
             width: 60vw;
-            height: 18vh;
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
@@ -176,9 +183,12 @@
           }
         }
         .ep_no, .ep_name{
-          font-size: 0.8rem;
+          font-size: 0.85rem;
           margin-top: 0vh !important;
           max-width: 60vw !important;
+        }
+        .ep_name{
+          display: none !important;
         }
       }
   }

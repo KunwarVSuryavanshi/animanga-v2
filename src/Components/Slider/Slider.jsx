@@ -180,8 +180,8 @@ function Slider(props) {
 										{item?.title?.english ??
 											item?.title?.romaji ??
 											item?.name?.full}{' '}
-                  </div>
-                  
+									</div>
+
 									{/* {props.trailer && (
                     <div className="startDate">
                       {item?.startDate?.day
@@ -268,11 +268,11 @@ function Slider(props) {
 								{cleanHTML(anchorElem?.data?.description)}
 							</div>
 							<div className='genres'>
-								<span>Genres:</span>{' '}
+								<span>Genres:</span>&nbsp;&nbsp;
 								{anchorElem?.data?.genres?.slice(0, 5)?.join(', ')}
 							</div>
 							<div className='status'>
-								<span>Status:</span> {anchorElem?.data?.status}
+								<span>Status:</span>&nbsp; {anchorElem?.data?.status}
 							</div>
 							<div className='btn'>
 								<Chip

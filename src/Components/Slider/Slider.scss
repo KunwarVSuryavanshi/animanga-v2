@@ -11,6 +11,7 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     margin-left: 1vw;
+
     .info-icon {
       // font-size: 0.1rem;
       height: 1vw;
@@ -107,7 +108,8 @@
       //   justify-content: center;
       // }
     }
-    .related_type{
+
+    .related_type {
       text-align: center;
       font-weight: 600;
     }
@@ -185,8 +187,9 @@
     padding-bottom: 0;
   }
 
-  .genres, .status{
-    span{
+  .genres,
+  .status {
+    span {
       font-weight: 700;
     }
   }
@@ -238,19 +241,21 @@
     }
 
     &_title {
-      font-size: 1.4rem;
-      margin-bottom: 3vh;
+      font-size: 1.15rem;
+      margin-bottom: 1vh;
       font-weight: 600;
       margin-left: 1vw;
 
       .MuiSvgIcon-root {
         font-size: 6.4vw;
-        padding-top: 1vw;
+        padding-top: 0vw;
+        font-size: 1.25rem;
+        margin-bottom: -1vw;
       }
 
       .scroll-btn {
         .MuiSvgIcon-root {
-          font-size: 8.4vw;
+          font-size: 1.65rem;
         }
       }
     }
@@ -262,6 +267,7 @@
         padding: 1vw;
         border: 3px solid transparent;
         border-radius: 10px;
+        margin-top: 1vh;
 
         &_image {
           width: 35vw;
@@ -276,9 +282,14 @@
             border-radius: 45%;
           }
         }
+        .related_type{
+          font-size: 0.85rem;
+          font-style: italic;
+        }
 
         &_title {
           width: 35vw;
+          font-size: 0.75rem;
         }
 
         .related_tag {

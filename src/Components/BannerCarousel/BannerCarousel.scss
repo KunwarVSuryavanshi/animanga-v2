@@ -155,21 +155,21 @@
 @media (max-width: 600px) {
   .container {
     &_gradient {
-      height: 30vh;
+      height: 20vh;
     }
 
     &_img {
       border-radius: 10px;
-      box-shadow: inset 50px 0px 80px -25px variables.$background_main;
+      box-shadow: inset 50px 0px 180px -25px variables.$background_main;
     }
 
     .description {
-      margin: 2vh 5vw;
+      margin: -1vh 5vw;
       width: 60%;
       text-shadow: 3px 2px 2px black;
 
       &_title {
-        font-size: 1.25rem;
+        font-size: 1.15rem;
         width: 125%;
         // text-overflow: ellipsis;
         word-wrap: break-word;
@@ -181,9 +181,19 @@
       }
 
       &_epDetails {
+        margin-top: 0%;
+        font-size: 0.75rem;
+
+        div {
+          span {
+            padding-left: 4vw;
+          }
+        }
+
         :nth-child(3) {
           display: none !important;
         }
+
         :nth-child(4) {
           display: none !important;
         }
@@ -194,15 +204,24 @@
       }
 
       .btn {
-        bottom: 5vh;
+        bottom: 1vh;
         font-weight: 600;
 
         // box-shadow: 0px 0px 20px 2px #0180ff;
         &_mui {
-          padding: .95vh 1vw;
-          font-weight: 900;
+          padding: .75vh 1vw;
+          font-weight: 700;
           font-size: 0.8rem;
           z-index: 1;
+          backdrop-filter: brightness(0.75);
+          color: rgba(0,255,251,0.7);
+          border: 2px solid rgba(0, 255, 251, 0.7);
+
+          // height: 30px;
+          // scale: 0.75;
+          svg {
+            display: none;
+          }
         }
       }
     }

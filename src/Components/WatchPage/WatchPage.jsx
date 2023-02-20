@@ -249,7 +249,7 @@ function WatchPage() {
 								<span>
 									<TableRowsIcon /> &nbsp;Episodes
 								</span>
-								<div>
+								<div className='text_field'>
 									<TextField
 										id='standard-basic'
 										label='Go to'
@@ -339,7 +339,10 @@ function WatchPage() {
 							d='M12,4a8,8,0,0,1,7.89,6.7A1.53,1.53,0,0,0,21.38,12h0a1.5,1.5,0,0,0,1.48-1.75,11,11,0,0,0-21.72,0A1.5,1.5,0,0,0,2.62,12h0a1.53,1.53,0,0,0,1.49-1.3A8,8,0,0,1,12,4Z'
 							className='path'
 						/>
-					</svg>
+						</svg>
+						{console.log('Quality----->',quality ??
+							sources?.filter(item => item.quality === '1080p')?.[0]?.url ??
+							sources?.[0]?.url)}
 					<ReactPlayer
 						className='react-player'
 						url={
@@ -365,31 +368,31 @@ function WatchPage() {
 						volume={volume?.current ?? 0.5}
 						pip={false}
 					></ReactPlayer>
+					<div className={`quality ${loading && 'hidden'}`}>
+						<FormControl variant='standard' sx={{ m: 1, minWidth: 120 }}>
+							<InputLabel id='select-filled-label' style={{ color: 'white' }}>
+								Quality
+							</InputLabel>
+							<Select
+								labelId='quality-select'
+								id='quality-select'
+								value={quality}
+								label='Quality'
+								onChange={handleQualityChange}
+								defaultValue={'1080p'}
+								style={{ color: 'white' }}
+							>
+								{sources?.map(item => {
+									return (
+										<MenuItem value={item?.url} key={item?.quality}>
+											{item?.quality}
+										</MenuItem>
+									);
+								})}
+							</Select>
+						</FormControl>
+					</div>
 					<div className={`player-ep ${loading && 'hidden'}`}>
-						<div className='quality'>
-							<FormControl variant='standard' sx={{ m: 1, minWidth: 120 }}>
-								<InputLabel id='select-filled-label' style={{ color: 'white' }}>
-									Quality
-								</InputLabel>
-								<Select
-									labelId='quality-select'
-									id='quality-select'
-									value={quality}
-									label='Quality'
-									onChange={handleQualityChange}
-									defaultValue={'1080p'}
-									style={{ color: 'white' }}
-								>
-									{sources?.map(item => {
-										return (
-											<MenuItem value={item?.url} key={item?.quality}>
-												{item?.quality}
-											</MenuItem>
-										);
-									})}
-								</Select>
-							</FormControl>
-						</div>
 						{animeInfo?.episodes?.length > 0 && (
 							<div className='eplist'>
 								{animeInfo?.episodes?.map((item, key) => {

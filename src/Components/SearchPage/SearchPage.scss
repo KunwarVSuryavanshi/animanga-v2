@@ -49,70 +49,79 @@
   }
 }
 
-.filter-bar{
+.filter-bar {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   font-size: 1.15rem;
-  .adv{
+
+  .adv {
     // text-underline-offset: 1;
     font-style: italic;
     cursor: pointer;
   }
 }
 
-.filter_root{
+.filter_root {
   overflow-y: auto;
-    overflow-x: hidden;
-    background-color: var(--black_grey);
-    left: 18%;
-    right: 18%;
-    position: absolute;
-    top: 15%;
-    bottom: 15%;
-    height: fit-content;
-    max-height: 60vh;
-    // min-height: 60vh;
-    padding: 0.5vw;
-    border-radius: 10px;
-    padding: 2vw 2vw;
-    .filter_header{
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      font-size: 1.35rem;
-      font-weight: 500;
-      svg{
-        padding-right: 1.5vw;
-      }
-      margin-top: 1.5vw;
+  overflow-x: hidden;
+  background-color: var(--black_grey);
+  left: 18%;
+  right: 18%;
+  position: absolute;
+  top: 15%;
+  bottom: 15%;
+  height: fit-content;
+  max-height: 60vh;
+  // min-height: 60vh;
+  padding: 0.5vw;
+  border-radius: 10px;
+  padding: 2vw 2vw;
+
+  .filter_header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1.35rem;
+    font-weight: 500;
+
+    svg {
+      padding-right: 1.5vw;
     }
-    .filter_body{
-      // span{
-      //   border-radius: 6px;
-      //   // border: 2px solid red;
-      //   padding: 0.25vw 0.5vw;
-      //   // margin: 0.25vw 0.5vw;
-      //   margin-right: 0.5vw;
-      //   margin-top: 0.5vw;
-      //   display: inline-block;
-      // }
-      .MuiChip-root{
-        padding: 0.25vw 0.5vw;
-        margin: 1vw 0.5vw;
+
+    margin-top: 1.5vw;
+  }
+
+  .filter_body {
+
+    // span{
+    //   border-radius: 6px;
+    //   // border: 2px solid red;
+    //   padding: 0.25vw 0.5vw;
+    //   // margin: 0.25vw 0.5vw;
+    //   margin-right: 0.5vw;
+    //   margin-top: 0.5vw;
+    //   display: inline-block;
+    // }
+    .MuiChip-root {
+      padding: 0.25vw 0.5vw;
+      margin: 1vw 0.5vw;
+      color: white;
+      height: auto;
+
+      svg {
         color: white;
-        height: auto;
-        svg{
-          color: white;
-          font-size: 1rem;
-        }
+        font-size: 1rem;
       }
     }
+  }
 }
+
 .filter_root:focus-visible {
   outline: none;
 }
+
 .search-bar {
   padding: 2vh 3.5vw;
   box-sizing: border-box;
@@ -190,12 +199,13 @@
   }
 }
 
-@keyframes right_filter{
-  0%{
+@keyframes right_filter {
+  0% {
     top: -20%;
     opacity: 0;
   }
-  100%{
+
+  100% {
     top: 10%;
     opacity: 1;
   }
@@ -223,6 +233,7 @@
   }
 
   .search-bar {
+    margin-top: 3vh;
     padding: 1vh 4vw;
 
     .MuiButtonBase-root {
@@ -232,4 +243,11 @@
     }
   }
 
+  .adv-text {
+    font-size: 0.85rem;
+    margin-top: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
