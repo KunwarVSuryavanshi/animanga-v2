@@ -219,4 +219,19 @@
       bottom: 20%;
     }
   }
+
+  #account-popover {
+    .MuiPaper-root {
+      &.MuiPaper-elevation {
+        left: 73vw !important;
+      }
+    }
+  }
+
+  .pop-acc {
+    width: 23vw;
+    font-size: 0.75rem;
+    min-height: 8vh;
+    left: -20%;
+  }
 }
