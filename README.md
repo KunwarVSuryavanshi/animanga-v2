@@ -1,6 +1,6 @@
-<h1 align="center">Animanga &nbsp;&nbsp; | &nbsp;&nbsp; アニマンガ<h1/>
+<h1 align="center">AniManga &nbsp;&nbsp; | &nbsp;&nbsp; アニマンガ<h1/>
 <p align="center"> 
-  <h3 align="center"> Animanga is an Ad free, responsive web application where you can stream Anime and read Manga.</h3>
+  <h3 align="center"> AniManga is an Ad free, responsive web application where you can stream Anime and read Manga.</h3>
 <p/>
 
 <br />
@@ -49,7 +49,7 @@
 ![manga-details](./blob/manga_details.png)
 <br/>
 
-## Mobile (WIP)
+## Mobile
 
 <br/>
 
@@ -57,12 +57,12 @@
 <tr>
   <td>
 
-![mobile](<./blob/localhost_6969_(Pixel%205).png>)
+![mobile](./blob/home_mobile.png)
 
   </td>
   <td>
 
-![mobile](./blob/related.png)
+![mobile](./blob/watch_mob.png)
 
   </td>
 </tr>
@@ -70,8 +70,21 @@
 
 <br />
 
+# Deploying your own instance??
+
+1. Star this repo (Very important step, believe me).
+2. Deploy this project using deploy button - <br/> <br/>
+   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/KunwarVSuryavanshi/animanga-v2)
+
+3. So your frontend is deployed, now for API - <br/> <br/>
+   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fconsumet%2Fapi.consumet.org)
+
+4. For DB, create an account on [supabase](https://supabase.com/), and then create a table for watchList using PostgreSQL or the UI.
+
+5. Do check `.env.example`, where you can either paste those variable or directly use them in you file
+
+<br/>
+
 # Credit
 
-`Anilist` - For anime related information.
-
-`Consumet` - For streaming link + Info. (Do check their repo and give it a star. &#128521;)
+`Anilist` & `Consumet` - For making this project possible. (Do check their repo and give it a star. &#128521;)
