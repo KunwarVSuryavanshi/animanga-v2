@@ -17,7 +17,7 @@ function Header() {
 	const { userInfo, setUserInfo } = useContext(AuthContext);
 	const [anchor, setAnchor] = useState(null);
 	const open = Boolean(anchor);
-	const id = open ? 'simple-popover' : undefined;
+	const id = open ? 'account-popover' : undefined;
 	const StyledBadge = styled(Badge)(({ theme }) => ({
 		'& .MuiBadge-badge': {
 			backgroundColor: '#44b700',

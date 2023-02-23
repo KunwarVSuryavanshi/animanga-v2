@@ -15,7 +15,13 @@ import { supabase } from '../../config/supabase';
 import { AuthContext } from '../../Common/AuthContext';
 import LiveTvIcon from '@mui/icons-material/LiveTv';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
-import { Modal } from '@mui/material';
+import {
+	FormControl,
+	InputLabel,
+	MenuItem,
+	Modal,
+	Select,
+} from '@mui/material';
 import ReactPlayer from 'react-player';
 import axios from 'axios';
 
@@ -37,10 +43,12 @@ function HomePage() {
 	const [sources, setSources] = useState(null);
 	const [animeInfo, setAnimeInfo] = useState(null);
 	const [playEp, setPlayEp] = useState(null);
+	const [quality, setQuality] = useState(null);
 	const playerRef = useRef(null);
 	const timeRef = useRef(null);
 
 	const openPlayer = (item, flag = true) => {
+		setPlayEp(null);
 		setLoading(true);
 		if (flag)
 			axios
@@ -68,6 +76,10 @@ function HomePage() {
 		setOpenModal(true);
 	};
 
+	const handleQualityChange = item => {
+		setQuality(item?.target?.value);
+	};
+
 	const handleClose = () => {
 		handleWatchList();
 		setPlayEp(null);
@@ -77,15 +89,21 @@ function HomePage() {
 
 	const handleWatchList = async () => {
 		if (userMeta?.data?.user?.id) {
+			console.log('Loggg', playEp);
 			await supabase.from(import.meta.env.VITE_ANIME_TABLE).upsert(
 				{
 					email: userMeta?.data.user.email,
 					epDetails: {
-						id: playEp?.id,
-						image: playEp?.image,
-						title: playEp?.title,
-						number: playEp?.number,
-						time: Math.round(playerRef?.current?.getCurrentTime() ?? 0),
+						id: playEp?.id ?? playEp?.epDetails?.id,
+						image: playEp?.image ?? playEp?.epDetails?.image,
+						title: playEp?.title ?? playEp?.epDetails?.title,
+						number: playEp?.number ?? playEp?.epDetails?.number,
+						time: Math.round(
+							playerRef?.current?.getCurrentTime() ??
+								playEp?.time ??
+								playEp?.epDetails?.time ??
+								0
+						),
 					},
 					aniListId: +animeInfo?.id,
 					ani_user_id: `${animeInfo?.id}_${userMeta?.data.user.email}`,
@@ -127,7 +145,6 @@ function HomePage() {
 			getUserData();
 		}
 	}, [userMeta?.data?.user]);
-
 
 	return (
 		<>
@@ -258,9 +275,16 @@ function HomePage() {
 							className='path'
 						/>
 					</svg>
+					{console.log(
+						'Sources',
+						sources,
+						sources?.filter(item => item.quality === '1080p')?.[0]?.url ??
+							sources?.[0]?.url
+					)}
 					<ReactPlayer
 						className='react-player'
 						url={
+							quality ??
 							sources?.filter(item => item.quality === '1080p')?.[0]?.url ??
 							sources?.[0]?.url
 						}
@@ -282,8 +306,32 @@ function HomePage() {
 						playing={true}
 						onStart={handleStart}
 						volume={0.5}
-						pip={false}
+						pip={true}
 					></ReactPlayer>
+					<div className={`quality ${loading && 'hidden'}`}>
+						<FormControl variant='standard' sx={{ m: 1, minWidth: 120 }}>
+							<InputLabel id='select-filled-label' style={{ color: 'white' }}>
+								Quality
+							</InputLabel>
+							<Select
+								labelId='quality-select'
+								id='quality-select'
+								value={quality}
+								label='Quality'
+								onChange={handleQualityChange}
+								defaultValue={'1080p'}
+								style={{ color: 'white' }}
+							>
+								{sources?.map(item => {
+									return (
+										<MenuItem value={item?.url} key={item?.quality}>
+											{item?.quality}
+										</MenuItem>
+									);
+								})}
+							</Select>
+						</FormControl>
+					</div>
 					<div className={`player-ep ${loading && 'hidden'}`}>
 						{animeInfo?.episodes?.length > 0 && (
 							<div className='eplist'>

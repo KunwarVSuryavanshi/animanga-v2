@@ -38,7 +38,7 @@ function WatchPage() {
 	const [loading, setLoading] = useState(true);
 	const [err, setErr] = useState(false);
 	const [ep, setEp] = useState('');
-	const [quality, setQuality] = useState(null);
+	const [quality, setQuality] = useState('1080p');
 	const { userInfo: userMeta } = useContext(AuthContext);
 	// const [buffering, setLoading] = useState(true);
 	const volume = useRef(0.5);
@@ -340,9 +340,6 @@ function WatchPage() {
 							className='path'
 						/>
 						</svg>
-						{console.log('Quality----->',quality ??
-							sources?.filter(item => item.quality === '1080p')?.[0]?.url ??
-							sources?.[0]?.url)}
 					<ReactPlayer
 						className='react-player'
 						url={

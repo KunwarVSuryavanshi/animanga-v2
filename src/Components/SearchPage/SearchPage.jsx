@@ -262,6 +262,9 @@ function SearchPage() {
 			>
 				<div className='filter_root'>
 					<div className='category'>
+						UNDER CONSTRUCTION &#128517;
+						<br />
+						{`\n`}
 						<div className='filter_header'>
 							<CategoryIcon /> Type
 						</div>

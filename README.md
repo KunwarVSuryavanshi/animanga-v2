@@ -14,6 +14,9 @@
   <a href="https://mui.com/">
     <img src="https://img.shields.io/github/package-json/dependency-version/KunwarVSuryavanshi/animanga-v2/@mui/material?filename=package.json&label=mui&color=007FFF&logo=mui&labelColor=242526&style=flat-square&logoColor=007FFF">
   </a>
+  <a href="https://supabase.com/">
+    <img src="https://img.shields.io/github/package-json/dependency-version/KunwarVSuryavanshi/animanga-v2/@supabase/supabase-js?filename=package.json&label=supabase&color=20ce80&logo=supabase&labelColor=242526&style=flat-square&logoColor=20ce80">
+  </a>
 </p>
 
 # Screenshots
@@ -22,20 +25,28 @@
 
 <br/>
 
-![banner](./blob/banner.png)
-
+![banner](./blob/banner1.png)
 <br/>
 
-![airing](./blob/airing.png)
-
+![airing](./blob/continue.png)
 <br/>
 
-![details](./blob/details.png)
-
+![details](./blob/details1.png)
 <br/>
 
-![watch](./blob/watch.png)
+![details](./blob/details2.png)
+<br/>
 
+![watch](./blob/player.png)
+<br/>
+
+![continue](./blob/continue.png)
+<br/>
+
+![manga](./blob/manga.png)
+<br/>
+
+![manga-details](./blob/manga_details.png)
 <br/>
 
 ## Mobile (WIP)

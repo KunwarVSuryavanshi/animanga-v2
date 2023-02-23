@@ -28,11 +28,42 @@
     box-shadow: 0 0 1rem 0rem var(--accent);
   }
 
-  50% {
+  100% {
     box-shadow: 0 0 0rem 0rem var(--accent);
   }
+}
 
-  100% {
-    box-shadow: 0 0 1rem 0rem var(--accent);
+@media (max-width: 600px) {
+  .Outlet {
+    height: 100vh;
+    background-color: black;
+  }
+
+  .login_container {
+    height: 10vh;
+    background-image: url('../../assets/komi.jpg');
+    background-position: bottom right;
+    background-size: contain;
+    padding-top: 18vh;
+    align-items: flex-start;
+
+    .form {
+      min-width: 90vw;
+      min-height: 50vh;
+      padding: 6vh 2vw 2vh;
+      border-radius: 10px;
+      box-shadow: 0 0 1.5rem 0.55rem #05e0d559;
+      margin-left: 3vw;
+      position: relative;
+    }
+    .form::before{
+      content: 'AniManga';
+      font-size: 1.5rem;
+      left: 33%;
+      right: 35%;
+      position: absolute;
+      font-weight: 800;
+      top: -10%;
+    }
   }
 }
