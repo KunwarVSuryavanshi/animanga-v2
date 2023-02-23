@@ -50,7 +50,7 @@ function WatchPage() {
 		setLoading(true);
 		axios
 			.get(
-				`https://${import.meta.env.VITE_PRIMARY_API}/meta/anilist/watch/${
+				`https://${import.meta.env.VITE_SECONDARY_API}/meta/anilist/watch/${
 					item?.id
 				}`
 			)
@@ -122,7 +122,7 @@ function WatchPage() {
 			axios
 				.get(
 					`https://${
-						import.meta.env.VITE_PRIMARY_API
+						import.meta.env.VITE_SECONDARY_API
 					}/meta/anilist/info/${epInfo}`
 				)
 				.then(res => setAnimeInfo(res.data))

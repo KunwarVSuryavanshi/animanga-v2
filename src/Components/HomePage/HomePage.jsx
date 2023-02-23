@@ -63,7 +63,7 @@ function HomePage() {
 				});
 		axios
 			.get(
-				`https://${import.meta.env.VITE_PRIMARY_API}/meta/anilist/watch/${
+				`https://${import.meta.env.VITE_SECONDARY_API}/meta/anilist/watch/${
 					item?.epDetails?.id ?? item?.id
 				}`
 			)

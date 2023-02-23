@@ -16,7 +16,7 @@ function MangaInfo() {
 			axios
 				.get(
 					`https://${
-						import.meta.env.VITE_PRIMARY_API
+						import.meta.env.VITE_SECONDARY_API
 					}/meta/anilist-manga/info/${param.id}?provider=mangadex`
 					// `https://${import.meta.env.VITE_PRIMARY_API}/meta/anilist-manga/info/${param.id}?provider=mangahere`
 				)
