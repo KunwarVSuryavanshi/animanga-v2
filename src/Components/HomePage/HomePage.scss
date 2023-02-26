@@ -23,7 +23,23 @@
 .top {
   padding-bottom: 10vh;
 }
-
+.currentEp{
+  position: relative;
+  color: var(--blue);
+}
+.player-ep{
+  margin-right: 2vw;
+}
+.currentEp::before {
+  content: '';
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: red;
+}
 .episodes_ {
   margin-top: 8vh;
   margin-left: 2vw;

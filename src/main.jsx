@@ -1,21 +1,21 @@
-import React, { lazy, Suspense } from "react";
-import ReactDOM from "react-dom/client";
-import { Provider } from "react-redux";
-import App from "./App";
-import store from "./app/store";
-import "./index.scss";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-const HomePage = lazy(() => import("./Components/HomePage/HomePage"));
-const Manga = lazy(() => import("./Components/Manga/Manga"));
-const LandingPage = lazy(() => import("./Components/LandingPage/LandingPage"));
-import { inject } from "@vercel/analytics";
-import WatchPage from "./Components/WatchPage/WatchPage";
-import NotFound from "./Components/NotFound/NotFound";
-import SearchPage from "./Components/SearchPage/SearchPage";
-import MangaInfo from "./Components/MangaInfo/MangaInfo";
-import AboutManga from "./Components/MangaInfo/AboutManga/AboutManga";
-import Reader from "./Components/MangaInfo/Reader/Reader";
-import Login from "./Components/Login/Login";
+import React, { lazy, Suspense } from 'react';
+import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+import App from './App';
+import store from './app/store';
+import './index.scss';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+const HomePage = lazy(() => import('./Components/HomePage/HomePage'));
+const Manga = lazy(() => import('./Components/Manga/Manga'));
+const LandingPage = lazy(() => import('./Components/LandingPage/LandingPage'));
+import { inject } from '@vercel/analytics';
+import WatchPage from './Components/WatchPage/WatchPage';
+import NotFound from './Components/NotFound/NotFound';
+import SearchPage from './Components/SearchPage/SearchPage';
+import MangaInfo from './Components/MangaInfo/MangaInfo';
+import AboutManga from './Components/MangaInfo/AboutManga/AboutManga';
+import Reader from './Components/MangaInfo/Reader/Reader';
+import Login from './Components/Login/Login';
 // import scriptt from './Common/mini';
 
 inject();
@@ -98,13 +98,27 @@ const router = createBrowserRouter([
 						<Login />
 					</Suspense>
 				),
+				errorElement: <NotFound />,
+			},
+			{
+				path: '*',
+				element: (
+					<Suspense fallbak={null}>
+						<NotFound noHeader={true} />
+					</Suspense>
+				),
 			},
 		],
 	},
+	{
+		path: '*',
+		element: <NotFound />,
+		errorElement: <NotFound />,
+	},
 ]);
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <Provider store={store}>
-    <RouterProvider router={router} />
-  </Provider>
+ReactDOM.createRoot(document.getElementById('root')).render(
+	<Provider store={store}>
+		<RouterProvider router={router} />
+	</Provider>
 );

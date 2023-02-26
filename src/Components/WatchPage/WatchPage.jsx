@@ -396,7 +396,7 @@ function WatchPage() {
 									return (
 										<>
 											<div
-												className='ep_no'
+												className={`ep_no`}
 												key={item?.number + '_list'}
 												onClick={() => openPlayer(item)}
 											>

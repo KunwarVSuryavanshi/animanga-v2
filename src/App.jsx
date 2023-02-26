@@ -37,7 +37,10 @@ function App() {
 				<div
 					className='Outlet'
 					style={{
-						paddingBottom: location?.pathname === '/login' ? '0vh' : '',
+						paddingBottom:
+							location?.pathname !== '/anime'
+								? '0vh'
+								: '',
 					}}
 				>
 					<Outlet />

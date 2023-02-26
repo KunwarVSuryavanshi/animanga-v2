@@ -275,12 +275,6 @@ function HomePage() {
 							className='path'
 						/>
 					</svg>
-					{console.log(
-						'Sources',
-						sources,
-						sources?.filter(item => item.quality === '1080p')?.[0]?.url ??
-							sources?.[0]?.url
-					)}
 					<ReactPlayer
 						className='react-player'
 						url={
@@ -339,7 +333,14 @@ function HomePage() {
 									return (
 										<>
 											<div
-												className='ep_no'
+												className={`ep_no ${
+													key + 1 ===
+													watchList?.filter(
+														item => +item?.aniListId === +animeInfo?.id
+													)?.[0]?.epDetails?.number
+														? 'currentEp'
+														: ''
+												}`}
 												key={item?.number + '_list'}
 												onClick={() => openPlayer(item, false)}
 											>

@@ -4,7 +4,8 @@
   max-width: 100vw;
   min-height: 90vh;
   position: relative;
-
+  padding-bottom: 10vh;
+  
   .details {
     max-width: 100vw;
     min-height: 72vh;
@@ -168,7 +169,7 @@
 
         .ep_image {
           width: 28vw;
-          height: 35vh;
+          max-height: 35vh;
           border-radius: 10px;
           background-position: center;
           background-size: cover;
@@ -292,6 +293,7 @@
     overflow-x: auto;
     overflow-y: hidden;
     margin: 0.5vh 0.9vh;
+    margin-right: 2vw;
 
     .eplist {
       display: flex;
@@ -473,7 +475,7 @@
       }
 
       .ep-list {
-        max-height: 22vh;
+        max-height: 30vh;
         display: flex;
         flex-direction: row;
         overflow: auto;
@@ -489,7 +491,7 @@
 
           .ep_image {
             width: 60vw;
-            height: 20vh;
+            max-height: 16vh;
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
@@ -503,6 +505,11 @@
           }
           .ep_no{
             font-size: 0.85rem;
+          }
+          .ep_name{
+            font-size: 0.75rem;
+            width: 100%;
+            max-width: 40vw;
           }
         }
       }
