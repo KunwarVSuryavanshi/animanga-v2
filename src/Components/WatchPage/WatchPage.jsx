@@ -1,4 +1,5 @@
 import {
+	Alert,
 	Chip,
 	FormControl,
 	InputLabel,
@@ -6,6 +7,7 @@ import {
 	MenuItem,
 	Modal,
 	Select,
+	Snackbar,
 	TextField,
 } from '@mui/material';
 import axios from 'axios';
@@ -40,6 +42,8 @@ function WatchPage() {
 	const [ep, setEp] = useState('');
 	const [quality, setQuality] = useState('');
 	const { userInfo: userMeta } = useContext(AuthContext);
+	const [adBlocker, setAdBlocker] = useState(false);
+	const [open, setOpen] = useState(false);
 	// const [epWatched, setEpWatched] = useState(null);
 	// const [buffering, setLoading] = useState(true);
 	const volume = useRef(0.5);
@@ -68,6 +72,13 @@ function WatchPage() {
 		handleWatchList();
 		setPlayEp(null);
 		setOpenModal(false);
+	};
+
+	const handleClosePopUp = (event, reason) => {
+		if (reason === 'clickaway') {
+			return;
+		}
+		setOpen(false);
 	};
 
 	const handleQualityChange = item => {
@@ -144,6 +155,13 @@ function WatchPage() {
 	//   }
 	// }, [animeInfo])
 
+	useEffect(() => {
+		if (adBlocker) {
+			console.log('Adblocker detected');
+			setOpen(true);
+		}
+	}, [adBlocker])
+	
 	return err ? (
 		<NotFound noHeader={true} />
 	) : (
@@ -275,6 +293,9 @@ function WatchPage() {
 											// style={{ backgroundImage: `url(${item.image})` }}
 											src={item.image}
 											loading='lazy'
+											onError={() => {
+												if (!adBlocker) setAdBlocker(true);
+											}}
 										/>
 										<div className='play'>
 											<PlayCircleOutlineIcon />
@@ -414,6 +435,20 @@ function WatchPage() {
 					</div>
 				</div>
 			</Modal>
+			<Snackbar
+				open={open}
+				autoHideDuration={4000}
+				anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+				onClose={handleClosePopUp}
+			>
+				<Alert
+					onClose={handleClosePopUp}
+					severity='error'
+					sx={{ width: '100%', color: '#f85553' }}
+				>
+						Episodes thumbnail might not load because of AdBlocker !
+				</Alert>
+			</Snackbar>
 		</div>
 	);
 }
