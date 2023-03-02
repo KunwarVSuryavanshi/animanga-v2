@@ -69,6 +69,12 @@ function HomePage() {
 			)
 			.then(res => {
 				setSources(res?.data?.sources);
+				if (!quality) {
+					setQuality(
+						res?.data?.sources?.filter(item => item?.quality === '1080p')?.[0]
+							?.url
+					);
+				}
 				timeRef.current = item?.epDetails?.time;
 				setLoading(false);
 			});
@@ -84,12 +90,12 @@ function HomePage() {
 		handleWatchList();
 		setPlayEp(null);
 		setSources(null);
+		setQuality(null);
 		setOpenModal(false);
 	};
 
 	const handleWatchList = async () => {
 		if (userMeta?.data?.user?.id) {
-			console.log('Loggg', playEp);
 			await supabase.from(import.meta.env.VITE_ANIME_TABLE).upsert(
 				{
 					email: userMeta?.data.user.email,
@@ -310,10 +316,13 @@ function HomePage() {
 							<Select
 								labelId='quality-select'
 								id='quality-select'
-								value={quality}
+								value={
+									quality ??
+									sources?.filter(item => item.quality === '1080p')?.[0]?.url ??
+									sources?.[0]?.url
+								}
 								label='Quality'
 								onChange={handleQualityChange}
-								defaultValue={'1080p'}
 								style={{ color: 'white' }}
 							>
 								{sources?.map(item => {
@@ -339,6 +348,14 @@ function HomePage() {
 														item => +item?.aniListId === +animeInfo?.id
 													)?.[0]?.epDetails?.number
 														? 'currentEp'
+														: ''
+												}
+												${
+													key + 1 <=
+													watchList?.filter(
+														item => +item?.aniListId === +animeInfo?.id
+													)?.[0]?.epDetails?.number
+														? 'watched'
 														: ''
 												}`}
 												key={item?.number + '_list'}

@@ -38,8 +38,9 @@ function WatchPage() {
 	const [loading, setLoading] = useState(true);
 	const [err, setErr] = useState(false);
 	const [ep, setEp] = useState('');
-	const [quality, setQuality] = useState('1080p');
+	const [quality, setQuality] = useState('');
 	const { userInfo: userMeta } = useContext(AuthContext);
+	// const [epWatched, setEpWatched] = useState(null);
 	// const [buffering, setLoading] = useState(true);
 	const volume = useRef(0.5);
 	const formatter = Intl.NumberFormat('en', { notation: 'compact' });
@@ -81,7 +82,6 @@ function WatchPage() {
 	};
 
 	const handleScroll = e => {
-		console.log('Scroll', epRef.current.scrollLeft, e.key, ep);
 		const key = e.key;
 		if (ep > 0) {
 			if (key === 'Backspace' || key === 'Delete') {
@@ -339,7 +339,7 @@ function WatchPage() {
 							d='M12,4a8,8,0,0,1,7.89,6.7A1.53,1.53,0,0,0,21.38,12h0a1.5,1.5,0,0,0,1.48-1.75,11,11,0,0,0-21.72,0A1.5,1.5,0,0,0,2.62,12h0a1.53,1.53,0,0,0,1.49-1.3A8,8,0,0,1,12,4Z'
 							className='path'
 						/>
-						</svg>
+					</svg>
 					<ReactPlayer
 						className='react-player'
 						url={
@@ -373,10 +373,12 @@ function WatchPage() {
 							<Select
 								labelId='quality-select'
 								id='quality-select'
-								value={quality}
+								value={
+									quality ??
+									sources?.filter(item => item?.quality === '1080p')?.[0]?.url
+								}
 								label='Quality'
 								onChange={handleQualityChange}
-								defaultValue={'1080p'}
 								style={{ color: 'white' }}
 							>
 								{sources?.map(item => {
@@ -396,7 +398,9 @@ function WatchPage() {
 									return (
 										<>
 											<div
-												className={`ep_no`}
+												className={`ep_no ${
+													playEp?.number >= key + 1 ? 'watched' : ''
+												} ${playEp?.number === key + 1 ? 'currentEp' : ''}`}
 												key={item?.number + '_list'}
 												onClick={() => openPlayer(item)}
 											>

@@ -5,7 +5,7 @@
   min-height: 90vh;
   position: relative;
   padding-bottom: 10vh;
-  
+
   .details {
     max-width: 100vw;
     min-height: 72vh;
@@ -303,6 +303,24 @@
       align-items: center;
       margin: 2vh 0;
 
+      .watched {
+        background-color: #09bbb230;
+      }
+
+      .currentEp{
+        position: relative;
+      }
+      .currentEp::before {
+        content: '';
+        top: 5%;
+        left: 5%;
+        position: absolute;
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
+        background-color: rgba(0, 255, 132, 0.596);
+      }
+
       .ep_no {
         min-height: 1vh;
         min-width: 2vw;
@@ -400,6 +418,7 @@
           justify-content: center;
           height: 45vh;
           padding: 0 1.5vw;
+
           .banner {
             &_image {
               display: none;
@@ -439,6 +458,7 @@
             margin-top: 2vh;
             width: 100%;
             justify-content: center;
+
             div {
               margin-bottom: 2vh;
             }
@@ -464,11 +484,13 @@
     .episodes {
       .title {
         font-size: 1.25rem;
-        .text_field{
+
+        .text_field {
           width: 80px;
           font-size: 0.75rem;
           height: 60px;
         }
+
         .MuiSvgIcon-root {
           font-size: 1.5rem;
         }
@@ -500,13 +522,16 @@
               font-size: 3rem;
             }
           }
-          .play{
+
+          .play {
             height: 16vh;
           }
-          .ep_no{
+
+          .ep_no {
             font-size: 0.85rem;
           }
-          .ep_name{
+
+          .ep_name {
             font-size: 0.75rem;
             width: 100%;
             max-width: 40vw;
@@ -548,12 +573,13 @@
     bottom: 30%;
     min-height: 45vh;
     max-height: 45vh;
+
     // .thumbnail{
     //   width: 100%;
     //   height: 100%;
     // }
-    .eplist{
-      .ep_no{
+    .eplist {
+      .ep_no {
         min-width: 5vw !important;
       }
     }
