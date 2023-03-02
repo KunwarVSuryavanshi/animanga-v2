@@ -76,7 +76,7 @@
 2. Deploy this project using deploy button - <br/> <br/>
    [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/KunwarVSuryavanshi/animanga-v2)
 
-3. So your frontend is deployed, now for API - <br/> <br/>
+3. So your frontend is deployed, now for the API - <br/> <br/>
    [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fconsumet%2Fapi.consumet.org)
 
 4. For DB, create an account on [supabase](https://supabase.com/), and then create a table for watchList using PostgreSQL or the UI.
@@ -88,3 +88,7 @@
 # Credit
 
 `Anilist` & `Consumet` - For making this project possible. (Do check their repo and give it a star. &#128521;)
+
+## Disclaimer :- 
+
+```I am not promoting any illegal activity here. This is purely for educational purpose and I am not responsible if you use it for illegal purpose.```
