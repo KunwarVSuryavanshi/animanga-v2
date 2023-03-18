@@ -46,6 +46,7 @@ function WatchPage() {
 	const [open, setOpen] = useState(false);
 	// const [epWatched, setEpWatched] = useState(null);
 	// const [buffering, setLoading] = useState(true);
+	const [referer, setReferer] = useState('');
 	const volume = useRef(0.5);
 	const formatter = Intl.NumberFormat('en', { notation: 'compact' });
 	const playerRef = useRef(null);
@@ -61,8 +62,40 @@ function WatchPage() {
 			)
 			.then(res => {
 				setSources(res?.data?.sources);
+				setReferer(res?.data?.headers?.Referer);
 				setLoading(false);
-				setQuality();
+				setQuality(res?.data?.sources?.filter(item => item.quality === '1080p')?.[0]?.url);
+			})
+			.catch(err => {
+				let episodeNo = +item?.id.replace(/^\D+/g, '');
+				axios
+					.get(
+						`https://${
+							import.meta.env.VITE_SECONDARY_API
+						}/meta/anilist/info/${epInfo}?provider=zoro`
+					)
+					.then(res => {
+						setAnimeInfo(res.data);
+						return res;
+					})
+					.then(res => {
+						return axios.get(
+							`https://${
+								import.meta.env.VITE_SECONDARY_API
+							}/meta/anilist/watch/${
+								res?.data?.episodes?.[episodeNo - 1]?.id
+							}?provider=zoro`
+						);
+					})
+					.then(res => {
+						setSources(res?.data?.sources);
+						setReferer(res?.data?.headers?.Referer);
+						setLoading(false);
+						setQuality(
+							res?.data?.sources?.filter(item => item.quality === '1080p')?.[0]
+								?.url
+						);
+					});
 			});
 		setPlayEp(item);
 		setOpenModal(true);
@@ -160,8 +193,8 @@ function WatchPage() {
 			console.log('Adblocker detected');
 			setOpen(true);
 		}
-	}, [adBlocker])
-	
+	}, [adBlocker]);
+
 	return err ? (
 		<NotFound noHeader={true} />
 	) : (
@@ -363,15 +396,23 @@ function WatchPage() {
 					</svg>
 					<ReactPlayer
 						className='react-player'
-						url={
-							quality ??
-							sources?.filter(item => item.quality === '1080p')?.[0]?.url ??
-							sources?.[0]?.url
-						}
+						url={`https://m3u8proxy.counterstrike828.workers.dev/?url=${quality}`}
 						ref={playerRef}
 						width='100%'
 						height='100%'
 						controls={true}
+						// config={{
+						// 	file: {
+						// 		attributes: {
+						// 			crossOrigin: 'true',
+						// 			preload: 'metadata',
+						// 		},
+						// 		hlsOptions: {
+						// 			autoStartLoad: true,
+						// 			startFragPrefetch: true,
+						// 		},
+						// 	},
+						// }}
 						// light={playEp?.image} // replace with image tag
 						// playIcon={
 						//   <div className="play-icon">
@@ -446,7 +487,7 @@ function WatchPage() {
 					severity='error'
 					sx={{ width: '100%', color: '#f85553' }}
 				>
-						Episodes thumbnail might not load because of AdBlocker !
+					Episodes thumbnail might not load because of AdBlocker !
 				</Alert>
 			</Snackbar>
 		</div>
