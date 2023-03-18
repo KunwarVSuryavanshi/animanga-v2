@@ -64,7 +64,7 @@ function WatchPage() {
 				setSources(res?.data?.sources);
 				setReferer(res?.data?.headers?.Referer);
 				setLoading(false);
-				setQuality();
+				setQuality(res?.data?.sources?.filter(item => item.quality === '1080p')?.[0]?.url);
 			})
 			.catch(err => {
 				console.log('Error1');
@@ -91,8 +91,12 @@ function WatchPage() {
 					.then(res => {
 						console.log('Last response---->', res);
 						setSources(res?.data?.sources);
+						setReferer(res?.data?.headers?.Referer);
 						setLoading(false);
-						setQuality();
+						setQuality(
+							res?.data?.sources?.filter(item => item.quality === '1080p')?.[0]
+								?.url
+						);
 					});
 			});
 		setPlayEp(item);
@@ -392,32 +396,27 @@ function WatchPage() {
 							className='path'
 						/>
 					</svg>
+					{console.log(`https://m3u8proxy.counterstrike828.workers.dev/?url=${quality}&&referer=${referer}`)}
 					<ReactPlayer
 						className='react-player'
-						url={
-							import.meta.env.VITE_PROXY_URL +
-							'?url=' +
-							(quality ??
-								sources?.filter(item => item.quality === '1080p')?.[0]?.url ??
-								sources?.[0]?.url)
-							+`&&referer=${referer}`
+						url={`https://m3u8proxy.counterstrike828.workers.dev/?url=${encodeURIComponent(quality)}&&referer=${encodeURIComponent(referer)}`
 						}
 						ref={playerRef}
 						width='100%'
 						height='100%'
 						controls={true}
-						config={{
-							file: {
-								attributes: {
-									crossOrigin: 'true',
-									// preload: 'metadata',
-								},
-								// hlsOptions: {
-								// 	autoStartLoad: true,
-								// 	startFragPrefetch: true,
-								// },
-							},
-						}}
+						// config={{
+						// 	file: {
+						// 		attributes: {
+						// 			crossOrigin: 'true',
+						// 			preload: 'metadata',
+						// 		},
+						// 		hlsOptions: {
+						// 			autoStartLoad: true,
+						// 			startFragPrefetch: true,
+						// 		},
+						// 	},
+						// }}
 						// light={playEp?.image} // replace with image tag
 						// playIcon={
 						//   <div className="play-icon">
