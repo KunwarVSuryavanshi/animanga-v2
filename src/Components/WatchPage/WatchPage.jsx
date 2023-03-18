@@ -396,7 +396,7 @@ function WatchPage() {
 						className='react-player'
 						url={
 							import.meta.env.VITE_PROXY_URL +
-							'?url' +
+							'?url=' +
 							(quality ??
 								sources?.filter(item => item.quality === '1080p')?.[0]?.url ??
 								sources?.[0]?.url)
