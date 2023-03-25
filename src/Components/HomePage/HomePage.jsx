@@ -283,11 +283,12 @@ function HomePage() {
 					</svg>
 					<ReactPlayer
 						className='react-player'
-						url={
-							quality ??
-							sources?.filter(item => item.quality === '1080p')?.[0]?.url ??
-							sources?.[0]?.url
-						}
+						url={`https://m3u8proxy.counterstrike828.workers.dev/?url=
+							${
+								quality ??
+								sources?.filter(item => item.quality === '1080p')?.[0]?.url ??
+								sources?.[0]?.url
+							}`}
 						// file={}
 						ref={playerRef}
 						width='100%'

@@ -271,7 +271,7 @@
 .modal_root {
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: variables.$black_grey;
+  background-color: var(--black);
   left: 18%;
   right: 18%;
   position: absolute;
@@ -283,11 +283,10 @@
   padding: 0.5vw;
   border-radius: 10px;
 
-  // padding: 2vw;
-  // .thumbnail{
-  //   width: 100%;
-  //   height: 100%;
-  // }
+  .episodeTitle {
+    display: none;
+  }
+
   .player-ep {
     width: 100%;
     overflow-x: auto;
@@ -307,9 +306,10 @@
         background-color: #09bbb230;
       }
 
-      .currentEp{
+      .currentEp {
         position: relative;
       }
+
       .currentEp::before {
         content: '';
         top: 5%;
@@ -333,6 +333,24 @@
         cursor: pointer;
       }
     }
+  }
+}
+
+.modal_root:hover {
+  .episodeTitle {
+    position: absolute;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.25rem;
+    padding-bottom: 10vh;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box;
+    font-weight: 600;
+    opacity: 0.95;
+    height: 100%;
+    background: linear-gradient(185deg, black, transparent);
   }
 }
 
