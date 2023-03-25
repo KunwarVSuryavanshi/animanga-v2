@@ -44,6 +44,7 @@ function WatchPage() {
 	const { userInfo: userMeta } = useContext(AuthContext);
 	const [adBlocker, setAdBlocker] = useState(false);
 	const [open, setOpen] = useState(false);
+	const [epTitle, setEpTitle] = useState('');
 	// const [epWatched, setEpWatched] = useState(null);
 	// const [buffering, setLoading] = useState(true);
 	const [referer, setReferer] = useState('');
@@ -53,7 +54,9 @@ function WatchPage() {
 	const epRef = useRef(null);
 
 	const openPlayer = item => {
+		console.log('Item---->', item);
 		setLoading(true);
+		setEpTitle(item?.number + ' - ' + item?.title);
 		axios
 			.get(
 				`https://${import.meta.env.VITE_SECONDARY_API}/meta/anilist/watch/${
@@ -64,7 +67,9 @@ function WatchPage() {
 				setSources(res?.data?.sources);
 				setReferer(res?.data?.headers?.Referer);
 				setLoading(false);
-				setQuality(res?.data?.sources?.filter(item => item.quality === '1080p')?.[0]?.url);
+				setQuality(
+					res?.data?.sources?.filter(item => item.quality === '1080p')?.[0]?.url
+				);
 			})
 			.catch(err => {
 				let episodeNo = +item?.id.replace(/^\D+/g, '');
@@ -381,6 +386,9 @@ function WatchPage() {
 				id='watchPage'
 			>
 				<div className='modal_root'>
+					<div className='episodeTitle'>
+							{epTitle}
+					</div>
 					<svg
 						className={`spinner ${!loading && 'hidden'}`}
 						viewBox='0 0 24 24'
@@ -396,7 +404,7 @@ function WatchPage() {
 					</svg>
 					<ReactPlayer
 						className='react-player'
-						url={`https://m3u8proxy.counterstrike828.workers.dev/?url=${quality}`}
+						url={`https://m3u8proxy.counterstrike828.workers.dev/?referer=${referer}&&url=${quality}`}
 						ref={playerRef}
 						width='100%'
 						height='100%'
