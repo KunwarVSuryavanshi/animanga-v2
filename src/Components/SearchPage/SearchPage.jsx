@@ -23,7 +23,7 @@ function SearchPage() {
 	const searchResult = useSelector(state => state.searchedAnime);
 	const navigate = useNavigate();
 	const [type, setType] = useState([
-		{ id: 'ANIME', text: 'Anime', selected: true, color: '#E90064' },
+		{ id: 'ANIME', text: 'Anime', selected: false, color: '#E90064' },
 		{ id: 'MANGA', text: 'Manga', selected: false, color: '#810CA8' },
 	]);
 	const [season, setSeason] = useState([
@@ -33,7 +33,7 @@ function SearchPage() {
 		{ id: 'FALL', text: 'Fall', selected: false, color: '#ABC270' },
 	]);
 	const [format, setFormat] = useState([
-		{ id: 'TV', text: 'TV	', selected: true, color: '#B9F3E4' },
+		{ id: 'TV', text: 'TV	', selected: false, color: '#B9F3E4' },
 		{ id: 'TV_SHORT', text: 'TV SHORT', selected: false, color: '#B5F1CC' },
 		{ id: 'OVA', text: 'OVA', selected: false, color: '#FD8A8A' },
 		{ id: 'ONA', text: 'ONA', selected: false, color: '#BA94D1' },
@@ -145,8 +145,6 @@ function SearchPage() {
 		setSearchText(e.target.value);
 	};
 
-	const handleDelete = () => {};
-
 	const handleRoute = (e, item) => {
 		if (item.type === 'MANGA') {
 			navigate(`/manga/${item.id}`);
@@ -187,6 +185,37 @@ function SearchPage() {
 		if (searchText.trim()?.length > 0) {
 			dispatch(clearSearchData());
 			dispatch(searchAnimes({ page: 1, perPage: 50, text: searchText }));
+		}
+	};
+
+	const handleChipClick = (item, region, index) => {
+		switch (region) {
+			case 'type':
+				type[index].selected = !type[index].selected;
+				setType([...type]);
+				break;
+			case 'genres':
+				genres[index].selected = !genres[index].selected;
+				setGenres([...genres])
+				break;
+			case 'format':
+				format[index].selected = !format[index].selected;
+				setFormat([...format])
+				break;
+			case 'status':
+				status[index].selected = !status[index].selected;
+				setStatus([...status])
+				break
+			case 'season':
+				season[index].selected = !season[index].selected;
+				setSeason([...season]);
+				break;
+			case 'sort':
+				sort[index].selected = !sort[index].selected;
+				setSort([...sort]);
+				break;
+			default:
+				break;
 		}
 	};
 
@@ -261,6 +290,7 @@ function SearchPage() {
 				aria-describedby='modal-modal-description'
 			>
 				<div className='filter_root'>
+					{console.log('Type---->', type)}
 					<div className='category'>
 						UNDER CONSTRUCTION &#128517;
 						<br />
@@ -269,12 +299,16 @@ function SearchPage() {
 							<CategoryIcon /> Type
 						</div>
 						<div className='filter_body'>
-							{type?.map(item => {
+							{type?.map((item, key) => {
 								return (
 									<Chip
 										className={'category ' + item.id}
 										label={item.text}
-										onDelete={item.selected ? handleDelete : null}
+										onDelete={
+											item.selected
+												? () => handleChipClick(item, 'type', key)
+												: null
+										}
 										style={{
 											border: `2px solid ${item?.color}`,
 											boxShadow: `${
@@ -283,6 +317,7 @@ function SearchPage() {
 											// textShadow: `${item?.color} 0.05rem 0.05rem`,
 											// color: `${item?.color}`,
 										}}
+										onClick={() => handleChipClick(item, 'type', key)}
 									/>
 								);
 							})}
@@ -294,18 +329,23 @@ function SearchPage() {
 							Format
 						</div>
 						<div className='filter_body'>
-							{format?.map(item => {
+							{format?.map((item, key) => {
 								return (
 									<Chip
 										className={'format ' + item.id}
 										label={item.text}
-										onDelete={item.selected ? handleDelete : null}
+										onDelete={
+											item.selected
+												? () => handleChipClick(item, 'format', key)
+												: null
+										}
 										style={{
 											border: `2px solid ${item?.color}`,
 											boxShadow: `${
 												item.selected ? `0 0 1rem 0 ${item?.color}` : ``
 											}`,
 										}}
+										onClick={() => handleChipClick(item, 'format', key)}
 									/>
 								);
 							})}
@@ -317,18 +357,23 @@ function SearchPage() {
 							Season
 						</div>
 						<div className='filter_body'>
-							{season?.map(item => {
+							{season?.map((item, key) => {
 								return (
 									<Chip
 										className={'season ' + item.id}
 										label={item.text}
-										onDelete={item.selected ? handleDelete : null}
+										onDelete={
+											item.selected
+												? () => handleChipClick(item, 'season', key)
+												: null
+										}
 										style={{
 											border: `2px solid ${item?.color}`,
 											boxShadow: `${
 												item.selected ? `0 0 1rem 0 ${item?.color}` : ``
 											}`,
 										}}
+										onClick={() => handleChipClick(item, 'season', key)}
 									/>
 								);
 							})}
@@ -340,18 +385,23 @@ function SearchPage() {
 							Status
 						</div>
 						<div className='filter_body'>
-							{status?.map(item => {
+							{status?.map((item, key) => {
 								return (
 									<Chip
 										className={'status ' + item.id}
 										label={item.text}
-										onDelete={item.selected ? handleDelete : null}
+										onDelete={
+											item.selected
+												? () => handleChipClick(item, 'status', key)
+												: null
+										}
 										style={{
 											border: `2px solid ${item?.color}`,
 											boxShadow: `${
 												item.selected ? `0 0 1rem 0 ${item?.color}` : ``
 											}`,
 										}}
+										onClick={() => handleChipClick(item, 'status', key)}
 									/>
 								);
 							})}
@@ -363,18 +413,23 @@ function SearchPage() {
 							Genres
 						</div>
 						<div className='filter_body'>
-							{genres?.map(item => {
+							{genres?.map((item, key) => {
 								return (
 									<Chip
 										className={'status ' + item.id}
 										label={item.text}
-										onDelete={item.selected ? handleDelete : null}
+										onDelete={
+											item.selected
+												? () => handleChipClick(item, 'genres', key)
+												: null
+										}
 										style={{
 											border: `2px solid ${item?.color}`,
 											boxShadow: `${
 												item.selected ? `0 0 1rem 0 ${item?.color}` : ``
 											}`,
 										}}
+										onClick={() => handleChipClick(item, 'genres', key)}
 									/>
 								);
 							})}
@@ -386,18 +441,23 @@ function SearchPage() {
 							Sort
 						</div>
 						<div className='filter_body'>
-							{sort?.map(item => {
+							{sort?.map((item, key) => {
 								return (
 									<Chip
 										className={'sort ' + item.id}
 										label={item.text}
-										onDelete={item.selected ? handleDelete : null}
+										onDelete={
+											item.selected
+												? () => handleChipClick(item, 'sort', key)
+												: null
+										}
 										style={{
 											border: `2px solid ${item?.color}`,
 											boxShadow: `${
 												item.selected ? `0 0 1rem 0 ${item?.color}` : ``
 											}`,
 										}}
+										onClick={() => handleChipClick(item, 'sort', key)}
 									/>
 								);
 							})}
