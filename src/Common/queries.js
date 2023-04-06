@@ -1,7 +1,7 @@
 // Anilist
 
 export const anilistNotAiringScheduleQuery = (date, page = 1, perPage = 50) => {
-  return `query { 
+	return `query { 
       Page(page: ${page}, perPage: ${perPage}) { 
         pageInfo { 
           total 
@@ -11,8 +11,14 @@ export const anilistNotAiringScheduleQuery = (date, page = 1, perPage = 50) => {
           hasNextPage
         } 
         media(countryOfOrigin: JP, status: NOT_YET_RELEASED, type: ANIME, startDate_greater: ${
-          date.getFullYear() + "" + (date.getMonth()+1 > 9 ? (date.getMonth()+1) : '0'+(date.getMonth()+1)) + "" + (date.getDate() > 9 ? date.getDate() : '0'+date.getDate())
-        }, sort: POPULARITY_DESC, isAdult: false){
+					date.getFullYear() +
+					'' +
+					(date.getMonth() + 1 > 9
+						? date.getMonth() + 1
+						: '0' + (date.getMonth() + 1)) +
+					'' +
+					(date.getDate() > 9 ? date.getDate() : '0' + date.getDate())
+				}, sort: POPULARITY_DESC, isAdult: false){
           title {
             romaji
             english
@@ -37,7 +43,7 @@ export const anilistNotAiringScheduleQuery = (date, page = 1, perPage = 50) => {
     }`;
 };
 export const airingToday = (page = 1, perPage = 50) => {
-  return `query { 
+	return `query { 
       Page(page: ${page}, perPage: ${perPage}) { 
         pageInfo { 
           total 
@@ -84,12 +90,12 @@ export const airingToday = (page = 1, perPage = 50) => {
 };
 
 export const topAnime = (
-  page = 1,
-  type = "ANIME",
-  status = "FINISHED",
-  sort = "SCORE_DESC"
+	page = 1,
+	type = 'ANIME',
+	status = 'FINISHED',
+	sort = 'SCORE_DESC'
 ) => {
-  return `{ 
+	return `{ 
       Page(page: ${page}, perPage: 50) { 
         pageInfo { 
           total 
@@ -135,9 +141,15 @@ export const topAnime = (
     }`;
 };
 
-export const searchAnime = (page = 1, perPage = 50, searchText) => {
-  // console.log(page, per)
-  return `query { 
+export const searchAnime = (
+	page = 1,
+	perPage = 50,
+	searchText,
+	filterParam,
+	sort = 'POPULARITY_DESC'
+) => {
+	// console.log(page, per)
+	return `query { 
       Page(page: ${page}, perPage: ${perPage}) { 
         pageInfo { 
           total 
@@ -146,7 +158,9 @@ export const searchAnime = (page = 1, perPage = 50, searchText) => {
           lastPage 
           hasNextPage
         } 
-        media(search: "${searchText}", sort: POPULARITY_DESC, isAdult: false){
+        media(search: "${searchText}", sort: ${sort}, isAdult: false, ${
+		filterParam ?? ''
+	}){
           title {
             romaji
             english

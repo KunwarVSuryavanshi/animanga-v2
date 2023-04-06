@@ -6,7 +6,7 @@
   flex-wrap: wrap;
   // gap: 2rem;
   row-gap: 2rem;
-  margin: 10vh 2vw;
+  margin: 13vh 2vw;
 
   .card_wrap {
     display: flex;
@@ -206,7 +206,7 @@
   }
 
   100% {
-    top: 10%;
+    top: 70px;
     opacity: 1;
   }
 
@@ -249,5 +249,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+}
+
+#searchModal {
+  backdrop-filter: blur(7px);
+
+  .filter_root {
+    background-color: rgb(0 0 0 / 63%);
+
+    .MuiButtonBase-root.MuiButton-root:hover {
+      border: none;
+    }
   }
 }

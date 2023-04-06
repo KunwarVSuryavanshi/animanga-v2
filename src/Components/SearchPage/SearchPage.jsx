@@ -177,7 +177,60 @@ function SearchPage() {
 		setOpen(true);
 	};
 
-	const handleClose = () => {
+	const handleClose = param => {
+		if (param === 'filter') {
+			dispatch(clearSearchData());
+			let filterParam = '';
+			let types = type
+				?.filter(item => item.selected)
+				?.map(item => item?.id)
+				.join('');
+			if (types?.length > 0) {
+				filterParam += 'type:' + types + ', ';
+			}
+			let seasons = season
+				?.filter(item => item.selected)
+				?.map(item => item?.id)
+				.join('');
+			if (seasons?.length > 0) {
+				filterParam += 'season:' + seasons + ', ';
+			}
+			let formats = format
+				?.filter(item => item.selected)
+				?.map(item => item?.id)
+				.join('');
+			if (formats?.length > 0) {
+				filterParam += 'format:' + formats + ', ';
+			}
+			let genre = genres
+				?.filter(item => item.selected)
+				?.map(item => item?.id)
+				.join('');
+			if (genre?.length > 0) {
+				filterParam += 'genre:' + genre + ', ';
+			}
+			let statuses = status
+				?.filter(item => item.selected)
+				?.map(item => item?.id)
+				.join('');
+			if (statuses?.length > 0) {
+				filterParam += 'status:' + statuses + ', ';
+			}
+			let sorts = sort
+				?.filter(item => item.selected)
+				?.map(item => item?.id)
+				.join('');
+			console.log('FiterParam', filterParam, formats, genres, statuses);
+			dispatch(
+				searchAnimes({
+					page: 1,
+					perPage: 50,
+					text: searchText,
+					filterParam,
+					sorts,
+				})
+			);
+		}
 		setOpen(false);
 	};
 
@@ -196,16 +249,16 @@ function SearchPage() {
 				break;
 			case 'genres':
 				genres[index].selected = !genres[index].selected;
-				setGenres([...genres])
+				setGenres([...genres]);
 				break;
 			case 'format':
 				format[index].selected = !format[index].selected;
-				setFormat([...format])
+				setFormat([...format]);
 				break;
 			case 'status':
 				status[index].selected = !status[index].selected;
-				setStatus([...status])
-				break
+				setStatus([...status]);
+				break;
 			case 'season':
 				season[index].selected = !season[index].selected;
 				setSeason([...season]);
@@ -240,7 +293,11 @@ function SearchPage() {
 					Search
 				</Button>
 			</div>
-			<div className='filter-genres filter-bar adv-text'>
+			<div
+				className={`filter-genres filter-bar adv-text ${
+					searchResult?.list?.Page?.media?.length > 30 ? 'topClass' : ''
+				}`}
+			>
 				<span>
 					Not sure what to look for? Try{' '}
 					<span className='adv' onClick={openAdvancedSearch}>
@@ -286,11 +343,11 @@ function SearchPage() {
 			<Modal
 				open={open}
 				onClose={handleClose}
-				aria-labelledby='modal-modal-title'
+				aria-labelledby='search-title'
+				id='searchModal'
 				aria-describedby='modal-modal-description'
 			>
 				<div className='filter_root'>
-					{console.log('Type---->', type)}
 					<div className='category'>
 						UNDER CONSTRUCTION &#128517;
 						<br />
@@ -463,6 +520,15 @@ function SearchPage() {
 							})}
 						</div>
 					</div>
+					<span style={{ float: 'right' }}>
+						<Button
+							variant='contained'
+							onClick={() => handleClose('filter')}
+							disableElevation={true}
+						>
+							Done
+						</Button>
+					</span>
 				</div>
 			</Modal>
 		</div>

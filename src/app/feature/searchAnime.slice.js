@@ -14,11 +14,17 @@ export const searchAnimes = createAsyncThunk(
   (payload) => {
     let url = "https://graphql.anilist.co";
     return axios
-      .post(url, {
-        query: searchAnime(payload.page, payload.perPage, payload.text),
-      })
-      .then((res) => res.data)
-      .catch((err) => err);
+			.post(url, {
+				query: searchAnime(
+					payload.page,
+					payload.perPage,
+					payload.text,
+					payload.filterParam,
+					payload.sort
+				),
+			})
+			.then(res => res.data)
+			.catch(err => err);
   }
 );
 
