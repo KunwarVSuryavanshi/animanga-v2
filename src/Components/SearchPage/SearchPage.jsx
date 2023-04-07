@@ -220,7 +220,6 @@ function SearchPage() {
 				?.filter(item => item.selected)
 				?.map(item => item?.id)
 				.join('');
-			console.log('FiterParam', filterParam, formats, genres, statuses);
 			dispatch(
 				searchAnimes({
 					page: 1,

@@ -54,7 +54,6 @@ function WatchPage() {
 	const epRef = useRef(null);
 
 	const openPlayer = item => {
-		console.log('Item---->', item);
 		setLoading(true);
 		setEpTitle(item?.number + ' - ' + item?.title);
 		axios
@@ -195,7 +194,7 @@ function WatchPage() {
 
 	useEffect(() => {
 		if (adBlocker) {
-			console.log('Adblocker detected');
+			console.error('Adblocker detected');
 			setOpen(true);
 		}
 	}, [adBlocker]);
@@ -486,7 +485,7 @@ function WatchPage() {
 			</Modal>
 			<Snackbar
 				open={open}
-				autoHideDuration={4000}
+				autoHideDuration={6000}
 				anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
 				onClose={handleClosePopUp}
 			>

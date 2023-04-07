@@ -28,7 +28,6 @@ function Reader() {
 	};
 
 	const handleLazyLoad = (items, observer) => {
-		console.log('Lazy load---->', items);
 		items?.forEach(item => {
 			if (item?.isIntersecting) {
 				loadImage(item?.target?.children?.[0]);
