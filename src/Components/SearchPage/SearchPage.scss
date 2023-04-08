@@ -6,7 +6,7 @@
   flex-wrap: wrap;
   // gap: 2rem;
   row-gap: 2rem;
-  margin: 10vh 2vw;
+  margin: 13vh 2vw;
 
   .card_wrap {
     display: flex;
@@ -206,7 +206,7 @@
   }
 
   100% {
-    top: 10%;
+    top: 70px;
     opacity: 1;
   }
 
@@ -215,7 +215,7 @@
 @media (max-width: 600px) {
   .cards {
     row-gap: 1rem;
-    margin: 8vh 2vw;
+    margin: 12vh 2vw;
 
     .card_wrap {
       width: 43vw;
@@ -249,5 +249,43 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .filter_root {
+    left: 5%;
+    right: 5%;
+    top: 12%;
+    bottom: 12%;
+    height: fit-content;
+    max-height: 75vh;
+    // min-height: 60vh;
+    padding: 3vw 4vw;
+
+    .filter_header {
+      font-size: 1.15rem;
+      margin-top: 4vw;
+      margin-bottom: 1vw;
+    }
+
+    .filter_body {
+      .MuiChip-root {
+        padding: 0.25vw 0.5vw;
+        margin: 1.5vw 1.5vw;
+        margin-left: 0vw;
+      }
+    }
+  }
+
+}
+
+#searchModal {
+  backdrop-filter: blur(7px);
+
+  .filter_root {
+    background-color: rgb(0 0 0 / 63%);
+
+    .MuiButtonBase-root.MuiButton-root:hover {
+      border: none;
+    }
   }
 }
