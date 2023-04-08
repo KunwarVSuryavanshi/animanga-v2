@@ -298,9 +298,9 @@ function SearchPage() {
 				}`}
 			>
 				<span>
-					Not sure what to look for? Try{' '}
+					More specific ? Try{' '}
 					<span className='adv' onClick={openAdvancedSearch}>
-						<u>advanced search</u>
+						<u>advanced search </u>
 					</span>
 				</span>
 			</div>
@@ -348,9 +348,8 @@ function SearchPage() {
 			>
 				<div className='filter_root'>
 					<div className='category'>
-						UNDER CONSTRUCTION &#128517;
-						<br />
-						{`\n`}
+						{/* UNDER CONSTRUCTION &#128517;
+						{`\n`} */}
 						<div className='filter_header'>
 							<CategoryIcon /> Type
 						</div>
