@@ -54,8 +54,11 @@ function WatchPage() {
 	const epRef = useRef(null);
 
 	const openPlayer = item => {
+		console.log('Item', item);
 		setLoading(true);
-		setEpTitle(item?.number + ' - ' + item?.title);
+		let title = item?.title ? ` - ${item?.title}` : '';
+		title = title ? title : `Episode ${item?.number}`;
+		setEpTitle(title);
 		axios
 			.get(
 				`https://${import.meta.env.VITE_SECONDARY_API}/meta/anilist/watch/${
@@ -63,6 +66,7 @@ function WatchPage() {
 				}`
 			)
 			.then(res => {
+				console.log('First Response--->', res);
 				setSources(res?.data?.sources);
 				setReferer(res?.data?.headers?.Referer);
 				setLoading(false);
@@ -71,7 +75,10 @@ function WatchPage() {
 				);
 			})
 			.catch(err => {
-				let episodeNo = +item?.id.replace(/^\D+/g, '');
+				console.log(item, +item?.id.replace(/^\D+/g, ''));
+				let episodeNo = item?.number ?? +item?.id.replace(/^\D+/g, '');
+				console.log('Error First--->', err);
+				//EWWWWWWW???? ik xD
 				axios
 					.get(
 						`https://${
@@ -79,15 +86,18 @@ function WatchPage() {
 						}/meta/anilist/info/${epInfo}?provider=zoro`
 					)
 					.then(res => {
+						console.log('Second Response--->', res);
 						setAnimeInfo(res.data);
 						return res;
 					})
 					.then(res => {
+						console.log('Third Response--->', res?.data?.episodes, episodeNo);
 						return axios.get(
 							`https://${
 								import.meta.env.VITE_SECONDARY_API
 							}/meta/anilist/watch/${
-								res?.data?.episodes?.[episodeNo - 1]?.id
+								res?.data?.episodes?.[episodeNo - 1]?.id ??
+								res?.data?.episodes?.[0]?.id
 							}?provider=zoro`
 						);
 					})
@@ -99,6 +109,11 @@ function WatchPage() {
 							res?.data?.sources?.filter(item => item.quality === '1080p')?.[0]
 								?.url
 						);
+					})
+					.catch(err => {
+						console.log('Error Second--->', err);
+						setLoading(false);
+						setErr(true);
 					});
 			});
 		setPlayEp(item);
@@ -385,9 +400,7 @@ function WatchPage() {
 				id='watchPage'
 			>
 				<div className='modal_root'>
-					<div className='episodeTitle'>
-							{epTitle}
-					</div>
+					<div className='episodeTitle'>{epTitle ?? ''}</div>
 					<svg
 						className={`spinner ${!loading && 'hidden'}`}
 						viewBox='0 0 24 24'
