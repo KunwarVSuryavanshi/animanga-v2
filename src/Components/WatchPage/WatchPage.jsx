@@ -54,7 +54,6 @@ function WatchPage() {
 	const epRef = useRef(null);
 
 	const openPlayer = item => {
-		console.log('Item', item);
 		setLoading(true);
 		let title = item?.title ? ` - ${item?.title}` : '';
 		title = title ? title : `Episode ${item?.number}`;
@@ -66,18 +65,17 @@ function WatchPage() {
 				}`
 			)
 			.then(res => {
-				console.log('First Response--->', res);
+				// throw error
+				//This block is for gogo
 				setSources(res?.data?.sources);
-				setReferer(res?.data?.headers?.Referer);
+				// setReferer(res?.data?.headers?.Referer);
 				setLoading(false);
 				setQuality(
 					res?.data?.sources?.filter(item => item.quality === '1080p')?.[0]?.url
 				);
 			})
 			.catch(err => {
-				console.log(item, +item?.id.replace(/^\D+/g, ''));
 				let episodeNo = item?.number ?? +item?.id.replace(/^\D+/g, '');
-				console.log('Error First--->', err);
 				//EWWWWWWW???? ik xD
 				axios
 					.get(
@@ -86,12 +84,12 @@ function WatchPage() {
 						}/meta/anilist/info/${epInfo}?provider=zoro`
 					)
 					.then(res => {
-						console.log('Second Response--->', res);
+						//This one is Zoro, for anime details
 						setAnimeInfo(res.data);
 						return res;
 					})
 					.then(res => {
-						console.log('Third Response--->', res?.data?.episodes, episodeNo);
+						//Using anime details from above fetching the episodes
 						return axios.get(
 							`https://${
 								import.meta.env.VITE_SECONDARY_API
@@ -111,7 +109,6 @@ function WatchPage() {
 						);
 					})
 					.catch(err => {
-						console.log('Error Second--->', err);
 						setLoading(false);
 						setErr(true);
 					});
@@ -416,7 +413,12 @@ function WatchPage() {
 					</svg>
 					<ReactPlayer
 						className='react-player'
-						url={`https://m3u8proxy.counterstrike828.workers.dev/?referer=${referer}&&url=${quality}`}
+						// url={`https://m3u8proxy.counterstrike828.workers.dev/?referer=${referer}&&url=${quality}`}
+						url={
+							!referer
+								? quality
+								: `https://m3u8proxy.counterstrike828.workers.dev/?referer=${referer}&&url=${quality}`
+						}
 						ref={playerRef}
 						width='100%'
 						height='100%'
