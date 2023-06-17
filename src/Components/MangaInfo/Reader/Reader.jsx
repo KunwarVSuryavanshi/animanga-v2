@@ -9,8 +9,8 @@ function Reader() {
 	const [chapter, setChapter] = useState(null);
 	const [chap, setChap] = useState(null);
 	const [loading, setLoading] = useState(false);
-	const viewRef = useRef();
-	const pageRef = useRef();
+	const viewRef = useRef(null);
+	const pageRef = useRef(null);
 	const options = {
 		root: null,
 		rootMargin: '0px 0px 0px 1000px', // +ve means pre load
@@ -23,11 +23,13 @@ function Reader() {
 
 	const loadImage = async element => {
 		let src = element?.getAttribute('data-src');
-		let proxiedImg = await proxyReq(src);
+		let ref = element?.getAttribute('data-ref');
+		let proxiedImg = ref ? await proxyReq(src, ref) : src;
 		element.src = proxiedImg;
 	};
 
 	const handleLazyLoad = (items, observer) => {
+		console.log('Handle Lazy', items);
 		items?.forEach(item => {
 			if (item?.isIntersecting) {
 				loadImage(item?.target?.children?.[0]);
@@ -37,15 +39,21 @@ function Reader() {
 	};
 
 	const handleChapterFetch = event => {
+		console.log('Event', event?.target?.value);
 		setChap(event.target?.value);
 		setLoading(true);
-		let url = `https://${import.meta.env.VITE_SECONDARY_API}/manga/${
-			meta?.provider
-		}/read?chapterId=${event.target?.value?.id}`;
+		let url =
+			meta?.provider === 'mangadex'
+				? `https://${import.meta.env.VITE_SECONDARY_API}/manga/${
+						meta?.provider
+				  }/read/${event.target?.value?.id}`
+				: `https://${import.meta.env.VITE_SECONDARY_API}/manga/${
+						meta?.provider
+				  }/read?chapterId=${event.target?.value?.id}`;
 		axios
 			.get(url)
 			.then(res => {
-				setChapter(res.data);
+				setChapter(res.data?.results ?? res?.data);
 			})
 			.catch(err => console.error(err))
 			.finally(() => setLoading(false));
@@ -142,6 +150,7 @@ function Reader() {
 								<span>Left</span>
 							</div>
 						)}
+						{console.log('Chapter', chapter)}
 						{chapter?.map((item, key) => {
 							return (
 								<div
@@ -150,7 +159,11 @@ function Reader() {
 									ref={pageRef}
 									key={key}
 								>
-									<img className='images' data-src={item?.img}/>
+									<img
+										className='images'
+										data-src={item?.img}
+										data-ref={item?.headerForImage?.Referer}
+									/>
 								</div>
 							);
 						})}
