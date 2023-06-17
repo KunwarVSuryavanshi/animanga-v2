@@ -231,6 +231,10 @@
     }
   }
 
+  .view_cont {
+    margin-bottom: 5vh;
+  }
+
   .viewer {
     display: flex;
     flex-direction: row;
@@ -242,6 +246,7 @@
     height: max-content;
     overflow: auto;
     max-height: 100vh;
+    padding-bottom: 10vh;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
 
@@ -405,11 +410,12 @@
 }
 
 @keyframes visiblity {
-  0% {
-  }
-  99%{
+  0% {}
+
+  99% {
     font-size: 2rem;
   }
+
   100% {
     background-color: transparent;
     color: transparent;
@@ -422,10 +428,11 @@
 }
 
 @media (max-width: 600px) {
-  .manga_banner{
+  .manga_banner {
     min-height: 12vh;
     // max-height: fit-content
   }
+
   .about_manga_container {
     .info {
       gap: 1rem;
@@ -480,7 +487,8 @@
       }
     }
   }
-  .chapters-drop{
+
+  .chapters-drop {
     justify-content: center;
   }
 }
