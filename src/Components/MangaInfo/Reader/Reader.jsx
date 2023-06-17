@@ -32,7 +32,6 @@ function Reader() {
 		console.log('Handle Lazy', items);
 		items?.forEach(item => {
 			if (item?.isIntersecting) {
-				console.log('Item is intersecting', item?.target);
 				loadImage(item?.target?.children?.[0]);
 				observer.unobserve(item.target);
 			}
@@ -43,13 +42,17 @@ function Reader() {
 		console.log('Event', event?.target?.value);
 		setChap(event.target?.value);
 		setLoading(true);
-		let url = `https://${import.meta.env.VITE_SECONDARY_API}/manga/${
-			meta?.provider
-		}/read/${event.target?.value?.id}`;
+		let url =
+			meta?.provider === 'mangadex'
+				? `https://${import.meta.env.VITE_SECONDARY_API}/manga/${
+						meta?.provider
+				  }/read/${event.target?.value?.id}`
+				: `https://${import.meta.env.VITE_SECONDARY_API}/manga/${
+						meta?.provider
+				  }/read?chapterId=${event.target?.value?.id}`;
 		axios
 			.get(url)
 			.then(res => {
-				console.log('Fetching list of chapters done', res.data);
 				setChapter(res.data?.results ?? res?.data);
 			})
 			.catch(err => console.error(err))
