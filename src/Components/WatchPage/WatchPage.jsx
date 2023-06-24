@@ -85,7 +85,10 @@ function WatchPage() {
 					)
 					.then(res => {
 						//This one is Zoro, for anime details
-						setAnimeInfo(res.data);
+						setAnimeInfo({
+							...res.data,
+							episodes: res?.data?.episodes?.reverse(),
+						});
 						return res;
 					})
 					.then(res => {
@@ -185,7 +188,12 @@ function WatchPage() {
 						import.meta.env.VITE_SECONDARY_API
 					}/meta/anilist/info/${epInfo}`
 				)
-				.then(res => setAnimeInfo(res.data))
+				.then(res =>
+					setAnimeInfo({
+						...res.data,
+						episodes: res?.data?.episodes?.reverse(),
+					})
+				)
 				.catch(err => {
 					console.error('Error with API call--->', err);
 					setErr(true);

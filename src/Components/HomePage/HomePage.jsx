@@ -57,7 +57,12 @@ function HomePage() {
 						item?.aniListId
 					}`
 				)
-				.then(res => setAnimeInfo(res.data))
+				.then(res =>
+					setAnimeInfo({
+						...res.data,
+						episodes: res?.data?.episodes?.reverse(),
+					})
+				)
 				.catch(err => {
 					console.error('Error with API call--->', err);
 				});
