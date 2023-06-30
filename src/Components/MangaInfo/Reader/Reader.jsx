@@ -24,7 +24,7 @@ function Reader() {
 	const loadImage = async element => {
 		let src = element?.getAttribute('data-src');
 		let ref = element?.getAttribute('data-ref');
-		let proxiedImg = ref ? await proxyReq(src, ref) : src;
+		let proxiedImg = await proxyReq(src, ref);
 		element.src = proxiedImg;
 	};
 
@@ -63,9 +63,9 @@ function Reader() {
 		const data = await axios.get(
 			`https://${
 				import.meta.env.VITE_SECONDARY_API
-			}/utils/image-proxy?url=${url}&referer=${
+			}/utils/image-proxy?url=${url}&headers={"referer" : "${
 				referer ?? `https://${meta?.provider}.org/`
-			}`,
+			}"}`,
 			{
 				responseType: 'arraybuffer',
 			}
