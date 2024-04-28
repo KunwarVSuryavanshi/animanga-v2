@@ -178,6 +178,7 @@
           // flex-direction: column;
           justify-content: center;
           align-items: center;
+          object-fit: contain;
         }
 
         .play {
@@ -535,6 +536,7 @@
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
+            object-fit: cover;
 
             .MuiSvgIcon-root {
               font-size: 3rem;

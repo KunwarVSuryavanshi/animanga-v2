@@ -182,6 +182,7 @@ function WatchPage() {
 
 	useEffect(() => {
 		if (epInfo && !animeInfo) {
+			//https://march-api1.vercel.app/meta/anilist/info/
 			axios
 				.get(
 					`https://${
