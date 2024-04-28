@@ -339,7 +339,7 @@ function WatchPage() {
 							</div>
 						)}
 						<div className='ep-list' ref={epRef}>
-							{animeInfo?.episodes?.map((item, key) => {
+							{animeInfo?.episodes?.reverse()?.map((item, key) => {
 								return (
 									<div
 										className='ep_card'
@@ -487,7 +487,7 @@ function WatchPage() {
 					<div className={`player-ep ${loading && 'hidden'}`}>
 						{animeInfo?.episodes?.length > 0 && (
 							<div className='eplist'>
-								{animeInfo?.episodes?.map((item, key) => {
+								{animeInfo?.episodes?.reverse()?.map((item, key) => {
 									return (
 										<>
 											<div
